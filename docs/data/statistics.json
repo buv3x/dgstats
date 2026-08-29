@@ -1,0 +1,18 @@
+{
+  "metadata" : {
+    "exportedAt" : "2026-08-29T20:42:08.100338Z",
+    "diagnostics" : {
+      "exportedSamples" : 6246,
+      "ignoredUnratedSamples" : 72894,
+      "ignoredUnmappedSamples" : 218051,
+      "includedBasketCourses" : 1,
+      "generatedCourseFiles" : 1
+    }
+  },
+  "courses" : [ {
+    "id" : 1,
+    "name" : "Alytus",
+    "sampleCount" : 6246,
+    "path" : "courses/1.json"
+  } ]
+}

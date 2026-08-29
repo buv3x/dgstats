@@ -1,0 +1,238 @@
+https://www.pdga.com/apps/tournament/live-api/live_results_fetch_event?TournID=68806
+
+{
+    "data": {
+        "DateRange": "Saturday, Mar 25, 2023",
+        "EndDate": "2023-03-25",
+        "Country": "Lithuania",
+        "Location": "Vilnius, Lithuania",
+        "LocationShort": "Vilnius, Lithuania",
+        "Divisions": [
+            {
+                "DivisionID": 105,
+                "Division": "FPO",
+                "DivisionName": "Women's Pro Open",
+                "Players": 9,
+                "IsPro": true,
+                "ShortName": "Women's Pro Open",
+                "AbbreviatedName": "Women's Pro Open",
+                "LatestRound": 2
+            },
+            {
+                "DivisionID": 111,
+                "Division": "MP40",
+                "DivisionName": "Mixed Pro 40+",
+                "Players": 26,
+                "IsPro": true,
+                "ShortName": "Mixed Pro 40+",
+                "AbbreviatedName": "Mixed Pro 40+",
+                "LatestRound": 2
+            },
+            {
+                "DivisionID": 116,
+                "Division": "FP40",
+                "DivisionName": "Women's Pro 40+",
+                "Players": 5,
+                "IsPro": true,
+                "ShortName": "Women's Pro 40+",
+                "AbbreviatedName": "Women's Pro 40+",
+                "LatestRound": 2
+            },
+            {
+                "DivisionID": 121,
+                "Division": "MP50",
+                "DivisionName": "Mixed Pro 50+",
+                "Players": 5,
+                "IsPro": true,
+                "ShortName": "Mixed Pro 50+",
+                "AbbreviatedName": "Mixed Pro 50+",
+                "LatestRound": 2
+            },
+            {
+                "DivisionID": 801,
+                "Division": "MJ18",
+                "DivisionName": "Mixed Junior ≤18",
+                "Players": 3,
+                "IsPro": false,
+                "ShortName": "Mixed Junior ≤18",
+                "AbbreviatedName": "Mixed Junior ≤18",
+                "LatestRound": 2
+            }
+        ],
+        "Finals": "no",
+        "HighestCompletedRound": 2,
+        "LatestRound": 2,
+        "FinalRound": 2,
+        "Layouts": [
+            {
+                "LayoutID": 611239,
+                "CourseID": 241036,
+                "CourseName": "Pūčkoriai",
+                "Name": "Default Layout",
+                "Holes": 18,
+                "Par": 63,
+                "Length": 2203,
+                "Units": "Meters",
+                "Accuracy": "M",
+                "Details": [
+                    {
+                        "Hole": "H1",
+                        "Label": "1",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H2",
+                        "Label": "2",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H3",
+                        "Label": "3",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H4",
+                        "Label": "4",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H5",
+                        "Label": "5",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H6",
+                        "Label": "6",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H7",
+                        "Label": "7",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H8",
+                        "Label": "8",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H9",
+                        "Label": "9",
+                        "Par": 5,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H10",
+                        "Label": "10",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H11",
+                        "Label": "11",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H12",
+                        "Label": "12",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H13",
+                        "Label": "13",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H14",
+                        "Label": "14",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H15",
+                        "Label": "15",
+                        "Par": 4,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H16",
+                        "Label": "16",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H17",
+                        "Label": "17",
+                        "Par": 3,
+                        "Length": null
+                    },
+                    {
+                        "Hole": "H18",
+                        "Label": "18",
+                        "Par": 3,
+                        "Length": null
+                    }
+                ]
+            }
+        ],
+        "Name": "Lietuvos diskgolfo taurė 2023 su Westside Discs – I – PŪČKORIAI - FPO, FP40, MP40, MP50, MJ18",
+        "NameHtml": "Lietuvos diskgolfo taurė 2023 su Westside Discs – I – PŪČKORIAI - FPO, FP40, MP40, MP50, MJ18",
+        "MultiLineName": {
+            "pre": "",
+            "main": "Lietuvos diskgolfo taurė 2023 su Westside Discs – I – PŪČKORIAI - FPO, FP40, MP40, MP50, MJ18",
+            "post": ""
+        },
+        "MultiLineNameHtml": " <span class=\"event-name-main\">Lietuvos diskgolfo taurė 2023 su Westside Discs – I – PŪČKORIAI - FPO, FP40, MP40, MP50, MJ18</span>",
+        "RawTier": "C",
+        "Rounds": 2,
+        "RoundsList": {
+            "1": {
+                "Number": 1,
+                "Label": "Round 1",
+                "LabelAbbreviated": "Rd 1",
+                "Date": "2023-03-25",
+                "DateAbbreviated": "Mar 25",
+                "ShowDate": false
+            },
+            "2": {
+                "Number": 2,
+                "Label": "Round 2",
+                "LabelAbbreviated": "Rd 2",
+                "Date": "2023-03-25",
+                "DateAbbreviated": "Mar 25",
+                "ShowDate": false
+            }
+        },
+        "Semis": "no",
+        "SimpleName": "Lietuvos diskgolfo taurė 2023 su Westside Discs – I – PŪČKORIAI - FPO, FP40, MP40, MP50, MJ18",
+        "StartDate": "2023-03-25",
+        "TDName": "Skirmantas Bikelis",
+        "TDPDGANum": 51470,
+        "Tier": "C",
+        "FormattedTier": "C-Tier",
+        "FormattedLongTier": "C-Tier",
+        "TierPro": "C",
+        "TierAm": "C",
+        "TierX": false,
+        "TotalPlayers": 48,
+        "TournamentId": "68806",
+        "International": true,
+        "FullStats": true,
+        "TimeZone": null,
+        "AdditionalEventInfo": null,
+        "EventVideo": null,
+        "ScoringFormat": "S"
+    },
+    "hash": "56ccb677e7c135611f5b85d5e155fc78"
+}

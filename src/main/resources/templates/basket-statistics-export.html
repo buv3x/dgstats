@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Basket Statistics Export</title>
+    <style>
+        body {
+            color: #1f2933;
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            margin: 32px auto;
+            max-width: 880px;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #245b7a;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        button,
+        .button {
+            background: #245b7a;
+            border: 0;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 15px;
+            padding: 9px 14px;
+            text-decoration: none;
+        }
+
+        .message {
+            background: #e7f4ea;
+            border-left: 4px solid #2f855a;
+            margin: 18px 0;
+            padding: 10px 12px;
+        }
+
+        .error {
+            background: #fff1f0;
+            border-left: 4px solid #c2410c;
+            margin: 18px 0;
+            padding: 10px 12px;
+        }
+
+        dl {
+            display: grid;
+            gap: 8px 18px;
+            grid-template-columns: max-content 1fr;
+            margin: 0;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<a th:href="@{/basket-courses}">Basket courses</a>
+<h1>Basket Statistics Export</h1>
+
+<div class="message" th:if="${message}">
+    <p th:text="${message}">Basket statistics exported</p>
+    <dl th:if="${result != null}">
+        <dt>File</dt>
+        <dd th:text="${result.path}">docs/data/statistics.json</dd>
+        <dt>Generated course files</dt>
+        <dd th:text="${result.generatedCourseFiles}">0</dd>
+        <dt>Exported samples</dt>
+        <dd th:text="${result.diagnostics.exportedSamples}">0</dd>
+        <dt>Ignored unrated scores</dt>
+        <dd th:text="${result.diagnostics.ignoredUnratedSamples}">0</dd>
+        <dt>Ignored unmapped scores</dt>
+        <dd th:text="${result.diagnostics.ignoredUnmappedSamples}">0</dd>
+        <dt>Included basket courses</dt>
+        <dd th:text="${result.diagnostics.includedBasketCourses}">0</dd>
+    </dl>
+</div>
+<div class="error" th:if="${error}" th:text="${error}"></div>
+
+<form method="post" th:action="@{/basket-statistics-export}">
+    <button type="submit">Export</button>
+</form>
+</body>
+</html>

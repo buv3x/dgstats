@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title th:text="${course.name}">Basket Course</title>
+    <style>
+        body {
+            color: #1f2933;
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            margin: 32px auto;
+            max-width: 1080px;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #245b7a;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 32px;
+        }
+
+        h3 {
+            font-size: 17px;
+            margin: 0 0 10px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        input {
+            border: 1px solid #a7b0ba;
+            border-radius: 4px;
+            font-size: 15px;
+            padding: 8px 10px;
+        }
+
+        input[name="name"] {
+            min-width: 220px;
+        }
+
+        input[name="distance"] {
+            width: 120px;
+        }
+
+        button {
+            background: #245b7a;
+            border: 0;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            padding: 9px 14px;
+        }
+
+        .message {
+            background: #e7f4ea;
+            border-left: 4px solid #2f855a;
+            margin: 18px 0;
+            padding: 10px 12px;
+        }
+
+        .error {
+            background: #fff1f0;
+            border-left: 4px solid #c2410c;
+            margin: 18px 0;
+            padding: 10px 12px;
+        }
+
+        .basket {
+            border-top: 1px solid #d8dee4;
+            padding: 18px 0;
+        }
+
+        .variation {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-left: 24px;
+        }
+
+        .variation-list {
+            margin: 8px 0 16px;
+        }
+    </style>
+</head>
+<body>
+<a th:href="@{/basket-courses}">Back to courses</a>
+<h1 th:text="${course.name}">Basket Course</h1>
+
+<div class="message" th:if="${message}" th:text="${message}"></div>
+<div class="error" th:if="${error}" th:text="${error}"></div>
+
+<h2>Add Basket</h2>
+<form method="post" th:action="@{/basket-courses/{courseId}/baskets(courseId=${course.id})}">
+    <input name="name" type="text" placeholder="Basket name">
+    <button type="submit">Add Basket</button>
+</form>
+
+<h2>Baskets</h2>
+<p th:if="${#lists.isEmpty(baskets)}">No baskets have been added for this course yet.</p>
+
+<section class="basket" th:each="basket : ${baskets}">
+    <h3 th:text="'Basket ' + ${basket.name}">Basket</h3>
+
+    <form method="post" th:action="@{/basket-courses/{courseId}/baskets/{basketId}(courseId=${course.id},basketId=${basket.id})}">
+        <input name="name" type="text" th:value="${basket.name}">
+        <button type="submit">Update Basket</button>
+    </form>
+
+    <div class="variation-list">
+        <div class="variation" th:each="variation : ${variationsByBasket[basket.id]}">
+            <form method="post" th:action="@{/basket-courses/{courseId}/baskets/{basketId}/variations/{variationId}(courseId=${course.id},basketId=${basket.id},variationId=${variation.id})}">
+                <input name="name" type="text" th:value="${variation.name}">
+                <input name="distance" type="number" min="1" th:value="${variation.distance}" placeholder="Distance">
+                <button type="submit">Update Variation</button>
+            </form>
+        </div>
+    </div>
+
+    <form method="post" th:action="@{/basket-courses/{courseId}/baskets/{basketId}/variations(courseId=${course.id},basketId=${basket.id})}">
+        <input name="name" type="text" placeholder="Variation name">
+        <input name="distance" type="number" min="1" placeholder="Distance">
+        <button type="submit">Add Variation</button>
+    </form>
+</section>
+</body>
+</html>

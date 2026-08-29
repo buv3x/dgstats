@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Basket Variation Mappings</title>
+    <style>
+        body {
+            color: #1f2933;
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            margin: 32px auto;
+            max-width: 1280px;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #245b7a;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        form.controls {
+            align-items: flex-end;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        select {
+            border: 1px solid #a7b0ba;
+            border-radius: 4px;
+            font-size: 14px;
+            max-width: 360px;
+            min-width: 220px;
+            padding: 7px 9px;
+        }
+
+        button,
+        .button {
+            background: #245b7a;
+            border: 0;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 15px;
+            padding: 9px 14px;
+            text-decoration: none;
+        }
+
+        .message {
+            background: #e7f4ea;
+            border-left: 4px solid #2f855a;
+            margin: 18px 0;
+            padding: 10px 12px;
+        }
+
+        .error {
+            background: #fff1f0;
+            border-left: 4px solid #c2410c;
+            margin: 18px 0;
+            padding: 10px 12px;
+        }
+
+        .table-wrap {
+            border: 1px solid #d8dee4;
+            margin-bottom: 22px;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            min-width: 760px;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid #d8dee4;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #eef2f6;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        td:first-child,
+        th:first-child {
+            min-width: 90px;
+            width: 90px;
+        }
+
+        td select {
+            min-width: 180px;
+            width: 100%;
+        }
+
+        .empty-cell {
+            color: #667085;
+            display: block;
+            padding: 8px 0;
+        }
+
+        .actions {
+            margin-top: 18px;
+        }
+
+        .round-heading {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            margin: 30px 0 12px;
+        }
+
+        .round-copy-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .copy-round-button {
+            background: #4b5563;
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+    </style>
+</head>
+<body>
+<a th:href="@{/basket-courses}">Basket courses</a>
+<h1>Basket Variation Mappings</h1>
+
+<div class="message" th:if="${message}" th:text="${message}"></div>
+<div class="error" th:if="${error}" th:text="${error}"></div>
+
+<form class="controls" method="get" th:action="@{/basket-variation-mappings}">
+    <div>
+        <label for="competitionId">Competition</label>
+        <select id="competitionId" name="competitionId" onchange="this.form.submit()">
+            <option value="">Select competition</option>
+            <option th:each="competition : ${editor.competitions}"
+                    th:selected="${competition.id == editor.selectedCompetitionId}"
+                    th:text="${competition.label}"
+                    th:value="${competition.id}">Competition</option>
+        </select>
+    </div>
+    <div th:if="${editor.hasCompetitionSelection()}">
+        <label for="basketCourseId">Basket course</label>
+        <select id="basketCourseId" name="basketCourseId" onchange="this.form.submit()">
+            <option th:if="${#lists.isEmpty(editor.basketCourses)}" value="">No basket courses</option>
+            <option th:each="course : ${editor.basketCourses}"
+                    th:selected="${course.id == editor.selectedBasketCourseId}"
+                    th:text="${course.name}"
+                    th:value="${course.id}">Course</option>
+        </select>
+    </div>
+    <noscript>
+        <button type="submit">Load</button>
+    </noscript>
+</form>
+
+<p th:if="${!editor.hasCompetitionSelection()}">Select a competition to edit basket variation mappings.</p>
+<p th:if="${editor.hasCompetitionSelection() and !editor.hasBasketCourseSelection()}">Add a basket course before editing mappings.</p>
+<p th:if="${editor.hasBasketCourseSelection() and #lists.isEmpty(editor.variationOptions)}">Add baskets and variations to the selected basket course before editing mappings.</p>
+<p th:if="${editor.hasCompetitionSelection() and #lists.isEmpty(editor.roundTables)}">No imported round divisions are available for this competition.</p>
+
+<form method="post"
+      th:action="@{/basket-variation-mappings}"
+      th:if="${editor.hasCompetitionSelection() and editor.hasBasketCourseSelection() and !#lists.isEmpty(editor.roundTables)}">
+    <input name="competitionId" th:value="${editor.selectedCompetitionId}" type="hidden">
+    <input name="basketCourseId" th:value="${editor.selectedBasketCourseId}" type="hidden">
+
+    <section th:each="roundTable : ${editor.roundTables}"
+             th:attr="data-round-id=${roundTable.roundId}">
+        <div class="round-heading">
+            <h2 th:text="${roundTable.label}">Round</h2>
+            <div class="round-copy-controls" th:if="${#lists.size(editor.roundTables) > 1}">
+                <th:block th:each="sourceRound : ${editor.roundTables}">
+                    <button class="copy-round-button"
+                            th:if="${sourceRound.roundId != roundTable.roundId}"
+                            th:attr="data-source-round-id=${sourceRound.roundId},data-target-round-id=${roundTable.roundId}"
+                            th:text="${'Copy ' + sourceRound.label}"
+                            type="button">Copy Round</button>
+                </th:block>
+            </div>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Basket</th>
+                    <th th:each="division : ${roundTable.divisions}" th:text="${division.label}">Division</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="holeOrdinal : ${roundTable.holeOrdinals}">
+                    <th th:text="${holeOrdinal}">1</th>
+                    <td th:each="division : ${roundTable.divisions}">
+                        <select th:if="${division.hasHole(holeOrdinal)}"
+                                class="mapping-cell"
+                                th:attr="data-round-id=${roundTable.roundId},data-division-key=${division.copyKey},data-hole-ordinal=${holeOrdinal}"
+                                th:name="${'cell_' + division.roundDivisionId + '_' + holeOrdinal}">
+                            <option value="">No mapping</option>
+                            <option th:each="variation : ${editor.variationOptions}"
+                                    th:selected="${variation.id == roundTable.selectedVariationId(division.roundDivisionId, holeOrdinal)}"
+                                    th:text="${variation.label}"
+                                    th:value="${variation.id}">Variation</option>
+                        </select>
+                        <span class="empty-cell" th:unless="${division.hasHole(holeOrdinal)}">-</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="actions">
+        <button type="submit">Save Mappings</button>
+    </div>
+</form>
+<script>
+    (function () {
+        function cellKey(select) {
+            return select.dataset.divisionKey + "|" + select.dataset.holeOrdinal;
+        }
+
+        document.addEventListener("click", function (event) {
+            var button = event.target.closest(".copy-round-button");
+            if (!button) {
+                return;
+            }
+
+            var sourceRoundId = button.dataset.sourceRoundId;
+            var targetRoundId = button.dataset.targetRoundId;
+            var sourceValues = new Map();
+            var cells = Array.from(document.querySelectorAll(".mapping-cell"));
+
+            cells.forEach(function (cell) {
+                if (cell.dataset.roundId === sourceRoundId) {
+                    sourceValues.set(cellKey(cell), cell.value);
+                }
+            });
+
+            cells.forEach(function (cell) {
+                if (cell.dataset.roundId === targetRoundId && sourceValues.has(cellKey(cell))) {
+                    cell.value = sourceValues.get(cellKey(cell));
+                    cell.dispatchEvent(new Event("change", {bubbles: true}));
+                }
+            });
+        });
+    })();
+</script>
+</body>
+</html>

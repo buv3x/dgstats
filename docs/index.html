@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basket Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+    <header class="page-header">
+        <h1>Basket Statistics</h1>
+        <div id="snapshot-meta" class="snapshot-meta"></div>
+    </header>
+
+    <form id="filters" class="filters" hidden>
+        <label>
+            <span>Basket course</span>
+            <select id="course" name="course"></select>
+        </label>
+        <label>
+            <span>Rating from</span>
+            <input id="rating-from" name="ratingFrom" type="number" inputmode="numeric">
+        </label>
+        <label>
+            <span>Rating to</span>
+            <input id="rating-to" name="ratingTo" type="number" inputmode="numeric">
+        </label>
+        <button type="submit">Filter</button>
+    </form>
+
+    <div id="message" class="message" hidden></div>
+
+    <section id="chart-section" class="chart-section" hidden>
+        <div class="section-header">
+            <h2>SPR / VAR</h2>
+            <div id="chart-status" class="chart-status"></div>
+        </div>
+        <div id="chart-canvas" class="chart-canvas">
+            <svg id="spr-var-chart" class="spr-var-chart" role="img" aria-label="SPR by VAR scatter chart"></svg>
+            <div id="chart-tooltip" class="chart-tooltip" hidden></div>
+        </div>
+    </section>
+
+    <div id="table-wrap" class="table-wrap" hidden>
+        <table>
+            <thead>
+            <tr>
+                <th>Basket</th>
+                <th>Average</th>
+                <th>1-2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8+</th>
+                <th>Count</th>
+            </tr>
+            </thead>
+            <tbody id="statistics-body"></tbody>
+        </table>
+    </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
