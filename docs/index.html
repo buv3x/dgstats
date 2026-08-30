@@ -13,54 +13,87 @@
         <div id="snapshot-meta" class="snapshot-meta"></div>
     </header>
 
-    <form id="filters" class="filters" hidden>
-        <label>
-            <span>Basket course</span>
-            <select id="course" name="course"></select>
-        </label>
-        <label>
-            <span>Rating from</span>
-            <input id="rating-from" name="ratingFrom" type="number" inputmode="numeric">
-        </label>
-        <label>
-            <span>Rating to</span>
-            <input id="rating-to" name="ratingTo" type="number" inputmode="numeric">
-        </label>
-        <button type="submit">Filter</button>
-    </form>
+    <nav class="view-nav" aria-label="Statistics views">
+        <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
+        <button id="basket-stats-tab" class="view-tab" type="button">Basket stats</button>
+    </nav>
 
-    <div id="message" class="message" hidden></div>
+    <section id="course-stats-view">
+        <form id="filters" class="filters" hidden>
+            <label>
+                <span>Basket course</span>
+                <select id="course" name="course"></select>
+            </label>
+            <label>
+                <span>Rating from</span>
+                <input id="rating-from" name="ratingFrom" type="number" inputmode="numeric">
+            </label>
+            <label>
+                <span>Rating to</span>
+                <input id="rating-to" name="ratingTo" type="number" inputmode="numeric">
+            </label>
+            <button type="submit">Filter</button>
+        </form>
 
-    <section id="chart-section" class="chart-section" hidden>
-        <div class="section-header">
-            <h2>SPR / VAR</h2>
-            <div id="chart-status" class="chart-status"></div>
-        </div>
-        <div id="chart-canvas" class="chart-canvas">
-            <svg id="spr-var-chart" class="spr-var-chart" role="img" aria-label="SPR by VAR scatter chart"></svg>
-            <div id="chart-tooltip" class="chart-tooltip" hidden></div>
+        <div id="message" class="message" hidden></div>
+
+        <section id="chart-section" class="chart-section" hidden>
+            <div class="section-header">
+                <h2>SPR / VAR</h2>
+                <div id="chart-status" class="chart-status"></div>
+            </div>
+            <div id="chart-canvas" class="chart-canvas">
+                <svg id="spr-var-chart" class="spr-var-chart" role="img" aria-label="SPR by VAR scatter chart"></svg>
+                <div id="chart-tooltip" class="chart-tooltip" hidden></div>
+            </div>
+        </section>
+
+        <div id="table-wrap" class="table-wrap" hidden>
+            <table>
+                <thead>
+                <tr>
+                    <th>Basket</th>
+                    <th>Average</th>
+                    <th>1-2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8+</th>
+                    <th>Count</th>
+                </tr>
+                </thead>
+                <tbody id="statistics-body"></tbody>
+            </table>
         </div>
     </section>
 
-    <div id="table-wrap" class="table-wrap" hidden>
-        <table>
-            <thead>
-            <tr>
-                <th>Basket</th>
-                <th>Average</th>
-                <th>1-2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8+</th>
-                <th>Count</th>
-            </tr>
-            </thead>
-            <tbody id="statistics-body"></tbody>
-        </table>
-    </div>
+    <section id="basket-stats-view" hidden>
+        <form id="basket-filters" class="filters" hidden>
+            <label>
+                <span>Basket course</span>
+                <select id="basket-course" name="basketCourse"></select>
+            </label>
+            <label>
+                <span>Basket variation</span>
+                <select id="basket-variation" name="basketVariation"></select>
+            </label>
+        </form>
+
+        <div id="basket-message" class="message" hidden></div>
+
+        <section id="basket-chart-section" class="chart-section" hidden>
+            <div class="section-header">
+                <h2>Basket SPR / VAR</h2>
+                <div id="basket-chart-status" class="chart-status"></div>
+            </div>
+            <div id="basket-chart-canvas" class="chart-canvas basket-chart-canvas">
+                <svg id="basket-stats-chart" class="spr-var-chart" role="img" aria-label="Basket sliding-window SPR and VAR chart"></svg>
+                <div id="basket-chart-tooltip" class="chart-tooltip" hidden></div>
+            </div>
+        </section>
+    </section>
 </main>
 <script src="app.js"></script>
 </body>

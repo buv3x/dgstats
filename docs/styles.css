@@ -87,6 +87,26 @@ button {
     padding: 8px 14px;
 }
 
+.view-nav {
+    border-bottom: 1px solid #d8dee4;
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.view-tab {
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    color: #475467;
+}
+
+.view-tab.active {
+    border-bottom-color: #245b7a;
+    color: #1f2933;
+    font-weight: bold;
+}
+
 .message {
     background: #ffffff;
     border-left: 4px solid #667085;
@@ -169,6 +189,76 @@ button {
 .chart-arrow.hovered {
     fill: #c2410c;
     opacity: 1;
+}
+
+.basket-spr-line {
+    fill: none;
+    stroke: #245b7a;
+}
+
+.basket-var-line {
+    fill: none;
+    stroke: #c2410c;
+}
+
+.basket-line-50-99 {
+    stroke-width: 2;
+}
+
+.basket-line-100-199 {
+    stroke-dasharray: 2 5;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.basket-line-200-plus {
+    stroke-width: 2;
+}
+
+.basket-chart-point {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+}
+
+.basket-chart-point.spr {
+    fill: #245b7a;
+}
+
+.basket-chart-point.var {
+    fill: #c2410c;
+}
+
+.basket-chart-point.hovered {
+    fill: #1f2933;
+}
+
+.chart-legend {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    margin: 10px 0 0 58px;
+}
+
+.legend-item {
+    align-items: center;
+    color: #475467;
+    display: inline-flex;
+    font-size: 13px;
+    gap: 6px;
+}
+
+.legend-swatch {
+    display: inline-block;
+    height: 3px;
+    width: 24px;
+}
+
+.legend-spr {
+    background: #245b7a;
+}
+
+.legend-var {
+    background: #c2410c;
 }
 
 .chart-tooltip {

@@ -1,18 +1,26 @@
 {
   "metadata" : {
-    "exportedAt" : "2026-08-29T20:42:08.100338Z",
+    "exportedAt" : "2026-08-30T21:15:32.672676300Z",
     "diagnostics" : {
-      "exportedSamples" : 6246,
+      "exportedSamples" : 9248,
       "ignoredUnratedSamples" : 72894,
-      "ignoredUnmappedSamples" : 218051,
-      "includedBasketCourses" : 1,
-      "generatedCourseFiles" : 1
+      "ignoredUnmappedSamples" : 215049,
+      "includedBasketCourses" : 2,
+      "generatedCourseFiles" : 2,
+      "generatedBasketStatsFiles" : 2
     }
   },
   "courses" : [ {
     "id" : 1,
     "name" : "Alytus",
     "sampleCount" : 6246,
-    "path" : "courses/1.json"
+    "path" : "courses/1.json",
+    "basketStatsPath" : "basket-stats/1.json"
+  }, {
+    "id" : 2,
+    "name" : "Pakruojis",
+    "sampleCount" : 3002,
+    "path" : "courses/2.json",
+    "basketStatsPath" : "basket-stats/2.json"
   } ]
 }

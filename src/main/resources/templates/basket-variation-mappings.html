@@ -27,6 +27,13 @@
             margin: 0;
         }
 
+        .admin-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
         form.controls {
             align-items: flex-end;
             display: flex;
@@ -146,7 +153,11 @@
     </style>
 </head>
 <body>
-<a th:href="@{/basket-courses}">Basket courses</a>
+<nav class="admin-nav" aria-label="Administration">
+    <a class="button" th:href="@{/basket-courses}">Basket courses</a>
+    <a class="button" th:href="@{/basket-variation-mappings}">Basket Variation Mapping</a>
+    <a class="button" th:href="@{/basket-statistics-export}">Export</a>
+</nav>
 <h1>Basket Variation Mappings</h1>
 
 <div class="message" th:if="${message}" th:text="${message}"></div>

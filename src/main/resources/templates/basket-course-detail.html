@@ -32,6 +32,13 @@
             margin: 0 0 10px;
         }
 
+        .admin-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
         form {
             display: flex;
             flex-wrap: wrap;
@@ -54,14 +61,17 @@
             width: 120px;
         }
 
-        button {
+        button,
+        .button {
             background: #245b7a;
             border: 0;
             border-radius: 4px;
             color: white;
             cursor: pointer;
+            display: inline-block;
             font-size: 15px;
             padding: 9px 14px;
+            text-decoration: none;
         }
 
         .message {
@@ -97,7 +107,11 @@
     </style>
 </head>
 <body>
-<a th:href="@{/basket-courses}">Back to courses</a>
+<nav class="admin-nav" aria-label="Administration">
+    <a class="button" th:href="@{/basket-courses}">Basket courses</a>
+    <a class="button" th:href="@{/basket-variation-mappings}">Basket Variation Mapping</a>
+    <a class="button" th:href="@{/basket-statistics-export}">Export</a>
+</nav>
 <h1 th:text="${course.name}">Basket Course</h1>
 
 <div class="message" th:if="${message}" th:text="${message}"></div>
