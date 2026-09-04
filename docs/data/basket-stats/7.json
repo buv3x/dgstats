@@ -1,0 +1,4565 @@
+{
+  "course" : {
+    "id" : 7,
+    "name" : "Akmenė"
+  },
+  "variations" : [ {
+    "basketId" : 112,
+    "basketLabel" : "1",
+    "variationId" : 127,
+    "variationLabel" : "Main [105]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.6524461750965169,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.6077429640640862,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.5799183782322881,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.6095395984016916,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.6716774224313067,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.757513674675332,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.8055965471486727,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.8374381494354478,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.8493470846484635,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.8562007287985994,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.8666651865203752,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.8626232349213994,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.8216694845143304,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.7661988193265107,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.7040452816891335,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.6507789977311361,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.5880248785057928,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.5451933854361659,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.503552544005948,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.46151508101647365,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.431464984594704,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.4612882792109062,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.5380301496833273,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.612985859763728,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.6927017053443904,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.7755614688733782,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.870920141844418,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.9829059821843152,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.1406169568078763,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.3668956535217842,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.5499812004203282,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 113,
+    "basketLabel" : "2",
+    "variationId" : 128,
+    "variationLabel" : "Main [86]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.9523383548902513,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.905213807206741,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.8200706590228833,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.7778282219218777,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.7365890410464471,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.680933298635866,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.6450088738922041,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.6086328840177341,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.5675520542567796,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.5548018721720471,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.5553821112968358,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.5321449817967551,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.47544795491701625,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.3967751289933356,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.3331259135257127,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.29869471296774813,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.3397524970109143,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.3981790440963191,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.45950820933875314,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.4810221701622992,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.4776986841357299,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.6011530182854666,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.7562997170498673,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.8983839348268466,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 1.0303578656448618,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 1.1143426693844525,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 1.1219965746304483,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 1.1356872494163854,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.169981880305405,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.1746891553589756,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.0898020752298352,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 114,
+    "basketLabel" : "3",
+    "variationId" : 129,
+    "variationLabel" : "Main [166]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.6877923627465002,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.5601366981685783,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.47590995859475277,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.39337074869167366,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.35622743091946907,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.4278352249731227,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.5067646928793391,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.5957977858909665,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.6779436780435845,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.7316878893101644,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.7673593496380954,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.797713005926499,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.8631638085895901,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.9452118762928532,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.9631175948218593,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.9533525152101154,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.8573994994285291,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.7788753060946969,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.7339746535873533,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.6985592576871074,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.6057933421122422,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.4867377780942471,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.36819333354561445,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.2736281004325621,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.26305122393231195,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.2434229337392879,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.16911328731914455,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.027954247358362543,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : -0.16513276963276918,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : -0.37283202004968585,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : -0.49337631228675505,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 115,
+    "basketLabel" : "4",
+    "variationId" : 130,
+    "variationLabel" : "Main [105]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 1.2166545334782857,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 1.0468969881334613,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.9271012036188612,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.8509828304629803,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.8334707750114381,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.7705688957742647,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.7514679691845678,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.7168059877346812,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.7431069300204036,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.779209047227941,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.8024849287149647,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.8119270462000899,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.7860682993774213,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.7621082697845233,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.7384761717457166,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.7517764719539202,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.7421591875997765,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.7257395374642519,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.6482666214605187,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.574743714743367,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.5141392510773527,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.5186354300872363,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.5413220894657034,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.5630888135194124,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.5597493079594018,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.591378096022132,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.6971945571863627,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.8655139193153943,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.0063847084687472,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.138334114420836,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.3044095906197533,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 116,
+    "basketLabel" : "5",
+    "variationId" : 131,
+    "variationLabel" : "Main [75]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : -0.12077565134005047,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.029964171842380715,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.18146691736299925,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.3450162531909466,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.5745195968030627,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.8056488986693131,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.9400296840553695,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.9905294731516989,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.9641385628614804,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.9359662802824482,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.8855500579060531,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.880698165748116,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.8402758358002549,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.7462242166120083,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.6445018738236226,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.54989327239337,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.4978412381712017,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.43993509359186334,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.43221376785040516,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.42511561596895575,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.42329731902942425,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.46614236026601763,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.5575037730491488,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.6736936403931075,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.7793065267003385,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.8548762046721692,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.8790824662209922,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.9203621755202982,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.9773413284635518,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.0556698364204153,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.0840297648780397,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 117,
+    "basketLabel" : "6",
+    "variationId" : 132,
+    "variationLabel" : "Main [93]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.31846511526306737,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.3137251832321881,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.36688242412360145,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.41877796771073816,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.4445766657164176,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.44406480259844944,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.5046040273992507,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.5515946586225111,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.6011855007519159,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.6200794215233593,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.6348285728972838,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.6732882925305465,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.6794724363646272,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.6836138063656193,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.7141990056530939,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.7233870131464454,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.7402580457750835,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.7534493644850243,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.7611411317998469,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.7799660894507501,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.7570795792322085,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.7297614024578957,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.7014762094670586,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.6596172759335588,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.6156155567891045,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.6294107182730946,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.606544426510396,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.5677862977034042,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.5034291091996226,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 0.47741043774312186,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 0.5236796611189962,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 118,
+    "basketLabel" : "7",
+    "variationId" : 133,
+    "variationLabel" : "Main [71]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.5103131578339496,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.43694523433,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.3908848240906997,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.3664471591861594,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.3410770795459893,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.316142713500514,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.32395752498798186,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.35359956837722556,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.3764716589442735,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.3685034509776219,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.3332074799421185,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.29065308585764815,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.25860247419184723,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.23257593833425325,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.19608511925298205,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.15376373082267483,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.15891174492625243,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.16663795800164705,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.1549388896235824,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.15439406708314762,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.1527055854115281,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.19340587298155568,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.23287871255895212,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.2713010136270995,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.3152714425564826,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.3431189041778709,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.3741477790061257,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.3659587559859715,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.33888970950632397,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 0.3433560332139873,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 0.40592490472714604,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 119,
+    "basketLabel" : "8",
+    "variationId" : 134,
+    "variationLabel" : "Main [81]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : -0.21109826133495577,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : -0.09232164520103281,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.16228675505534065,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.3747493936166573,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.5555947475791894,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.734896104833505,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.822435441474214,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.841624157663832,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.7752963355788463,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.6926944266326953,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.5966976241642958,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.478733723047771,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.37179636318875914,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.29018741805051573,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.24139306870056798,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.20101802530568866,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.24599805005490943,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.3195705164808386,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.3771784655030371,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.44175985756601466,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.5109896770660057,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.5876668554998148,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.5632790887939885,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.5353023123683219,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.49855485783016273,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.4013970202924386,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.23641785337425195,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.051607058457412563,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : -0.05686479889942792,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : -0.1389965051589927,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : -0.2005019902408891,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 120,
+    "basketLabel" : "9",
+    "variationId" : 135,
+    "variationLabel" : "Main [67]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.5448130354954881,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.6465025028527023,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.7091038704626681,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.7465772592428562,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.7491132734818059,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.6964982128013237,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.6431234621353834,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.586097341401521,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.5369763607542382,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.4740678772605129,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.3936776074011507,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.31570910831965826,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.24715128957922794,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.1812098038973129,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.1399593767647871,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.11162928735928954,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.11633330192103329,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.09883091386745585,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.11727848684350416,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.17812685288521923,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.2613877452227518,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.28580171730044984,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.30383542767427535,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.329763797936486,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.3573087744199289,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.38054009281887974,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.39813278585461653,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.4488191642680288,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.4544144520372607,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 0.4404630137979568,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 0.38367455660017724,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 121,
+    "basketLabel" : "10",
+    "variationId" : 136,
+    "variationLabel" : "Main [167]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 1.2846209121472587,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 1.0627236095265822,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.8626926643646585,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.7356833535345038,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.6397229631028318,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.5524317873187611,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.5182473384628107,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.547826926326279,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.5699482987326059,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.5876209551581605,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.6948670093352166,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.8054706590670896,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.9131289789871636,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 1.0358176205524487,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 1.1648557148209866,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 1.2484842549322326,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 1.2003848071938883,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 1.1190341976338818,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 1.049094288699537,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.9832782339890745,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.9161519615627802,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.8596507920885526,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.8075791875903053,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.7513102764532806,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.6801265333635357,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.6628203240342196,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.694867074261198,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.7319370653689247,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.8610254859133748,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.1152324638171258,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.289654063722852,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 122,
+    "basketLabel" : "11",
+    "variationId" : 137,
+    "variationLabel" : "Main [84]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.5480696426058018,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.4264514692409164,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.38965009510866166,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.3614594231127929,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.29994705484369794,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.25334326838678545,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.29382343740505684,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.3201057128315086,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.33386109069256364,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.36842238980052455,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.38783349093356995,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.40131848551055066,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.4002905400079417,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.42681805926866373,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.48834279424016847,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.5297844415772862,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.6033744891535372,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.6670787799458608,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.6653809973228059,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.6656856251647512,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.6861421535069643,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.7096717923142937,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.6904322789398665,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.6457535426515152,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.5898312305978954,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.5333691752994956,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.44094665949086803,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.39323374499689573,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.44251093351501036,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 0.46601234020611015,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 0.5020263451567547,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 123,
+    "basketLabel" : "12",
+    "variationId" : 138,
+    "variationLabel" : "Main [180]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.39943203893527957,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.39711458181353715,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.5852965316843461,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.7195762676410086,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.8485831556608776,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.9171734917170469,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 1.0041200068795892,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 1.077091056686097,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 1.1210281391715806,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 1.1611766409021314,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 1.1864369165077002,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 1.1650137141103467,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 1.1203267082056088,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 1.093830779866145,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 1.006293564136586,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.9090560833754608,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.7787350990352474,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.6293342268323725,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.4960694382727951,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.4232641289214398,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.3403295890449807,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.39387467430838824,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.4225059264365186,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.4744605449695559,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.5584473051750096,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.7039996746702247,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.925413857552875,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 1.1785995343893563,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.4661747111932641,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.8261228665574976,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 2.211122176784618,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 124,
+    "basketLabel" : "13",
+    "variationId" : 139,
+    "variationLabel" : "Main [101]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.918202414054141,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.7321045068457395,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.6530271992100225,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.5742462673066364,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.5443195213470164,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.5271678656533189,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.48309516010532133,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.5051366650338938,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.586945729643959,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.6541367667982199,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.7151897519595153,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.7636641916177036,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.7386902913576692,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.6871570592384355,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.6338764936431657,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.5606874027439976,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.5469562337147237,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.5471845040389467,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.5448781029480058,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.5567766597132352,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.5957601206665855,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.7125933341965635,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.810558730191709,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.8991728403918468,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.9687339333839364,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 1.0572267800840922,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 1.1706371279447396,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 1.2680192185681674,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.2950877563471652,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.288886806007943,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.195524865767518,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 125,
+    "basketLabel" : "14",
+    "variationId" : 140,
+    "variationLabel" : "Main [254]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.39923752097685966,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.3428007879554713,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.32666824240188974,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.36329281363644444,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.40829825364630223,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.43658580433260485,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.4779833324758972,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.5171835283727646,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.5678296782655048,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.590152862738575,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.6175941966859906,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.6759782897723141,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.7490685895212315,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.796186773404891,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.8119282826090252,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.8385154009660987,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.8831687424135553,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.9621976732758426,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 1.0347618650102937,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 1.1343889124285298,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 1.2857879426233303,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 1.4542387735615268,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 1.5908792840158548,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 1.7020631616281083,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 1.8149454901035342,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 1.9028912441832029,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 1.9448646029141048,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 1.9941759887123858,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 2.0112380720452503,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 2.0292294350724362,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 2.10363215105082,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 126,
+    "basketLabel" : "15",
+    "variationId" : 141,
+    "variationLabel" : "Main [189]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 1.4259472289250088,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 1.3991602800276606,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 1.429098640899966,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 1.395535193253546,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 1.3935296649344562,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 1.349266059769981,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 1.3840652161772689,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 1.366845814834321,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 1.2783829427440319,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 1.1858260378449978,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 1.173378435436254,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 1.135698734428432,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 1.0890111198104033,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 1.0470008390908476,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.9999634752384449,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.9447035646030558,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.9315926903647918,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.9534930076773471,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 1.039125251678986,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 1.1212139900701201,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 1.2002288876779408,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 1.2987148880207946,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 1.3304514446376918,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 1.387436689215613,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 1.4010447088509534,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 1.3882676128819538,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 1.395758777033073,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 1.4071520369485122,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.4279144499084124,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 1.4708013142033323,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.2837885568875067,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 127,
+    "basketLabel" : "16",
+    "variationId" : 142,
+    "variationLabel" : "Main [170]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 0.250287355183635,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 0.27326863932394874,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 0.3425399213907401,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 0.39091412993629576,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 0.3971468464047561,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 0.405083369490349,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 0.520355107192063,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 0.6231236750645421,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 0.7329098829990308,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 0.790467837428054,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 0.830049951263237,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 0.8710603142362063,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 0.9392818508746589,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 0.9916773635054216,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 0.9722453551585395,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 0.9575747142874588,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 0.8926548300032122,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 0.8442382193233365,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 0.804241797524804,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 0.7923307129262872,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 0.7435148102700282,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 0.7497262815829153,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 0.7479827051479085,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 0.7524733275592483,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 0.8031026070144248,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 0.882153699436335,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 0.9141012952823544,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 0.9067951399032803,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 0.8468653526394915,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 0.8914770671841296,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 1.0076507491911637,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 128,
+    "basketLabel" : "17",
+    "variationId" : 143,
+    "variationLabel" : "Main [162]",
+    "sampleCount" : 278,
+    "windows" : [ {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 53,
+      "sprw" : 0.9034535140216581,
+      "sprwCount" : 54.78,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 55,
+      "sprw" : 0.9591644835508012,
+      "sprwCount" : 59.52,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 59,
+      "sprw" : 1.0813116841693184,
+      "sprwCount" : 64.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 73,
+      "sprw" : 1.106954947767078,
+      "sprwCount" : 67.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 81,
+      "sprw" : 1.1632051176891198,
+      "sprwCount" : 72.08,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 81,
+      "sprw" : 1.2704043801834883,
+      "sprwCount" : 77.04,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 87,
+      "sprw" : 1.3244588827147006,
+      "sprwCount" : 80.88,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 87,
+      "sprw" : 1.2586574405429125,
+      "sprwCount" : 85.7,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 88,
+      "sprw" : 1.2013980336364802,
+      "sprwCount" : 88.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 92,
+      "sprw" : 1.2018813441036982,
+      "sprwCount" : 89.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 96,
+      "sprw" : 1.184713637805638,
+      "sprwCount" : 89.7,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 101,
+      "sprw" : 1.1057610420166974,
+      "sprwCount" : 89.46,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 100,
+      "sprw" : 1.033465566053931,
+      "sprwCount" : 87.94,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 92,
+      "sprw" : 1.0707919506122738,
+      "sprwCount" : 87.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 87,
+      "sprw" : 1.058201163577536,
+      "sprwCount" : 86.9,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 83,
+      "sprw" : 1.0397286277443964,
+      "sprwCount" : 85.58,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 77,
+      "sprw" : 1.1642625645644313,
+      "sprwCount" : 84.16,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 75,
+      "sprw" : 1.3165351603849684,
+      "sprwCount" : 81.3,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 81,
+      "sprw" : 1.4691289429493417,
+      "sprwCount" : 79.88,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 84,
+      "sprw" : 1.513757082542475,
+      "sprwCount" : 78.17999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 78,
+      "sprw" : 1.5420558793049057,
+      "sprwCount" : 75.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 80,
+      "sprw" : 1.6084415065847586,
+      "sprwCount" : 73.74,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 77,
+      "sprw" : 1.6256668654126232,
+      "sprwCount" : 71.76,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 77,
+      "sprw" : 1.649047304630977,
+      "sprwCount" : 68.06,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 66,
+      "sprw" : 1.671460588430653,
+      "sprwCount" : 63.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 62,
+      "sprw" : 1.5910205343702903,
+      "sprwCount" : 58.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 58,
+      "sprw" : 1.4250917815370616,
+      "sprwCount" : 52.82,
+      "sprwCountBucket" : "50-99"
+    } ]
+  }, {
+    "basketId" : 129,
+    "basketLabel" : "18",
+    "variationId" : 145,
+    "variationLabel" : "Main [305]",
+    "sampleCount" : 378,
+    "windows" : [ {
+      "ratingFrom" : 780,
+      "ratingTo" : 830,
+      "ratingMidpoint" : 805,
+      "count" : 64,
+      "sprw" : 1.0563682061808797,
+      "sprwCount" : 52.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 785,
+      "ratingTo" : 835,
+      "ratingMidpoint" : 810,
+      "count" : 62,
+      "sprw" : 1.2400962271856826,
+      "sprwCount" : 59.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 790,
+      "ratingTo" : 840,
+      "ratingMidpoint" : 815,
+      "count" : 60,
+      "sprw" : 1.4640743674945305,
+      "sprwCount" : 67.84,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 795,
+      "ratingTo" : 845,
+      "ratingMidpoint" : 820,
+      "count" : 75,
+      "sprw" : 1.5835998995692144,
+      "sprwCount" : 76.54,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 800,
+      "ratingTo" : 850,
+      "ratingMidpoint" : 825,
+      "count" : 81,
+      "sprw" : 1.721235722673203,
+      "sprwCount" : 84.44,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 805,
+      "ratingTo" : 855,
+      "ratingMidpoint" : 830,
+      "count" : 87,
+      "sprw" : 1.76538106422089,
+      "sprwCount" : 92.66,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 810,
+      "ratingTo" : 860,
+      "ratingMidpoint" : 835,
+      "count" : 107,
+      "sprw" : 1.6193193219034574,
+      "sprwCount" : 99.0,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 815,
+      "ratingTo" : 865,
+      "ratingMidpoint" : 840,
+      "count" : 121,
+      "sprw" : 1.4564269240757033,
+      "sprwCount" : 105.96,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 820,
+      "ratingTo" : 870,
+      "ratingMidpoint" : 845,
+      "count" : 119,
+      "sprw" : 1.3760803437630216,
+      "sprwCount" : 113.36,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 825,
+      "ratingTo" : 875,
+      "ratingMidpoint" : 850,
+      "count" : 129,
+      "sprw" : 1.3182750504174108,
+      "sprwCount" : 118.76,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 830,
+      "ratingTo" : 880,
+      "ratingMidpoint" : 855,
+      "count" : 131,
+      "sprw" : 1.2379844955237373,
+      "sprwCount" : 124.82000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 835,
+      "ratingTo" : 885,
+      "ratingMidpoint" : 860,
+      "count" : 130,
+      "sprw" : 1.1403497362141113,
+      "sprwCount" : 127.72,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 840,
+      "ratingTo" : 890,
+      "ratingMidpoint" : 865,
+      "count" : 132,
+      "sprw" : 1.1350073598445147,
+      "sprwCount" : 128.14000000000001,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 845,
+      "ratingTo" : 895,
+      "ratingMidpoint" : 870,
+      "count" : 140,
+      "sprw" : 1.1046656925588538,
+      "sprwCount" : 127.86,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 850,
+      "ratingTo" : 900,
+      "ratingMidpoint" : 875,
+      "count" : 137,
+      "sprw" : 1.1074119249939658,
+      "sprwCount" : 127.06,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 855,
+      "ratingTo" : 905,
+      "ratingMidpoint" : 880,
+      "count" : 140,
+      "sprw" : 1.115466174001951,
+      "sprwCount" : 123.82,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 860,
+      "ratingTo" : 910,
+      "ratingMidpoint" : 885,
+      "count" : 128,
+      "sprw" : 1.1467707325494179,
+      "sprwCount" : 121.62,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 865,
+      "ratingTo" : 915,
+      "ratingMidpoint" : 890,
+      "count" : 117,
+      "sprw" : 1.1587005925608946,
+      "sprwCount" : 119.18,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 870,
+      "ratingTo" : 920,
+      "ratingMidpoint" : 895,
+      "count" : 117,
+      "sprw" : 1.1721738737293803,
+      "sprwCount" : 115.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 875,
+      "ratingTo" : 925,
+      "ratingMidpoint" : 900,
+      "count" : 107,
+      "sprw" : 1.196334931362948,
+      "sprwCount" : 112.64,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 880,
+      "ratingTo" : 930,
+      "ratingMidpoint" : 905,
+      "count" : 99,
+      "sprw" : 1.1667959939047976,
+      "sprwCount" : 107.9,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 885,
+      "ratingTo" : 935,
+      "ratingMidpoint" : 910,
+      "count" : 105,
+      "sprw" : 1.2804067906401204,
+      "sprwCount" : 104.92,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 890,
+      "ratingTo" : 940,
+      "ratingMidpoint" : 915,
+      "count" : 110,
+      "sprw" : 1.3460502895270998,
+      "sprwCount" : 101.74,
+      "sprwCountBucket" : "100-199"
+    }, {
+      "ratingFrom" : 895,
+      "ratingTo" : 945,
+      "ratingMidpoint" : 920,
+      "count" : 98,
+      "sprw" : 1.4264636793147498,
+      "sprwCount" : 97.68,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 900,
+      "ratingTo" : 950,
+      "ratingMidpoint" : 925,
+      "count" : 102,
+      "sprw" : 1.4588814230761158,
+      "sprwCount" : 93.53999999999999,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 905,
+      "ratingTo" : 955,
+      "ratingMidpoint" : 930,
+      "count" : 97,
+      "sprw" : 1.526189729052832,
+      "sprwCount" : 90.2,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 910,
+      "ratingTo" : 960,
+      "ratingMidpoint" : 935,
+      "count" : 95,
+      "sprw" : 1.6650261152073145,
+      "sprwCount" : 85.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 915,
+      "ratingTo" : 965,
+      "ratingMidpoint" : 940,
+      "count" : 82,
+      "sprw" : 1.8722555813000812,
+      "sprwCount" : 79.22,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 920,
+      "ratingTo" : 970,
+      "ratingMidpoint" : 945,
+      "count" : 74,
+      "sprw" : 1.9975321009842752,
+      "sprwCount" : 72.18,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 925,
+      "ratingTo" : 975,
+      "ratingMidpoint" : 950,
+      "count" : 70,
+      "sprw" : 2.085931708609854,
+      "sprwCount" : 65.26,
+      "sprwCountBucket" : "50-99"
+    }, {
+      "ratingFrom" : 930,
+      "ratingTo" : 980,
+      "ratingMidpoint" : 955,
+      "count" : 66,
+      "sprw" : 2.4201347799549673,
+      "sprwCount" : 57.84,
+      "sprwCountBucket" : "50-99"
+    } ]
+  } ]
+}

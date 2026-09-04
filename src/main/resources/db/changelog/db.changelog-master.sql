@@ -327,3 +327,22 @@ GROUP BY grouped.round_division_id, grouped.hole_ordinal
 HAVING COUNT(*) = 1;
 
 ALTER TABLE datas.hole_score DROP COLUMN basket_variation_id;
+
+
+--changeset datascience:010-basket-variation-round-settings dbms:postgresql
+--validCheckSum 1:any
+
+CREATE TABLE datas.basket_variation_round_settings (
+    round_id BIGINT NOT NULL,
+    basket_course_id BIGINT NOT NULL,
+    same_layout BOOLEAN NOT NULL DEFAULT false,
+    CONSTRAINT pk_basket_variation_round_settings PRIMARY KEY (round_id),
+    CONSTRAINT fk_bvrs_round FOREIGN KEY (round_id) REFERENCES datas.round (id),
+    CONSTRAINT fk_bvrs_basket_course FOREIGN KEY (basket_course_id) REFERENCES datas.basket_course (id)
+);
+
+
+--changeset datascience:011-drop-basket-variation-round-settings dbms:postgresql
+--validCheckSum 1:any
+
+DROP TABLE IF EXISTS datas.basket_variation_round_settings;

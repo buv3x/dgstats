@@ -1,26 +1,98 @@
 {
   "metadata" : {
-    "exportedAt" : "2026-08-30T21:15:32.672676300Z",
+    "exportedAt" : "2026-09-03T19:43:59.602485400Z",
     "diagnostics" : {
-      "exportedSamples" : 9248,
+      "exportedSamples" : 224297,
       "ignoredUnratedSamples" : 72894,
-      "ignoredUnmappedSamples" : 215049,
-      "includedBasketCourses" : 2,
-      "generatedCourseFiles" : 2,
-      "generatedBasketStatsFiles" : 2
+      "ignoredUnmappedSamples" : 0,
+      "includedBasketCourses" : 14,
+      "generatedCourseFiles" : 14,
+      "generatedBasketStatsFiles" : 13
     }
   },
   "courses" : [ {
+    "id" : 7,
+    "name" : "Akmenė",
+    "sampleCount" : 6804,
+    "path" : "courses/7.json",
+    "basketStatsPath" : "basket-stats/7.json"
+  }, {
     "id" : 1,
     "name" : "Alytus",
     "sampleCount" : 6246,
     "path" : "courses/1.json",
     "basketStatsPath" : "basket-stats/1.json"
   }, {
+    "id" : 10,
+    "name" : "Domeikava",
+    "sampleCount" : 27979,
+    "path" : "courses/10.json",
+    "basketStatsPath" : "basket-stats/10.json"
+  }, {
+    "id" : 9,
+    "name" : "Elektrėnai",
+    "sampleCount" : 6480,
+    "path" : "courses/9.json",
+    "basketStatsPath" : "basket-stats/9.json"
+  }, {
+    "id" : 15,
+    "name" : "Jonava",
+    "sampleCount" : 12012,
+    "path" : "courses/15.json",
+    "basketStatsPath" : "basket-stats/15.json"
+  }, {
+    "id" : 8,
+    "name" : "Molėtai",
+    "sampleCount" : 8172,
+    "path" : "courses/8.json",
+    "basketStatsPath" : "basket-stats/8.json"
+  }, {
+    "id" : 12,
+    "name" : "Nedožinka",
+    "sampleCount" : 6534,
+    "path" : "courses/12.json",
+    "basketStatsPath" : "basket-stats/12.json"
+  }, {
     "id" : 2,
     "name" : "Pakruojis",
-    "sampleCount" : 3002,
+    "sampleCount" : 4262,
     "path" : "courses/2.json",
     "basketStatsPath" : "basket-stats/2.json"
+  }, {
+    "id" : 11,
+    "name" : "Panevėžys. Skaistakalnis",
+    "sampleCount" : 4590,
+    "path" : "courses/11.json",
+    "basketStatsPath" : "basket-stats/11.json"
+  }, {
+    "id" : 3,
+    "name" : "Pušynas",
+    "sampleCount" : 43082,
+    "path" : "courses/3.json",
+    "basketStatsPath" : "basket-stats/3.json"
+  }, {
+    "id" : 5,
+    "name" : "Ramygala",
+    "sampleCount" : 1188,
+    "path" : "courses/5.json",
+    "basketStatsPath" : null
+  }, {
+    "id" : 4,
+    "name" : "Rietavas",
+    "sampleCount" : 5976,
+    "path" : "courses/4.json",
+    "basketStatsPath" : "basket-stats/4.json"
+  }, {
+    "id" : 14,
+    "name" : "Survilų Sodyba",
+    "sampleCount" : 23022,
+    "path" : "courses/14.json",
+    "basketStatsPath" : "basket-stats/14.json"
+  }, {
+    "id" : 6,
+    "name" : "Vilnius. Pučkoriai",
+    "sampleCount" : 67950,
+    "path" : "courses/6.json",
+    "basketStatsPath" : "basket-stats/6.json"
   } ]
 }

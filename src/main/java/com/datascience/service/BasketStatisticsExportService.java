@@ -2,6 +2,7 @@ package com.datascience.service;
 
 import com.datascience.repository.HoleScoreRepository;
 import com.datascience.repository.HoleScoreRepository.StatisticsExportRow;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,7 @@ public class BasketStatisticsExportService {
     private static final int BASKET_STATS_WINDOW_SIZE = 50;
     private static final int BASKET_STATS_WINDOW_STEP = 5;
     private static final int BASKET_STATS_MIN_SAMPLES = 50;
+    private static final int BASKET_STATS_SPRW_RADIUS = 50;
 
     private final HoleScoreRepository holeScoreRepository;
     private final ObjectMapper objectMapper;
@@ -306,23 +308,21 @@ public class BasketStatisticsExportService {
                 continue;
             }
 
-            Regression regression = regression(windowSamples);
-            if (regression == null) {
+            int midpoint = start + BASKET_STATS_WINDOW_SIZE / 2;
+            WeightedRegression weightedRegression = weightedRegression(samples, midpoint);
+            if (weightedRegression == null) {
                 continue;
             }
 
-            double residualTotal = windowSamples.stream()
-                    .mapToDouble(sample -> Math.abs(sample.score() - regression.expectedScore(sample.rating())))
-                    .sum();
             int count = windowSamples.size();
             windows.add(new BasketStatsWindow(
                     start,
                     end,
-                    start + BASKET_STATS_WINDOW_SIZE / 2,
+                    midpoint,
                     count,
-                    countBucket(count),
-                    -100 * regression.slope(),
-                    residualTotal / count
+                    -100 * weightedRegression.regression().slope(),
+                    weightedRegression.weightedCount(),
+                    countBucket(weightedRegression.weightedCount())
             ));
         }
 
@@ -356,7 +356,50 @@ public class BasketStatisticsExportService {
         return new Regression(slope, meanScore - slope * meanRating);
     }
 
-    private static String countBucket(int count) {
+    private static WeightedRegression weightedRegression(List<ScoreSample> samples, int midpoint) {
+        List<WeightedScoreSample> weightedSamples = samples.stream()
+                .map(sample -> new WeightedScoreSample(sample, sprwWeight(sample.rating(), midpoint)))
+                .filter(sample -> sample.weight() > 0)
+                .toList();
+        double weightedCount = weightedSamples.stream()
+                .mapToDouble(WeightedScoreSample::weight)
+                .sum();
+        if (weightedCount < BASKET_STATS_MIN_SAMPLES) {
+            return null;
+        }
+
+        double meanRating = weightedSamples.stream()
+                .mapToDouble(sample -> sample.weight() * sample.sample().rating())
+                .sum() / weightedCount;
+        double meanScore = weightedSamples.stream()
+                .mapToDouble(sample -> sample.weight() * sample.sample().score())
+                .sum() / weightedCount;
+        double ratingVariance = 0;
+        double covariance = 0;
+
+        for (WeightedScoreSample sample : weightedSamples) {
+            double ratingDelta = sample.sample().rating() - meanRating;
+            ratingVariance += sample.weight() * ratingDelta * ratingDelta;
+            covariance += sample.weight() * ratingDelta * (sample.sample().score() - meanScore);
+        }
+
+        if (ratingVariance == 0) {
+            return null;
+        }
+
+        double slope = covariance / ratingVariance;
+        return new WeightedRegression(new Regression(slope, meanScore - slope * meanRating), weightedCount);
+    }
+
+    private static double sprwWeight(int rating, int midpoint) {
+        int distance = Math.abs(rating - midpoint);
+        if (distance > BASKET_STATS_SPRW_RADIUS) {
+            return 0;
+        }
+        return Math.max(0, 1 - (double) distance / BASKET_STATS_SPRW_RADIUS);
+    }
+
+    private static String countBucket(double count) {
         if (count >= 200) {
             return "200+";
         }
@@ -444,14 +487,15 @@ public class BasketStatisticsExportService {
     ) {
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public record BasketStatsWindow(
             int ratingFrom,
             int ratingTo,
             int ratingMidpoint,
             int count,
-            String countBucket,
-            double spr,
-            double var
+            double sprw,
+            double sprwCount,
+            String sprwCountBucket
     ) {
     }
 
@@ -463,6 +507,18 @@ public class BasketStatisticsExportService {
         private double expectedScore(int rating) {
             return intercept + slope * rating;
         }
+    }
+
+    private record WeightedScoreSample(
+            ScoreSample sample,
+            double weight
+    ) {
+    }
+
+    private record WeightedRegression(
+            Regression regression,
+            double weightedCount
+    ) {
     }
 
     public record ExportResult(

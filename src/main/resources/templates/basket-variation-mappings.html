@@ -48,6 +48,17 @@
             margin-bottom: 6px;
         }
 
+        .checkbox-label {
+            align-items: center;
+            display: flex;
+            gap: 8px;
+            margin-bottom: 9px;
+        }
+
+        .checkbox-label input {
+            margin: 0;
+        }
+
         select {
             border: 1px solid #a7b0ba;
             border-radius: 4px;
@@ -145,10 +156,39 @@
             gap: 8px;
         }
 
+        .round-settings {
+            align-items: flex-end;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0 0 12px;
+        }
+
+        .division-heading {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .division-heading select {
+            min-width: 170px;
+            width: 100%;
+        }
+
         .copy-round-button {
             background: #4b5563;
             font-size: 13px;
             padding: 6px 10px;
+        }
+
+        .same-layout-copy-cell {
+            background: #f3f6f8;
+            color: #4b5563;
+        }
+
+        [hidden] {
+            display: none !important;
         }
     </style>
 </head>
@@ -170,18 +210,8 @@
             <option value="">Select competition</option>
             <option th:each="competition : ${editor.competitions}"
                     th:selected="${competition.id == editor.selectedCompetitionId}"
-                    th:text="${competition.label}"
+                    th:text="${competition.displayLabel()}"
                     th:value="${competition.id}">Competition</option>
-        </select>
-    </div>
-    <div th:if="${editor.hasCompetitionSelection()}">
-        <label for="basketCourseId">Basket course</label>
-        <select id="basketCourseId" name="basketCourseId" onchange="this.form.submit()">
-            <option th:if="${#lists.isEmpty(editor.basketCourses)}" value="">No basket courses</option>
-            <option th:each="course : ${editor.basketCourses}"
-                    th:selected="${course.id == editor.selectedBasketCourseId}"
-                    th:text="${course.name}"
-                    th:value="${course.id}">Course</option>
         </select>
     </div>
     <noscript>
@@ -191,20 +221,52 @@
 
 <p th:if="${!editor.hasCompetitionSelection()}">Select a competition to edit basket variation mappings.</p>
 <p th:if="${editor.hasCompetitionSelection() and !editor.hasBasketCourseSelection()}">Add a basket course before editing mappings.</p>
-<p th:if="${editor.hasBasketCourseSelection() and #lists.isEmpty(editor.variationOptions)}">Add baskets and variations to the selected basket course before editing mappings.</p>
+<p th:if="${editor.hasBasketCourseSelection() and !editor.hasVariationOptions()}">Add baskets and variations to a basket course before editing mappings.</p>
 <p th:if="${editor.hasCompetitionSelection() and #lists.isEmpty(editor.roundTables)}">No imported round divisions are available for this competition.</p>
 
 <form method="post"
       th:action="@{/basket-variation-mappings}"
-      th:if="${editor.hasCompetitionSelection() and editor.hasBasketCourseSelection() and !#lists.isEmpty(editor.roundTables)}">
+      th:if="${editor.hasCompetitionSelection() and editor.hasBasketCourseSelection() and editor.hasVariationOptions() and !#lists.isEmpty(editor.roundTables)}">
     <input name="competitionId" th:value="${editor.selectedCompetitionId}" type="hidden">
-    <input name="basketCourseId" th:value="${editor.selectedBasketCourseId}" type="hidden">
+    <div class="round-settings">
+        <div class="competition-course-setting" th:hidden="${editor.courseSelectionByRound}">
+            <label for="basketCourseId">Basket course</label>
+            <select id="basketCourseId"
+                    name="basketCourseId"
+                    th:attr="data-default-course-id=${editor.selectedBasketCourseId}">
+                <option th:each="course : ${editor.basketCourses}"
+                        th:selected="${course.id == editor.selectedBasketCourseId}"
+                        th:text="${course.name}"
+                        th:value="${course.id}">Course</option>
+            </select>
+        </div>
+        <div class="competition-same-layout-setting" th:hidden="${editor.courseSelectionByRound}">
+            <label class="checkbox-label" for="sameLayout">
+                <input id="sameLayout"
+                       name="sameLayout"
+                       th:checked="${editor.sameLayout}"
+                       type="checkbox"
+                       value="true">
+                <span>Same layout for all divisions</span>
+            </label>
+        </div>
+        <div>
+            <label class="checkbox-label" for="courseSelectionByRound">
+                <input id="courseSelectionByRound"
+                       name="courseSelectionByRound"
+                       th:checked="${editor.courseSelectionByRound}"
+                       type="checkbox"
+                       value="true">
+                <span>Course selection by round</span>
+            </label>
+        </div>
+    </div>
 
     <section th:each="roundTable : ${editor.roundTables}"
              th:attr="data-round-id=${roundTable.roundId}">
         <div class="round-heading">
             <h2 th:text="${roundTable.label}">Round</h2>
-            <div class="round-copy-controls" th:if="${#lists.size(editor.roundTables) > 1}">
+            <div class="round-copy-controls" th:if="${#lists.size(editor.roundTables) > 1 and !editor.courseSelectionByRound}">
                 <th:block th:each="sourceRound : ${editor.roundTables}">
                     <button class="copy-round-button"
                             th:if="${sourceRound.roundId != roundTable.roundId}"
@@ -214,12 +276,66 @@
                 </th:block>
             </div>
         </div>
+        <div class="round-settings round-course-settings"
+             th:attr="data-round-id=${roundTable.roundId}"
+             th:hidden="${!editor.courseSelectionByRound}">
+            <div>
+                <label th:for="${'roundBasketCourse_' + roundTable.roundId}">Basket course</label>
+                <select class="round-basket-course"
+                        th:id="${'roundBasketCourse_' + roundTable.roundId}"
+                        th:name="${'roundBasketCourse_' + roundTable.roundId}"
+                        th:attr="data-round-id=${roundTable.roundId}">
+                    <option th:each="course : ${editor.basketCourses}"
+                            th:selected="${course.id == roundTable.selectedBasketCourseId}"
+                            th:text="${course.name}"
+                            th:value="${course.id}">Course</option>
+                </select>
+            </div>
+            <div>
+                <label class="checkbox-label" th:for="${'roundSameLayout_' + roundTable.roundId}">
+                    <input class="round-same-layout"
+                           th:id="${'roundSameLayout_' + roundTable.roundId}"
+                           th:name="${'roundSameLayout_' + roundTable.roundId}"
+                           th:attr="data-round-id=${roundTable.roundId}"
+                           th:checked="${roundTable.sameLayout}"
+                           type="checkbox"
+                           value="true">
+                    <span>Same layout for all divisions</span>
+                </label>
+            </div>
+            <div>
+                <label class="checkbox-label" th:for="${'roundCourseSelectionByGroup_' + roundTable.roundId}">
+                    <input class="round-course-selection-by-group"
+                           th:id="${'roundCourseSelectionByGroup_' + roundTable.roundId}"
+                           th:name="${'roundCourseSelectionByGroup_' + roundTable.roundId}"
+                           th:attr="data-round-id=${roundTable.roundId}"
+                           th:checked="${roundTable.courseSelectionByGroup}"
+                           type="checkbox"
+                           value="true">
+                    <span>Course selection by group</span>
+                </label>
+            </div>
+        </div>
         <div class="table-wrap">
             <table>
                 <thead>
                 <tr>
                     <th>Basket</th>
-                    <th th:each="division : ${roundTable.divisions}" th:text="${division.label}">Division</th>
+                    <th th:each="division : ${roundTable.divisions}">
+                        <div class="division-heading">
+                            <span th:text="${division.label}">Division</span>
+                            <select class="group-basket-course"
+                                    th:id="${'groupBasketCourse_' + division.roundDivisionId}"
+                                    th:name="${'groupBasketCourse_' + division.roundDivisionId}"
+                                    th:attr="data-round-id=${roundTable.roundId},data-round-division-id=${division.roundDivisionId}"
+                                    th:hidden="${!editor.courseSelectionByRound or !roundTable.courseSelectionByGroup}">
+                                <option th:each="course : ${editor.basketCourses}"
+                                        th:selected="${course.id == division.selectedBasketCourseId}"
+                                        th:text="${course.name}"
+                                        th:value="${course.id}">Course</option>
+                            </select>
+                        </div>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -228,10 +344,11 @@
                     <td th:each="division : ${roundTable.divisions}">
                         <select th:if="${division.hasHole(holeOrdinal)}"
                                 class="mapping-cell"
-                                th:attr="data-round-id=${roundTable.roundId},data-division-key=${division.copyKey},data-hole-ordinal=${holeOrdinal}"
+                                th:attr="data-round-id=${roundTable.roundId},data-round-division-id=${division.roundDivisionId},data-division-key=${division.copyKey},data-hole-ordinal=${holeOrdinal},data-first-division=${roundTable.isFirstDivision(division.roundDivisionId)},data-layout-source=false"
                                 th:name="${'cell_' + division.roundDivisionId + '_' + holeOrdinal}">
                             <option value="">No mapping</option>
                             <option th:each="variation : ${editor.variationOptions}"
+                                    th:attr="data-basket-course-id=${variation.basketCourseId}"
                                     th:selected="${variation.id == roundTable.selectedVariationId(division.roundDivisionId, holeOrdinal)}"
                                     th:text="${variation.label}"
                                     th:value="${variation.id}">Variation</option>
@@ -254,14 +371,204 @@
             return select.dataset.divisionKey + "|" + select.dataset.holeOrdinal;
         }
 
+        function roundElement(roundId) {
+            return document.querySelector("section[data-round-id=\"" + roundId + "\"]");
+        }
+
+        function courseSelectionByRound() {
+            var checkbox = document.getElementById("courseSelectionByRound");
+            return !!checkbox && checkbox.checked;
+        }
+
+        function globalSameLayoutEnabled() {
+            var checkbox = document.getElementById("sameLayout");
+            return !!checkbox && checkbox.checked && !courseSelectionByRound();
+        }
+
+        function selectedGlobalCourseId() {
+            var course = document.getElementById("basketCourseId");
+            return course ? course.value : "";
+        }
+
+        function selectedCourseId(round) {
+            var course = round.querySelector(".round-basket-course");
+            return course ? course.value : "";
+        }
+
+        function roundCourseSelectionByGroup(round) {
+            var checkbox = round.querySelector(".round-course-selection-by-group");
+            return courseSelectionByRound() && !!checkbox && checkbox.checked;
+        }
+
+        function roundSameLayoutEnabled(round) {
+            var sameLayout = round.querySelector(".round-same-layout");
+            return courseSelectionByRound()
+                && !roundCourseSelectionByGroup(round)
+                && !!sameLayout
+                && sameLayout.checked;
+        }
+
+        function sameLayoutEnabled(round) {
+            return courseSelectionByRound() ? roundSameLayoutEnabled(round) : globalSameLayoutEnabled();
+        }
+
+        function groupCourseId(round, roundDivisionId) {
+            var selector = round.querySelector(".group-basket-course[data-round-division-id=\"" + roundDivisionId + "\"]");
+            return selector ? selector.value : "";
+        }
+
+        function effectiveCourseId(round, cell) {
+            if (!courseSelectionByRound()) {
+                return selectedGlobalCourseId();
+            }
+            if (roundCourseSelectionByGroup(round)) {
+                return groupCourseId(round, cell.dataset.roundDivisionId);
+            }
+            return selectedCourseId(round);
+        }
+
+        function updateVisibility() {
+            var byRound = courseSelectionByRound();
+            Array.from(document.querySelectorAll(".competition-course-setting,.competition-same-layout-setting")).forEach(function (element) {
+                element.hidden = byRound;
+            });
+            Array.from(document.querySelectorAll(".round-course-settings")).forEach(function (element) {
+                element.hidden = !byRound;
+            });
+            Array.from(document.querySelectorAll(".round-copy-controls")).forEach(function (element) {
+                element.hidden = byRound;
+            });
+            Array.from(document.querySelectorAll("section[data-round-id]")).forEach(function (round) {
+                var groupScoped = roundCourseSelectionByGroup(round);
+                Array.from(round.querySelectorAll(".group-basket-course")).forEach(function (select) {
+                    select.hidden = !groupScoped;
+                });
+                var sameLayout = round.querySelector(".round-same-layout");
+                if (sameLayout) {
+                    sameLayout.disabled = groupScoped;
+                    if (groupScoped) {
+                        sameLayout.checked = false;
+                    }
+                }
+            });
+        }
+
+        function updateRoundVariationOptions(round, clearInvalidValue) {
+            Array.from(round.querySelectorAll(".mapping-cell")).forEach(function (cell) {
+                var courseId = effectiveCourseId(round, cell);
+                var selectedOptionAllowed = true;
+                Array.from(cell.options).forEach(function (option) {
+                    if (!option.value) {
+                        option.hidden = false;
+                        option.disabled = false;
+                        return;
+                    }
+                    var allowed = option.dataset.basketCourseId === courseId;
+                    option.hidden = !allowed;
+                    option.disabled = !allowed;
+                    if (option.selected && !allowed) {
+                        selectedOptionAllowed = false;
+                    }
+                });
+                if (clearInvalidValue && !selectedOptionAllowed) {
+                    cell.value = "";
+                    cell.dispatchEvent(new Event("change", {bubbles: true}));
+                }
+            });
+        }
+
+        function updateSameLayoutState(round) {
+            var enabled = sameLayoutEnabled(round);
+            Array.from(round.querySelectorAll(".mapping-cell")).forEach(function (cell) {
+                var isSource = enabled && cell.dataset.firstDivision === "true";
+                var isCopy = enabled && cell.dataset.firstDivision !== "true";
+                cell.disabled = isCopy;
+                cell.dataset.layoutSource = isSource ? "true" : "false";
+                cell.classList.toggle("same-layout-source-cell", isSource);
+                cell.classList.toggle("same-layout-copy-cell", isCopy);
+            });
+            mirrorSameLayoutSources(round);
+        }
+
+        function mirrorSameLayoutSources(round) {
+            if (!sameLayoutEnabled(round)) {
+                return;
+            }
+            Array.from(round.querySelectorAll(".mapping-cell[data-first-division=\"true\"]")).forEach(function (source) {
+                var copies = round.querySelectorAll(
+                    ".same-layout-copy-cell[data-hole-ordinal=\"" + source.dataset.holeOrdinal + "\"]"
+                );
+                Array.from(copies).forEach(function (copy) {
+                    copy.value = source.value;
+                });
+            });
+        }
+
+        function updateAll(clearInvalidValue) {
+            updateVisibility();
+            Array.from(document.querySelectorAll("section[data-round-id]")).forEach(function (round) {
+                updateRoundVariationOptions(round, clearInvalidValue);
+                updateSameLayoutState(round);
+            });
+        }
+
+        updateAll(true);
+
+        document.addEventListener("change", function (event) {
+            if (event.target.closest("#courseSelectionByRound,#basketCourseId,#sameLayout")) {
+                updateAll(true);
+                return;
+            }
+
+            var course = event.target.closest(".round-basket-course");
+            if (course) {
+                var courseRound = roundElement(course.dataset.roundId);
+                updateRoundVariationOptions(courseRound, true);
+                updateSameLayoutState(courseRound);
+                return;
+            }
+
+            var groupCourse = event.target.closest(".group-basket-course");
+            if (groupCourse) {
+                var groupRound = roundElement(groupCourse.dataset.roundId);
+                updateRoundVariationOptions(groupRound, true);
+                updateSameLayoutState(groupRound);
+                return;
+            }
+
+            var byGroup = event.target.closest(".round-course-selection-by-group");
+            if (byGroup) {
+                var byGroupRound = roundElement(byGroup.dataset.roundId);
+                updateVisibility();
+                updateRoundVariationOptions(byGroupRound, true);
+                updateSameLayoutState(byGroupRound);
+                return;
+            }
+
+            var sameLayout = event.target.closest(".round-same-layout");
+            if (sameLayout) {
+                updateSameLayoutState(roundElement(sameLayout.dataset.roundId));
+            }
+        });
+
         document.addEventListener("click", function (event) {
             var button = event.target.closest(".copy-round-button");
             if (!button) {
                 return;
             }
 
+            if (courseSelectionByRound()) {
+                return;
+            }
+
             var sourceRoundId = button.dataset.sourceRoundId;
             var targetRoundId = button.dataset.targetRoundId;
+            var sourceRound = roundElement(sourceRoundId);
+            var targetRound = roundElement(targetRoundId);
+            if (!sourceRound || !targetRound) {
+                return;
+            }
+
             var sourceValues = new Map();
             var cells = Array.from(document.querySelectorAll(".mapping-cell"));
 
@@ -276,6 +583,21 @@
                     cell.value = sourceValues.get(cellKey(cell));
                     cell.dispatchEvent(new Event("change", {bubbles: true}));
                 }
+            });
+            updateSameLayoutState(targetRound);
+        });
+
+        document.addEventListener("change", function (event) {
+            var source = event.target.closest(".mapping-cell");
+            if (!source || source.dataset.layoutSource !== "true") {
+                return;
+            }
+
+            var copies = roundElement(source.dataset.roundId).querySelectorAll(
+                ".same-layout-copy-cell[data-hole-ordinal=\"" + source.dataset.holeOrdinal + "\"]"
+            );
+            Array.from(copies).forEach(function (copy) {
+                copy.value = source.value;
             });
         });
     })();

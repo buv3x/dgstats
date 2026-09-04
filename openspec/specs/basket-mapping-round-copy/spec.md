@@ -4,10 +4,10 @@
 TBD - created by archiving change copy-basket-mappings-between-rounds. Update Purpose after archive.
 ## Requirements
 ### Requirement: Round copy controls
-The system SHALL provide copy controls on the basket variation mapping page for copying values from other displayed rounds into a target round.
+The system SHALL provide copy controls on the basket variation mapping page for copying values from other displayed rounds into a target round only when course selection is competition-scoped.
 
 #### Scenario: Copy buttons are shown for other rounds
-- **WHEN** the local user views the basket variation mapping editor with more than one round table
+- **WHEN** the local user views the basket variation mapping editor with more than one round table and course selection by round is unchecked
 - **THEN** each round label area displays a copy button for each other displayed round
 
 #### Scenario: Current round is not offered as a source
@@ -18,8 +18,12 @@ The system SHALL provide copy controls on the basket variation mapping page for 
 - **WHEN** the local user views the basket variation mapping editor with only one round table
 - **THEN** no round copy buttons are displayed
 
+#### Scenario: Round-scoped course selection has no copy buttons
+- **WHEN** course selection by round is checked
+- **THEN** no round copy buttons are displayed
+
 ### Requirement: Unsaved round value copying
-The system SHALL copy mapping values between round tables in the browser without saving them.
+The system SHALL copy mapping values between round tables in the browser without saving them when round copy controls are available.
 
 #### Scenario: Copying does not submit the mapping form
 - **WHEN** the local user clicks a round copy button
@@ -51,4 +55,3 @@ The system SHALL match copied cells by division identity and basket ordinal.
 #### Scenario: Column order does not control matching
 - **WHEN** source and target round tables have divisions in different positions or missing divisions
 - **THEN** copied values are matched by division identity and basket ordinal rather than by table column position
-

@@ -1,11 +1,10 @@
 (function () {
     var BUCKETS = ["1-2", "3", "4", "5", "6", "7", "8+"];
-    var CHART_MIN_SAMPLES = 10;
+    var CHART_MIN_SAMPLES = 50;
     var CHART_HIT_RADIUS = 14;
     var CHART_SPR_DOMAIN = [-0.25, 1.75];
     var CHART_VAR_DOMAIN = [0.25, 1.25];
     var BASKET_SPR_DOMAIN = [-0.5, 2.0];
-    var BASKET_VAR_DOMAIN = [0.0, 1.5];
     var SVG_NS = "http://www.w3.org/2000/svg";
     var manifest = null;
     var selectedCourseSnapshot = null;
@@ -378,6 +377,10 @@
         return Number.isFinite(parsed) ? parsed : null;
     }
 
+    function isNumeric(value) {
+        return typeof value === "number" && Number.isFinite(value);
+    }
+
     function ratingMatches(rating, from, to) {
         if (typeof rating !== "number") {
             return false;
@@ -649,7 +652,7 @@
     }
 
     function drawBasketLineChart(variation, windows) {
-        var metrics = chartMetrics(basketChartCanvas, {top: 24, right: 62, bottom: 58, left: 58}, 360, 300);
+        var metrics = chartMetrics(basketChartCanvas, {top: 24, right: 24, bottom: 58, left: 58}, 360, 300);
         var xDomain = paddedRatingDomain(windows);
         basketChartPoints = [];
         basketChartSvg.innerHTML = "";
@@ -660,14 +663,13 @@
         basketChartSvg.setAttribute("width", String(metrics.width));
         basketChartSvg.setAttribute("height", String(metrics.height));
 
-        drawDualAxisGrid(metrics, xDomain);
-        drawBasketSeriesSegments(windows, "spr", xDomain, BASKET_SPR_DOMAIN, metrics, "basket-spr-line");
-        drawBasketSeriesSegments(windows, "var", xDomain, BASKET_VAR_DOMAIN, metrics, "basket-var-line");
+        drawBasketGrid(metrics, xDomain);
+        drawBasketSeriesSegments(windows, "sprw", "sprwCountBucket", xDomain, BASKET_SPR_DOMAIN, metrics, "basket-sprw-line");
         drawBasketPoints(windows, xDomain, metrics);
         drawBasketLegend(metrics);
     }
 
-    function drawDualAxisGrid(metrics, xDomain) {
+    function drawBasketGrid(metrics, xDomain) {
         drawChartGridWithTicks(
             basketChartSvg,
             metrics,
@@ -676,42 +678,30 @@
             ratingTicks(xDomain),
             [0, 0.5, 1, 1.5],
             "Rating",
-            "SPR",
+            "SPRW",
             true
         );
-        [0.5, 1].forEach(function (tick) {
-            var y = scale(tick, BASKET_VAR_DOMAIN, metrics.bottom, metrics.top);
-            appendSvg(basketChartSvg, "text", {
-                class: "chart-tick-label",
-                x: metrics.right + 8,
-                y: y + 4,
-                "text-anchor": "start"
-            }, formatAxisValue(tick));
-        });
-        appendSvg(basketChartSvg, "line", {class: "chart-axis", x1: metrics.right, y1: metrics.top, x2: metrics.right, y2: metrics.bottom});
-        appendSvg(basketChartSvg, "text", {
-            class: "chart-axis-label",
-            x: metrics.width - 18,
-            y: metrics.top + metrics.plotHeight / 2,
-            "text-anchor": "middle",
-            transform: "rotate(90 " + (metrics.width - 18) + " " + (metrics.top + metrics.plotHeight / 2) + ")"
-        }, "VAR");
     }
 
-    function drawBasketSeriesSegments(windows, metric, xDomain, yDomain, metrics, baseClass) {
+    function drawBasketSeriesSegments(windows, metric, countBucketField, xDomain, yDomain, metrics, baseClass) {
         for (var index = 0; index < windows.length - 1; index++) {
             var current = windows[index];
             var next = windows[index + 1];
+            if (!isNumeric(current[metric]) || !isNumeric(next[metric])) {
+                continue;
+            }
             var x1 = scale(current.ratingMidpoint, xDomain, metrics.left, metrics.right);
             var y1 = scale(current[metric], yDomain, metrics.bottom, metrics.top);
             var x2 = scale(next.ratingMidpoint, xDomain, metrics.left, metrics.right);
             var y2 = scale(next[metric], yDomain, metrics.bottom, metrics.top);
+            var currentBucket = current[countBucketField];
+            var nextBucket = next[countBucketField];
 
-            if (current.countBucket === next.countBucket) {
-                appendBasketLine(x1, y1, x2, y2, baseClass, current.countBucket);
+            if (currentBucket === nextBucket) {
+                appendBasketLine(x1, y1, x2, y2, baseClass, currentBucket);
             } else {
-                appendBasketLine(x1, y1, (x1 + x2) / 2, (y1 + y2) / 2, baseClass, current.countBucket);
-                appendBasketLine((x1 + x2) / 2, (y1 + y2) / 2, x2, y2, baseClass, next.countBucket);
+                appendBasketLine(x1, y1, (x1 + x2) / 2, (y1 + y2) / 2, baseClass, currentBucket);
+                appendBasketLine((x1 + x2) / 2, (y1 + y2) / 2, x2, y2, baseClass, nextBucket);
             }
         }
     }
@@ -731,15 +721,18 @@
 
     function drawBasketPoints(windows, xDomain, metrics) {
         windows.forEach(function (window) {
-            addBasketPoint(window, "SPR", "spr", BASKET_SPR_DOMAIN, xDomain, metrics);
-            addBasketPoint(window, "VAR", "var", BASKET_VAR_DOMAIN, xDomain, metrics);
+            addBasketPoint(window, "SPRW", "sprw", BASKET_SPR_DOMAIN, xDomain, metrics);
         });
     }
 
     function addBasketPoint(window, label, metric, yDomain, xDomain, metrics) {
+        if (!isNumeric(window[metric])) {
+            return;
+        }
         var point = {
             window: window,
             metric: label,
+            valueField: metric,
             x: scale(window.ratingMidpoint, xDomain, metrics.left, metrics.right),
             y: scale(window[metric], yDomain, metrics.bottom, metrics.top)
         };
@@ -757,10 +750,8 @@
     function drawBasketLegend(metrics) {
         var y = metrics.top + 14;
         var x = metrics.left + 8;
-        appendSvg(basketChartSvg, "line", {class: "basket-spr-line basket-line-200-plus", x1: x, y1: y, x2: x + 28, y2: y});
-        appendSvg(basketChartSvg, "text", {class: "chart-tick-label", x: x + 36, y: y + 4}, "SPR");
-        appendSvg(basketChartSvg, "line", {class: "basket-var-line basket-line-200-plus", x1: x + 82, y1: y, x2: x + 110, y2: y});
-        appendSvg(basketChartSvg, "text", {class: "chart-tick-label", x: x + 118, y: y + 4}, "VAR");
+        appendSvg(basketChartSvg, "line", {class: "basket-sprw-line basket-line-200-plus", x1: x, y1: y, x2: x + 28, y2: y});
+        appendSvg(basketChartSvg, "text", {class: "chart-tick-label", x: x + 36, y: y + 4}, "SPRW");
     }
 
     function bucketClass(countBucket) {
@@ -974,7 +965,7 @@
             row.className = "chart-tooltip-row";
             row.textContent = point.metric
                 + " | Rating " + window.ratingMidpoint
-                + " | " + point.metric + " " + formatMetric(window[point.metric.toLowerCase()]);
+                + " | " + formatMetric(window[point.valueField]);
             basketChartTooltip.appendChild(row);
         });
 

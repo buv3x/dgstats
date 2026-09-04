@@ -24,7 +24,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -49,54 +48,63 @@ public class BasketVariationMappingAdminService {
     private final BasketVariationRoundDivisionRepository mappingRepository;
 
     @Transactional(readOnly = true)
-    public MappingEditorModel loadEditor(Long competitionId, Long basketCourseId) {
+    public MappingEditorModel loadEditor(Long competitionId) {
+        Set<Long> mappedCompetitionIds = mappingRepository.findMappedCompetitionIds();
         List<CompetitionOption> competitions = competitionRepository.findAllForMappingOrder().stream()
-                .map(competition -> new CompetitionOption(competition.getId(), competitionLabel(competition)))
+                .map(competition -> new CompetitionOption(
+                        competition.getId(),
+                        competitionLabel(competition),
+                        mappedCompetitionIds.contains(competition.getId())
+                ))
                 .toList();
-        List<BasketCourseOption> basketCourses = basketCourseRepository.findAllByOrderByNameAsc().stream()
+        List<BasketCourse> basketCourseEntities = basketCourseRepository.findAllByOrderByNameAsc();
+        List<BasketCourseOption> basketCourses = basketCourseEntities.stream()
                 .map(course -> new BasketCourseOption(course.getId(), course.getName()))
                 .toList();
+        Long defaultBasketCourseId = defaultBasketCourseId(basketCourses);
 
         if (competitionId == null) {
-            return new MappingEditorModel(competitions, null, basketCourses, basketCourseId, List.of(), List.of());
+            return new MappingEditorModel(competitions, null, basketCourses, defaultBasketCourseId, false, false, List.of(), List.of());
         }
 
         Competition competition = competitionRepository.findById(competitionId)
                 .orElseThrow(() -> new IllegalArgumentException("Competition not found"));
-        Long resolvedBasketCourseId = resolveBasketCourseId(basketCourseId, basketCourses);
-        List<VariationOption> variationOptions = resolvedBasketCourseId == null
-                ? List.of()
-                : loadVariationOptions(resolvedBasketCourseId);
-        List<RoundTable> roundTables = loadRoundTables(competition);
+        List<VariationOption> variationOptions = loadVariationOptions(basketCourseEntities);
+        List<RoundTable> roundTables = loadRoundTables(competition, defaultBasketCourseId);
 
         return new MappingEditorModel(
                 competitions,
                 competition.getId(),
                 basketCourses,
-                resolvedBasketCourseId,
+                defaultBasketCourseId,
+                false,
+                false,
                 variationOptions,
                 roundTables
         );
     }
 
     @Transactional
-    public void saveMappings(Long competitionId, Long basketCourseId, List<CellSubmission> submissions) {
+    public void saveMappings(Long competitionId, MappingFormSubmission form, List<CellSubmission> submissions) {
         if (competitionId == null) {
             throw new IllegalArgumentException("Competition is required");
-        }
-        if (basketCourseId == null) {
-            throw new IllegalArgumentException("Basket course is required");
         }
 
         Competition competition = competitionRepository.findById(competitionId)
                 .orElseThrow(() -> new IllegalArgumentException("Competition not found"));
-        BasketCourse basketCourse = basketCourseRepository.findById(basketCourseId)
-                .orElseThrow(() -> new IllegalArgumentException("Basket course not found"));
+        List<RoundDivision> roundDivisions = roundDivisionRepository.findByCompetitionForMapping(competition);
+        Map<Long, Round> roundsById = roundsById(roundDivisions);
+        Map<Long, RoundDivision> roundDivisionsById = roundDivisionsById(roundDivisions);
+        Map<Long, Set<Integer>> editableSlots = editableSlotsByRoundDivision(roundDivisions);
+        Map<Long, BasketCourse> basketCoursesById = basketCourseRepository.findAllByOrderByNameAsc().stream()
+                .collect(LinkedHashMap::new, (map, course) -> map.put(course.getId(), course), Map::putAll);
 
-        Map<Long, Set<Integer>> editableSlots = editableSlotsByRoundDivision(competition);
-        Set<Long> allowedVariationIds = allowedVariationIds(basketCourse);
+        validateScopeSelection(form, roundsById, roundDivisionsById, basketCoursesById);
+        Map<Long, Long> effectiveCourseByRoundDivision = effectiveCourseByRoundDivision(form, roundDivisions, basketCoursesById);
+        Map<Long, Set<Long>> allowedVariationIdsByBasketCourse = allowedVariationIdsByBasketCourse(basketCoursesById);
+        List<CellSubmission> effectiveSubmissions = expandSameLayoutSubmissions(roundDivisions, editableSlots, form, submissions);
 
-        for (CellSubmission submission : submissions) {
+        for (CellSubmission submission : effectiveSubmissions) {
             if (submission.roundDivisionId() == null || submission.holeOrdinal() == null) {
                 throw new IllegalArgumentException("Invalid mapping cell submitted");
             }
@@ -107,17 +115,21 @@ public class BasketVariationMappingAdminService {
             if (!holeOrdinals.contains(submission.holeOrdinal())) {
                 throw new IllegalArgumentException("Submitted hole ordinal is not editable for the selected round division");
             }
-            if (submission.basketVariationId() != null && !allowedVariationIds.contains(submission.basketVariationId())) {
+            Long basketCourseId = effectiveCourseByRoundDivision.get(submission.roundDivisionId());
+            Set<Long> allowedVariationIds = allowedVariationIdsByBasketCourse.get(basketCourseId);
+            if (submission.basketVariationId() != null
+                    && (allowedVariationIds == null || !allowedVariationIds.contains(submission.basketVariationId()))) {
                 throw new IllegalArgumentException("Submitted basket variation does not belong to the selected basket course");
             }
         }
 
-        Map<Long, RoundDivision> roundDivisionsById = roundDivisionRepository.findAllById(editableSlots.keySet()).stream()
-                .collect(LinkedHashMap::new, (map, rd) -> map.put(rd.getId(), rd), Map::putAll);
-        Map<Long, BasketVariation> variationsById = basketVariationRepository.findAllById(allowedVariationIds).stream()
+        Set<Long> allAllowedVariationIds = allowedVariationIdsByBasketCourse.values().stream()
+                .flatMap(Collection::stream)
+                .collect(HashSet::new, Set::add, Set::addAll);
+        Map<Long, BasketVariation> variationsById = basketVariationRepository.findAllById(allAllowedVariationIds).stream()
                 .collect(LinkedHashMap::new, (map, variation) -> map.put(variation.getId(), variation), Map::putAll);
 
-        for (CellSubmission submission : submissions) {
+        for (CellSubmission submission : effectiveSubmissions) {
             RoundDivision roundDivision = roundDivisionsById.get(submission.roundDivisionId());
             if (submission.basketVariationId() == null) {
                 mappingRepository.deleteByRoundDivisionAndHoleOrdinal(roundDivision, submission.holeOrdinal());
@@ -140,27 +152,24 @@ public class BasketVariationMappingAdminService {
         return startDate == null ? name + " (no date)" : name + " (" + startDate + ")";
     }
 
-    private Long resolveBasketCourseId(Long basketCourseId, List<BasketCourseOption> basketCourses) {
-        if (basketCourseId != null) {
-            return basketCourseId;
+    private List<VariationOption> loadVariationOptions(List<BasketCourse> basketCourses) {
+        List<VariationOption> options = new ArrayList<>();
+        for (BasketCourse basketCourse : basketCourses) {
+            List<Basket> baskets = basketRepository.findByBasketCourseOrderByIdAsc(basketCourse);
+            if (baskets.isEmpty()) {
+                continue;
+            }
+            List<VariationOption> courseOptions = basketVariationRepository.findByBasketInForMapping(baskets).stream()
+                    .map(variation -> new VariationOption(
+                            variation.getId(),
+                            variationLabel(variation),
+                            variation.getBasket().getId(),
+                            basketCourse.getId()
+                    ))
+                    .toList();
+            options.addAll(courseOptions);
         }
-        return basketCourses.isEmpty() ? null : basketCourses.get(0).id();
-    }
-
-    private List<VariationOption> loadVariationOptions(Long basketCourseId) {
-        BasketCourse basketCourse = basketCourseRepository.findById(basketCourseId)
-                .orElseThrow(() -> new IllegalArgumentException("Basket course not found"));
-        List<Basket> baskets = basketRepository.findByBasketCourseOrderByIdAsc(basketCourse);
-        if (baskets.isEmpty()) {
-            return List.of();
-        }
-        return basketVariationRepository.findByBasketInForMapping(baskets).stream()
-                .map(variation -> new VariationOption(
-                        variation.getId(),
-                        variationLabel(variation),
-                        variation.getBasket().getId()
-                ))
-                .toList();
+        return options;
     }
 
     private String variationLabel(BasketVariation variation) {
@@ -176,19 +185,11 @@ public class BasketVariationMappingAdminService {
         return variation.getDistance() == null ? "" : " [" + variation.getDistance() + "]";
     }
 
-    private List<RoundTable> loadRoundTables(Competition competition) {
+    private List<RoundTable> loadRoundTables(Competition competition, Long defaultBasketCourseId) {
         List<RoundDivision> roundDivisions = roundDivisionRepository.findByCompetitionForMapping(competition);
-        Map<Long, Set<Integer>> slotsByRoundDivision = new HashMap<>();
-        for (RoundDivision roundDivision : roundDivisions) {
-            slotsByRoundDivision.put(roundDivision.getId(), deriveHoleOrdinals(roundDivision));
-        }
-
+        Map<Long, Set<Integer>> slotsByRoundDivision = editableSlotsByRoundDivision(roundDivisions);
         Map<String, Long> selectedVariationIds = selectedVariationIds(roundDivisions);
-        Map<Long, List<RoundDivision>> roundDivisionsByRound = new LinkedHashMap<>();
-        for (RoundDivision roundDivision : roundDivisions) {
-            roundDivisionsByRound.computeIfAbsent(roundDivision.getRound().getId(), ignored -> new ArrayList<>())
-                    .add(roundDivision);
-        }
+        Map<Long, List<RoundDivision>> roundDivisionsByRound = roundDivisionsByRound(roundDivisions);
 
         List<RoundTable> tables = new ArrayList<>();
         for (List<RoundDivision> divisions : roundDivisionsByRound.values()) {
@@ -198,6 +199,7 @@ public class BasketVariationMappingAdminService {
                             roundDivision.getId(),
                             divisionLabel(roundDivision),
                             divisionCopyKey(roundDivision),
+                            defaultBasketCourseId,
                             slotsByRoundDivision.getOrDefault(roundDivision.getId(), Set.of())
                     ))
                     .toList();
@@ -207,17 +209,152 @@ public class BasketVariationMappingAdminService {
                     .max(Integer::compareTo)
                     .orElse(0);
             List<Integer> holeOrdinals = IntStream.rangeClosed(1, maxHoleOrdinal).boxed().toList();
-            tables.add(new RoundTable(round.getId(), roundLabel(round), columns, holeOrdinals, selectedVariationIds));
+            tables.add(new RoundTable(
+                    round.getId(),
+                    roundLabel(round),
+                    defaultBasketCourseId,
+                    false,
+                    false,
+                    columns,
+                    holeOrdinals,
+                    selectedVariationIds
+            ));
         }
         return tables;
     }
 
-    private Map<Long, Set<Integer>> editableSlotsByRoundDivision(Competition competition) {
+    private void validateScopeSelection(
+            MappingFormSubmission form,
+            Map<Long, Round> roundsById,
+            Map<Long, RoundDivision> roundDivisionsById,
+            Map<Long, BasketCourse> basketCoursesById
+    ) {
+        if (!form.courseSelectionByRound()) {
+            validateBasketCourse(form.basketCourseId(), basketCoursesById);
+            return;
+        }
+
+        for (Long roundId : roundsById.keySet()) {
+            if (form.courseSelectionByGroupByRound().getOrDefault(roundId, false)) {
+                continue;
+            }
+            validateBasketCourse(form.roundBasketCourseIds().get(roundId), basketCoursesById);
+        }
+        for (RoundDivision roundDivision : roundDivisionsById.values()) {
+            Long roundId = roundDivision.getRound().getId();
+            if (!form.courseSelectionByGroupByRound().getOrDefault(roundId, false)) {
+                continue;
+            }
+            validateBasketCourse(form.groupBasketCourseIds().get(roundDivision.getId()), basketCoursesById);
+        }
+    }
+
+    private void validateBasketCourse(Long basketCourseId, Map<Long, BasketCourse> basketCoursesById) {
+        if (basketCourseId == null || !basketCoursesById.containsKey(basketCourseId)) {
+            throw new IllegalArgumentException("Submitted basket course does not exist");
+        }
+    }
+
+    private Map<Long, Long> effectiveCourseByRoundDivision(
+            MappingFormSubmission form,
+            List<RoundDivision> roundDivisions,
+            Map<Long, BasketCourse> basketCoursesById
+    ) {
+        Map<Long, Long> effectiveCourses = new HashMap<>();
+        for (RoundDivision roundDivision : roundDivisions) {
+            Long roundId = roundDivision.getRound().getId();
+            Long basketCourseId;
+            if (!form.courseSelectionByRound()) {
+                basketCourseId = form.basketCourseId();
+            } else if (form.courseSelectionByGroupByRound().getOrDefault(roundId, false)) {
+                basketCourseId = form.groupBasketCourseIds().get(roundDivision.getId());
+            } else {
+                basketCourseId = form.roundBasketCourseIds().get(roundId);
+            }
+            validateBasketCourse(basketCourseId, basketCoursesById);
+            effectiveCourses.put(roundDivision.getId(), basketCourseId);
+        }
+        return effectiveCourses;
+    }
+
+    private Map<Long, Set<Long>> allowedVariationIdsByBasketCourse(Map<Long, BasketCourse> basketCoursesById) {
+        Map<Long, Set<Long>> allowedByCourse = new HashMap<>();
+        for (BasketCourse basketCourse : basketCoursesById.values()) {
+            allowedByCourse.put(basketCourse.getId(), allowedVariationIds(basketCourse));
+        }
+        return allowedByCourse;
+    }
+
+    private Map<Long, Set<Integer>> editableSlotsByRoundDivision(List<RoundDivision> roundDivisions) {
         Map<Long, Set<Integer>> slots = new HashMap<>();
-        for (RoundDivision roundDivision : roundDivisionRepository.findByCompetitionForMapping(competition)) {
+        for (RoundDivision roundDivision : roundDivisions) {
             slots.put(roundDivision.getId(), deriveHoleOrdinals(roundDivision));
         }
         return slots;
+    }
+
+    private List<CellSubmission> expandSameLayoutSubmissions(
+            List<RoundDivision> roundDivisions,
+            Map<Long, Set<Integer>> editableSlots,
+            MappingFormSubmission form,
+            List<CellSubmission> submissions
+    ) {
+        Map<String, CellSubmission> submittedCells = new HashMap<>();
+        for (CellSubmission submission : submissions) {
+            if (submission.roundDivisionId() != null && submission.holeOrdinal() != null) {
+                submittedCells.put(cellKey(submission.roundDivisionId(), submission.holeOrdinal()), submission);
+            }
+        }
+
+        Map<String, CellSubmission> expandedCells = new LinkedHashMap<>();
+        for (List<RoundDivision> divisions : roundDivisionsByRound(roundDivisions).values()) {
+            if (divisions.isEmpty()) {
+                continue;
+            }
+            Long roundId = divisions.get(0).getRound().getId();
+            boolean sameLayout = effectiveSameLayout(form, roundId);
+            if (!sameLayout) {
+                for (RoundDivision division : divisions) {
+                    for (Integer holeOrdinal : editableSlots.getOrDefault(division.getId(), Set.of())) {
+                        CellSubmission submission = submittedCells.get(cellKey(division.getId(), holeOrdinal));
+                        if (submission != null) {
+                            expandedCells.put(cellKey(division.getId(), holeOrdinal), submission);
+                        }
+                    }
+                }
+                continue;
+            }
+
+            RoundDivision sourceDivision = divisions.get(0);
+            Set<Integer> sourceHoles = editableSlots.getOrDefault(sourceDivision.getId(), Set.of());
+            for (Integer holeOrdinal : sourceHoles) {
+                CellSubmission sourceSubmission = submittedCells.get(cellKey(sourceDivision.getId(), holeOrdinal));
+                if (sourceSubmission == null) {
+                    continue;
+                }
+                for (RoundDivision targetDivision : divisions) {
+                    if (editableSlots.getOrDefault(targetDivision.getId(), Set.of()).contains(holeOrdinal)) {
+                        CellSubmission expandedSubmission = new CellSubmission(
+                                targetDivision.getId(),
+                                holeOrdinal,
+                                sourceSubmission.basketVariationId()
+                        );
+                        expandedCells.put(cellKey(targetDivision.getId(), holeOrdinal), expandedSubmission);
+                    }
+                }
+            }
+        }
+        return new ArrayList<>(expandedCells.values());
+    }
+
+    private boolean effectiveSameLayout(MappingFormSubmission form, Long roundId) {
+        if (!form.courseSelectionByRound()) {
+            return form.sameLayout();
+        }
+        if (form.courseSelectionByGroupByRound().getOrDefault(roundId, false)) {
+            return false;
+        }
+        return form.sameLayoutByRound().getOrDefault(roundId, false);
     }
 
     private Set<Integer> deriveHoleOrdinals(RoundDivision roundDivision) {
@@ -257,6 +394,32 @@ public class BasketVariationMappingAdminService {
         return basketVariationRepository.findByBasketInForMapping(baskets).stream()
                 .map(BasketVariation::getId)
                 .collect(HashSet::new, Set::add, Set::addAll);
+    }
+
+    private Map<Long, Round> roundsById(List<RoundDivision> roundDivisions) {
+        Map<Long, Round> roundsById = new LinkedHashMap<>();
+        for (RoundDivision roundDivision : roundDivisions) {
+            roundsById.put(roundDivision.getRound().getId(), roundDivision.getRound());
+        }
+        return roundsById;
+    }
+
+    private Map<Long, RoundDivision> roundDivisionsById(List<RoundDivision> roundDivisions) {
+        return roundDivisions.stream()
+                .collect(LinkedHashMap::new, (map, rd) -> map.put(rd.getId(), rd), Map::putAll);
+    }
+
+    private Map<Long, List<RoundDivision>> roundDivisionsByRound(List<RoundDivision> roundDivisions) {
+        Map<Long, List<RoundDivision>> roundDivisionsByRound = new LinkedHashMap<>();
+        for (RoundDivision roundDivision : roundDivisions) {
+            roundDivisionsByRound.computeIfAbsent(roundDivision.getRound().getId(), ignored -> new ArrayList<>())
+                    .add(roundDivision);
+        }
+        return roundDivisionsByRound;
+    }
+
+    private Long defaultBasketCourseId(List<BasketCourseOption> basketCourses) {
+        return basketCourses.isEmpty() ? null : basketCourses.get(0).id();
     }
 
     private String roundLabel(Round round) {
@@ -312,6 +475,8 @@ public class BasketVariationMappingAdminService {
             Long selectedCompetitionId,
             List<BasketCourseOption> basketCourses,
             Long selectedBasketCourseId,
+            boolean sameLayout,
+            boolean courseSelectionByRound,
             List<VariationOption> variationOptions,
             List<RoundTable> roundTables
     ) {
@@ -320,22 +485,32 @@ public class BasketVariationMappingAdminService {
         }
 
         public boolean hasBasketCourseSelection() {
-            return selectedBasketCourseId != null;
+            return !basketCourses.isEmpty();
+        }
+
+        public boolean hasVariationOptions() {
+            return !variationOptions.isEmpty();
         }
     }
 
-    public record CompetitionOption(Long id, String label) {
+    public record CompetitionOption(Long id, String label, boolean mapped) {
+        public String displayLabel() {
+            return mapped ? "* " + label : label;
+        }
     }
 
     public record BasketCourseOption(Long id, String name) {
     }
 
-    public record VariationOption(Long id, String label, Long basketId) {
+    public record VariationOption(Long id, String label, Long basketId, Long basketCourseId) {
     }
 
     public record RoundTable(
             Long roundId,
             String label,
+            Long selectedBasketCourseId,
+            boolean sameLayout,
+            boolean courseSelectionByGroup,
             List<DivisionColumn> divisions,
             List<Integer> holeOrdinals,
             Map<String, Long> selectedVariationIds
@@ -343,12 +518,40 @@ public class BasketVariationMappingAdminService {
         public Long selectedVariationId(Long roundDivisionId, Integer holeOrdinal) {
             return selectedVariationIds.get(cellKey(roundDivisionId, holeOrdinal));
         }
+
+        public boolean isFirstDivision(Long roundDivisionId) {
+            return !divisions.isEmpty() && Objects.equals(divisions.get(0).roundDivisionId(), roundDivisionId);
+        }
+
+        public Long sameLayoutSelectedVariationId(Long roundDivisionId, Integer holeOrdinal) {
+            if (isFirstDivision(roundDivisionId) || divisions.isEmpty()) {
+                return selectedVariationId(roundDivisionId, holeOrdinal);
+            }
+            return selectedVariationId(divisions.get(0).roundDivisionId(), holeOrdinal);
+        }
     }
 
-    public record DivisionColumn(Long roundDivisionId, String label, String copyKey, Set<Integer> holeOrdinals) {
+    public record DivisionColumn(
+            Long roundDivisionId,
+            String label,
+            String copyKey,
+            Long selectedBasketCourseId,
+            Set<Integer> holeOrdinals
+    ) {
         public boolean hasHole(Integer holeOrdinal) {
             return holeOrdinals.contains(holeOrdinal);
         }
+    }
+
+    public record MappingFormSubmission(
+            Long basketCourseId,
+            boolean sameLayout,
+            boolean courseSelectionByRound,
+            Map<Long, Long> roundBasketCourseIds,
+            Map<Long, Boolean> sameLayoutByRound,
+            Map<Long, Boolean> courseSelectionByGroupByRound,
+            Map<Long, Long> groupBasketCourseIds
+    ) {
     }
 
     public record CellSubmission(Long roundDivisionId, Integer holeOrdinal, Long basketVariationId) {
