@@ -1,13 +1,15 @@
 {
   "metadata" : {
-    "exportedAt" : "2026-09-03T19:43:59.602485400Z",
+    "exportedAt" : "2026-09-04T18:50:19.559486Z",
     "diagnostics" : {
       "exportedSamples" : 224297,
       "ignoredUnratedSamples" : 72894,
       "ignoredUnmappedSamples" : 0,
       "includedBasketCourses" : 14,
       "generatedCourseFiles" : 14,
-      "generatedBasketStatsFiles" : 13
+      "generatedBasketStatsFiles" : 13,
+      "eligiblePersonalPlayers" : 537,
+      "generatedPersonalStatsFiles" : 537
     }
   },
   "courses" : [ {
@@ -94,5 +96,7 @@
     "sampleCount" : 67950,
     "path" : "courses/6.json",
     "basketStatsPath" : "basket-stats/6.json"
-  } ]
+  } ],
+  "playersPath" : "players.json",
+  "personalStatsPathTemplate" : "personal-stats/{playerId}.json"
 }

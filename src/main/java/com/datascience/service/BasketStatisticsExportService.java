@@ -15,6 +15,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -28,10 +29,14 @@ public class BasketStatisticsExportService {
     private static final Path MANIFEST_PATH = Path.of("docs", "data", "statistics.json");
     private static final Path COURSES_DIRECTORY = Path.of("docs", "data", "courses");
     private static final Path BASKET_STATS_DIRECTORY = Path.of("docs", "data", "basket-stats");
+    private static final Path PLAYERS_PATH = Path.of("docs", "data", "players.json");
+    private static final Path PERSONAL_STATS_DIRECTORY = Path.of("docs", "data", "personal-stats");
     private static final int BASKET_STATS_WINDOW_SIZE = 50;
     private static final int BASKET_STATS_WINDOW_STEP = 5;
     private static final int BASKET_STATS_MIN_SAMPLES = 50;
     private static final int BASKET_STATS_SPRW_RADIUS = 50;
+    private static final int PERSONAL_STATS_MIN_GLOBAL_SAMPLES = 50;
+    private static final int PERSONAL_STATS_MIN_PLAYER_SAMPLES = 2;
 
     private final HoleScoreRepository holeScoreRepository;
     private final ObjectMapper objectMapper;
@@ -43,6 +48,7 @@ public class BasketStatisticsExportService {
         long ignoredUnratedSamples = 0;
         long ignoredUnmappedSamples = 0;
         long exportedSamples = 0;
+        List<PersonalScoreSample> personalSamples = new ArrayList<>();
 
         for (StatisticsExportRow row : rows) {
             if (row.getRating() == null) {
@@ -72,6 +78,21 @@ public class BasketStatisticsExportService {
                     row.getRating(),
                     row.getScore()
             ));
+            personalSamples.add(new PersonalScoreSample(
+                    row.getBasketCourseId(),
+                    courseName(row),
+                    row.getBasketId(),
+                    basketLabel(row),
+                    row.getVariationId(),
+                    variationLabel(row),
+                    row.getPlayerId(),
+                    playerName(row),
+                    row.getPlayerPdgaNum(),
+                    row.getRoundId(),
+                    row.getRoundDate(),
+                    row.getRating(),
+                    row.getScore()
+            ));
             exportedSamples++;
         }
 
@@ -83,6 +104,8 @@ public class BasketStatisticsExportService {
         Path manifestPath = resolveManifestPath();
         Path coursesDirectory = resolveCoursesDirectory();
         Path basketStatsDirectory = resolveBasketStatsDirectory();
+        Path playersPath = resolvePlayersPath();
+        Path personalStatsDirectory = resolvePersonalStatsDirectory();
         List<CourseOption> courseOptions = new ArrayList<>();
         int generatedBasketStatsFiles = 0;
 
@@ -106,20 +129,36 @@ public class BasketStatisticsExportService {
             ));
         }
 
+        PersonalStatisticsExport personalStatisticsExport = buildPersonalStatisticsExport(personalSamples);
+        writeJson(personalStatisticsExport.players(), playersPath);
+        for (PersonalPlayerSnapshot snapshot : personalStatisticsExport.snapshots()) {
+            writeJson(snapshot, personalStatsDirectory.resolve(personalStatsFileName(snapshot.player().id())));
+        }
+
         ExportDiagnostics diagnostics = new ExportDiagnostics(
                 exportedSamples,
                 ignoredUnratedSamples,
                 ignoredUnmappedSamples,
                 courses.size(),
                 courses.size(),
-                generatedBasketStatsFiles
+                generatedBasketStatsFiles,
+                personalStatisticsExport.players().size(),
+                personalStatisticsExport.snapshots().size()
         );
         StatisticsManifest manifest = new StatisticsManifest(
                 new SnapshotMetadata(Instant.now().toString(), diagnostics),
-                courseOptions
+                courseOptions,
+                playersRelativePath(),
+                personalStatsPathTemplate()
         );
         writeJson(manifest, manifestPath);
-        return new ExportResult(manifestPath.toString(), courses.size(), generatedBasketStatsFiles, diagnostics);
+        return new ExportResult(
+                manifestPath.toString(),
+                courses.size(),
+                generatedBasketStatsFiles,
+                personalStatisticsExport.snapshots().size(),
+                diagnostics
+        );
     }
 
     private Path resolveManifestPath() {
@@ -132,6 +171,14 @@ public class BasketStatisticsExportService {
 
     private Path resolveBasketStatsDirectory() {
         return resolveProjectRoot().resolve(BASKET_STATS_DIRECTORY).toAbsolutePath().normalize();
+    }
+
+    private Path resolvePlayersPath() {
+        return resolveProjectRoot().resolve(PLAYERS_PATH).toAbsolutePath().normalize();
+    }
+
+    private Path resolvePersonalStatsDirectory() {
+        return resolveProjectRoot().resolve(PERSONAL_STATS_DIRECTORY).toAbsolutePath().normalize();
     }
 
     private Path resolveProjectRoot() {
@@ -180,6 +227,10 @@ public class BasketStatisticsExportService {
         return label + " [" + row.getVariationDistance() + "]";
     }
 
+    private String playerName(StatisticsExportRow row) {
+        return firstNonBlank(row.getPlayerName(), "Player " + row.getPlayerId());
+    }
+
     private String firstNonBlank(String value, String fallback) {
         return value == null || value.isBlank() ? fallback : value.trim();
     }
@@ -192,8 +243,80 @@ public class BasketStatisticsExportService {
         return "basket-stats/" + courseFileName(courseId);
     }
 
+    private String playersRelativePath() {
+        return "players.json";
+    }
+
+    private String personalStatsRelativePath(Long playerId) {
+        return "personal-stats/" + personalStatsFileName(playerId);
+    }
+
+    private String personalStatsPathTemplate() {
+        return "personal-stats/{playerId}.json";
+    }
+
     private String courseFileName(Long courseId) {
         return courseId + ".json";
+    }
+
+    private String personalStatsFileName(Long playerId) {
+        return playerId + ".json";
+    }
+
+    private PersonalStatisticsExport buildPersonalStatisticsExport(List<PersonalScoreSample> samples) {
+        Map<String, PersonalGlobalVariationBuilder> globalVariationBuilders = new LinkedHashMap<>();
+        for (PersonalScoreSample sample : samples) {
+            globalVariationBuilders.computeIfAbsent(
+                    variationKey(sample.basketId(), sample.variationId()),
+                    ignored -> new PersonalGlobalVariationBuilder(sample)
+            ).samples.add(sample);
+        }
+
+        Map<String, PersonalGlobalVariation> eligibleVariations = new LinkedHashMap<>();
+        for (PersonalGlobalVariationBuilder builder : globalVariationBuilders.values()) {
+            PersonalGlobalVariation variation = builder.toEligibleVariation();
+            if (variation != null) {
+                eligibleVariations.put(variationKey(variation.basketId(), variation.variationId()), variation);
+            }
+        }
+
+        Map<Long, PersonalPlayerBuilder> playersById = new LinkedHashMap<>();
+        for (PersonalScoreSample sample : samples) {
+            PersonalGlobalVariation variation = eligibleVariations.get(variationKey(sample.basketId(), sample.variationId()));
+            if (variation == null) {
+                continue;
+            }
+            playersById.computeIfAbsent(
+                    sample.playerId(),
+                    ignored -> new PersonalPlayerBuilder(sample.playerId(), sample.playerName(), sample.playerPdgaNum())
+            ).add(sample, variation);
+        }
+
+        List<PersonalPlayerSnapshot> snapshots = playersById.values().stream()
+                .map(PersonalPlayerBuilder::toSnapshot)
+                .filter(snapshot -> !snapshot.variations().isEmpty())
+                .sorted(Comparator.comparing(
+                                (PersonalPlayerSnapshot snapshot) -> snapshot.player().label(),
+                                String.CASE_INSENSITIVE_ORDER
+                        )
+                        .thenComparing(snapshot -> snapshot.player().id()))
+                .toList();
+
+        List<PlayerLookupEntry> players = snapshots.stream()
+                .map(snapshot -> new PlayerLookupEntry(
+                        snapshot.player().id(),
+                        snapshot.player().name(),
+                        snapshot.player().pdgaNum(),
+                        snapshot.player().label(),
+                        personalStatsRelativePath(snapshot.player().id())
+                ))
+                .toList();
+
+        return new PersonalStatisticsExport(players, snapshots);
+    }
+
+    private static String variationKey(Long basketId, Long variationId) {
+        return basketId + ":" + variationId;
     }
 
     private static class CourseExportBuilder {
@@ -411,7 +534,9 @@ public class BasketStatisticsExportService {
 
     public record StatisticsManifest(
             SnapshotMetadata metadata,
-            List<CourseOption> courses
+            List<CourseOption> courses,
+            String playersPath,
+            String personalStatsPathTemplate
     ) {
     }
 
@@ -427,7 +552,9 @@ public class BasketStatisticsExportService {
             long ignoredUnmappedSamples,
             long includedBasketCourses,
             long generatedCourseFiles,
-            long generatedBasketStatsFiles
+            long generatedBasketStatsFiles,
+            long eligiblePersonalPlayers,
+            long generatedPersonalStatsFiles
     ) {
     }
 
@@ -468,6 +595,44 @@ public class BasketStatisticsExportService {
             String variationLabel,
             Integer rating,
             Integer score
+    ) {
+    }
+
+    public record PlayerLookupEntry(
+            Long id,
+            String name,
+            Long pdgaNum,
+            String label,
+            String path
+    ) {
+    }
+
+    public record PersonalPlayerSnapshot(
+            PlayerDescriptor player,
+            List<PersonalVariationRow> variations
+    ) {
+    }
+
+    public record PlayerDescriptor(
+            Long id,
+            String name,
+            Long pdgaNum,
+            String label
+    ) {
+    }
+
+    public record PersonalVariationRow(
+            Long basketCourseId,
+            String basketCourseName,
+            Long basketId,
+            String basketLabel,
+            Long variationId,
+            String variationLabel,
+            int globalSampleCount,
+            int count,
+            double rating,
+            int displayRating,
+            List<Integer> scores
     ) {
     }
 
@@ -521,10 +686,193 @@ public class BasketStatisticsExportService {
     ) {
     }
 
+    private record PersonalStatisticsExport(
+            List<PlayerLookupEntry> players,
+            List<PersonalPlayerSnapshot> snapshots
+    ) {
+    }
+
+    private record PersonalScoreSample(
+            Long basketCourseId,
+            String basketCourseName,
+            Long basketId,
+            String basketLabel,
+            Long variationId,
+            String variationLabel,
+            Long playerId,
+            String playerName,
+            Long playerPdgaNum,
+            Long roundId,
+            LocalDate roundDate,
+            Integer rating,
+            Integer score
+    ) {
+    }
+
+    private record PersonalGlobalVariation(
+            Long basketId,
+            Long variationId,
+            int sampleCount,
+            Regression regression
+    ) {
+    }
+
+    private static class PersonalGlobalVariationBuilder {
+
+        private final Long basketId;
+        private final Long variationId;
+        private final List<PersonalScoreSample> samples = new ArrayList<>();
+
+        private PersonalGlobalVariationBuilder(PersonalScoreSample sample) {
+            this.basketId = sample.basketId();
+            this.variationId = sample.variationId();
+        }
+
+        private PersonalGlobalVariation toEligibleVariation() {
+            if (samples.size() < PERSONAL_STATS_MIN_GLOBAL_SAMPLES) {
+                return null;
+            }
+            Regression regression = personalRegression(samples);
+            if (regression == null || regression.slope() >= 0) {
+                return null;
+            }
+            return new PersonalGlobalVariation(basketId, variationId, samples.size(), regression);
+        }
+    }
+
+    private static class PersonalPlayerBuilder {
+
+        private final Long id;
+        private final String name;
+        private final Long pdgaNum;
+        private final Map<String, PersonalVariationBuilder> variationsByKey = new LinkedHashMap<>();
+
+        private PersonalPlayerBuilder(Long id, String name, Long pdgaNum) {
+            this.id = id;
+            this.name = name;
+            this.pdgaNum = pdgaNum;
+        }
+
+        private void add(PersonalScoreSample sample, PersonalGlobalVariation globalVariation) {
+            variationsByKey.computeIfAbsent(
+                    variationKey(sample.basketId(), sample.variationId()),
+                    ignored -> new PersonalVariationBuilder(sample, globalVariation)
+            ).samples.add(sample);
+        }
+
+        private PersonalPlayerSnapshot toSnapshot() {
+            List<PersonalVariationRow> rows = variationsByKey.values().stream()
+                    .map(PersonalVariationBuilder::toRow)
+                    .filter(row -> row != null)
+                    .sorted(Comparator.comparingDouble(PersonalVariationRow::rating).reversed()
+                            .thenComparing(PersonalVariationRow::basketCourseName, String.CASE_INSENSITIVE_ORDER)
+                            .thenComparing(PersonalVariationRow::basketId)
+                            .thenComparing(PersonalVariationRow::variationId))
+                    .toList();
+            return new PersonalPlayerSnapshot(
+                    new PlayerDescriptor(id, name, pdgaNum, playerLabel(name, pdgaNum)),
+                    rows
+            );
+        }
+    }
+
+    private static class PersonalVariationBuilder {
+
+        private final Long basketCourseId;
+        private final String basketCourseName;
+        private final Long basketId;
+        private final String basketLabel;
+        private final Long variationId;
+        private final String variationLabel;
+        private final PersonalGlobalVariation globalVariation;
+        private final List<PersonalScoreSample> samples = new ArrayList<>();
+
+        private PersonalVariationBuilder(PersonalScoreSample sample, PersonalGlobalVariation globalVariation) {
+            this.basketCourseId = sample.basketCourseId();
+            this.basketCourseName = sample.basketCourseName();
+            this.basketId = sample.basketId();
+            this.basketLabel = sample.basketLabel();
+            this.variationId = sample.variationId();
+            this.variationLabel = sample.variationLabel();
+            this.globalVariation = globalVariation;
+        }
+
+        private PersonalVariationRow toRow() {
+            if (samples.size() < PERSONAL_STATS_MIN_PLAYER_SAMPLES) {
+                return null;
+            }
+            List<PersonalScoreSample> sortedSamples = samples.stream()
+                    .sorted(Comparator.comparing(
+                                    PersonalScoreSample::roundDate,
+                                    Comparator.nullsLast(Comparator.naturalOrder())
+                            )
+                            .thenComparing(PersonalScoreSample::roundId))
+                    .toList();
+            double averageRating = sortedSamples.stream()
+                    .mapToDouble(sample -> calculatedRating(sample.score(), globalVariation.regression()))
+                    .average()
+                    .orElse(0);
+            return new PersonalVariationRow(
+                    basketCourseId,
+                    basketCourseName,
+                    basketId,
+                    basketLabel,
+                    variationId,
+                    variationLabel,
+                    globalVariation.sampleCount(),
+                    sortedSamples.size(),
+                    averageRating,
+                    (int) Math.round(averageRating),
+                    sortedSamples.stream()
+                            .map(PersonalScoreSample::score)
+                            .toList()
+            );
+        }
+    }
+
+    private static Regression personalRegression(List<PersonalScoreSample> samples) {
+        int count = samples.size();
+        double meanRating = samples.stream()
+                .mapToDouble(PersonalScoreSample::rating)
+                .average()
+                .orElse(0);
+        double meanScore = samples.stream()
+                .mapToDouble(PersonalScoreSample::score)
+                .average()
+                .orElse(0);
+        double ratingVariance = 0;
+        double covariance = 0;
+
+        for (PersonalScoreSample sample : samples) {
+            double ratingDelta = sample.rating() - meanRating;
+            ratingVariance += ratingDelta * ratingDelta;
+            covariance += ratingDelta * (sample.score() - meanScore);
+        }
+
+        if (ratingVariance == 0 || count == 0) {
+            return null;
+        }
+
+        double slope = covariance / ratingVariance;
+        return new Regression(slope, meanScore - slope * meanRating);
+    }
+
+    private static double calculatedRating(int score, Regression regression) {
+        return (score - regression.intercept()) / regression.slope();
+    }
+
+    private static String playerLabel(String name, Long pdgaNum) {
+        if (pdgaNum == null) {
+            return name;
+        }
+        return name + " (" + pdgaNum + ")";
+    }
+
     public record ExportResult(
             String path,
             int generatedCourseFiles,
             int generatedBasketStatsFiles,
+            int generatedPersonalStatsFiles,
             ExportDiagnostics diagnostics
     ) {
     }

@@ -5,6 +5,7 @@ import com.datascience.domain.RoundResult;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,10 +26,16 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
                 bv.id as variationId,
                 bv.name as variationName,
                 bv.distance as variationDistance,
+                p.id as playerId,
+                p.name as playerName,
+                p.pdgaNum as playerPdgaNum,
+                r.id as roundId,
+                r.date as roundDate,
                 rr.rating as rating,
                 hs.score as score
             from HoleScore hs
             join hs.roundResult rr
+            join rr.player p
             join rr.roundDivision rd
             join rd.round r
             join r.competition c
@@ -61,6 +68,16 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
         String getVariationName();
 
         Integer getVariationDistance();
+
+        Long getPlayerId();
+
+        String getPlayerName();
+
+        Long getPlayerPdgaNum();
+
+        Long getRoundId();
+
+        LocalDate getRoundDate();
 
         Integer getRating();
 

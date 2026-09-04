@@ -16,6 +16,7 @@
     <nav class="view-nav" aria-label="Statistics views">
         <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
         <button id="basket-stats-tab" class="view-tab" type="button">Basket stats</button>
+        <button id="personal-stats-tab" class="view-tab" type="button">Personal stats</button>
     </nav>
 
     <section id="course-stats-view">
@@ -93,6 +94,34 @@
                 <div id="basket-chart-tooltip" class="chart-tooltip" hidden></div>
             </div>
         </section>
+    </section>
+
+    <section id="personal-stats-view" hidden>
+        <form id="personal-filters" class="filters" hidden>
+            <label class="personal-player-field">
+                <span>Person</span>
+                <input id="personal-player" name="personalPlayer" type="text" list="personal-player-options" autocomplete="off">
+                <datalist id="personal-player-options"></datalist>
+            </label>
+        </form>
+
+        <div id="personal-message" class="message" hidden></div>
+
+        <div id="personal-table-wrap" class="table-wrap" hidden>
+            <table class="personal-table">
+                <thead>
+                <tr>
+                    <th>Basket course</th>
+                    <th>Basket</th>
+                    <th>Variation</th>
+                    <th>Rating</th>
+                    <th>Count</th>
+                    <th>Scores</th>
+                </tr>
+                </thead>
+                <tbody id="personal-statistics-body"></tbody>
+            </table>
+        </div>
     </section>
 </main>
 <script src="app.js"></script>

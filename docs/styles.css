@@ -76,6 +76,11 @@ input {
     width: 130px;
 }
 
+.personal-player-field input {
+    min-width: 320px;
+    width: 320px;
+}
+
 button {
     background: #245b7a;
     border: 0;
@@ -316,6 +321,26 @@ thead th {
     padding-left: 28px;
 }
 
+.personal-table {
+    min-width: 880px;
+}
+
+.personal-table th,
+.personal-table td {
+    text-align: left;
+}
+
+.personal-table th:nth-child(4),
+.personal-table th:nth-child(5),
+.personal-table td:nth-child(4),
+.personal-table td:nth-child(5) {
+    text-align: right;
+}
+
+.personal-table td:nth-child(6) {
+    white-space: normal;
+}
+
 @media (max-width: 640px) {
     .page {
         margin-top: 18px;
@@ -339,6 +364,11 @@ thead th {
     select,
     input,
     button {
+        width: 100%;
+    }
+
+    .personal-player-field input {
+        min-width: 0;
         width: 100%;
     }
 }

@@ -13,11 +13,16 @@
     var selectedBasketStatsSnapshot = null;
     var selectedBasketStatsRequest = 0;
     var basketChartPoints = [];
+    var playerLookup = [];
+    var selectedPersonalSnapshot = null;
+    var selectedPersonalRequest = 0;
 
     var courseStatsTab = document.getElementById("course-stats-tab");
     var basketStatsTab = document.getElementById("basket-stats-tab");
+    var personalStatsTab = document.getElementById("personal-stats-tab");
     var courseStatsView = document.getElementById("course-stats-view");
     var basketStatsView = document.getElementById("basket-stats-view");
+    var personalStatsView = document.getElementById("personal-stats-view");
     var filters = document.getElementById("filters");
     var courseSelect = document.getElementById("course");
     var ratingFromInput = document.getElementById("rating-from");
@@ -40,6 +45,12 @@
     var basketChartCanvas = document.getElementById("basket-chart-canvas");
     var basketChartSvg = document.getElementById("basket-stats-chart");
     var basketChartTooltip = document.getElementById("basket-chart-tooltip");
+    var personalFilters = document.getElementById("personal-filters");
+    var personalPlayerInput = document.getElementById("personal-player");
+    var personalPlayerOptions = document.getElementById("personal-player-options");
+    var personalMessage = document.getElementById("personal-message");
+    var personalTableWrap = document.getElementById("personal-table-wrap");
+    var personalTableBody = document.getElementById("personal-statistics-body");
 
     fetch("data/statistics.json")
         .then(function (response) {
@@ -55,6 +66,7 @@
         .catch(function () {
             showMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
             showBasketMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
+            showPersonalMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
         });
 
     courseStatsTab.addEventListener("click", function () {
@@ -63,6 +75,10 @@
 
     basketStatsTab.addEventListener("click", function () {
         setActiveView("basket");
+    });
+
+    personalStatsTab.addEventListener("click", function () {
+        setActiveView("personal");
     });
 
     filters.addEventListener("submit", function (event) {
@@ -80,6 +96,14 @@
 
     basketVariationSelect.addEventListener("change", function () {
         renderSelectedBasketVariation();
+    });
+
+    personalPlayerInput.addEventListener("input", function () {
+        handlePersonalPlayerInput();
+    });
+
+    personalPlayerInput.addEventListener("change", function () {
+        handlePersonalPlayerInput();
     });
 
     chartSvg.addEventListener("pointermove", function (event) {
@@ -102,6 +126,7 @@
         renderMetadata();
         populateCourses();
         populateBasketCourses();
+        loadPlayerLookup();
         if (courseSelect.value) {
             loadSelectedCourse();
         }
@@ -112,12 +137,18 @@
 
     function setActiveView(view) {
         var basketActive = view === "basket";
-        courseStatsView.hidden = basketActive;
+        var personalActive = view === "personal";
+        courseStatsView.hidden = basketActive || personalActive;
         basketStatsView.hidden = !basketActive;
-        courseStatsTab.classList.toggle("active", !basketActive);
+        personalStatsView.hidden = !personalActive;
+        courseStatsTab.classList.toggle("active", !personalActive && !basketActive);
         basketStatsTab.classList.toggle("active", basketActive);
+        personalStatsTab.classList.toggle("active", personalActive);
         if (basketActive) {
             renderSelectedBasketVariation();
+        }
+        if (personalActive && playerLookup.length === 0 && personalFilters.hidden) {
+            showPersonalMessage("No eligible players are available in this statistics export.", false);
         }
     }
 
@@ -275,6 +306,147 @@
 
     function basketStatsDataUrl(course) {
         return "data/" + String(course.basketStatsPath).replace(/^\/+/, "");
+    }
+
+    function loadPlayerLookup() {
+        playerLookup = [];
+        personalPlayerOptions.innerHTML = "";
+        resetPersonalResults();
+
+        if (!manifest || !manifest.playersPath) {
+            personalFilters.hidden = true;
+            showPersonalMessage("No personal statistics are available in this export.", false);
+            return;
+        }
+
+        showPersonalMessage("Loading eligible players...", false);
+        fetch(dataUrl(manifest.playersPath))
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Player lookup data not found");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                playerLookup = Array.isArray(data) ? data : [];
+                populatePersonalPlayerOptions();
+            })
+            .catch(function () {
+                personalFilters.hidden = true;
+                resetPersonalResults();
+                showPersonalMessage("Personal statistics player data could not be loaded.", true);
+            });
+    }
+
+    function populatePersonalPlayerOptions() {
+        personalPlayerOptions.innerHTML = "";
+        playerLookup.forEach(function (player) {
+            var option = document.createElement("option");
+            option.value = player.label;
+            personalPlayerOptions.appendChild(option);
+        });
+        personalFilters.hidden = playerLookup.length === 0;
+        if (playerLookup.length === 0) {
+            showPersonalMessage("No eligible players are available in this statistics export.", false);
+            return;
+        }
+        showPersonalMessage("Select a person to view personal basket statistics.", false);
+    }
+
+    function handlePersonalPlayerInput() {
+        selectedPersonalRequest++;
+        var player = selectedPersonalPlayer();
+        selectedPersonalSnapshot = null;
+        personalTableBody.innerHTML = "";
+        personalTableWrap.hidden = true;
+
+        if (personalPlayerInput.value.trim() === "") {
+            showPersonalMessage("Select a person to view personal basket statistics.", false);
+            return;
+        }
+
+        if (!player) {
+            showPersonalMessage("Select a person from the autocomplete list.", false);
+            return;
+        }
+
+        loadSelectedPersonalStats(player);
+    }
+
+    function selectedPersonalPlayer() {
+        var value = personalPlayerInput.value.trim();
+        for (var index = 0; index < playerLookup.length; index++) {
+            if (playerLookup[index].label === value) {
+                return playerLookup[index];
+            }
+        }
+        return null;
+    }
+
+    function loadSelectedPersonalStats(player) {
+        var requestId = ++selectedPersonalRequest;
+        showPersonalMessage("Loading personal basket statistics...", false);
+        fetch(dataUrl(player.path))
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Personal statistics data not found");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                if (requestId !== selectedPersonalRequest) {
+                    return;
+                }
+                selectedPersonalSnapshot = data;
+                renderPersonalStatistics();
+            })
+            .catch(function () {
+                if (requestId !== selectedPersonalRequest) {
+                    return;
+                }
+                resetPersonalResults();
+                showPersonalMessage("Personal statistics for the selected player could not be loaded.", true);
+            });
+    }
+
+    function renderPersonalStatistics() {
+        var rows = selectedPersonalSnapshot && Array.isArray(selectedPersonalSnapshot.variations)
+            ? selectedPersonalSnapshot.variations
+            : [];
+        personalTableBody.innerHTML = "";
+
+        if (rows.length === 0) {
+            personalTableWrap.hidden = true;
+            showPersonalMessage("No personal basket variation results are available for the selected player.", false);
+            return;
+        }
+
+        rows.forEach(appendPersonalVariationRow);
+        hidePersonalMessage();
+        personalTableWrap.hidden = false;
+    }
+
+    function appendPersonalVariationRow(variation) {
+        var row = document.createElement("tr");
+        row.className = "variation-row";
+        appendCell(row, variation.basketCourseName);
+        appendCell(row, variation.basketLabel);
+        appendCell(row, variation.variationLabel);
+        appendCell(row, String(variation.displayRating));
+        appendCell(row, String(variation.count));
+        appendCell(row, personalScoresText(variation.scores));
+        personalTableBody.appendChild(row);
+    }
+
+    function personalScoresText(scores) {
+        if (!Array.isArray(scores)) {
+            return "";
+        }
+        return scores.join(", ");
+    }
+
+    function dataUrl(path) {
+        return "data/" + String(path).replace(/^\/+/, "");
     }
 
     function renderStatistics() {
@@ -1056,6 +1228,12 @@
         hideBasketChartTooltip();
     }
 
+    function resetPersonalResults() {
+        selectedPersonalSnapshot = null;
+        personalTableWrap.hidden = true;
+        personalTableBody.innerHTML = "";
+    }
+
     function formatAxisValue(value) {
         return value.toFixed(2);
     }
@@ -1087,5 +1265,17 @@
         basketMessage.textContent = "";
         basketMessage.classList.remove("error");
         basketMessage.hidden = true;
+    }
+
+    function showPersonalMessage(text, isError) {
+        personalMessage.textContent = text;
+        personalMessage.classList.toggle("error", isError);
+        personalMessage.hidden = false;
+    }
+
+    function hidePersonalMessage() {
+        personalMessage.textContent = "";
+        personalMessage.classList.remove("error");
+        personalMessage.hidden = true;
     }
 })();

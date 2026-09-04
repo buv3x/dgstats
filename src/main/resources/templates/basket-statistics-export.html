@@ -89,6 +89,8 @@
         <dd th:text="${result.generatedCourseFiles}">0</dd>
         <dt>Generated basket stats files</dt>
         <dd th:text="${result.generatedBasketStatsFiles}">0</dd>
+        <dt>Generated personal stats files</dt>
+        <dd th:text="${result.generatedPersonalStatsFiles}">0</dd>
         <dt>Exported samples</dt>
         <dd th:text="${result.diagnostics.exportedSamples}">0</dd>
         <dt>Ignored unrated scores</dt>
@@ -97,6 +99,8 @@
         <dd th:text="${result.diagnostics.ignoredUnmappedSamples}">0</dd>
         <dt>Included basket courses</dt>
         <dd th:text="${result.diagnostics.includedBasketCourses}">0</dd>
+        <dt>Eligible personal players</dt>
+        <dd th:text="${result.diagnostics.eligiblePersonalPlayers}">0</dd>
     </dl>
 </div>
 <div class="error" th:if="${error}" th:text="${error}"></div>
