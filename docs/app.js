@@ -48,6 +48,8 @@
     var personalFilters = document.getElementById("personal-filters");
     var personalPlayerInput = document.getElementById("personal-player");
     var personalPlayerOptions = document.getElementById("personal-player-options");
+    var personalCourseSelect = document.getElementById("personal-course");
+    var personalMinCountInput = document.getElementById("personal-min-count");
     var personalMessage = document.getElementById("personal-message");
     var personalTableWrap = document.getElementById("personal-table-wrap");
     var personalTableBody = document.getElementById("personal-statistics-body");
@@ -104,6 +106,19 @@
 
     personalPlayerInput.addEventListener("change", function () {
         handlePersonalPlayerInput();
+    });
+
+    personalCourseSelect.addEventListener("change", function () {
+        renderPersonalStatistics();
+    });
+
+    personalMinCountInput.addEventListener("input", function () {
+        renderPersonalStatistics();
+    });
+
+    personalMinCountInput.addEventListener("change", function () {
+        normalizePersonalMinCount();
+        renderPersonalStatistics();
     });
 
     chartSvg.addEventListener("pointermove", function (event) {
@@ -340,6 +355,8 @@
 
     function populatePersonalPlayerOptions() {
         personalPlayerOptions.innerHTML = "";
+        resetPersonalCourseOptions();
+        normalizePersonalMinCount();
         playerLookup.forEach(function (player) {
             var option = document.createElement("option");
             option.value = player.label;
@@ -357,6 +374,7 @@
         selectedPersonalRequest++;
         var player = selectedPersonalPlayer();
         selectedPersonalSnapshot = null;
+        resetPersonalCourseOptions();
         personalTableBody.innerHTML = "";
         personalTableWrap.hidden = true;
 
@@ -398,6 +416,7 @@
                     return;
                 }
                 selectedPersonalSnapshot = data;
+                populatePersonalCourseOptions();
                 renderPersonalStatistics();
             })
             .catch(function () {
@@ -410,9 +429,19 @@
     }
 
     function renderPersonalStatistics() {
+        if (!selectedPersonalSnapshot) {
+            personalTableBody.innerHTML = "";
+            personalTableWrap.hidden = true;
+            if (personalPlayerInput.value.trim() === "") {
+                showPersonalMessage("Select a person to view personal basket statistics.", false);
+            }
+            return;
+        }
+
         var rows = selectedPersonalSnapshot && Array.isArray(selectedPersonalSnapshot.variations)
             ? selectedPersonalSnapshot.variations
             : [];
+        var visibleRows = personalFilteredRows(rows);
         personalTableBody.innerHTML = "";
 
         if (rows.length === 0) {
@@ -421,9 +450,69 @@
             return;
         }
 
-        rows.forEach(appendPersonalVariationRow);
+        if (visibleRows.length === 0) {
+            personalTableWrap.hidden = true;
+            showPersonalMessage("No personal basket variation results match the selected filters.", false);
+            return;
+        }
+
+        visibleRows.forEach(appendPersonalVariationRow);
         hidePersonalMessage();
         personalTableWrap.hidden = false;
+    }
+
+    function populatePersonalCourseOptions() {
+        var rows = selectedPersonalSnapshot && Array.isArray(selectedPersonalSnapshot.variations)
+            ? selectedPersonalSnapshot.variations
+            : [];
+        var coursesById = {};
+        resetPersonalCourseOptions();
+
+        rows.forEach(function (variation) {
+            var courseId = variation.basketCourseId;
+            if (courseId === null || courseId === undefined || coursesById[String(courseId)]) {
+                return;
+            }
+            coursesById[String(courseId)] = variation.basketCourseName || String(courseId);
+        });
+
+        Object.keys(coursesById)
+            .sort(function (left, right) {
+                return coursesById[left].localeCompare(coursesById[right]);
+            })
+            .forEach(function (courseId) {
+                var option = document.createElement("option");
+                option.value = courseId;
+                option.textContent = coursesById[courseId];
+                personalCourseSelect.appendChild(option);
+            });
+    }
+
+    function resetPersonalCourseOptions() {
+        personalCourseSelect.innerHTML = "";
+        var option = document.createElement("option");
+        option.value = "";
+        option.textContent = "All courses";
+        personalCourseSelect.appendChild(option);
+    }
+
+    function personalFilteredRows(rows) {
+        var selectedCourseId = personalCourseSelect.value;
+        var minCount = normalizePersonalMinCount();
+        return rows.filter(function (variation) {
+            var courseMatches = selectedCourseId === "" || String(variation.basketCourseId) === selectedCourseId;
+            return courseMatches && Number(variation.count) >= minCount;
+        });
+    }
+
+    function normalizePersonalMinCount() {
+        var minCount = Number(personalMinCountInput.value);
+        if (!Number.isFinite(minCount) || minCount < 2) {
+            minCount = 2;
+        }
+        minCount = Math.floor(minCount);
+        personalMinCountInput.value = String(minCount);
+        return minCount;
     }
 
     function appendPersonalVariationRow(variation) {
@@ -1230,6 +1319,8 @@
 
     function resetPersonalResults() {
         selectedPersonalSnapshot = null;
+        resetPersonalCourseOptions();
+        normalizePersonalMinCount();
         personalTableWrap.hidden = true;
         personalTableBody.innerHTML = "";
     }

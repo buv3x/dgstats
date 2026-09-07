@@ -14,7 +14,7 @@
     "variationLabel" : "Base [111]",
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 1048.4261959887751,
+    "rating" : 1048.4261959887754,
     "displayRating" : 1048,
     "scores" : [ 2, 2, 3, 3, 2, 3, 2, 2, 3 ]
   }, {
@@ -38,7 +38,7 @@
     "variationLabel" : "Pilgrim [172]",
     "globalSampleCount" : 2756,
     "count" : 8,
-    "rating" : 997.1518530435612,
+    "rating" : 997.1518530435615,
     "displayRating" : 997,
     "scores" : [ 3, 3, 5, 5, 3, 4, 4, 3 ]
   }, {
@@ -50,7 +50,7 @@
     "variationLabel" : "Base [132]",
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 997.1326006138045,
+    "rating" : 997.1326006138047,
     "displayRating" : 997,
     "scores" : [ 4, 3, 3, 4, 4, 3, 3, 2, 4 ]
   }, {
@@ -62,7 +62,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 1527,
     "count" : 2,
-    "rating" : 992.0834922353504,
+    "rating" : 992.0834922353505,
     "displayRating" : 992,
     "scores" : [ 2, 3 ]
   }, {
@@ -74,7 +74,7 @@
     "variationLabel" : "Main [84]",
     "globalSampleCount" : 1076,
     "count" : 2,
-    "rating" : 989.157938636713,
+    "rating" : 989.1579386367127,
     "displayRating" : 989,
     "scores" : [ 3, 3 ]
   }, {
@@ -86,7 +86,7 @@
     "variationLabel" : "Main [69]",
     "globalSampleCount" : 1526,
     "count" : 2,
-    "rating" : 988.6257998134607,
+    "rating" : 988.6257998134606,
     "displayRating" : 989,
     "scores" : [ 4, 2 ]
   }, {
@@ -98,7 +98,7 @@
     "variationLabel" : "Base [76]",
     "globalSampleCount" : 3758,
     "count" : 9,
-    "rating" : 988.2912922104582,
+    "rating" : 988.291292210458,
     "displayRating" : 988,
     "scores" : [ 2, 2, 3, 3, 2, 3, 3, 2, 3 ]
   }, {
@@ -122,7 +122,7 @@
     "variationLabel" : "Pilgrim [144]",
     "globalSampleCount" : 2755,
     "count" : 8,
-    "rating" : 978.2809470572137,
+    "rating" : 978.280947057214,
     "displayRating" : 978,
     "scores" : [ 3, 5, 3, 4, 5, 4, 5, 4 ]
   }, {
@@ -134,7 +134,7 @@
     "variationLabel" : "Pilgrim [155]",
     "globalSampleCount" : 2755,
     "count" : 8,
-    "rating" : 976.3176906122403,
+    "rating" : 976.3176906122404,
     "displayRating" : 976,
     "scores" : [ 4, 3, 4, 4, 3, 5, 3, 5 ]
   }, {
@@ -146,7 +146,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 1077,
     "count" : 2,
-    "rating" : 974.9205371429896,
+    "rating" : 974.9205371429894,
     "displayRating" : 975,
     "scores" : [ 3, 3 ]
   }, {
@@ -158,7 +158,7 @@
     "variationLabel" : "Base [118]",
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 974.6901020212588,
+    "rating" : 974.6901020212586,
     "displayRating" : 975,
     "scores" : [ 3, 3, 4, 4, 4, 4, 4, 4, 3 ]
   }, {
@@ -194,7 +194,7 @@
     "variationLabel" : "Main [164]",
     "globalSampleCount" : 1077,
     "count" : 2,
-    "rating" : 961.642271931644,
+    "rating" : 961.6422719316441,
     "displayRating" : 962,
     "scores" : [ 4, 4 ]
   }, {
@@ -254,7 +254,7 @@
     "variationLabel" : "Main [107]",
     "globalSampleCount" : 1527,
     "count" : 2,
-    "rating" : 927.5310054752691,
+    "rating" : 927.5310054752692,
     "displayRating" : 928,
     "scores" : [ 3, 3 ]
   }, {
@@ -278,21 +278,9 @@
     "variationLabel" : "Pilgrim [178]",
     "globalSampleCount" : 2756,
     "count" : 8,
-    "rating" : 910.4959490888813,
+    "rating" : 910.4959490888814,
     "displayRating" : 910,
     "scores" : [ 4, 7, 4, 5, 4, 4, 4, 6 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 178,
-    "basketLabel" : "13",
-    "variationId" : 208,
-    "variationLabel" : "Main [78]",
-    "globalSampleCount" : 296,
-    "count" : 2,
-    "rating" : 909.0104167116531,
-    "displayRating" : 909,
-    "scores" : [ 3, 3 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -306,6 +294,18 @@
     "displayRating" : 906,
     "scores" : [ 5, 4, 4, 5, 4, 5, 4, 4, 5 ]
   }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 178,
+    "basketLabel" : "13",
+    "variationId" : 208,
+    "variationLabel" : "Main [78]",
+    "globalSampleCount" : 1526,
+    "count" : 2,
+    "rating" : 900.999992031242,
+    "displayRating" : 901,
+    "scores" : [ 3, 3 ]
+  }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
     "basketId" : 101,
@@ -314,7 +314,7 @@
     "variationLabel" : "Base [295]",
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 876.6995424234352,
+    "rating" : 876.6995424234354,
     "displayRating" : 877,
     "scores" : [ 7, 5, 7, 6, 5, 4, 5, 6, 7 ]
   }, {
@@ -326,7 +326,7 @@
     "variationLabel" : "Base [87]",
     "globalSampleCount" : 3758,
     "count" : 9,
-    "rating" : 865.1501713256071,
+    "rating" : 865.150171325607,
     "displayRating" : 865,
     "scores" : [ 3, 2, 5, 3, 4, 3, 2, 3, 3 ]
   }, {
@@ -350,7 +350,7 @@
     "variationLabel" : "Base [106]",
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 836.4362652430311,
+    "rating" : 836.436265243031,
     "displayRating" : 836,
     "scores" : [ 4, 3, 4, 3, 2, 3, 5, 3, 5 ]
   }, {
@@ -374,7 +374,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 1347,
     "count" : 2,
-    "rating" : 824.1482542932669,
+    "rating" : 824.1482542932671,
     "displayRating" : 824,
     "scores" : [ 4, 4 ]
   }, {
@@ -386,7 +386,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 1077,
     "count" : 2,
-    "rating" : 802.1191897751023,
+    "rating" : 802.1191897751025,
     "displayRating" : 802,
     "scores" : [ 3, 5 ]
   }, {
@@ -410,7 +410,7 @@
     "variationLabel" : "Pilgrim [176]",
     "globalSampleCount" : 2756,
     "count" : 8,
-    "rating" : 694.0497871098072,
+    "rating" : 694.0497871098077,
     "displayRating" : 694,
     "scores" : [ 7, 7, 9, 8, 5, 6, 7, 5 ]
   }, {
@@ -422,7 +422,7 @@
     "variationLabel" : "Main [102]",
     "globalSampleCount" : 1526,
     "count" : 2,
-    "rating" : 692.3465577541047,
+    "rating" : 692.3465577541048,
     "displayRating" : 692,
     "scores" : [ 7, 4 ]
   }, {

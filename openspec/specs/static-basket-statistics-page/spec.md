@@ -219,7 +219,7 @@ The static page SHALL communicate when SPR/VAR chart data is loading or recalcul
 - **THEN** the chart area displays a calculating state until the chart is updated
 
 ### Requirement: Basket statistics view navigation
-The static page SHALL provide top-level navigation between the current Course stats view and the Basket stats view.
+The static page SHALL provide top-level navigation between the Course stats view, Basket stats view, and Personal stats view.
 
 #### Scenario: Course stats navigation item is displayed
 - **WHEN** the static basket statistics page is displayed
@@ -229,6 +229,10 @@ The static page SHALL provide top-level navigation between the current Course st
 - **WHEN** the static basket statistics page is displayed
 - **THEN** it shows a top navigation item labeled `Basket stats`
 
+#### Scenario: Personal stats navigation item is displayed
+- **WHEN** the static basket statistics page is displayed
+- **THEN** it shows a top navigation item labeled `Personal stats`
+
 #### Scenario: Course stats preserves current display
 - **WHEN** the user selects `Course stats`
 - **THEN** the page displays the existing course-level statistics controls, SPR/VAR scatter chart, and table
@@ -236,6 +240,102 @@ The static page SHALL provide top-level navigation between the current Course st
 #### Scenario: Basket stats switches to basket controls
 - **WHEN** the user selects `Basket stats`
 - **THEN** the page displays Basket stats course and basket variation controls instead of the Course stats rating controls and table
+
+#### Scenario: Personal stats switches to player controls
+- **WHEN** the user selects `Personal stats`
+- **THEN** the page displays Personal stats player autocomplete controls and personal variation results instead of the Course stats and Basket stats controls
+
+### Requirement: Personal stats data loading
+The static page SHALL load personal statistics data using manifest-provided paths.
+
+#### Scenario: Player lookup data is loaded
+- **WHEN** the statistics manifest includes a player lookup path
+- **THEN** the page fetches the player lookup data from that relative path
+
+#### Scenario: Missing player lookup data is reported
+- **WHEN** the page cannot load the player lookup data
+- **THEN** it displays a clear personal-statistics missing-data message in the Personal stats view
+
+#### Scenario: Empty player lookup is reported
+- **WHEN** the player lookup data contains no eligible players
+- **THEN** the Personal stats view displays a no-eligible-players message
+
+#### Scenario: Selected player data is loaded
+- **WHEN** the user selects a player from the Personal stats autocomplete
+- **THEN** the page fetches that player's personal statistics file using the selected player's exported path
+
+#### Scenario: Missing selected player data is reported
+- **WHEN** the page cannot load the selected player's personal statistics file
+- **THEN** it displays a clear selected-player missing-data message
+
+### Requirement: Personal stats autocomplete
+The static page SHALL provide autocomplete selection for eligible players.
+
+#### Scenario: Autocomplete uses eligible player labels
+- **WHEN** player lookup data loads successfully
+- **THEN** the Personal stats player input offers autocomplete options using exported player display labels
+
+#### Scenario: Selecting a player applies exact identity
+- **WHEN** the user selects an autocomplete option
+- **THEN** the page uses that option's player id and personal statistics path rather than matching by free-form text alone
+
+#### Scenario: Clearing player selection resets personal results
+- **WHEN** the user clears the selected player input
+- **THEN** the page hides the personal statistics list and shows an unselected state
+
+### Requirement: Personal stats variation list
+The static page SHALL display one ordered list of personal basket variation ratings for the selected player.
+
+#### Scenario: Personal list displays rows
+- **WHEN** a selected player's personal statistics file contains variation rows
+- **THEN** the Personal stats view displays one table or list containing those rows
+
+#### Scenario: Personal row fields are displayed
+- **WHEN** a personal variation row is displayed
+- **THEN** the row shows basket course, basket label, variation label, rounded rating, personal result count, and comma-separated scores
+
+#### Scenario: Personal rows preserve exported order
+- **WHEN** personal variation rows are rendered
+- **THEN** the page displays them in the order provided by the selected player's personal statistics file
+
+#### Scenario: Empty selected player results are reported
+- **WHEN** the selected player's personal statistics file contains no variation rows
+- **THEN** the Personal stats view displays a no-personal-results message instead of an empty list
+
+### Requirement: Personal stats client-side filters
+The static page SHALL provide Personal stats filters for basket course and minimum personal result count, applied only in the browser to the selected player's loaded personal statistics rows.
+
+#### Scenario: Course selector uses selected player rows
+- **WHEN** a selected player's personal statistics file loads with variation rows
+- **THEN** the Personal stats course selector is populated with an all-courses option and only the basket courses present in those loaded rows
+
+#### Scenario: Course filter is optional
+- **WHEN** the Personal stats course selector is set to the all-courses option
+- **THEN** the Personal stats list includes rows from every basket course in the selected player's loaded personal statistics rows that also match the minimum count filter
+
+#### Scenario: Selected course filters rows
+- **WHEN** the user selects a basket course in the Personal stats course selector
+- **THEN** the Personal stats list includes only selected-player variation rows whose `basketCourseId` matches the selected course and whose `count` matches the minimum count filter
+
+#### Scenario: Minimum count defaults to two
+- **WHEN** the Personal stats controls are shown
+- **THEN** the minimum count filter defaults to `2`
+
+#### Scenario: Minimum count cannot be lower than two
+- **WHEN** the user enters a minimum count value lower than `2`, empty, or invalid
+- **THEN** the page normalizes the minimum count filter to `2` before applying it
+
+#### Scenario: Minimum count filters rows
+- **WHEN** the Personal stats minimum count filter is set to a value of `2` or greater
+- **THEN** the Personal stats list includes only selected-player variation rows whose `count` is greater than or equal to that value and whose course matches the course filter
+
+#### Scenario: Filtering preserves exported row order
+- **WHEN** Personal stats filters are applied
+- **THEN** matching rows are displayed in the same relative order as the selected player's exported personal statistics file
+
+#### Scenario: Empty filtered result is reported
+- **WHEN** the selected player's personal statistics file contains variation rows but none match the active Personal stats filters
+- **THEN** the Personal stats view displays a filtered-empty message instead of an empty table
 
 ### Requirement: Basket stats data loading
 The static page SHALL load Basket stats data for the selected course using the manifest-provided basket stats path.
@@ -260,66 +360,45 @@ The static page SHALL load Basket stats data for the selected course using the m
 - **WHEN** a selected course has no basket variations with eligible sliding-window statistics
 - **THEN** the page displays a no-basket-variations message instead of an empty chart
 
-### Requirement: Basket stats SPR/VAR line chart
-The static page SHALL display precomputed basket variation SPR and VAR sliding-window statistics as a dual-axis line chart.
+### Requirement: Basket stats SPR-only line chart
+The static page SHALL display precomputed basket variation sliding-window SPRW values in Basket stats without displaying raw SPR, SPR2, or VAR.
 
-#### Scenario: Selected variation windows are displayed
-- **WHEN** the user selects a basket variation with exported windows
-- **THEN** the page displays that variation's windows on a line chart
+#### Scenario: Selected variation SPRW windows are displayed
+- **WHEN** the user selects a basket variation with exported SPRW windows
+- **THEN** the Basket stats chart displays those windows as a single SPRW line chart
 
 #### Scenario: X axis uses rating midpoint
-- **WHEN** basket sliding-window statistics are displayed
+- **WHEN** Basket stats sliding-window statistics are displayed
 - **THEN** the chart uses each window's `ratingMidpoint` as the X-axis value
 
-#### Scenario: SPR uses left fixed axis
-- **WHEN** basket sliding-window statistics are displayed
-- **THEN** SPR values are plotted against the left Y-axis fixed from `-0.5` to `2.0`
+#### Scenario: SPRW uses fixed left axis
+- **WHEN** Basket stats sliding-window statistics are displayed
+- **THEN** SPRW values are plotted against the Y-axis fixed from `-0.5` to `2.0`
 
-#### Scenario: VAR uses right fixed axis
-- **WHEN** basket sliding-window statistics are displayed
-- **THEN** VAR values are plotted against the right Y-axis fixed from `0.0` to `1.5`
+#### Scenario: Raw SPR series is not rendered
+- **WHEN** Basket stats sliding-window statistics are displayed
+- **THEN** the chart does not render raw SPR line segments or raw SPR points
 
-#### Scenario: SPR and VAR use different colors
-- **WHEN** basket sliding-window statistics are displayed
-- **THEN** SPR and VAR are rendered as two differently colored lines
+#### Scenario: SPR2 series is not rendered
+- **WHEN** Basket stats sliding-window statistics are displayed
+- **THEN** the chart does not render SPR2 line segments or SPR2 points
+
+#### Scenario: VAR series is not rendered
+- **WHEN** Basket stats sliding-window statistics are displayed
+- **THEN** the chart does not render VAR line segments or VAR points
+
+#### Scenario: VAR axis is not rendered
+- **WHEN** Basket stats sliding-window statistics are displayed
+- **THEN** the chart does not render a VAR Y-axis, VAR tick labels, or a VAR axis label
+
+#### Scenario: Basket stats chart labels mention only SPRW
+- **WHEN** the Basket stats chart is displayed
+- **THEN** the visible chart title, Y-axis label, legend, tooltip metric labels, and accessible chart label mention SPRW
+- **AND** they do not mention raw SPR, SPR2, or VAR
 
 #### Scenario: Empty window series is reported
 - **WHEN** the selected basket variation has no exported windows
-- **THEN** the page displays a no-window-results message instead of an empty chart
-
-### Requirement: Basket stats count bucket styling
-The static page SHALL style Basket stats line segments according to each window's exported sample-count bucket.
-
-#### Scenario: Low count bucket is dotted
-- **WHEN** a line segment portion represents a window with count bucket `50-99`
-- **THEN** that segment portion is displayed as a dotted line
-
-#### Scenario: Medium count bucket is normal
-- **WHEN** a line segment portion represents a window with count bucket `100-199`
-- **THEN** that segment portion is displayed as a normal line
-
-#### Scenario: High count bucket is bold
-- **WHEN** a line segment portion represents a window with count bucket `200+`
-- **THEN** that segment portion is displayed as a bold line
-
-#### Scenario: Style changes at midpoint between different buckets
-- **WHEN** two adjacent chart points have different count buckets
-- **THEN** the connecting line changes style at the midpoint between those points
-
-### Requirement: Basket stats tooltip behavior
-The static page SHALL expose exact sliding-window values through chart tooltips.
-
-#### Scenario: Hovering a chart point shows window details
-- **WHEN** the user hovers over a Basket stats chart point
-- **THEN** the page displays a tooltip with rating range, rating midpoint, sample count, count bucket, SPR, and VAR
-
-#### Scenario: Hovering close points shows all matches
-- **WHEN** the user hovers close to multiple Basket stats chart points
-- **THEN** the page displays one tooltip containing details for every hovered matching point
-
-#### Scenario: Tooltip hides when no basket stats points are hovered
-- **WHEN** the pointer is not close to any Basket stats chart point
-- **THEN** the Basket stats tooltip is hidden
+- **THEN** the page displays a no-window-results message instead of an empty Basket stats chart
 
 ### Requirement: Basket stats chart first render sizing
 The static page SHALL render the initially selected Basket stats chart using the visible chart container dimensions.
@@ -328,41 +407,28 @@ The static page SHALL render the initially selected Basket stats chart using the
 - **WHEN** the user opens the Basket stats view after the page has loaded a selected basket course and variation
 - **THEN** the Basket stats chart is drawn at the same full chart width used after changing the selected variation
 
-### Requirement: Basket stats count bucket connectivity
-The static page SHALL encode Basket stats sample-count buckets through point connectivity and line pattern.
+### Requirement: Basket stats SPR-only count bucket connectivity
+The static page SHALL encode Basket stats weighted sample-count buckets through point connectivity and line pattern for SPRW values only.
 
-#### Scenario: Low count windows are unconnected points
-- **WHEN** a Basket stats window has count bucket `50-99`
-- **THEN** its SPR and VAR values are displayed as chart points without a connecting line segment representing that window
+#### Scenario: Low weighted count SPRW windows are unconnected points
+- **WHEN** a Basket stats window has `sprwCountBucket` of `50-99`
+- **THEN** its SPRW value is displayed as a chart point without a connecting line segment representing that window
 
-#### Scenario: Medium count windows use dotted lines
-- **WHEN** a Basket stats line segment portion represents count bucket `100-199`
+#### Scenario: Medium weighted count SPRW windows use dotted lines
+- **WHEN** a Basket stats SPRW line segment portion represents `sprwCountBucket` of `100-199`
 - **THEN** that segment portion is displayed as a dotted line
 
-#### Scenario: High count windows use normal lines
-- **WHEN** a Basket stats line segment portion represents count bucket `200+`
+#### Scenario: High weighted count SPRW windows use normal lines
+- **WHEN** a Basket stats SPRW line segment portion represents `sprwCountBucket` of `200+`
 - **THEN** that segment portion is displayed as a normal solid line
 
-#### Scenario: Bucket changes split line eligibility at midpoint
-- **WHEN** two adjacent Basket stats points have different count buckets
-- **THEN** each half of the connection is rendered or omitted according to the count bucket of the endpoint it represents
+#### Scenario: Bucket changes split SPRW line eligibility at midpoint
+- **WHEN** two adjacent Basket stats SPRW points have different `sprwCountBucket` values
+- **THEN** each half of the connection is rendered or omitted according to the `sprwCountBucket` of the endpoint it represents
 
-### Requirement: Basket stats chart tooltip values
-The static page SHALL keep Basket stats chart point tooltips limited to the hovered metric's rating and value.
-
-#### Scenario: SPR point tooltip is shown
-- **WHEN** the user hovers over an SPR point in the Basket stats chart
-- **THEN** the tooltip displays the rating and SPR value for that point
-- **AND** the tooltip does not display rating range, sample count, count bucket, or VAR
-
-#### Scenario: VAR point tooltip is shown
-- **WHEN** the user hovers over a VAR point in the Basket stats chart
-- **THEN** the tooltip displays the rating and VAR value for that point
-- **AND** the tooltip does not display rating range, sample count, count bucket, or SPR
-
-#### Scenario: Close Basket stats points show compact rows
-- **WHEN** the user hovers close to multiple Basket stats chart points
-- **THEN** the tooltip contains one compact row per matching point using only that point's metric name, rating, and metric value
+#### Scenario: Raw count bucket is not used for connectivity
+- **WHEN** Basket stats sliding-window statistics are displayed
+- **THEN** chart point connectivity and line pattern are based on `sprwCountBucket`, not `countBucket`
 
 ### Requirement: Basket stats chart rating axis
 The static page SHALL render the Basket stats chart rating X-axis with explicit whole-number rating labels and grid lines.
@@ -380,17 +446,32 @@ The static page SHALL render the Basket stats chart rating X-axis with explicit 
 - **THEN** a vertical grid line is displayed at that rating value
 
 ### Requirement: Basket stats chart Y axes
-The static page SHALL render Basket stats SPR and VAR Y-axis labels according to fixed chart-specific tick rules.
+The static page SHALL render Basket stats SPRW Y-axis labels according to fixed chart-specific tick rules.
 
-#### Scenario: SPR axis labels and grid lines are shown
+#### Scenario: SPRW axis labels and grid lines are shown
 - **WHEN** the Basket stats chart is displayed
-- **THEN** the left SPR Y-axis displays labels at `0`, `0.5`, `1`, and `1.5`
-- **AND** a horizontal grid line is displayed at each of those SPR values
+- **THEN** the left SPRW Y-axis displays labels at `0`, `0.5`, `1`, and `1.5`
+- **AND** a horizontal grid line is displayed at each of those SPRW values
 
-#### Scenario: VAR axis labels are shown without grid lines
+#### Scenario: VAR axis labels are not shown
 - **WHEN** the Basket stats chart is displayed
-- **THEN** the right VAR Y-axis displays labels at `0.5` and `1`
-- **AND** no horizontal grid line is displayed solely for those VAR labels
+- **THEN** the chart does not display a right VAR Y-axis or VAR labels
+
+### Requirement: Basket stats SPR-only tooltip values
+The static page SHALL keep Basket stats chart point tooltips limited to the hovered SPRW rating and value.
+
+#### Scenario: SPRW point tooltip is shown
+- **WHEN** the user hovers over an SPRW point in the Basket stats chart
+- **THEN** the tooltip displays the rating and SPRW value for that point
+- **AND** the tooltip does not display rating range, sample count, count bucket, raw SPR, SPR2, or VAR
+
+#### Scenario: Close Basket stats SPRW points show compact rows
+- **WHEN** the user hovers close to multiple Basket stats SPRW chart points
+- **THEN** the tooltip contains one compact row per matching point using only the SPRW metric name, rating, and SPRW value
+
+#### Scenario: Tooltip hides when no Basket stats SPRW points are hovered
+- **WHEN** the pointer is not close to any Basket stats SPRW chart point
+- **THEN** the Basket stats tooltip is hidden
 
 ### Requirement: Course stats SPR/VAR scatter chart filtered sample threshold
 The static page SHALL display Course stats SPR/VAR scatter chart markers only for basket variations with at least 50 matching score samples after the current rating bounds are applied.
@@ -416,70 +497,3 @@ The static page SHALL display Course stats SPR/VAR scatter chart markers only fo
 #### Scenario: Empty chart result is reported after threshold filtering
 - **WHEN** the selected basket course and rating bounds produce no basket variations with at least 50 matching score samples and rating variance
 - **THEN** the page displays a no-chart-results message instead of an empty Course stats chart
-
-### Requirement: Basket stats SPR-only line chart
-The static page SHALL display precomputed basket variation sliding-window SPR values in Basket stats without displaying VAR.
-
-#### Scenario: Selected variation SPR windows are displayed
-- **WHEN** the user selects a basket variation with exported windows
-- **THEN** the Basket stats chart displays those windows as an SPR line chart
-
-#### Scenario: X axis uses rating midpoint
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart uses each window's `ratingMidpoint` as the X-axis value
-
-#### Scenario: SPR uses fixed left axis
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** SPR values are plotted against the Y-axis fixed from `-0.5` to `2.0`
-
-#### Scenario: VAR series is not rendered
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart does not render VAR line segments or VAR points
-
-#### Scenario: VAR axis is not rendered
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart does not render a VAR Y-axis, VAR tick labels, or a VAR axis label
-
-#### Scenario: Basket stats chart labels omit VAR
-- **WHEN** the Basket stats chart is displayed
-- **THEN** the visible chart title, legend, and accessible chart label do not mention VAR
-
-#### Scenario: Empty window series is reported
-- **WHEN** the selected basket variation has no exported windows
-- **THEN** the page displays a no-window-results message instead of an empty Basket stats chart
-
-### Requirement: Basket stats SPR-only count bucket connectivity
-The static page SHALL encode Basket stats sample-count buckets through point connectivity and line pattern for SPR values only.
-
-#### Scenario: Low count SPR windows are unconnected points
-- **WHEN** a Basket stats window has count bucket `50-99`
-- **THEN** its SPR value is displayed as a chart point without a connecting line segment representing that window
-
-#### Scenario: Medium count SPR windows use dotted lines
-- **WHEN** a Basket stats SPR line segment portion represents count bucket `100-199`
-- **THEN** that segment portion is displayed as a dotted line
-
-#### Scenario: High count SPR windows use normal lines
-- **WHEN** a Basket stats SPR line segment portion represents count bucket `200+`
-- **THEN** that segment portion is displayed as a normal solid line
-
-#### Scenario: Bucket changes split SPR line eligibility at midpoint
-- **WHEN** two adjacent Basket stats SPR points have different count buckets
-- **THEN** each half of the connection is rendered or omitted according to the count bucket of the endpoint it represents
-
-### Requirement: Basket stats SPR-only tooltip values
-The static page SHALL keep Basket stats chart point tooltips limited to the hovered SPR rating and value.
-
-#### Scenario: SPR point tooltip is shown
-- **WHEN** the user hovers over an SPR point in the Basket stats chart
-- **THEN** the tooltip displays the rating and SPR value for that point
-- **AND** the tooltip does not display rating range, sample count, count bucket, or VAR
-
-#### Scenario: Close Basket stats SPR points show compact rows
-- **WHEN** the user hovers close to multiple Basket stats SPR chart points
-- **THEN** the tooltip contains one compact row per matching point using only the SPR metric name, rating, and SPR value
-
-#### Scenario: Tooltip hides when no Basket stats SPR points are hovered
-- **WHEN** the pointer is not close to any Basket stats SPR chart point
-- **THEN** the Basket stats tooltip is hidden
-

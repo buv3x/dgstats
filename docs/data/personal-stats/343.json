@@ -6,6 +6,18 @@
     "label" : "Albertas Tunaitis (94631)"
   },
   "variations" : [ {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 236,
+    "basketLabel" : "15",
+    "variationId" : 274,
+    "variationLabel" : "Skorpionas [81]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 995.9799134748279,
+    "displayRating" : 996,
+    "scores" : [ 3, 3 ]
+  }, {
     "basketCourseId" : 8,
     "basketCourseName" : "Molėtai",
     "basketId" : 137,
@@ -14,7 +26,7 @@
     "variationLabel" : "Main [76]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 987.170569485967,
+    "rating" : 987.1705694859668,
     "displayRating" : 987,
     "scores" : [ 2, 2, 2, 3 ]
   }, {
@@ -26,7 +38,7 @@
     "variationLabel" : "Main [160]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 947.2890680363568,
+    "rating" : 947.289068036357,
     "displayRating" : 947,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -50,7 +62,7 @@
     "variationLabel" : "Short [75]",
     "globalSampleCount" : 100,
     "count" : 2,
-    "rating" : 929.6591414603977,
+    "rating" : 929.6591414603974,
     "displayRating" : 930,
     "scores" : [ 4, 3 ]
   }, {
@@ -62,21 +74,9 @@
     "variationLabel" : "Main [70]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 928.8607027794776,
+    "rating" : 928.8607027794777,
     "displayRating" : 929,
     "scores" : [ 3, 3, 3, 2 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 178,
-    "basketLabel" : "13",
-    "variationId" : 210,
-    "variationLabel" : "Old (No OB) [71]",
-    "globalSampleCount" : 1230,
-    "count" : 4,
-    "rating" : 898.9594577619748,
-    "displayRating" : 899,
-    "scores" : [ 3, 3, 3, 3 ]
   }, {
     "basketCourseId" : 1,
     "basketCourseName" : "Alytus",
@@ -98,7 +98,7 @@
     "variationLabel" : "Main [114]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 889.0220330887222,
+    "rating" : 889.0220330887219,
     "displayRating" : 889,
     "scores" : [ 4, 3, 4 ]
   }, {
@@ -110,7 +110,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 888.2894264776616,
+    "rating" : 888.2894264776619,
     "displayRating" : 888,
     "scores" : [ 3, 3 ]
   }, {
@@ -122,7 +122,7 @@
     "variationLabel" : "Base [63]",
     "globalSampleCount" : 1160,
     "count" : 10,
-    "rating" : 878.343127808372,
+    "rating" : 878.3431278083721,
     "displayRating" : 878,
     "scores" : [ 3, 3, 3, 3, 3, 4, 2, 3, 2, 3 ]
   }, {
@@ -134,9 +134,21 @@
     "variationLabel" : "Main [173]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 875.7828895434113,
+    "rating" : 875.7828895434111,
     "displayRating" : 876,
     "scores" : [ 5, 4 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 223,
+    "basketLabel" : "2",
+    "variationId" : 257,
+    "variationLabel" : "Skorpionas [76]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 869.5989461397099,
+    "displayRating" : 870,
+    "scores" : [ 3, 3 ]
   }, {
     "basketCourseId" : 5,
     "basketCourseName" : "Ramygala",
@@ -146,7 +158,7 @@
     "variationLabel" : "Black [85]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 867.3591790905123,
+    "rating" : 867.359179090512,
     "displayRating" : 867,
     "scores" : [ 4, 3 ]
   }, {
@@ -158,7 +170,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 1077,
     "count" : 4,
-    "rating" : 854.0399395159238,
+    "rating" : 854.0399395159236,
     "displayRating" : 854,
     "scores" : [ 3, 5, 3, 4 ]
   }, {
@@ -194,7 +206,7 @@
     "variationLabel" : "Main [168]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 839.3690243193012,
+    "rating" : 839.369024319301,
     "displayRating" : 839,
     "scores" : [ 4, 4, 5, 4 ]
   }, {
@@ -206,7 +218,7 @@
     "variationLabel" : "Black [85]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 835.6727625906098,
+    "rating" : 835.6727625906095,
     "displayRating" : 836,
     "scores" : [ 3, 3 ]
   }, {
@@ -218,7 +230,7 @@
     "variationLabel" : "Main [74]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 833.1421691876782,
+    "rating" : 833.1421691876781,
     "displayRating" : 833,
     "scores" : [ 4, 4, 3, 3 ]
   }, {
@@ -242,7 +254,7 @@
     "variationLabel" : "Main [102]",
     "globalSampleCount" : 1526,
     "count" : 6,
-    "rating" : 827.0558434734421,
+    "rating" : 827.0558434734422,
     "displayRating" : 827,
     "scores" : [ 4, 4, 6, 4, 5, 5 ]
   }, {
@@ -266,7 +278,7 @@
     "variationLabel" : "Black [165]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 820.4920194170879,
+    "rating" : 820.4920194170876,
     "displayRating" : 820,
     "scores" : [ 4, 5 ]
   }, {
@@ -278,7 +290,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 819.7935683184041,
+    "rating" : 819.793568318404,
     "displayRating" : 820,
     "scores" : [ 4, 4, 4, 3 ]
   }, {
@@ -290,7 +302,7 @@
     "variationLabel" : "Pilgrim [144]",
     "globalSampleCount" : 2755,
     "count" : 4,
-    "rating" : 818.8868958540213,
+    "rating" : 818.8868958540215,
     "displayRating" : 819,
     "scores" : [ 5, 5, 6, 5 ]
   }, {
@@ -302,7 +314,7 @@
     "variationLabel" : "Main [105]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 817.762563319876,
+    "rating" : 817.7625633198762,
     "displayRating" : 818,
     "scores" : [ 3, 3, 3, 6 ]
   }, {
@@ -338,7 +350,7 @@
     "variationLabel" : "Main [81]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 810.1116149696561,
+    "rating" : 810.1116149696559,
     "displayRating" : 810,
     "scores" : [ 4, 4 ]
   }, {
@@ -350,7 +362,7 @@
     "variationLabel" : "Black [85]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 808.23643030184,
+    "rating" : 808.2364303018398,
     "displayRating" : 808,
     "scores" : [ 3, 4 ]
   }, {
@@ -378,6 +390,18 @@
     "displayRating" : 807,
     "scores" : [ 4, 3, 4 ]
   }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 178,
+    "basketLabel" : "13",
+    "variationId" : 208,
+    "variationLabel" : "Main [78]",
+    "globalSampleCount" : 1526,
+    "count" : 6,
+    "rating" : 807.1790628128128,
+    "displayRating" : 807,
+    "scores" : [ 3, 3, 3, 3, 5, 3 ]
+  }, {
     "basketCourseId" : 9,
     "basketCourseName" : "Elektrėnai",
     "basketId" : 164,
@@ -386,7 +410,7 @@
     "variationLabel" : "Main [156]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 806.7272892354904,
+    "rating" : 806.7272892354906,
     "displayRating" : 807,
     "scores" : [ 5, 5 ]
   }, {
@@ -410,7 +434,7 @@
     "variationLabel" : "Main [76]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 804.2547089884481,
+    "rating" : 804.254708988448,
     "displayRating" : 804,
     "scores" : [ 4, 3, 3, 4 ]
   }, {
@@ -422,7 +446,7 @@
     "variationLabel" : "Main [95]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 801.1956492031227,
+    "rating" : 801.1956492031226,
     "displayRating" : 801,
     "scores" : [ 3, 4, 4, 3 ]
   }, {
@@ -446,7 +470,7 @@
     "variationLabel" : "Main [80]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 797.9428598977205,
+    "rating" : 797.9428598977206,
     "displayRating" : 798,
     "scores" : [ 3, 3, 4, 4 ]
   }, {
@@ -458,7 +482,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 795.8361811876174,
+    "rating" : 795.8361811876175,
     "displayRating" : 796,
     "scores" : [ 4, 2, 4, 3 ]
   }, {
@@ -482,7 +506,7 @@
     "variationLabel" : "Old [81]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 794.9601407769928,
+    "rating" : 794.960140776993,
     "displayRating" : 795,
     "scores" : [ 3, 4 ]
   }, {
@@ -530,7 +554,7 @@
     "variationLabel" : "Main [305]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 787.1120269164614,
+    "rating" : 787.1120269164616,
     "displayRating" : 787,
     "scores" : [ 7, 10, 6, 10 ]
   }, {
@@ -542,7 +566,7 @@
     "variationLabel" : "Old [67]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 786.4836674882617,
+    "rating" : 786.4836674882615,
     "displayRating" : 786,
     "scores" : [ 3, 4 ]
   }, {
@@ -554,7 +578,7 @@
     "variationLabel" : "Base [99]",
     "globalSampleCount" : 3758,
     "count" : 14,
-    "rating" : 786.4795805710262,
+    "rating" : 786.4795805710258,
     "displayRating" : 786,
     "scores" : [ 4, 3, 5, 6, 4, 5, 4, 3, 4, 4, 6, 5, 6, 6 ]
   }, {
@@ -566,7 +590,7 @@
     "variationLabel" : "Main [202]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 783.8208974981249,
+    "rating" : 783.8208974981245,
     "displayRating" : 784,
     "scores" : [ 8, 4, 5 ]
   }, {
@@ -578,7 +602,7 @@
     "variationLabel" : "Gold [181]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 783.1347567756615,
+    "rating" : 783.1347567756612,
     "displayRating" : 783,
     "scores" : [ 4, 7, 5 ]
   }, {
@@ -590,7 +614,7 @@
     "variationLabel" : "Base [76]",
     "globalSampleCount" : 3758,
     "count" : 14,
-    "rating" : 781.9374587409457,
+    "rating" : 781.9374587409454,
     "displayRating" : 782,
     "scores" : [ 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 6, 3, 2 ]
   }, {
@@ -602,7 +626,7 @@
     "variationLabel" : "Pilgrim [178]",
     "globalSampleCount" : 2756,
     "count" : 4,
-    "rating" : 781.7061357247676,
+    "rating" : 781.7061357247673,
     "displayRating" : 782,
     "scores" : [ 6, 6, 6, 5 ]
   }, {
@@ -614,7 +638,7 @@
     "variationLabel" : "Pilgrim [172]",
     "globalSampleCount" : 2756,
     "count" : 4,
-    "rating" : 780.3881184818026,
+    "rating" : 780.3881184818023,
     "displayRating" : 780,
     "scores" : [ 6, 4, 4, 7 ]
   }, {
@@ -626,7 +650,7 @@
     "variationLabel" : "Gold [195]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 779.826374911766,
+    "rating" : 779.8263749117659,
     "displayRating" : 780,
     "scores" : [ 4, 6, 5 ]
   }, {
@@ -638,7 +662,7 @@
     "variationLabel" : "Main [67]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 777.6312464545407,
+    "rating" : 777.6312464545409,
     "displayRating" : 778,
     "scores" : [ 4, 3 ]
   }, {
@@ -650,7 +674,7 @@
     "variationLabel" : "Main [69]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 777.1085550807232,
+    "rating" : 777.1085550807229,
     "displayRating" : 777,
     "scores" : [ 4, 3, 4 ]
   }, {
@@ -662,7 +686,7 @@
     "variationLabel" : "Base [135]",
     "globalSampleCount" : 1002,
     "count" : 10,
-    "rating" : 775.6054614408055,
+    "rating" : 775.6054614408059,
     "displayRating" : 776,
     "scores" : [ 4, 5, 4, 6, 3, 3, 5, 4, 3, 4 ]
   }, {
@@ -686,7 +710,7 @@
     "variationLabel" : "Main [143]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 773.7066457288652,
+    "rating" : 773.706645728865,
     "displayRating" : 774,
     "scores" : [ 6, 5, 6 ]
   }, {
@@ -698,7 +722,7 @@
     "variationLabel" : "Main [169]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 772.6772604618842,
+    "rating" : 772.6772604618845,
     "displayRating" : 773,
     "scores" : [ 5, 6, 5 ]
   }, {
@@ -710,7 +734,7 @@
     "variationLabel" : "Gold [101]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 770.4780188195641,
+    "rating" : 770.4780188195637,
     "displayRating" : 770,
     "scores" : [ 4, 3, 4 ]
   }, {
@@ -746,7 +770,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 1077,
     "count" : 4,
-    "rating" : 763.7332827683165,
+    "rating" : 763.7332827683166,
     "displayRating" : 764,
     "scores" : [ 4, 4, 4, 5 ]
   }, {
@@ -758,7 +782,7 @@
     "variationLabel" : "Black [100]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 763.5217471732144,
+    "rating" : 763.5217471732142,
     "displayRating" : 764,
     "scores" : [ 5, 4 ]
   }, {
@@ -782,7 +806,7 @@
     "variationLabel" : "Main [180]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 761.0159456540955,
+    "rating" : 761.0159456540956,
     "displayRating" : 761,
     "scores" : [ 7, 6, 6, 5 ]
   }, {
@@ -794,7 +818,7 @@
     "variationLabel" : "Main [98]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 760.8942407681924,
+    "rating" : 760.8942407681925,
     "displayRating" : 761,
     "scores" : [ 3, 6, 3 ]
   }, {
@@ -818,7 +842,7 @@
     "variationLabel" : "Main [93]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 760.1990004310924,
+    "rating" : 760.1990004310925,
     "displayRating" : 760,
     "scores" : [ 4, 4, 4, 4 ]
   }, {
@@ -830,7 +854,7 @@
     "variationLabel" : "Pilgrim [176]",
     "globalSampleCount" : 2756,
     "count" : 4,
-    "rating" : 757.0198013838972,
+    "rating" : 757.0198013838975,
     "displayRating" : 757,
     "scores" : [ 6, 5, 7, 7 ]
   }, {
@@ -842,7 +866,7 @@
     "variationLabel" : "Main [107]",
     "globalSampleCount" : 1527,
     "count" : 6,
-    "rating" : 753.2361601146171,
+    "rating" : 753.2361601146173,
     "displayRating" : 753,
     "scores" : [ 4, 4, 4, 4, 4, 4 ]
   }, {
@@ -854,7 +878,7 @@
     "variationLabel" : "Base [132]",
     "globalSampleCount" : 3757,
     "count" : 14,
-    "rating" : 752.1364677207885,
+    "rating" : 752.1364677207886,
     "displayRating" : 752,
     "scores" : [ 6, 4, 4, 5, 7, 5, 4, 4, 3, 5, 6, 5, 4, 5 ]
   }, {
@@ -866,9 +890,21 @@
     "variationLabel" : "Black [145]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 750.1546003380826,
+    "rating" : 750.1546003380827,
     "displayRating" : 750,
     "scores" : [ 6, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 237,
+    "basketLabel" : "16",
+    "variationId" : 276,
+    "variationLabel" : "Skorpionas [73]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 748.3283945194272,
+    "displayRating" : 748,
+    "scores" : [ 4, 4 ]
   }, {
     "basketCourseId" : 2,
     "basketCourseName" : "Pakruojis",
@@ -902,7 +938,7 @@
     "variationLabel" : "Main [193]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 746.4474377983905,
+    "rating" : 746.4474377983902,
     "displayRating" : 746,
     "scores" : [ 6, 6, 5 ]
   }, {
@@ -914,7 +950,7 @@
     "variationLabel" : "Black [90]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 745.8076372059396,
+    "rating" : 745.8076372059394,
     "displayRating" : 746,
     "scores" : [ 4, 4 ]
   }, {
@@ -926,7 +962,7 @@
     "variationLabel" : "Main [70]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 743.8308546708756,
+    "rating" : 743.8308546708761,
     "displayRating" : 744,
     "scores" : [ 3, 4 ]
   }, {
@@ -962,7 +998,7 @@
     "variationLabel" : "Old [75]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 740.3345947254694,
+    "rating" : 740.3345947254692,
     "displayRating" : 740,
     "scores" : [ 5, 4 ]
   }, {
@@ -986,7 +1022,7 @@
     "variationLabel" : "Main [170]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 738.6527106922122,
+    "rating" : 738.6527106922125,
     "displayRating" : 739,
     "scores" : [ 6, 5, 6 ]
   }, {
@@ -1010,7 +1046,7 @@
     "variationLabel" : "Base [118]",
     "globalSampleCount" : 3757,
     "count" : 14,
-    "rating" : 735.6453046989824,
+    "rating" : 735.645304698982,
     "displayRating" : 736,
     "scores" : [ 4, 6, 6, 5, 7, 5, 5, 5, 4, 6, 5, 5, 4, 5 ]
   }, {
@@ -1034,7 +1070,7 @@
     "variationLabel" : "Main [127]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 730.5718945014132,
+    "rating" : 730.5718945014131,
     "displayRating" : 731,
     "scores" : [ 5, 5, 7 ]
   }, {
@@ -1046,7 +1082,7 @@
     "variationLabel" : "Base [87]",
     "globalSampleCount" : 3758,
     "count" : 14,
-    "rating" : 727.8139412791795,
+    "rating" : 727.8139412791791,
     "displayRating" : 728,
     "scores" : [ 6, 4, 4, 4, 4, 4, 2, 4, 3, 3, 3, 3, 5, 5 ]
   }, {
@@ -1058,7 +1094,7 @@
     "variationLabel" : "Main [95]",
     "globalSampleCount" : 1076,
     "count" : 4,
-    "rating" : 727.6627074002718,
+    "rating" : 727.662707400272,
     "displayRating" : 728,
     "scores" : [ 4, 4, 6, 4 ]
   }, {
@@ -1082,7 +1118,7 @@
     "variationLabel" : "Black [80]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 725.4037139331257,
+    "rating" : 725.4037139331256,
     "displayRating" : 725,
     "scores" : [ 4, 4 ]
   }, {
@@ -1094,7 +1130,7 @@
     "variationLabel" : "Base [106]",
     "globalSampleCount" : 3757,
     "count" : 14,
-    "rating" : 720.8265452468784,
+    "rating" : 720.8265452468783,
     "displayRating" : 721,
     "scores" : [ 4, 4, 4, 4, 5, 4, 4, 5, 4, 3, 4, 5, 4, 4 ]
   }, {
@@ -1106,7 +1142,7 @@
     "variationLabel" : "Main [67]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 720.5909535590974,
+    "rating" : 720.5909535590976,
     "displayRating" : 721,
     "scores" : [ 3, 3, 4, 3 ]
   }, {
@@ -1130,7 +1166,7 @@
     "variationLabel" : "Main [159]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 718.4926296679017,
+    "rating" : 718.4926296679016,
     "displayRating" : 718,
     "scores" : [ 4, 4, 6, 7 ]
   }, {
@@ -1142,7 +1178,7 @@
     "variationLabel" : "Main [104]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 718.1231325067561,
+    "rating" : 718.1231325067564,
     "displayRating" : 718,
     "scores" : [ 7, 5, 6, 5 ]
   }, {
@@ -1154,7 +1190,7 @@
     "variationLabel" : "Main [104]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 717.2712168375813,
+    "rating" : 717.2712168375814,
     "displayRating" : 717,
     "scores" : [ 4, 4 ]
   }, {
@@ -1166,9 +1202,21 @@
     "variationLabel" : "Main [95]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 715.5109196972377,
+    "rating" : 715.510919697238,
     "displayRating" : 716,
     "scores" : [ 5, 3, 4, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 238,
+    "basketLabel" : "17",
+    "variationId" : 277,
+    "variationLabel" : "Skorpionas [142]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 715.3339536059905,
+    "displayRating" : 715,
+    "scores" : [ 6, 5 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
@@ -1178,7 +1226,7 @@
     "variationLabel" : "Main [69]",
     "globalSampleCount" : 1526,
     "count" : 6,
-    "rating" : 714.7141673054651,
+    "rating" : 714.7141673054648,
     "displayRating" : 715,
     "scores" : [ 5, 5, 4, 2, 4, 4 ]
   }, {
@@ -1190,7 +1238,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 711.5095747718906,
+    "rating" : 711.5095747718902,
     "displayRating" : 712,
     "scores" : [ 6, 3, 3 ]
   }, {
@@ -1202,7 +1250,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 1347,
     "count" : 6,
-    "rating" : 710.2017780285918,
+    "rating" : 710.201778028592,
     "displayRating" : 710,
     "scores" : [ 6, 4, 6, 6, 4, 2 ]
   }, {
@@ -1214,7 +1262,7 @@
     "variationLabel" : "Main [180]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 709.1671818930294,
+    "rating" : 709.1671818930296,
     "displayRating" : 709,
     "scores" : [ 6, 5, 6 ]
   }, {
@@ -1250,7 +1298,7 @@
     "variationLabel" : "Main [85]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 705.3370460205804,
+    "rating" : 705.3370460205806,
     "displayRating" : 705,
     "scores" : [ 5, 5, 4, 3 ]
   }, {
@@ -1262,7 +1310,7 @@
     "variationLabel" : "Old [76]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 705.315445487937,
+    "rating" : 705.3154454879372,
     "displayRating" : 705,
     "scores" : [ 5, 3 ]
   }, {
@@ -1274,7 +1322,7 @@
     "variationLabel" : "Base [295]",
     "globalSampleCount" : 3757,
     "count" : 14,
-    "rating" : 704.3789945274532,
+    "rating" : 704.3789945274533,
     "displayRating" : 704,
     "scores" : [ 7, 8, 8, 7, 7, 8, 8, 7, 6, 7, 9, 8, 10, 6 ]
   }, {
@@ -1286,7 +1334,7 @@
     "variationLabel" : "2023 [65]",
     "globalSampleCount" : 172,
     "count" : 2,
-    "rating" : 703.7307522411324,
+    "rating" : 703.7307522411327,
     "displayRating" : 704,
     "scores" : [ 4, 3 ]
   }, {
@@ -1298,7 +1346,7 @@
     "variationLabel" : "Main [101]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 703.2593782503179,
+    "rating" : 703.259378250318,
     "displayRating" : 703,
     "scores" : [ 4, 4 ]
   }, {
@@ -1310,7 +1358,7 @@
     "variationLabel" : "Gold [146]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 702.9130588814731,
+    "rating" : 702.9130588814733,
     "displayRating" : 703,
     "scores" : [ 6, 5, 6 ]
   }, {
@@ -1322,7 +1370,7 @@
     "variationLabel" : "Main [101]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 702.5928960798726,
+    "rating" : 702.5928960798728,
     "displayRating" : 703,
     "scores" : [ 4, 5, 5, 5 ]
   }, {
@@ -1346,9 +1394,21 @@
     "variationLabel" : "Main [77]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 698.683442012883,
+    "rating" : 698.6834420128829,
     "displayRating" : 699,
     "scores" : [ 3, 4, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 230,
+    "basketLabel" : "9",
+    "variationId" : 266,
+    "variationLabel" : "Skorpionas [149]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 698.1789430261738,
+    "displayRating" : 698,
+    "scores" : [ 6, 4 ]
   }, {
     "basketCourseId" : 8,
     "basketCourseName" : "Molėtai",
@@ -1358,7 +1418,7 @@
     "variationLabel" : "Main [134]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 698.0240930706783,
+    "rating" : 698.0240930706782,
     "displayRating" : 698,
     "scores" : [ 6, 6, 5, 6 ]
   }, {
@@ -1394,7 +1454,7 @@
     "variationLabel" : "Main [168]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 693.8363361707535,
+    "rating" : 693.8363361707534,
     "displayRating" : 694,
     "scores" : [ 7, 7, 5, 6 ]
   }, {
@@ -1406,7 +1466,7 @@
     "variationLabel" : "Black [100]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 693.4336293196086,
+    "rating" : 693.4336293196085,
     "displayRating" : 693,
     "scores" : [ 5, 5 ]
   }, {
@@ -1422,6 +1482,18 @@
     "displayRating" : 693,
     "scores" : [ 5, 6, 5, 6 ]
   }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 234,
+    "basketLabel" : "13",
+    "variationId" : 271,
+    "variationLabel" : "Skorpionas [178]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 692.2216660360227,
+    "displayRating" : 692,
+    "scores" : [ 7, 5 ]
+  }, {
     "basketCourseId" : 1,
     "basketCourseName" : "Alytus",
     "basketId" : 17,
@@ -1430,7 +1502,7 @@
     "variationLabel" : "Gold [190]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 691.5800559318994,
+    "rating" : 691.5800559318999,
     "displayRating" : 692,
     "scores" : [ 6, 7, 7 ]
   }, {
@@ -1442,7 +1514,7 @@
     "variationLabel" : "Gold [335]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 691.5439809265495,
+    "rating" : 691.5439809265496,
     "displayRating" : 692,
     "scores" : [ 8, 7, 9 ]
   }, {
@@ -1466,7 +1538,7 @@
     "variationLabel" : "Main [72]",
     "globalSampleCount" : 1076,
     "count" : 4,
-    "rating" : 691.2545609017492,
+    "rating" : 691.2545609017493,
     "displayRating" : 691,
     "scores" : [ 4, 3, 4, 5 ]
   }, {
@@ -1478,7 +1550,7 @@
     "variationLabel" : "Main [85]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 689.3857902727569,
+    "rating" : 689.385790272757,
     "displayRating" : 689,
     "scores" : [ 4, 3, 5, 4 ]
   }, {
@@ -1490,7 +1562,7 @@
     "variationLabel" : "Main [189]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 687.2393470291585,
+    "rating" : 687.2393470291586,
     "displayRating" : 687,
     "scores" : [ 7, 9, 5, 8 ]
   }, {
@@ -1502,7 +1574,7 @@
     "variationLabel" : "Main [95]",
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 687.1279017865415,
+    "rating" : 687.1279017865414,
     "displayRating" : 687,
     "scores" : [ 6, 5, 4, 3 ]
   }, {
@@ -1526,7 +1598,7 @@
     "variationLabel" : "Main [164]",
     "globalSampleCount" : 1077,
     "count" : 4,
-    "rating" : 684.4176380034911,
+    "rating" : 684.417638003491,
     "displayRating" : 684,
     "scores" : [ 6, 7, 5, 6 ]
   }, {
@@ -1538,7 +1610,7 @@
     "variationLabel" : "Main [170]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 683.5215386757385,
+    "rating" : 683.5215386757386,
     "displayRating" : 684,
     "scores" : [ 6, 5, 5, 7 ]
   }, {
@@ -1550,7 +1622,7 @@
     "variationLabel" : "Main [71]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 682.3294389806333,
+    "rating" : 682.3294389806332,
     "displayRating" : 682,
     "scores" : [ 4, 3, 3, 5 ]
   }, {
@@ -1574,7 +1646,7 @@
     "variationLabel" : "Old [141]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 682.1335514163459,
+    "rating" : 682.133551416346,
     "displayRating" : 682,
     "scores" : [ 7, 5 ]
   }, {
@@ -1586,7 +1658,7 @@
     "variationLabel" : "Main [130]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 680.4073919107564,
+    "rating" : 680.4073919107561,
     "displayRating" : 680,
     "scores" : [ 5, 6, 8 ]
   }, {
@@ -1598,7 +1670,7 @@
     "variationLabel" : "Main [86]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 678.7317338547571,
+    "rating" : 678.7317338547568,
     "displayRating" : 679,
     "scores" : [ 5, 6, 4, 4 ]
   }, {
@@ -1610,7 +1682,7 @@
     "variationLabel" : "Main [80]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 678.2527832130953,
+    "rating" : 678.2527832130958,
     "displayRating" : 678,
     "scores" : [ 3, 6, 4 ]
   }, {
@@ -1622,7 +1694,7 @@
     "variationLabel" : "2023 [80]",
     "globalSampleCount" : 172,
     "count" : 2,
-    "rating" : 677.0028575907014,
+    "rating" : 677.0028575907015,
     "displayRating" : 677,
     "scores" : [ 4, 3 ]
   }, {
@@ -1634,7 +1706,7 @@
     "variationLabel" : "Base [78]",
     "globalSampleCount" : 1160,
     "count" : 10,
-    "rating" : 676.7497980476302,
+    "rating" : 676.7497980476298,
     "displayRating" : 677,
     "scores" : [ 4, 4, 6, 4, 3, 4, 5, 5, 3, 4 ]
   }, {
@@ -1649,6 +1721,42 @@
     "rating" : 676.5827356962089,
     "displayRating" : 677,
     "scores" : [ 5, 3, 4, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 239,
+    "basketLabel" : "18",
+    "variationId" : 278,
+    "variationLabel" : "Skorpionas [95]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 676.2783041953385,
+    "displayRating" : 676,
+    "scores" : [ 5, 4 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 235,
+    "basketLabel" : "14",
+    "variationId" : 273,
+    "variationLabel" : "Skorpionas [93]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 675.1960371398487,
+    "displayRating" : 675,
+    "scores" : [ 4, 4 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 231,
+    "basketLabel" : "10",
+    "variationId" : 268,
+    "variationLabel" : "Skorpionas [93]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 674.3560872995004,
+    "displayRating" : 674,
+    "scores" : [ 5, 4 ]
   }, {
     "basketCourseId" : 8,
     "basketCourseName" : "Molėtai",
@@ -1670,7 +1778,7 @@
     "variationLabel" : "Gold [177]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 671.5734325326629,
+    "rating" : 671.573432532663,
     "displayRating" : 672,
     "scores" : [ 5, 6, 7 ]
   }, {
@@ -1742,7 +1850,7 @@
     "variationLabel" : "Main [78]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 667.070847661178,
+    "rating" : 667.0708476611779,
     "displayRating" : 667,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -1766,7 +1874,7 @@
     "variationLabel" : "Base [80]",
     "globalSampleCount" : 1002,
     "count" : 10,
-    "rating" : 663.2165242385423,
+    "rating" : 663.2165242385424,
     "displayRating" : 663,
     "scores" : [ 3, 8, 3, 4, 3, 4, 3, 5, 3, 4 ]
   }, {
@@ -1778,7 +1886,7 @@
     "variationLabel" : "Gold [181]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 661.5455028034219,
+    "rating" : 661.545502803422,
     "displayRating" : 662,
     "scores" : [ 7, 7, 6 ]
   }, {
@@ -1790,7 +1898,7 @@
     "variationLabel" : "Main [85]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 661.1895692033861,
+    "rating" : 661.189569203386,
     "displayRating" : 661,
     "scores" : [ 4, 5, 3, 4 ]
   }, {
@@ -1814,7 +1922,7 @@
     "variationLabel" : "Main [145]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 658.1619045906531,
+    "rating" : 658.1619045906533,
     "displayRating" : 658,
     "scores" : [ 5, 6, 5, 5 ]
   }, {
@@ -1826,21 +1934,9 @@
     "variationLabel" : "Main [197]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 654.5704489886645,
+    "rating" : 654.5704489886642,
     "displayRating" : 655,
     "scores" : [ 6, 6 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 178,
-    "basketLabel" : "13",
-    "variationId" : 208,
-    "variationLabel" : "Main [78]",
-    "globalSampleCount" : 296,
-    "count" : 2,
-    "rating" : 653.5528141388581,
-    "displayRating" : 654,
-    "scores" : [ 5, 3 ]
   }, {
     "basketCourseId" : 7,
     "basketCourseName" : "Akmenė",
@@ -1850,7 +1946,7 @@
     "variationLabel" : "Main [162]",
     "globalSampleCount" : 278,
     "count" : 2,
-    "rating" : 652.4693560113948,
+    "rating" : 652.4693560113946,
     "displayRating" : 652,
     "scores" : [ 8, 8 ]
   }, {
@@ -1874,7 +1970,7 @@
     "variationLabel" : "Main [190]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 644.2342640233685,
+    "rating" : 644.2342640233683,
     "displayRating" : 644,
     "scores" : [ 6, 6, 6 ]
   }, {
@@ -1898,7 +1994,7 @@
     "variationLabel" : "Main [102]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 642.7823636600734,
+    "rating" : 642.7823636600733,
     "displayRating" : 643,
     "scores" : [ 6, 5, 4 ]
   }, {
@@ -1910,7 +2006,7 @@
     "variationLabel" : "Main [163]",
     "globalSampleCount" : 1076,
     "count" : 4,
-    "rating" : 638.3054667620426,
+    "rating" : 638.3054667620427,
     "displayRating" : 638,
     "scores" : [ 6, 6, 9, 5 ]
   }, {
@@ -1922,7 +2018,7 @@
     "variationLabel" : "Main [166]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 638.1059965806764,
+    "rating" : 638.1059965806766,
     "displayRating" : 638,
     "scores" : [ 6, 5, 8, 4 ]
   }, {
@@ -1958,7 +2054,7 @@
     "variationLabel" : "Main [190]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 636.2196338868126,
+    "rating" : 636.219633886813,
     "displayRating" : 636,
     "scores" : [ 8, 7, 5 ]
   }, {
@@ -1970,7 +2066,7 @@
     "variationLabel" : "Main [120]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 635.6684517806157,
+    "rating" : 635.6684517806159,
     "displayRating" : 636,
     "scores" : [ 8, 4, 4, 6 ]
   }, {
@@ -2006,7 +2102,7 @@
     "variationLabel" : "Main [84]",
     "globalSampleCount" : 1076,
     "count" : 4,
-    "rating" : 626.7882346008145,
+    "rating" : 626.7882346008141,
     "displayRating" : 627,
     "scores" : [ 5, 5, 5, 5 ]
   }, {
@@ -2018,7 +2114,7 @@
     "variationLabel" : "Black [90]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 618.8548545191911,
+    "rating" : 618.8548545191913,
     "displayRating" : 619,
     "scores" : [ 5, 5 ]
   }, {
@@ -2042,7 +2138,7 @@
     "variationLabel" : "Main [74]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 615.3709665495571,
+    "rating" : 615.370966549557,
     "displayRating" : 615,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -2054,7 +2150,7 @@
     "variationLabel" : "Base [172]",
     "globalSampleCount" : 1002,
     "count" : 10,
-    "rating" : 612.6634302111731,
+    "rating" : 612.6634302111736,
     "displayRating" : 613,
     "scores" : [ 9, 8, 5, 7, 4, 6, 5, 7, 7, 5 ]
   }, {
@@ -2078,7 +2174,7 @@
     "variationLabel" : "Old (No HZ) [96]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 609.4472704612065,
+    "rating" : 609.4472704612067,
     "displayRating" : 609,
     "scores" : [ 6, 5 ]
   }, {
@@ -2118,6 +2214,18 @@
     "displayRating" : 607,
     "scores" : [ 5, 4 ]
   }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 222,
+    "basketLabel" : "1",
+    "variationId" : 256,
+    "variationLabel" : "Skorpionas [110]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 605.1051329587832,
+    "displayRating" : 605,
+    "scores" : [ 5, 4 ]
+  }, {
     "basketCourseId" : 7,
     "basketCourseName" : "Akmenė",
     "basketId" : 125,
@@ -2126,7 +2234,7 @@
     "variationLabel" : "Main [254]",
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 603.6160322091057,
+    "rating" : 603.6160322091056,
     "displayRating" : 604,
     "scores" : [ 9, 8, 11, 7 ]
   }, {
@@ -2138,7 +2246,7 @@
     "variationLabel" : "Main [119]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 598.6890200120858,
+    "rating" : 598.6890200120856,
     "displayRating" : 599,
     "scores" : [ 4, 5 ]
   }, {
@@ -2150,7 +2258,7 @@
     "variationLabel" : "Main [68]",
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 595.9508704336216,
+    "rating" : 595.9508704336215,
     "displayRating" : 596,
     "scores" : [ 3, 5, 4, 7 ]
   }, {
@@ -2166,6 +2274,30 @@
     "displayRating" : 594,
     "scores" : [ 6, 7, 8 ]
   }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 227,
+    "basketLabel" : "6",
+    "variationId" : 321,
+    "variationLabel" : "Skorpionas [166]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 591.0526687190743,
+    "displayRating" : 591,
+    "scores" : [ 8, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 226,
+    "basketLabel" : "5",
+    "variationId" : 261,
+    "variationLabel" : "Skorpionas [125]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 585.0262900095812,
+    "displayRating" : 585,
+    "scores" : [ 7, 6 ]
+  }, {
     "basketCourseId" : 1,
     "basketCourseName" : "Alytus",
     "basketId" : 14,
@@ -2174,7 +2306,7 @@
     "variationLabel" : "Gold [96]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 582.4081580767478,
+    "rating" : 582.4081580767473,
     "displayRating" : 582,
     "scores" : [ 5, 4, 4 ]
   }, {
@@ -2186,7 +2318,7 @@
     "variationLabel" : "Black [95]",
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 580.9955028618153,
+    "rating" : 580.9955028618151,
     "displayRating" : 581,
     "scores" : [ 5, 5 ]
   }, {
@@ -2198,7 +2330,7 @@
     "variationLabel" : "Old [153]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 575.3829260441997,
+    "rating" : 575.3829260442,
     "displayRating" : 575,
     "scores" : [ 5, 9 ]
   }, {
@@ -2222,9 +2354,21 @@
     "variationLabel" : "Main [106]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 565.5746450869946,
+    "rating" : 565.5746450869945,
     "displayRating" : 566,
     "scores" : [ 6, 5, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 233,
+    "basketLabel" : "12",
+    "variationId" : 270,
+    "variationLabel" : "Skorpionas [96]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 561.4199102061015,
+    "displayRating" : 561,
+    "scores" : [ 5, 4 ]
   }, {
     "basketCourseId" : 11,
     "basketCourseName" : "Panevėžys. Skaistakalnis",
@@ -2234,7 +2378,7 @@
     "variationLabel" : "Main [180]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 549.3982297291809,
+    "rating" : 549.3982297291808,
     "displayRating" : 549,
     "scores" : [ 4, 8, 7 ]
   }, {
@@ -2246,7 +2390,7 @@
     "variationLabel" : "Main [63]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 539.1839712592794,
+    "rating" : 539.1839712592797,
     "displayRating" : 539,
     "scores" : [ 3, 5 ]
   }, {
@@ -2258,7 +2402,7 @@
     "variationLabel" : "Old [89]",
     "globalSampleCount" : 922,
     "count" : 3,
-    "rating" : 535.8194430530888,
+    "rating" : 535.8194430530884,
     "displayRating" : 536,
     "scores" : [ 7, 6, 6 ]
   }, {
@@ -2270,7 +2414,7 @@
     "variationLabel" : "Gold [113]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 528.948221688498,
+    "rating" : 528.9482216884982,
     "displayRating" : 529,
     "scores" : [ 4, 5, 5 ]
   }, {
@@ -2282,7 +2426,7 @@
     "variationLabel" : "Main [190]",
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 522.8101664295428,
+    "rating" : 522.810166429543,
     "displayRating" : 523,
     "scores" : [ 9, 8, 7 ]
   }, {
@@ -2294,9 +2438,21 @@
     "variationLabel" : "Gold [171]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 521.4654616096049,
+    "rating" : 521.4654616096051,
     "displayRating" : 521,
     "scores" : [ 5, 9, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 232,
+    "basketLabel" : "11",
+    "variationId" : 269,
+    "variationLabel" : "Skorpionas [149]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 509.53712766229427,
+    "displayRating" : 510,
+    "scores" : [ 7, 5 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
@@ -2310,6 +2466,18 @@
     "displayRating" : 492,
     "scores" : [ 8, 7, 3, 4, 4, 4 ]
   }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 229,
+    "basketLabel" : "8",
+    "variationId" : 265,
+    "variationLabel" : "Skorpionas [110]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 487.8624249699876,
+    "displayRating" : 488,
+    "scores" : [ 6, 6 ]
+  }, {
     "basketCourseId" : 5,
     "basketCourseName" : "Ramygala",
     "basketId" : 84,
@@ -2322,6 +2490,18 @@
     "displayRating" : 486,
     "scores" : [ 4, 6 ]
   }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 228,
+    "basketLabel" : "7",
+    "variationId" : 263,
+    "variationLabel" : "Skorpionas [95]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 484.4606821243706,
+    "displayRating" : 484,
+    "scores" : [ 5, 6 ]
+  }, {
     "basketCourseId" : 14,
     "basketCourseName" : "Survilų Sodyba",
     "basketId" : 253,
@@ -2330,9 +2510,33 @@
     "variationLabel" : "Main [92]",
     "globalSampleCount" : 1279,
     "count" : 3,
-    "rating" : 469.284511495596,
+    "rating" : 469.28451149559623,
     "displayRating" : 469,
     "scores" : [ 5, 7, 5 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 224,
+    "basketLabel" : "3",
+    "variationId" : 320,
+    "variationLabel" : "Skorpionas [208]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 467.96194918203935,
+    "displayRating" : 468,
+    "scores" : [ 10, 7 ]
+  }, {
+    "basketCourseId" : 13,
+    "basketCourseName" : "Panevėžys. Parkas",
+    "basketId" : 225,
+    "basketLabel" : "4",
+    "variationId" : 259,
+    "variationLabel" : "Skorpionas [108]",
+    "globalSampleCount" : 259,
+    "count" : 2,
+    "rating" : 377.2101493580225,
+    "displayRating" : 377,
+    "scores" : [ 6, 7 ]
   }, {
     "basketCourseId" : 5,
     "basketCourseName" : "Ramygala",
@@ -2354,7 +2558,7 @@
     "variationLabel" : "Old [81]",
     "globalSampleCount" : 450,
     "count" : 2,
-    "rating" : 200.51071106068963,
+    "rating" : 200.51071106068915,
     "displayRating" : 201,
     "scores" : [ 9, 6 ]
   }, {
@@ -2366,7 +2570,7 @@
     "variationLabel" : "Main [68]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : -105.45789967182245,
+    "rating" : -105.45789967182247,
     "displayRating" : -105,
     "scores" : [ 8, 5 ]
   } ]

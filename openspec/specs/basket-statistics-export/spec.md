@@ -83,7 +83,7 @@ The system SHALL report diagnostic counts for the local export operation.
 - **THEN** the manifest includes export time and diagnostic metadata
 
 ### Requirement: Basket sliding-window statistics export
-The system SHALL export precomputed basket variation sliding-window statistics for the static Basket stats view.
+The system SHALL export precomputed basket variation sliding-window statistics for the static Basket stats view using SPRW as the only exported window metric.
 
 #### Scenario: Basket stats files are written to docs data
 - **WHEN** the local user triggers a statistics export and at least one basket course has eligible basket sliding-window statistics
@@ -103,18 +103,26 @@ The system SHALL export precomputed basket variation sliding-window statistics f
 
 #### Scenario: Basket stats file contains variation descriptors
 - **WHEN** the system writes a basket stats file
-- **THEN** it includes each eligible basket variation using basket identity, basket label, variation identity, variation label, total sample count, and precomputed windows
+- **THEN** it includes each eligible basket variation using basket identity, basket label, variation identity, variation label, total sample count, and precomputed SPRW windows
+
+#### Scenario: Basket stats window exposes SPRW fields
+- **WHEN** the system writes a basket stats window
+- **THEN** the window includes `ratingFrom`, `ratingTo`, `ratingMidpoint`, `count`, `sprw`, `sprwCount`, and `sprwCountBucket`
+
+#### Scenario: Raw Basket stats metrics are omitted
+- **WHEN** the system writes a basket stats window
+- **THEN** the window does not include `spr`, `var`, `spr2`, `spr2Count`, `spr2CountBucket`, or `countBucket`
 
 #### Scenario: Player identity is excluded from basket stats
 - **WHEN** basket sliding-window statistics are exported
 - **THEN** the basket stats file does not include player name, PDGA number, profile URL, or other player-identifying fields
 
 ### Requirement: Basket sliding-window calculation
-The system SHALL calculate basket variation windows using fixed rating-window rules and SPR/VAR definitions.
+The system SHALL calculate basket variation windows using fixed rating-window rules and the weighted SPRW definition.
 
 #### Scenario: Windows use fixed size and step
 - **WHEN** basket sliding-window statistics are calculated
-- **THEN** the system evaluates inclusive 50-rating-point windows with a 5-rating-point step
+- **THEN** the system evaluates inclusive 50-rating-point windows with a 5-rating-point step for window placement and raw sample count
 
 #### Scenario: Windows use shared rating grid
 - **WHEN** basket sliding-window statistics are calculated for any basket variation
@@ -128,25 +136,97 @@ The system SHALL calculate basket variation windows using fixed rating-window ru
 - **WHEN** a rating window contains fewer than 50 matching score samples for a basket variation
 - **THEN** the system omits that window from the exported basket stats
 
-#### Scenario: Windows without rating variance are omitted
-- **WHEN** a rating window contains at least 50 score samples but all samples have the same rating
+#### Scenario: Window SPRW is calculated from weighted rating range
+- **WHEN** a basket sliding-window statistic is exported with rating midpoint `M`
+- **THEN** its `sprw` is `-100` multiplied by the weighted linear regression slope of score over rating for samples with rating between `M - 50` and `M + 50`, inclusive
+
+#### Scenario: SPRW weights decrease linearly from midpoint
+- **WHEN** a sample is included in the SPRW source range for midpoint `M`
+- **THEN** its regression weight is `max(0, 1 - abs(rating - M) / 50)`
+
+#### Scenario: SPRW weighted count is exported
+- **WHEN** a basket sliding-window statistic is exported
+- **THEN** it includes `sprwCount` equal to the sum of SPRW regression weights
+
+#### Scenario: SPRW count bucket is exported
+- **WHEN** a basket sliding-window statistic is exported
+- **THEN** it includes `sprwCountBucket` of `50-99`, `100-199`, or `200+` based on `sprwCount`
+
+#### Scenario: Sparse weighted SPRW windows are omitted
+- **WHEN** an otherwise eligible Basket stats window has SPRW weighted count below 50
 - **THEN** the system omits that window from the exported basket stats
 
-#### Scenario: Window SPR is calculated
-- **WHEN** a basket sliding-window statistic is exported
-- **THEN** its SPR is `-100` multiplied by the linear regression slope of score over rating for samples in that window
-
-#### Scenario: Window VAR is calculated
-- **WHEN** a basket sliding-window statistic is exported
-- **THEN** its VAR is the average absolute difference between actual score and the score expected from that window's regression line
-
-#### Scenario: Count bucket is exported
-- **WHEN** a basket sliding-window statistic is exported
-- **THEN** it includes a count bucket of `50-99`, `100-199`, or `200+` based on the window sample count
+#### Scenario: Windows without weighted rating variance are omitted
+- **WHEN** an otherwise eligible Basket stats window has SPRW weighted count at least 50 but weighted rating variance is zero
+- **THEN** the system omits that window from the exported basket stats
 
 #### Scenario: Variations without eligible windows are omitted
-- **WHEN** a basket variation has no windows with at least 50 score samples and rating variance
+- **WHEN** a basket variation has no windows with enough raw samples, enough weighted SPRW count, and weighted rating variance
 - **THEN** the system omits that basket variation from the exported basket stats file
+
+### Requirement: Personal statistics export files
+The system SHALL export personal basket statistics data as human-readable JSON under the GitHub Pages data directory.
+
+#### Scenario: Player lookup file is written
+- **WHEN** the local user triggers a statistics export and at least one player has eligible personal statistics
+- **THEN** the system writes `docs/data/players.json`
+
+#### Scenario: Personal stats directory is created
+- **WHEN** `docs/data/personal-stats` does not exist during export
+- **THEN** the system creates the directory before writing personal statistics files
+
+#### Scenario: Personal stats files are written
+- **WHEN** the local user triggers a statistics export and a player has eligible personal statistics
+- **THEN** the system writes one personal statistics file for that player under `docs/data/personal-stats/`
+
+#### Scenario: Existing personal files are overwritten
+- **WHEN** a personal statistics file already exists for an eligible player during export
+- **THEN** the system overwrites it with the newly exported personal statistics file
+
+#### Scenario: Manifest includes personal statistics paths
+- **WHEN** the system writes the basket statistics manifest
+- **THEN** the manifest includes the relative player lookup path and the relative personal statistics file path template
+
+### Requirement: Personal statistics export player identity
+The system SHALL export only the player identity fields needed for personal statistics lookup and display.
+
+#### Scenario: Eligible player identity is exported
+- **WHEN** a player has at least one eligible personal statistics row
+- **THEN** the player lookup file includes player id, player name, PDGA number when available, display label, and personal statistics file path
+
+#### Scenario: Ineligible player identity is excluded
+- **WHEN** a player has no eligible personal statistics rows
+- **THEN** the player lookup file does not include that player
+
+#### Scenario: Unneeded player identity is excluded
+- **WHEN** player lookup or personal statistics files are exported
+- **THEN** they do not include player profile URL, city, country, nationality, or other player-identifying fields beyond id, name, PDGA number, and display label
+
+### Requirement: Personal statistics export rows
+The system SHALL export eligible personal basket variation rows with calculated ratings and score summaries.
+
+#### Scenario: Personal row contains descriptors
+- **WHEN** a personal basket variation row is exported
+- **THEN** it includes basket course identity and name, basket identity and label, variation identity and label, global sample count, personal result count, decimal calculated rating, rounded display rating, and scores
+
+#### Scenario: Personal scores preserve chronological order
+- **WHEN** scores are exported for a personal basket variation row
+- **THEN** they are sorted by round date ascending and round id ascending when dates are equal
+
+#### Scenario: Personal rows are exported in display order
+- **WHEN** a personal statistics file is written
+- **THEN** its variation rows are ordered by decimal calculated rating from highest to lowest
+
+### Requirement: Personal statistics export diagnostics
+The system SHALL report diagnostic counts for the personal statistics export.
+
+#### Scenario: Export diagnostics include personal files
+- **WHEN** the local user completes a statistics export
+- **THEN** the administration page displays counts for eligible personal players and generated personal statistics files
+
+#### Scenario: Snapshot metadata includes personal diagnostics
+- **WHEN** the system writes the statistics manifest
+- **THEN** the manifest diagnostic metadata includes eligible personal player count and generated personal statistics file count
 
 ### Requirement: Basket statistics export administration navigation
 The system SHALL display a top administration navigation menu on the basket statistics export administration page.
@@ -158,4 +238,3 @@ The system SHALL display a top administration navigation menu on the basket stat
 #### Scenario: Export page behavior is preserved
 - **WHEN** the local user uses the basket statistics export page after navigation is added
 - **THEN** the existing export action, success diagnostics, and validation feedback continue to work
-

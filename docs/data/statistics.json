@@ -1,15 +1,15 @@
 {
   "metadata" : {
-    "exportedAt" : "2026-09-04T18:50:19.559486Z",
+    "exportedAt" : "2026-09-07T10:03:49.756276100Z",
     "diagnostics" : {
-      "exportedSamples" : 224297,
-      "ignoredUnratedSamples" : 72894,
+      "exportedSamples" : 228959,
+      "ignoredUnratedSamples" : 74010,
       "ignoredUnmappedSamples" : 0,
-      "includedBasketCourses" : 14,
-      "generatedCourseFiles" : 14,
-      "generatedBasketStatsFiles" : 13,
-      "eligiblePersonalPlayers" : 537,
-      "generatedPersonalStatsFiles" : 537
+      "includedBasketCourses" : 15,
+      "generatedCourseFiles" : 15,
+      "generatedBasketStatsFiles" : 14,
+      "eligiblePersonalPlayers" : 538,
+      "generatedPersonalStatsFiles" : 538
     }
   },
   "courses" : [ {
@@ -60,6 +60,12 @@
     "sampleCount" : 4262,
     "path" : "courses/2.json",
     "basketStatsPath" : "basket-stats/2.json"
+  }, {
+    "id" : 13,
+    "name" : "Panevėžys. Parkas",
+    "sampleCount" : 4662,
+    "path" : "courses/13.json",
+    "basketStatsPath" : "basket-stats/13.json"
   }, {
     "id" : 11,
     "name" : "Panevėžys. Skaistakalnis",

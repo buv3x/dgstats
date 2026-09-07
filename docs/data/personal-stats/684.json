@@ -14,7 +14,7 @@
     "variationLabel" : "Short [75]",
     "globalSampleCount" : 100,
     "count" : 2,
-    "rating" : 1055.3817991507383,
+    "rating" : 1055.381799150738,
     "displayRating" : 1055,
     "scores" : [ 3, 3 ]
   }, {
@@ -74,7 +74,7 @@
     "variationLabel" : "Main [109]",
     "globalSampleCount" : 2393,
     "count" : 6,
-    "rating" : 953.9882105787265,
+    "rating" : 953.9882105787266,
     "displayRating" : 954,
     "scores" : [ 3, 3, 3, 3, 4, 3 ]
   }, {
@@ -122,7 +122,7 @@
     "variationLabel" : "Main [72]",
     "globalSampleCount" : 1076,
     "count" : 2,
-    "rating" : 923.1253644358846,
+    "rating" : 923.1253644358848,
     "displayRating" : 923,
     "scores" : [ 3, 3 ]
   }, {
@@ -134,7 +134,7 @@
     "variationLabel" : "Main [68]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 922.8603572926688,
+    "rating" : 922.8603572926689,
     "displayRating" : 923,
     "scores" : [ 3, 3 ]
   }, {
@@ -146,7 +146,7 @@
     "variationLabel" : "Main [130]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 922.2728144309546,
+    "rating" : 922.2728144309544,
     "displayRating" : 922,
     "scores" : [ 4, 4, 3 ]
   }, {
@@ -170,7 +170,7 @@
     "variationLabel" : "Gold [146]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 916.3416196287802,
+    "rating" : 916.34161962878,
     "displayRating" : 916,
     "scores" : [ 5, 3, 4 ]
   }, {
@@ -182,7 +182,7 @@
     "variationLabel" : "Main [74]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 914.683544890988,
+    "rating" : 914.6835448909881,
     "displayRating" : 915,
     "scores" : [ 3, 3 ]
   }, {
@@ -206,7 +206,7 @@
     "variationLabel" : "Main [170]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 908.5733634488456,
+    "rating" : 908.5733634488457,
     "displayRating" : 909,
     "scores" : [ 4, 4, 3, 4, 4, 6 ]
   }, {
@@ -218,7 +218,7 @@
     "variationLabel" : "Main [49]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 907.1382546512351,
+    "rating" : 907.1382546512353,
     "displayRating" : 907,
     "scores" : [ 3, 2, 3 ]
   }, {
@@ -230,7 +230,7 @@
     "variationLabel" : "Main [104]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 905.4148166290074,
+    "rating" : 905.4148166290075,
     "displayRating" : 905,
     "scores" : [ 3, 3 ]
   }, {
@@ -246,6 +246,18 @@
     "displayRating" : 901,
     "scores" : [ 3, 5, 3, 3 ]
   }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 178,
+    "basketLabel" : "13",
+    "variationId" : 208,
+    "variationLabel" : "Main [78]",
+    "globalSampleCount" : 1526,
+    "count" : 2,
+    "rating" : 900.999992031242,
+    "displayRating" : 901,
+    "scores" : [ 3, 3 ]
+  }, {
     "basketCourseId" : 9,
     "basketCourseName" : "Elektrėnai",
     "basketId" : 163,
@@ -254,7 +266,7 @@
     "variationLabel" : "Main [101]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 899.8393257499463,
+    "rating" : 899.8393257499464,
     "displayRating" : 900,
     "scores" : [ 3, 3 ]
   }, {
@@ -266,21 +278,9 @@
     "variationLabel" : "Main [95]",
     "globalSampleCount" : 1076,
     "count" : 2,
-    "rating" : 899.2437509414772,
+    "rating" : 899.2437509414774,
     "displayRating" : 899,
     "scores" : [ 3, 4 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 178,
-    "basketLabel" : "13",
-    "variationId" : 210,
-    "variationLabel" : "Old (No OB) [71]",
-    "globalSampleCount" : 1230,
-    "count" : 2,
-    "rating" : 898.9594577619748,
-    "displayRating" : 899,
-    "scores" : [ 3, 3 ]
   }, {
     "basketCourseId" : 1,
     "basketCourseName" : "Alytus",
@@ -302,7 +302,7 @@
     "variationLabel" : "Pilgrim [178]",
     "globalSampleCount" : 2756,
     "count" : 7,
-    "rating" : 896.6970405141548,
+    "rating" : 896.6970405141549,
     "displayRating" : 897,
     "scores" : [ 5, 6, 4, 4, 5, 5, 5 ]
   }, {
@@ -338,7 +338,7 @@
     "variationLabel" : "Main [156]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 890.5336772758625,
+    "rating" : 890.5336772758628,
     "displayRating" : 891,
     "scores" : [ 5, 4 ]
   }, {
@@ -362,7 +362,7 @@
     "variationLabel" : "Main [167]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 887.8064557455322,
+    "rating" : 887.8064557455319,
     "displayRating" : 888,
     "scores" : [ 4, 8, 5, 5, 4, 4 ]
   }, {
@@ -374,7 +374,7 @@
     "variationLabel" : "Main [107]",
     "globalSampleCount" : 2393,
     "count" : 6,
-    "rating" : 884.5039930176908,
+    "rating" : 884.503993017691,
     "displayRating" : 885,
     "scores" : [ 4, 3, 3, 4, 2, 3 ]
   }, {
@@ -434,7 +434,7 @@
     "variationLabel" : "Main [103]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 872.6496863940242,
+    "rating" : 872.6496863940243,
     "displayRating" : 873,
     "scores" : [ 3, 4, 4 ]
   }, {
@@ -446,7 +446,7 @@
     "variationLabel" : "Main [114]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 872.2977649454405,
+    "rating" : 872.2977649454401,
     "displayRating" : 872,
     "scores" : [ 4, 4, 3, 4 ]
   }, {
@@ -458,7 +458,7 @@
     "variationLabel" : "Base [87]",
     "globalSampleCount" : 3758,
     "count" : 11,
-    "rating" : 868.8691408046205,
+    "rating" : 868.8691408046204,
     "displayRating" : 869,
     "scores" : [ 3, 3, 3, 2, 5, 2, 2, 3, 4, 4, 3 ]
   }, {
@@ -470,7 +470,7 @@
     "variationLabel" : "Gold [195]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 866.5516296390224,
+    "rating" : 866.5516296390223,
     "displayRating" : 867,
     "scores" : [ 4, 5, 4 ]
   }, {
@@ -482,7 +482,7 @@
     "variationLabel" : "Main [162]",
     "globalSampleCount" : 278,
     "count" : 4,
-    "rating" : 864.957064446537,
+    "rating" : 864.9570644465368,
     "displayRating" : 865,
     "scores" : [ 5, 9, 4, 4 ]
   }, {
@@ -494,7 +494,7 @@
     "variationLabel" : "Main [254]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 861.7412914605515,
+    "rating" : 861.7412914605512,
     "displayRating" : 862,
     "scores" : [ 6, 5, 7, 6, 7, 6 ]
   }, {
@@ -530,7 +530,7 @@
     "variationLabel" : "Pilgrim [144]",
     "globalSampleCount" : 2755,
     "count" : 7,
-    "rating" : 854.3077961213974,
+    "rating" : 854.3077961213976,
     "displayRating" : 854,
     "scores" : [ 6, 5, 7, 5, 4, 4, 4 ]
   }, {
@@ -542,7 +542,7 @@
     "variationLabel" : "Base [118]",
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 847.1060752979323,
+    "rating" : 847.1060752979321,
     "displayRating" : 847,
     "scores" : [ 5, 5, 5, 5, 5, 5, 4, 3, 4, 3, 5 ]
   }, {
@@ -578,7 +578,7 @@
     "variationLabel" : "Main [81]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 842.9243050733845,
+    "rating" : 842.9243050733843,
     "displayRating" : 843,
     "scores" : [ 2, 4, 4 ]
   }, {
@@ -590,7 +590,7 @@
     "variationLabel" : "Base [135]",
     "globalSampleCount" : 1002,
     "count" : 4,
-    "rating" : 842.2636456702382,
+    "rating" : 842.2636456702387,
     "displayRating" : 842,
     "scores" : [ 3, 4, 4, 4 ]
   }, {
@@ -614,7 +614,7 @@
     "variationLabel" : "Main [107]",
     "globalSampleCount" : 1527,
     "count" : 2,
-    "rating" : 840.3835827949431,
+    "rating" : 840.3835827949433,
     "displayRating" : 840,
     "scores" : [ 4, 3 ]
   }, {
@@ -626,7 +626,7 @@
     "variationLabel" : "Main [86]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 837.7175110800986,
+    "rating" : 837.7175110800985,
     "displayRating" : 838,
     "scores" : [ 5, 3, 3, 4, 4, 4 ]
   }, {
@@ -674,7 +674,7 @@
     "variationLabel" : "Main [305]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 834.2686202903941,
+    "rating" : 834.2686202903942,
     "displayRating" : 834,
     "scores" : [ 7, 7, 6, 10, 6, 10 ]
   }, {
@@ -686,7 +686,7 @@
     "variationLabel" : "Main [121]",
     "globalSampleCount" : 2393,
     "count" : 6,
-    "rating" : 832.4778859788889,
+    "rating" : 832.4778859788888,
     "displayRating" : 832,
     "scores" : [ 4, 4, 5, 4, 4, 3 ]
   }, {
@@ -698,7 +698,7 @@
     "variationLabel" : "Main [189]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 827.0624335922683,
+    "rating" : 827.0624335922685,
     "displayRating" : 827,
     "scores" : [ 6, 6, 7, 7, 4, 5 ]
   }, {
@@ -710,7 +710,7 @@
     "variationLabel" : "Main [150]",
     "globalSampleCount" : 2393,
     "count" : 6,
-    "rating" : 826.1107941496408,
+    "rating" : 826.110794149641,
     "displayRating" : 826,
     "scores" : [ 3, 5, 4, 4, 3, 6 ]
   }, {
@@ -722,7 +722,7 @@
     "variationLabel" : "Main [92]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 825.6422126120447,
+    "rating" : 825.6422126120449,
     "displayRating" : 826,
     "scores" : [ 3, 5, 4, 3 ]
   }, {
@@ -734,7 +734,7 @@
     "variationLabel" : "Main [133]",
     "globalSampleCount" : 2394,
     "count" : 6,
-    "rating" : 825.1372332899037,
+    "rating" : 825.137233289904,
     "displayRating" : 825,
     "scores" : [ 5, 7, 4, 4, 4, 7 ]
   }, {
@@ -746,7 +746,7 @@
     "variationLabel" : "Main [77]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 824.643014695351,
+    "rating" : 824.6430146953509,
     "displayRating" : 825,
     "scores" : [ 6, 3, 3, 2 ]
   }, {
@@ -770,7 +770,7 @@
     "variationLabel" : "Main [127]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 820.2265603228573,
+    "rating" : 820.2265603228572,
     "displayRating" : 820,
     "scores" : [ 6, 6, 3, 5 ]
   }, {
@@ -782,7 +782,7 @@
     "variationLabel" : "Main [77]",
     "globalSampleCount" : 188,
     "count" : 2,
-    "rating" : 818.7740210453684,
+    "rating" : 818.7740210453682,
     "displayRating" : 819,
     "scores" : [ 3, 3 ]
   }, {
@@ -818,7 +818,7 @@
     "variationLabel" : "Main [160]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 808.1029217400874,
+    "rating" : 808.1029217400875,
     "displayRating" : 808,
     "scores" : [ 5, 7, 5, 5 ]
   }, {
@@ -830,7 +830,7 @@
     "variationLabel" : "Base [132]",
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 807.999967471357,
+    "rating" : 807.9999674713571,
     "displayRating" : 808,
     "scores" : [ 3, 6, 4, 4, 6, 4, 5, 4, 4, 5, 4 ]
   }, {
@@ -854,7 +854,7 @@
     "variationLabel" : "Pilgrim [176]",
     "globalSampleCount" : 2756,
     "count" : 7,
-    "rating" : 806.4962411706822,
+    "rating" : 806.4962411706825,
     "displayRating" : 806,
     "scores" : [ 9, 6, 5, 5, 5, 5, 6 ]
   }, {
@@ -866,7 +866,7 @@
     "variationLabel" : "Main [105]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 806.189925347279,
+    "rating" : 806.1899253472793,
     "displayRating" : 806,
     "scores" : [ 4, 5, 3, 4, 3, 4 ]
   }, {
@@ -878,7 +878,7 @@
     "variationLabel" : "Main [105]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 805.623031098271,
+    "rating" : 805.6230310982711,
     "displayRating" : 806,
     "scores" : [ 3, 3, 3, 3, 6, 4 ]
   }, {
@@ -890,7 +890,7 @@
     "variationLabel" : "Main [173]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 804.7901515603203,
+    "rating" : 804.79015156032,
     "displayRating" : 805,
     "scores" : [ 6, 4 ]
   }, {
@@ -950,7 +950,7 @@
     "variationLabel" : "Main [71]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 797.1678618854057,
+    "rating" : 797.1678618854056,
     "displayRating" : 797,
     "scores" : [ 4, 3, 3, 4, 3, 3 ]
   }, {
@@ -962,7 +962,7 @@
     "variationLabel" : "Main [85]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 789.5700304252485,
+    "rating" : 789.5700304252483,
     "displayRating" : 790,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -974,7 +974,7 @@
     "variationLabel" : "Main [101]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 789.3637438829801,
+    "rating" : 789.3637438829802,
     "displayRating" : 789,
     "scores" : [ 3, 4, 4, 5, 5, 4 ]
   }, {
@@ -986,7 +986,7 @@
     "variationLabel" : "Gold [171]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 788.5141161704478,
+    "rating" : 788.5141161704479,
     "displayRating" : 789,
     "scores" : [ 4, 4, 6 ]
   }, {
@@ -1010,7 +1010,7 @@
     "variationLabel" : "Main [78]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 786.9372065406325,
+    "rating" : 786.9372065406326,
     "displayRating" : 787,
     "scores" : [ 5, 3, 3, 4 ]
   }, {
@@ -1022,7 +1022,7 @@
     "variationLabel" : "Main [197]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 786.9003445210047,
+    "rating" : 786.9003445210046,
     "displayRating" : 787,
     "scores" : [ 5, 5 ]
   }, {
@@ -1082,7 +1082,7 @@
     "variationLabel" : "Pilgrim [172]",
     "globalSampleCount" : 2756,
     "count" : 7,
-    "rating" : 775.2270771827132,
+    "rating" : 775.2270771827127,
     "displayRating" : 775,
     "scores" : [ 6, 6, 6, 5, 4, 6, 4 ]
   }, {
@@ -1094,7 +1094,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 774.832347656116,
+    "rating" : 774.8323476561159,
     "displayRating" : 775,
     "scores" : [ 6, 5, 3, 3, 3, 4 ]
   }, {
@@ -1106,7 +1106,7 @@
     "variationLabel" : "Main [102]",
     "globalSampleCount" : 1526,
     "count" : 2,
-    "rating" : 773.1721291857071,
+    "rating" : 773.1721291857073,
     "displayRating" : 773,
     "scores" : [ 6, 4 ]
   }, {
@@ -1118,7 +1118,7 @@
     "variationLabel" : "Gold [101]",
     "globalSampleCount" : 347,
     "count" : 3,
-    "rating" : 770.4780188195641,
+    "rating" : 770.4780188195637,
     "displayRating" : 770,
     "scores" : [ 4, 4, 3 ]
   }, {
@@ -1130,7 +1130,7 @@
     "variationLabel" : "Base [78]",
     "globalSampleCount" : 1160,
     "count" : 6,
-    "rating" : 767.0837108791867,
+    "rating" : 767.0837108791865,
     "displayRating" : 767,
     "scores" : [ 4, 3, 4, 4, 4, 4 ]
   }, {
@@ -1142,7 +1142,7 @@
     "variationLabel" : "Main [164]",
     "globalSampleCount" : 1077,
     "count" : 2,
-    "rating" : 753.7237964855294,
+    "rating" : 753.7237964855293,
     "displayRating" : 754,
     "scores" : [ 6, 5 ]
   }, {
@@ -1154,7 +1154,7 @@
     "variationLabel" : "Main [169]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 750.896653651896,
+    "rating" : 750.8966536518964,
     "displayRating" : 751,
     "scores" : [ 5, 8, 5, 4 ]
   }, {
@@ -1166,7 +1166,7 @@
     "variationLabel" : "Main [73]",
     "globalSampleCount" : 2363,
     "count" : 6,
-    "rating" : 750.7847360064725,
+    "rating" : 750.7847360064726,
     "displayRating" : 751,
     "scores" : [ 3, 4, 3, 5, 5, 3 ]
   }, {
@@ -1178,7 +1178,7 @@
     "variationLabel" : "Base [295]",
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 750.5437108986214,
+    "rating" : 750.5437108986215,
     "displayRating" : 751,
     "scores" : [ 8, 7, 10, 8, 6, 6, 7, 8, 6, 6, 6 ]
   }, {
@@ -1190,7 +1190,7 @@
     "variationLabel" : "Main [150]",
     "globalSampleCount" : 357,
     "count" : 2,
-    "rating" : 743.9445437854598,
+    "rating" : 743.94454378546,
     "displayRating" : 744,
     "scores" : [ 6, 6 ]
   }, {
@@ -1202,7 +1202,7 @@
     "variationLabel" : "Main [70]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 743.8308546708756,
+    "rating" : 743.8308546708761,
     "displayRating" : 744,
     "scores" : [ 3, 4 ]
   }, {
@@ -1214,7 +1214,7 @@
     "variationLabel" : "Base [155]",
     "globalSampleCount" : 1002,
     "count" : 4,
-    "rating" : 743.2543326549469,
+    "rating" : 743.254332654947,
     "displayRating" : 743,
     "scores" : [ 5, 7, 6, 5 ]
   }, {
@@ -1226,7 +1226,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 1347,
     "count" : 2,
-    "rating" : 738.6883970947605,
+    "rating" : 738.6883970947607,
     "displayRating" : 739,
     "scores" : [ 4, 5 ]
   }, {
@@ -1238,7 +1238,7 @@
     "variationLabel" : "Base [99]",
     "globalSampleCount" : 3758,
     "count" : 11,
-    "rating" : 737.7295388096741,
+    "rating" : 737.7295388096738,
     "displayRating" : 738,
     "scores" : [ 5, 7, 5, 5, 4, 4, 5, 6, 5, 3, 5 ]
   }, {
@@ -1250,7 +1250,7 @@
     "variationLabel" : "Base [76]",
     "globalSampleCount" : 3758,
     "count" : 11,
-    "rating" : 735.1518688962698,
+    "rating" : 735.1518688962694,
     "displayRating" : 735,
     "scores" : [ 3, 3, 4, 3, 4, 4, 3, 3, 4, 3, 3 ]
   }, {
@@ -1274,7 +1274,7 @@
     "variationLabel" : "Main [155]",
     "globalSampleCount" : 760,
     "count" : 5,
-    "rating" : 727.6775712168247,
+    "rating" : 727.6775712168246,
     "displayRating" : 728,
     "scores" : [ 5, 9, 6, 5, 4 ]
   }, {
@@ -1286,7 +1286,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 1077,
     "count" : 2,
-    "rating" : 725.3473757615305,
+    "rating" : 725.3473757615308,
     "displayRating" : 725,
     "scores" : [ 3, 6 ]
   }, {
@@ -1298,7 +1298,7 @@
     "variationLabel" : "Main [92]",
     "globalSampleCount" : 2363,
     "count" : 6,
-    "rating" : 724.0209171401843,
+    "rating" : 724.0209171401847,
     "displayRating" : 724,
     "scores" : [ 5, 4, 4, 5, 4, 3 ]
   }, {
@@ -1322,7 +1322,7 @@
     "variationLabel" : "Base [172]",
     "globalSampleCount" : 1002,
     "count" : 4,
-    "rating" : 722.2892193655478,
+    "rating" : 722.289219365548,
     "displayRating" : 722,
     "scores" : [ 5, 7, 5, 5 ]
   }, {
@@ -1334,7 +1334,7 @@
     "variationLabel" : "Main [130]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 722.0816646717411,
+    "rating" : 722.081664671741,
     "displayRating" : 722,
     "scores" : [ 5, 8, 7, 4 ]
   }, {
@@ -1358,7 +1358,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 719.8396061454885,
+    "rating" : 719.8396061454888,
     "displayRating" : 720,
     "scores" : [ 2, 5 ]
   }, {
@@ -1382,7 +1382,7 @@
     "variationLabel" : "Main [84]",
     "globalSampleCount" : 1076,
     "count" : 2,
-    "rating" : 717.3806606097892,
+    "rating" : 717.3806606097887,
     "displayRating" : 717,
     "scores" : [ 5, 4 ]
   }, {
@@ -1418,7 +1418,7 @@
     "variationLabel" : "Main [69]",
     "globalSampleCount" : 1526,
     "count" : 2,
-    "rating" : 714.714167305465,
+    "rating" : 714.7141673054648,
     "displayRating" : 715,
     "scores" : [ 4, 4 ]
   }, {
@@ -1430,7 +1430,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 711.5095747718907,
+    "rating" : 711.5095747718902,
     "displayRating" : 712,
     "scores" : [ 5, 4, 4, 3 ]
   }, {
@@ -1454,7 +1454,7 @@
     "variationLabel" : "Main [76]",
     "globalSampleCount" : 2394,
     "count" : 6,
-    "rating" : 709.7697024498067,
+    "rating" : 709.7697024498062,
     "displayRating" : 710,
     "scores" : [ 3, 2, 5, 4, 6, 4 ]
   }, {
@@ -1466,7 +1466,7 @@
     "variationLabel" : "Main [143]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 695.031680576153,
+    "rating" : 695.0316805761529,
     "displayRating" : 695,
     "scores" : [ 5, 7, 7, 6 ]
   }, {
@@ -1478,7 +1478,7 @@
     "variationLabel" : "Gold [335]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 691.5439809265495,
+    "rating" : 691.5439809265496,
     "displayRating" : 692,
     "scores" : [ 9, 7, 8 ]
   }, {
@@ -1502,7 +1502,7 @@
     "variationLabel" : "Old [89]",
     "globalSampleCount" : 922,
     "count" : 2,
-    "rating" : 688.307077961562,
+    "rating" : 688.3070779615617,
     "displayRating" : 688,
     "scores" : [ 5, 6 ]
   }, {
@@ -1538,7 +1538,7 @@
     "variationLabel" : "Main [90]",
     "globalSampleCount" : 2393,
     "count" : 6,
-    "rating" : 679.9173881206269,
+    "rating" : 679.9173881206272,
     "displayRating" : 680,
     "scores" : [ 4, 7, 5, 4, 4, 4 ]
   }, {
@@ -1550,7 +1550,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 2394,
     "count" : 6,
-    "rating" : 673.0006749480393,
+    "rating" : 673.0006749480391,
     "displayRating" : 673,
     "scores" : [ 5, 5, 6, 5, 5, 6 ]
   }, {
@@ -1562,7 +1562,7 @@
     "variationLabel" : "Main [57]",
     "globalSampleCount" : 2394,
     "count" : 6,
-    "rating" : 672.8669257078943,
+    "rating" : 672.8669257078946,
     "displayRating" : 673,
     "scores" : [ 4, 4, 3, 3, 6, 5 ]
   }, {
@@ -1574,7 +1574,7 @@
     "variationLabel" : "Gold [177]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 671.5734325326629,
+    "rating" : 671.573432532663,
     "displayRating" : 672,
     "scores" : [ 5, 8, 5 ]
   }, {
@@ -1586,7 +1586,7 @@
     "variationLabel" : "Base [63]",
     "globalSampleCount" : 1160,
     "count" : 6,
-    "rating" : 669.0267042477016,
+    "rating" : 669.0267042477017,
     "displayRating" : 669,
     "scores" : [ 4, 5, 3, 3, 4, 3 ]
   }, {
@@ -1610,7 +1610,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 663.5787238622225,
+    "rating" : 663.5787238622228,
     "displayRating" : 664,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -1634,7 +1634,7 @@
     "variationLabel" : "Main [90]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 652.348821467931,
+    "rating" : 652.3488214679311,
     "displayRating" : 652,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -1646,7 +1646,7 @@
     "variationLabel" : "Main [67]",
     "globalSampleCount" : 378,
     "count" : 6,
-    "rating" : 639.2057613414994,
+    "rating" : 639.2057613414995,
     "displayRating" : 639,
     "scores" : [ 4, 4, 4, 3, 2, 4 ]
   }, {
@@ -1658,7 +1658,7 @@
     "variationLabel" : "Main [79]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 638.7995601517258,
+    "rating" : 638.7995601517257,
     "displayRating" : 639,
     "scores" : [ 4, 6, 3, 5 ]
   }, {
@@ -1670,7 +1670,7 @@
     "variationLabel" : "Main [112]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 632.7017002995361,
+    "rating" : 632.701700299536,
     "displayRating" : 633,
     "scores" : [ 5, 7, 4 ]
   }, {
@@ -1682,7 +1682,7 @@
     "variationLabel" : "Main [130]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 629.4521630687224,
+    "rating" : 629.4521630687223,
     "displayRating" : 629,
     "scores" : [ 5, 4, 4 ]
   }, {
@@ -1694,7 +1694,7 @@
     "variationLabel" : "Main [69]",
     "globalSampleCount" : 1279,
     "count" : 4,
-    "rating" : 620.2564105630206,
+    "rating" : 620.2564105630199,
     "displayRating" : 620,
     "scores" : [ 4, 3, 6, 4 ]
   }, {
@@ -1706,7 +1706,7 @@
     "variationLabel" : "Gold [190]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 618.343950488619,
+    "rating" : 618.3439504886197,
     "displayRating" : 618,
     "scores" : [ 6, 9, 7 ]
   }, {
@@ -1718,7 +1718,7 @@
     "variationLabel" : "Gold [113]",
     "globalSampleCount" : 308,
     "count" : 3,
-    "rating" : 618.0790814399004,
+    "rating" : 618.0790814399005,
     "displayRating" : 618,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -1754,7 +1754,7 @@
     "variationLabel" : "Main [63]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 539.1839712592794,
+    "rating" : 539.1839712592797,
     "displayRating" : 539,
     "scores" : [ 4, 4 ]
   }, {
@@ -1766,7 +1766,7 @@
     "variationLabel" : "Main [151]",
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 532.9969611152279,
+    "rating" : 532.9969611152283,
     "displayRating" : 533,
     "scores" : [ 6, 10, 7 ]
   }, {
@@ -1778,7 +1778,7 @@
     "variationLabel" : "Main [96]",
     "globalSampleCount" : 1077,
     "count" : 2,
-    "rating" : 491.3981466347264,
+    "rating" : 491.3981466347262,
     "displayRating" : 491,
     "scores" : [ 5, 7 ]
   }, {
@@ -1790,7 +1790,7 @@
     "variationLabel" : "Main [65]",
     "globalSampleCount" : 188,
     "count" : 2,
-    "rating" : 467.26087980684247,
+    "rating" : 467.2608798068427,
     "displayRating" : 467,
     "scores" : [ 4, 5 ]
   }, {
@@ -1802,7 +1802,7 @@
     "variationLabel" : "Main [81]",
     "globalSampleCount" : 360,
     "count" : 2,
-    "rating" : 445.1559354502545,
+    "rating" : 445.15593545025445,
     "displayRating" : 445,
     "scores" : [ 5, 7 ]
   }, {
@@ -1814,7 +1814,7 @@
     "variationLabel" : "Main [52]",
     "globalSampleCount" : 2394,
     "count" : 6,
-    "rating" : 424.7758277510746,
+    "rating" : 424.77582775107476,
     "displayRating" : 425,
     "scores" : [ 4, 3, 4, 5, 4, 3 ]
   }, {
@@ -1826,7 +1826,7 @@
     "variationLabel" : "Main [75]",
     "globalSampleCount" : 1527,
     "count" : 2,
-    "rating" : 391.9767711199599,
+    "rating" : 391.97677111995984,
     "displayRating" : 392,
     "scores" : [ 4, 7 ]
   } ]
