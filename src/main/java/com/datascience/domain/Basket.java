@@ -1,5 +1,7 @@
 package com.datascience.domain;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -24,6 +26,9 @@ public class Basket {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "sort_order")
+    private BigDecimal sortOrder;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "basket_course_id", nullable = false)

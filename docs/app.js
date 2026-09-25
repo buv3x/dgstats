@@ -16,10 +16,15 @@
     var playerLookup = [];
     var selectedPersonalSnapshot = null;
     var selectedPersonalRequest = 0;
+    var descriptionSource = null;
 
+    var descriptionTab = document.getElementById("description-tab");
     var courseStatsTab = document.getElementById("course-stats-tab");
     var basketStatsTab = document.getElementById("basket-stats-tab");
     var personalStatsTab = document.getElementById("personal-stats-tab");
+    var descriptionView = document.getElementById("description-view");
+    var descriptionMessage = document.getElementById("description-message");
+    var descriptionContent = document.getElementById("description-content");
     var courseStatsView = document.getElementById("course-stats-view");
     var basketStatsView = document.getElementById("basket-stats-view");
     var personalStatsView = document.getElementById("personal-stats-view");
@@ -54,6 +59,8 @@
     var personalTableWrap = document.getElementById("personal-table-wrap");
     var personalTableBody = document.getElementById("personal-statistics-body");
 
+    loadDescription();
+
     fetch("data/statistics.json")
         .then(function (response) {
             if (!response.ok) {
@@ -64,12 +71,18 @@
         .then(function (data) {
             manifest = data;
             initializePage();
+            renderDescription();
         })
         .catch(function () {
             showMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
             showBasketMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
             showPersonalMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
+            renderDescription();
         });
+
+    descriptionTab.addEventListener("click", function () {
+        setActiveView("description");
+    });
 
     courseStatsTab.addEventListener("click", function () {
         setActiveView("course");
@@ -138,6 +151,7 @@
     });
 
     function initializePage() {
+        setActiveView("description");
         renderMetadata();
         populateCourses();
         populateBasketCourses();
@@ -151,20 +165,132 @@
     }
 
     function setActiveView(view) {
+        var descriptionActive = view === "description";
+        var courseActive = view === "course";
         var basketActive = view === "basket";
         var personalActive = view === "personal";
-        courseStatsView.hidden = basketActive || personalActive;
+        descriptionView.hidden = !descriptionActive;
+        courseStatsView.hidden = descriptionActive || basketActive || personalActive;
         basketStatsView.hidden = !basketActive;
         personalStatsView.hidden = !personalActive;
-        courseStatsTab.classList.toggle("active", !personalActive && !basketActive);
+        descriptionTab.classList.toggle("active", descriptionActive);
+        courseStatsTab.classList.toggle("active", !descriptionActive && !personalActive && !basketActive);
         basketStatsTab.classList.toggle("active", basketActive);
         personalStatsTab.classList.toggle("active", personalActive);
+        if (courseActive && selectedCourseSnapshot) {
+            renderStatistics();
+        }
         if (basketActive) {
             renderSelectedBasketVariation();
         }
         if (personalActive && playerLookup.length === 0 && personalFilters.hidden) {
             showPersonalMessage("No eligible players are available in this statistics export.", false);
         }
+    }
+
+    function loadDescription() {
+        fetch("description.txt")
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Description not found");
+                }
+                return response.text();
+            })
+            .then(function (text) {
+                descriptionSource = text;
+                renderDescription();
+            })
+            .catch(function () {
+                descriptionSource = null;
+                descriptionContent.hidden = true;
+                showDescriptionMessage("Description is unavailable.", true);
+            });
+    }
+
+    function renderDescription() {
+        if (descriptionSource === null) {
+            return;
+        }
+        descriptionContent.innerHTML = "";
+        var lines = resolveDescriptionPlaceholders(descriptionSource).split(/\r?\n/);
+        var paragraphLines = [];
+        var sectionContent = null;
+        lines.forEach(function (line) {
+            if (/^#\s+/.test(line)) {
+                flushDescriptionParagraph(paragraphLines, sectionContent || descriptionContent);
+                paragraphLines = [];
+                var title = line.replace(/^#\s+/, "");
+                var section = document.createElement("details");
+                section.className = "description-section";
+                if (title === "General Information") {
+                    section.open = true;
+                }
+
+                var summary = document.createElement("summary");
+                appendSafeInlineContent(summary, title);
+                section.appendChild(summary);
+
+                sectionContent = document.createElement("div");
+                sectionContent.className = "description-section-content";
+                section.appendChild(sectionContent);
+                descriptionContent.appendChild(section);
+            } else if (line.trim() === "") {
+                flushDescriptionParagraph(paragraphLines, sectionContent || descriptionContent);
+                paragraphLines = [];
+            } else {
+                paragraphLines.push(line);
+            }
+        });
+        flushDescriptionParagraph(paragraphLines, sectionContent || descriptionContent);
+        descriptionContent.hidden = false;
+        showDescriptionMessage("", false);
+    }
+
+    function flushDescriptionParagraph(lines, target) {
+        if (lines.length === 0) {
+            return;
+        }
+        var paragraph = document.createElement("p");
+        appendSafeInlineContent(paragraph, lines.join(" "));
+        target.appendChild(paragraph);
+    }
+
+    function resolveDescriptionPlaceholders(source) {
+        var values = manifest && manifest.metadata && manifest.metadata.description
+            ? manifest.metadata.description
+            : {};
+        return source
+            .replace(/\[competition_count\]/g, descriptionValue(values.competitionCount))
+            .replace(/\[players_count\]/g, descriptionValue(values.playersCount))
+            .replace(/\[latest_competition\]/g, descriptionValue(values.latestCompetition));
+    }
+
+    function descriptionValue(value) {
+        return value === undefined || value === null || value === "" ? "unavailable" : String(value);
+    }
+
+    function appendSafeInlineContent(parent, text) {
+        var markerPattern = /<(italic|bold)>([\s\S]*?)<\/\1>/gi;
+        var lastIndex = 0;
+        var match;
+        while ((match = markerPattern.exec(text)) !== null) {
+            if (match.index > lastIndex) {
+                parent.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+            }
+            var formatted = document.createElement(match[1].toLowerCase() === "bold" ? "strong" : "em");
+            formatted.textContent = match[2];
+            parent.appendChild(formatted);
+            lastIndex = markerPattern.lastIndex;
+        }
+        if (lastIndex < text.length) {
+            parent.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+    }
+
+    function showDescriptionMessage(text, error) {
+        descriptionMessage.textContent = text;
+        descriptionMessage.hidden = !text;
+        descriptionMessage.classList.toggle("error", !!error);
     }
 
     function renderMetadata() {
@@ -176,7 +302,7 @@
     }
 
     function populateCourses() {
-        var courses = Array.isArray(manifest.courses) ? manifest.courses : [];
+        var courses = sortedCourses(manifest.courses);
         courseSelect.innerHTML = "";
         courses.forEach(function (course) {
             var option = document.createElement("option");
@@ -192,7 +318,7 @@
     }
 
     function populateBasketCourses() {
-        var courses = basketStatsCourses();
+        var courses = sortedCourses(basketStatsCourses());
         basketCourseSelect.innerHTML = "";
         courses.forEach(function (course) {
             var option = document.createElement("option");
@@ -244,7 +370,9 @@
                     return;
                 }
                 selectedCourseSnapshot = data;
-                renderStatistics();
+                if (!courseStatsView.hidden) {
+                    renderStatistics();
+                }
             })
             .catch(function () {
                 if (requestId !== selectedCourseRequest) {
@@ -473,17 +601,22 @@
             if (courseId === null || courseId === undefined || coursesById[String(courseId)]) {
                 return;
             }
-            coursesById[String(courseId)] = variation.basketCourseName || String(courseId);
+            coursesById[String(courseId)] = selectedManifestCourse(courseId) || {
+                id: courseId,
+                name: variation.basketCourseName || String(courseId),
+                sampleCount: 0
+            };
         });
 
         Object.keys(coursesById)
-            .sort(function (left, right) {
-                return coursesById[left].localeCompare(coursesById[right]);
+            .map(function (courseId) {
+                return coursesById[courseId];
             })
-            .forEach(function (courseId) {
+            .sort(compareCourses)
+            .forEach(function (course) {
                 var option = document.createElement("option");
-                option.value = courseId;
-                option.textContent = coursesById[courseId];
+                option.value = String(course.id);
+                option.textContent = course.name;
                 personalCourseSelect.appendChild(option);
             });
     }
@@ -502,7 +635,7 @@
         return rows.filter(function (variation) {
             var courseMatches = selectedCourseId === "" || String(variation.basketCourseId) === selectedCourseId;
             return courseMatches && Number(variation.count) >= minCount;
-        });
+        }).sort(comparePersonalRows);
     }
 
     function normalizePersonalMinCount() {
@@ -612,7 +745,7 @@
         if (!selectedBasketStatsSnapshot || !Array.isArray(selectedBasketStatsSnapshot.variations)) {
             return [];
         }
-        return selectedBasketStatsSnapshot.variations;
+        return selectedBasketStatsSnapshot.variations.slice().sort(compareBasketStatsVariations);
     }
 
     function selectedBasketVariation() {
@@ -660,6 +793,7 @@
                 basketsById.set(sample.basketId, {
                     id: sample.basketId,
                     label: sample.basketLabel,
+                    sortOrder: sample.basketSortOrder,
                     variationsById: new Map()
                 });
             }
@@ -668,6 +802,7 @@
                 basket.variationsById.set(sample.variationId, {
                     id: sample.variationId,
                     label: sample.variationLabel,
+                    sortOrder: sample.variationSortOrder,
                     samples: [],
                     scores: []
                 });
@@ -677,13 +812,13 @@
         });
 
         return Array.from(basketsById.values())
-            .sort(compareById)
+            .sort(compareBaskets)
             .map(function (basket) {
                 basket.variations = Array.from(basket.variationsById.values())
                     .filter(function (variation) {
                         return variation.scores.length > 0;
                     })
-                    .sort(compareById)
+                    .sort(compareVariations)
                     .map(buildVariationStats);
                 return basket;
             })
@@ -753,8 +888,106 @@
         row.appendChild(cell);
     }
 
-    function compareById(left, right) {
-        return Number(left.id) - Number(right.id);
+    function sortedCourses(courses) {
+        return (Array.isArray(courses) ? courses : []).slice().sort(compareCourses);
+    }
+
+    function selectedManifestCourse(courseId) {
+        var courses = Array.isArray(manifest && manifest.courses) ? manifest.courses : [];
+        for (var index = 0; index < courses.length; index++) {
+            if (String(courses[index].id) === String(courseId)) {
+                return courses[index];
+            }
+        }
+        return null;
+    }
+
+    function compareCourses(left, right) {
+        var countComparison = Number(right.sampleCount || 0) - Number(left.sampleCount || 0);
+        if (countComparison !== 0) {
+            return countComparison;
+        }
+        var nameComparison = String(left.name || "").localeCompare(String(right.name || ""));
+        if (nameComparison !== 0) {
+            return nameComparison;
+        }
+        return compareIds(left.id, right.id);
+    }
+
+    function compareBaskets(left, right) {
+        return compareOrderedEntities(left, right, "sortOrder", "id");
+    }
+
+    function compareVariations(left, right) {
+        return compareOrderedEntities(left, right, "sortOrder", "id");
+    }
+
+    function compareBasketStatsVariations(left, right) {
+        var basketComparison = compareOrderedEntities(
+            {id: left.basketId, sortOrder: left.basketSortOrder},
+            {id: right.basketId, sortOrder: right.basketSortOrder},
+            "sortOrder",
+            "id"
+        );
+        if (basketComparison !== 0) {
+            return basketComparison;
+        }
+        return compareOrderedEntities(
+            {id: left.variationId, sortOrder: left.variationSortOrder},
+            {id: right.variationId, sortOrder: right.variationSortOrder},
+            "sortOrder",
+            "id"
+        );
+    }
+
+    function comparePersonalRows(left, right) {
+        var courseComparison = compareCourses(
+            selectedManifestCourse(left.basketCourseId) || {
+                id: left.basketCourseId,
+                name: left.basketCourseName,
+                sampleCount: 0
+            },
+            selectedManifestCourse(right.basketCourseId) || {
+                id: right.basketCourseId,
+                name: right.basketCourseName,
+                sampleCount: 0
+            }
+        );
+        if (courseComparison !== 0) {
+            return courseComparison;
+        }
+        var basketComparison = compareOrderedEntities(left, right, "basketSortOrder", "basketId");
+        if (basketComparison !== 0) {
+            return basketComparison;
+        }
+        return compareOrderedEntities(left, right, "variationSortOrder", "variationId");
+    }
+
+    function compareOrderedEntities(left, right, orderField, idField) {
+        var leftOrder = numericSortOrder(left[orderField]);
+        var rightOrder = numericSortOrder(right[orderField]);
+        if (leftOrder !== null && rightOrder === null) {
+            return -1;
+        }
+        if (leftOrder === null && rightOrder !== null) {
+            return 1;
+        }
+        if (leftOrder !== null && rightOrder !== null && leftOrder !== rightOrder) {
+            return leftOrder - rightOrder;
+        }
+        return compareIds(left[idField], right[idField]);
+    }
+
+    function numericSortOrder(value) {
+        if (value === null || value === undefined || value === "") {
+            return null;
+        }
+        var parsed = Number(value);
+        return Number.isFinite(parsed) ? parsed : null;
+    }
+
+    function compareIds(left, right) {
+        return Number(left) - Number(right);
     }
 
     function renderChart(samples) {
@@ -779,11 +1012,11 @@
                 return point !== null;
             })
             .sort(function (left, right) {
-                var basketComparison = compareById(left.basket, right.basket);
+                var basketComparison = compareBaskets(left.basket, right.basket);
                 if (basketComparison !== 0) {
                     return basketComparison;
                 }
-                return compareById(left, right);
+                return compareVariations(left, right);
             });
     }
 
@@ -796,9 +1029,11 @@
                 groupsByKey.set(key, {
                     id: sample.variationId,
                     label: sample.variationLabel,
+                    sortOrder: sample.variationSortOrder,
                     basket: {
                         id: sample.basketId,
-                        label: sample.basketLabel
+                        label: sample.basketLabel,
+                        sortOrder: sample.basketSortOrder
                     },
                     samples: []
                 });
@@ -827,6 +1062,7 @@
         return {
             id: group.id,
             label: group.label,
+            sortOrder: group.sortOrder,
             basket: group.basket,
             count: group.samples.length,
             spr: -100 * regression.slope,

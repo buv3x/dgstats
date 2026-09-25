@@ -14,12 +14,18 @@
     </header>
 
     <nav class="view-nav" aria-label="Statistics views">
-        <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
+        <button id="description-tab" class="view-tab active" type="button">Description</button>
+        <button id="course-stats-tab" class="view-tab" type="button">Course stats</button>
         <button id="basket-stats-tab" class="view-tab" type="button">Basket stats</button>
         <button id="personal-stats-tab" class="view-tab" type="button">Personal stats</button>
     </nav>
 
-    <section id="course-stats-view">
+    <section id="description-view">
+        <div id="description-message" class="message">Loading description...</div>
+        <article id="description-content" class="description-content" hidden></article>
+    </section>
+
+    <section id="course-stats-view" hidden>
         <form id="filters" class="filters" hidden>
             <label>
                 <span>Basket course</span>

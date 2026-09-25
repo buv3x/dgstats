@@ -75,9 +75,10 @@ The static page SHALL display aggregated score statistics grouped by basket and 
 - **WHEN** statistics are displayed
 - **THEN** each basket variation row displays Count, Average, and score bucket percentages
 
-#### Scenario: Basket and variation rows are sorted by id
+#### Scenario: Basket and variation rows use explicit order
 - **WHEN** statistics are displayed
-- **THEN** basket groups are sorted by basket id and variation rows are sorted by variation id
+- **THEN** basket groups with non-null `sortOrder` are ordered by ascending `sortOrder`, followed by baskets with null `sortOrder` ordered by basket ID
+- **AND** variation rows use the same ordering rule with variation `sortOrder` and variation ID
 
 #### Scenario: Empty rows are hidden
 - **WHEN** a basket variation has no samples after filtering
@@ -294,9 +295,10 @@ The static page SHALL display one ordered list of personal basket variation rati
 - **WHEN** a personal variation row is displayed
 - **THEN** the row shows basket course, basket label, variation label, rounded rating, personal result count, and comma-separated scores
 
-#### Scenario: Personal rows preserve exported order
+#### Scenario: Personal rows use exported entity order
 - **WHEN** personal variation rows are rendered
-- **THEN** the page displays them in the order provided by the selected player's personal statistics file
+- **THEN** rows use explicit basket and variation `sortOrder` values when present, with null-last and ID fallback ordering within the public display
+- **AND** existing exported rating order remains the fallback for otherwise equivalent rows
 
 #### Scenario: Empty selected player results are reported
 - **WHEN** the selected player's personal statistics file contains no variation rows
@@ -430,6 +432,96 @@ The static page SHALL encode Basket stats weighted sample-count buckets through 
 - **WHEN** Basket stats sliding-window statistics are displayed
 - **THEN** chart point connectivity and line pattern are based on `sprwCountBucket`, not `countBucket`
 
+### Requirement: Public course selector ordering
+All course select boxes on the public `docs/` statistics page SHALL order course options by total exported result count descending without displaying that count.
+
+#### Scenario: Course stats selector uses result count
+- **WHEN** the statistics manifest loads successfully
+- **THEN** the Course stats selector orders courses by descending `sampleCount`
+- **AND** option labels contain only the course name
+
+#### Scenario: Basket stats selector uses result count
+- **WHEN** the statistics manifest loads successfully
+- **THEN** the Basket stats selector orders eligible courses by descending `sampleCount`
+- **AND** option labels contain only the course name
+
+#### Scenario: Personal stats selector uses result count
+- **WHEN** a selected player's personal statistics contain rows from multiple courses
+- **THEN** the Personal stats course selector orders those courses by the corresponding manifest `sampleCount` descending
+- **AND** the all-courses option remains available
+
+#### Scenario: Course count ties are deterministic
+- **WHEN** two courses have the same total exported result count
+- **THEN** they are ordered by course name and then course ID
+
+### Requirement: Public Basket stats variation selector ordering
+The Basket stats variation selector SHALL use explicit basket and variation ordering from the exported data.
+
+#### Scenario: Variation selector uses entity order
+- **WHEN** a selected course's Basket stats file loads successfully
+- **THEN** variations are ordered by basket `sortOrder`, then basket ID, variation `sortOrder`, then variation ID, with null sort orders after non-null values
+
+### Requirement: Description tab navigation and default view
+The static page SHALL display a Description tab before Course stats, Basket stats, and Personal stats, and SHALL make Description the default active view.
+
+#### Scenario: Description tab is first
+- **WHEN** the static basket statistics page is displayed
+- **THEN** the navigation order is Description, Course stats, Basket stats, Personal stats
+
+#### Scenario: Description is selected initially
+- **WHEN** the static basket statistics page first loads successfully
+- **THEN** the Description tab is active and its content is visible
+- **AND** the Course stats, Basket stats, and Personal stats content is hidden
+
+#### Scenario: Existing statistics views remain selectable
+- **WHEN** the user selects Course stats, Basket stats, or Personal stats
+- **THEN** the selected existing view becomes visible and Description becomes inactive
+
+### Requirement: Description content asset
+The static page SHALL render the reviewed content maintained in `description/description.txt` through a relative static asset without hard-coding a second copy of the prose in the page script.
+
+#### Scenario: Description source is loaded
+- **WHEN** the Description view is loaded
+- **THEN** the page fetches the description asset using a relative path and renders its headings and paragraphs in the Description view
+
+#### Scenario: Description asset is unavailable
+- **WHEN** the description asset cannot be loaded
+- **THEN** the Description view displays a clear description-unavailable message
+
+### Requirement: Description formatting markers
+The page SHALL convert the supported `<italic>...</italic>` and `<bold>...</bold>` markers in the description source to italic and bold rendered text while treating the source as data rather than arbitrary executable HTML.
+
+#### Scenario: Inline formatting is rendered
+- **WHEN** the description contains supported italic or bold markers
+- **THEN** the enclosed text is rendered with the corresponding formatting
+
+#### Scenario: Unsupported markup is not executed
+- **WHEN** the description contains unsupported tags or markup-like text
+- **THEN** the page does not execute it as HTML or script
+
+### Requirement: Description placeholder resolution
+The page SHALL replace `[competition_count]`, `[players_count]`, and `[latest_competition]` using the corresponding values from the loaded statistics manifest.
+
+#### Scenario: Placeholders use manifest values
+- **WHEN** the manifest contains description metadata
+- **THEN** the Description view replaces all supported placeholders with the exported competition count, player count, and latest competition value
+
+#### Scenario: Missing placeholder metadata is handled
+- **WHEN** one or more supported placeholder values are absent from the manifest
+- **THEN** the Description view displays a deterministic unavailable value for each missing placeholder and remains readable
+
+### Requirement: Description loading state
+The page SHALL communicate Description loading and failure states without preventing access to the statistics views.
+
+#### Scenario: Description is loading
+- **WHEN** the description asset is being fetched
+- **THEN** the Description view displays a loading state
+
+#### Scenario: Statistics manifest is unavailable
+- **WHEN** the statistics manifest cannot be loaded
+- **THEN** the Description view may render its static text but displays an unavailable state for manifest-backed placeholders
+- **AND** existing statistics views retain their current missing-manifest state
+
 ### Requirement: Basket stats chart rating axis
 The static page SHALL render the Basket stats chart rating X-axis with explicit whole-number rating labels and grid lines.
 
@@ -497,3 +589,69 @@ The static page SHALL display Course stats SPR/VAR scatter chart markers only fo
 #### Scenario: Empty chart result is reported after threshold filtering
 - **WHEN** the selected basket course and rating bounds produce no basket variations with at least 50 matching score samples and rating variance
 - **THEN** the page displays a no-chart-results message instead of an empty Course stats chart
+
+### Requirement: Description accordion sections
+
+The static basket statistics page SHALL render each top-level section of the Description content as an independently collapsible section, with General Information expanded by default.
+
+#### Scenario: Description headings become accordion sections
+
+- **WHEN** the Description source is loaded successfully
+- **THEN** each top-level heading and the content that follows it are rendered as one collapsible section
+- **AND** the sections preserve the order of the source headings
+
+#### Scenario: General Information is open initially
+
+- **WHEN** the Description view finishes its initial successful render
+- **THEN** the General Information section is expanded
+- **AND** every other Description section is collapsed
+
+#### Scenario: Sections expand independently
+
+- **WHEN** the user expands or collapses a Description section
+- **THEN** only that section's content visibility changes
+- **AND** the open or closed state of every other section remains unchanged
+
+#### Scenario: Multiple sections remain open
+
+- **WHEN** the user expands two or more Description sections
+- **THEN** all of those sections remain expanded simultaneously
+
+#### Scenario: Accordion controls are accessible
+
+- **WHEN** the Description sections are displayed
+- **THEN** each section has a keyboard-operable disclosure control with an accessible section label
+- **AND** the control exposes whether its section is expanded or collapsed through native disclosure semantics
+
+#### Scenario: Section content retains existing rendering
+
+- **WHEN** a Description section is expanded
+- **THEN** its paragraphs, placeholders, and supported italic or bold markers are rendered as they are in the existing Description view
+
+#### Scenario: Description loading and error states are preserved
+
+- **WHEN** the Description asset is loading or unavailable
+- **THEN** the existing loading or unavailable message is displayed
+- **AND** accordion sections are not displayed until the content has loaded successfully
+
+### Requirement: Course stats chart first render sizing
+
+The static page SHALL render the initially selected Course stats chart using the visible Course stats chart container dimensions.
+
+#### Scenario: Course stats chart is first opened after Description
+
+- **WHEN** the page loads with Description active and Course stats data has already loaded
+- **AND** the user opens the Course stats view
+- **THEN** the Course stats chart is drawn at the same full chart width used after changing the Course stats filters
+
+#### Scenario: Course stats data finishes loading after the view is opened
+
+- **WHEN** the user opens Course stats before its selected course data has finished loading
+- **AND** the selected course data finishes loading while Course stats is visible
+- **THEN** the Course stats chart is drawn using the visible chart container dimensions
+
+#### Scenario: Course stats data loads while another view is active
+
+- **WHEN** the selected Course stats data finishes loading while Course stats is hidden
+- **THEN** the page does not measure and draw the Course stats chart using hidden-container dimensions
+- **AND** the chart is drawn with the visible container dimensions when the user opens Course stats

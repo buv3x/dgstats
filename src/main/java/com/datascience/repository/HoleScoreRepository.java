@@ -19,13 +19,16 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
             select
                 c.id as competitionId,
                 c.name as competitionName,
+                c.startDate as competitionStartDate,
                 bc.id as basketCourseId,
                 bc.name as basketCourseName,
                 b.id as basketId,
                 b.name as basketName,
+                b.sortOrder as basketSortOrder,
                 bv.id as variationId,
                 bv.name as variationName,
                 bv.distance as variationDistance,
+                bv.sortOrder as variationSortOrder,
                 p.id as playerId,
                 p.name as playerName,
                 p.pdgaNum as playerPdgaNum,
@@ -55,6 +58,8 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
 
         String getCompetitionName();
 
+        LocalDate getCompetitionStartDate();
+
         Long getBasketCourseId();
 
         String getBasketCourseName();
@@ -63,11 +68,15 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
 
         String getBasketName();
 
+        java.math.BigDecimal getBasketSortOrder();
+
         Long getVariationId();
 
         String getVariationName();
 
         Integer getVariationDistance();
+
+        java.math.BigDecimal getVariationSortOrder();
 
         Long getPlayerId();
 

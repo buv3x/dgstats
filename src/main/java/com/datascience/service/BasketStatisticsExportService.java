@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.math.BigDecimal;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,6 +28,8 @@ import java.util.Map;
 public class BasketStatisticsExportService {
 
     private static final Path MANIFEST_PATH = Path.of("docs", "data", "statistics.json");
+    private static final Path DESCRIPTION_SOURCE_PATH = Path.of("description", "description.txt");
+    private static final Path DESCRIPTION_OUTPUT_PATH = Path.of("docs", "description.txt");
     private static final Path COURSES_DIRECTORY = Path.of("docs", "data", "courses");
     private static final Path BASKET_STATS_DIRECTORY = Path.of("docs", "data", "basket-stats");
     private static final Path PLAYERS_PATH = Path.of("docs", "data", "players.json");
@@ -45,6 +48,7 @@ public class BasketStatisticsExportService {
     public ExportResult exportStatistics() {
         List<StatisticsExportRow> rows = holeScoreRepository.findStatisticsExportRows();
         Map<Long, CourseExportBuilder> coursesById = new LinkedHashMap<>();
+        Map<Long, IncludedCompetition> includedCompetitionsById = new LinkedHashMap<>();
         long ignoredUnratedSamples = 0;
         long ignoredUnmappedSamples = 0;
         long exportedSamples = 0;
@@ -60,6 +64,15 @@ public class BasketStatisticsExportService {
                 continue;
             }
 
+            includedCompetitionsById.putIfAbsent(
+                    row.getCompetitionId(),
+                    new IncludedCompetition(
+                            row.getCompetitionId(),
+                            competitionName(row),
+                            row.getCompetitionStartDate()
+                    )
+            );
+
             CourseExportBuilder course = coursesById.computeIfAbsent(
                     row.getBasketCourseId(),
                     id -> new CourseExportBuilder(id, courseName(row))
@@ -73,8 +86,10 @@ public class BasketStatisticsExportService {
                     row.getCompetitionId(),
                     row.getBasketId(),
                     basketLabel(row),
+                    row.getBasketSortOrder(),
                     row.getVariationId(),
                     variationLabel(row),
+                    row.getVariationSortOrder(),
                     row.getRating(),
                     row.getScore()
             ));
@@ -83,8 +98,10 @@ public class BasketStatisticsExportService {
                     courseName(row),
                     row.getBasketId(),
                     basketLabel(row),
+                    row.getBasketSortOrder(),
                     row.getVariationId(),
                     variationLabel(row),
+                    row.getVariationSortOrder(),
                     row.getPlayerId(),
                     playerName(row),
                     row.getPlayerPdgaNum(),
@@ -108,6 +125,8 @@ public class BasketStatisticsExportService {
         Path personalStatsDirectory = resolvePersonalStatsDirectory();
         List<CourseOption> courseOptions = new ArrayList<>();
         int generatedBasketStatsFiles = 0;
+
+        copyDescriptionAsset();
 
         for (CourseExportBuilder course : courses) {
             String relativePath = courseRelativePath(course.id());
@@ -146,7 +165,15 @@ public class BasketStatisticsExportService {
                 personalStatisticsExport.snapshots().size()
         );
         StatisticsManifest manifest = new StatisticsManifest(
-                new SnapshotMetadata(Instant.now().toString(), diagnostics),
+                new SnapshotMetadata(
+                        Instant.now().toString(),
+                        diagnostics,
+                        new DescriptionMetadata(
+                                includedCompetitionsById.size(),
+                                personalStatisticsExport.players().size(),
+                                latestCompetitionDisplay(includedCompetitionsById.values())
+                        )
+                ),
                 courseOptions,
                 playersRelativePath(),
                 personalStatsPathTemplate()
@@ -179,6 +206,46 @@ public class BasketStatisticsExportService {
 
     private Path resolvePersonalStatsDirectory() {
         return resolveProjectRoot().resolve(PERSONAL_STATS_DIRECTORY).toAbsolutePath().normalize();
+    }
+
+    private void copyDescriptionAsset() {
+        Path sourcePath = resolveProjectRoot().resolve(DESCRIPTION_SOURCE_PATH).toAbsolutePath().normalize();
+        Path outputPath = resolveProjectRoot().resolve(DESCRIPTION_OUTPUT_PATH).toAbsolutePath().normalize();
+        try {
+            Path parent = outputPath.getParent();
+            if (parent != null) {
+                Files.createDirectories(parent);
+            }
+            Files.copy(sourcePath, outputPath, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException ex) {
+            throw new UncheckedIOException("Failed to publish description asset", ex);
+        }
+    }
+
+    private String latestCompetitionDisplay(Iterable<IncludedCompetition> competitions) {
+        IncludedCompetition latest = null;
+        for (IncludedCompetition candidate : competitions) {
+            if (latest == null || isLaterCompetition(candidate, latest)) {
+                latest = candidate;
+            }
+        }
+        return latest == null ? "Unavailable" : latest.name();
+    }
+
+    private boolean isLaterCompetition(IncludedCompetition candidate, IncludedCompetition current) {
+        if (candidate.startDate() != null && current.startDate() == null) {
+            return true;
+        }
+        if (candidate.startDate() == null && current.startDate() != null) {
+            return false;
+        }
+        if (candidate.startDate() != null) {
+            int dateComparison = candidate.startDate().compareTo(current.startDate());
+            if (dateComparison != 0) {
+                return dateComparison > 0;
+            }
+        }
+        return candidate.id() > current.id();
     }
 
     private Path resolveProjectRoot() {
@@ -356,8 +423,10 @@ public class BasketStatisticsExportService {
                         ignored -> new BasketStatsVariationBuilder(
                                 sample.basketId(),
                                 sample.basketLabel(),
+                                sample.basketSortOrder(),
                                 sample.variationId(),
-                                sample.variationLabel()
+                                sample.variationLabel(),
+                                sample.variationSortOrder()
                         )
                 );
                 variation.samples.add(sample);
@@ -377,15 +446,20 @@ public class BasketStatisticsExportService {
 
         private final Long basketId;
         private final String basketLabel;
+        private final BigDecimal basketSortOrder;
         private final Long variationId;
         private final String variationLabel;
+        private final BigDecimal variationSortOrder;
         private final List<ScoreSample> samples = new ArrayList<>();
 
-        private BasketStatsVariationBuilder(Long basketId, String basketLabel, Long variationId, String variationLabel) {
+        private BasketStatsVariationBuilder(Long basketId, String basketLabel, BigDecimal basketSortOrder,
+                                            Long variationId, String variationLabel, BigDecimal variationSortOrder) {
             this.basketId = basketId;
             this.basketLabel = basketLabel;
+            this.basketSortOrder = basketSortOrder;
             this.variationId = variationId;
             this.variationLabel = variationLabel;
+            this.variationSortOrder = variationSortOrder;
         }
 
         private Long basketId() {
@@ -401,8 +475,10 @@ public class BasketStatisticsExportService {
             return new BasketStatsVariation(
                     basketId,
                     basketLabel,
+                    basketSortOrder,
                     variationId,
                     variationLabel,
+                    variationSortOrder,
                     samples.size(),
                     windows
             );
@@ -542,7 +618,15 @@ public class BasketStatisticsExportService {
 
     public record SnapshotMetadata(
             String exportedAt,
-            ExportDiagnostics diagnostics
+            ExportDiagnostics diagnostics,
+            DescriptionMetadata description
+    ) {
+    }
+
+    public record DescriptionMetadata(
+            long competitionCount,
+            long playersCount,
+            String latestCompetition
     ) {
     }
 
@@ -586,13 +670,22 @@ public class BasketStatisticsExportService {
     ) {
     }
 
+    private record IncludedCompetition(
+            Long id,
+            String name,
+            LocalDate startDate
+    ) {
+    }
+
     public record ScoreSample(
             Long basketCourseId,
             Long competitionId,
             Long basketId,
             String basketLabel,
+            BigDecimal basketSortOrder,
             Long variationId,
             String variationLabel,
+            BigDecimal variationSortOrder,
             Integer rating,
             Integer score
     ) {
@@ -626,8 +719,10 @@ public class BasketStatisticsExportService {
             String basketCourseName,
             Long basketId,
             String basketLabel,
+            BigDecimal basketSortOrder,
             Long variationId,
             String variationLabel,
+            BigDecimal variationSortOrder,
             int globalSampleCount,
             int count,
             double rating,
@@ -645,8 +740,10 @@ public class BasketStatisticsExportService {
     public record BasketStatsVariation(
             Long basketId,
             String basketLabel,
+            BigDecimal basketSortOrder,
             Long variationId,
             String variationLabel,
+            BigDecimal variationSortOrder,
             int sampleCount,
             List<BasketStatsWindow> windows
     ) {
@@ -697,8 +794,10 @@ public class BasketStatisticsExportService {
             String basketCourseName,
             Long basketId,
             String basketLabel,
+            BigDecimal basketSortOrder,
             Long variationId,
             String variationLabel,
+            BigDecimal variationSortOrder,
             Long playerId,
             String playerName,
             Long playerPdgaNum,
@@ -782,8 +881,10 @@ public class BasketStatisticsExportService {
         private final String basketCourseName;
         private final Long basketId;
         private final String basketLabel;
+        private final BigDecimal basketSortOrder;
         private final Long variationId;
         private final String variationLabel;
+        private final BigDecimal variationSortOrder;
         private final PersonalGlobalVariation globalVariation;
         private final List<PersonalScoreSample> samples = new ArrayList<>();
 
@@ -792,8 +893,10 @@ public class BasketStatisticsExportService {
             this.basketCourseName = sample.basketCourseName();
             this.basketId = sample.basketId();
             this.basketLabel = sample.basketLabel();
+            this.basketSortOrder = sample.basketSortOrder();
             this.variationId = sample.variationId();
             this.variationLabel = sample.variationLabel();
+            this.variationSortOrder = sample.variationSortOrder();
             this.globalVariation = globalVariation;
         }
 
@@ -817,8 +920,10 @@ public class BasketStatisticsExportService {
                     basketCourseName,
                     basketId,
                     basketLabel,
+                    basketSortOrder,
                     variationId,
                     variationLabel,
+                    variationSortOrder,
                     globalVariation.sampleCount(),
                     sortedSamples.size(),
                     averageRating,

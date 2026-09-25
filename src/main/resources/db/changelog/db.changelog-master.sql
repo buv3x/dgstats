@@ -346,3 +346,11 @@ CREATE TABLE datas.basket_variation_round_settings (
 --validCheckSum 1:any
 
 DROP TABLE IF EXISTS datas.basket_variation_round_settings;
+
+
+
+--changeset datascience:012-custom-sort-order dbms:postgresql
+--validCheckSum 1:any
+
+ALTER TABLE datas.basket ADD COLUMN sort_order decimal;
+ALTER TABLE datas.basket_variation ADD COLUMN sort_order decimal;
