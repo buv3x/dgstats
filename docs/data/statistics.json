@@ -1,9 +1,9 @@
 {
   "metadata" : {
-    "exportedAt" : "2026-09-21T21:28:12.954411400Z",
+    "exportedAt" : "2026-09-27T19:31:03.706278700Z",
     "diagnostics" : {
-      "exportedSamples" : 228959,
-      "ignoredUnratedSamples" : 74010,
+      "exportedSamples" : 233462,
+      "ignoredUnratedSamples" : 74428,
       "ignoredUnmappedSamples" : 0,
       "includedBasketCourses" : 15,
       "generatedCourseFiles" : 15,
@@ -12,9 +12,9 @@
       "generatedPersonalStatsFiles" : 538
     },
     "description" : {
-      "competitionCount" : 96,
+      "competitionCount" : 98,
       "playersCount" : 538,
-      "latestCompetition" : "Lietuvos diskgolfo taurė 2026 - V - PANEVĖŽYS - Amateurs"
+      "latestCompetition" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors"
     }
   },
   "courses" : [ {
@@ -44,7 +44,7 @@
   }, {
     "id" : 15,
     "name" : "Jonava",
-    "sampleCount" : 12012,
+    "sampleCount" : 16515,
     "path" : "courses/15.json",
     "basketStatsPath" : "basket-stats/15.json"
   }, {

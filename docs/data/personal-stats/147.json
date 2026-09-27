@@ -6,20 +6,6 @@
     "label" : "Elvyra Strelkauskiene (174089)"
   },
   "variations" : [ {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 272,
-    "basketLabel" : "13",
-    "basketSortOrder" : null,
-    "variationId" : 312,
-    "variationLabel" : "Main [81]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 885.9052446373688,
-    "displayRating" : 886,
-    "scores" : [ 3, 3, 3, 3, 4, 3, 5, 3, 3 ]
-  }, {
     "basketCourseId" : 12,
     "basketCourseName" : "Nedožinka",
     "basketId" : 205,
@@ -30,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 879.8045781368261,
+    "rating" : 879.804578136826,
     "displayRating" : 880,
     "scores" : [ 3, 3, 4 ]
   }, {
@@ -44,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 172,
     "count" : 2,
-    "rating" : 876.5348837209302,
+    "rating" : 876.5348837209305,
     "displayRating" : 877,
     "scores" : [ 3, 3 ]
   }, {
@@ -72,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 866.4754004851867,
+    "rating" : 866.4754004851866,
     "displayRating" : 866,
     "scores" : [ 4, 3, 3, 4 ]
   }, {
@@ -86,9 +72,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 853.7194747062441,
+    "rating" : 853.7194747062442,
     "displayRating" : 854,
     "scores" : [ 4, 3 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 272,
+    "basketLabel" : "14",
+    "basketSortOrder" : null,
+    "variationId" : 312,
+    "variationLabel" : "Main [81]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 852.8123283618359,
+    "displayRating" : 853,
+    "scores" : [ 3, 3, 3, 3, 4, 3, 5, 3, 3, 3, 4 ]
   }, {
     "basketCourseId" : 9,
     "basketCourseName" : "Elektrėnai",
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 172,
     "count" : 2,
-    "rating" : 837.374392611259,
+    "rating" : 837.3743926112593,
     "displayRating" : 837,
     "scores" : [ 4, 2 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 835.6727625906095,
+    "rating" : 835.6727625906098,
     "displayRating" : 836,
     "scores" : [ 3, 3 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 813.2378724973679,
+    "rating" : 813.2378724973678,
     "displayRating" : 813,
     "scores" : [ 4, 5, 4 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 812.5712288427509,
+    "rating" : 812.571228842751,
     "displayRating" : 813,
     "scores" : [ 3, 4, 3, 4 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2394,
     "count" : 28,
-    "rating" : 810.8255593933318,
+    "rating" : 810.8255593933316,
     "displayRating" : 811,
     "scores" : [ 4, 2, 3, 4, 5, 5, 3, 4, 4, 4, 4, 3, 3, 2, 4, 4, 4, 4, 4, 4, 5, 4, 3, 5, 4, 3, 4, 3 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 800.5651723309375,
+    "rating" : 800.5651723309376,
     "displayRating" : 801,
     "scores" : [ 4, 4, 4, 3 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 976,
     "count" : 8,
-    "rating" : 800.0929464461676,
+    "rating" : 800.0929464461677,
     "displayRating" : 800,
     "scores" : [ 3, 4, 5, 4, 5, 3, 4, 3 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 799.3539426523295,
+    "rating" : 799.3539426523296,
     "displayRating" : 799,
     "scores" : [ 3, 4, 3, 4 ]
   }, {
@@ -254,7 +254,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 795.4408765126535,
+    "rating" : 795.4408765126533,
     "displayRating" : 795,
     "scores" : [ 4, 3, 3 ]
   }, {
@@ -268,7 +268,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 791.5801962325676,
+    "rating" : 791.5801962325677,
     "displayRating" : 792,
     "scores" : [ 5, 4 ]
   }, {
@@ -282,7 +282,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 790.7023209300387,
+    "rating" : 790.7023209300389,
     "displayRating" : 791,
     "scores" : [ 4, 3 ]
   }, {
@@ -296,7 +296,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 790.2955614837474,
+    "rating" : 790.2955614837479,
     "displayRating" : 790,
     "scores" : [ 6, 5, 5 ]
   }, {
@@ -310,7 +310,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 789.1506726268292,
+    "rating" : 789.1506726268293,
     "displayRating" : 789,
     "scores" : [ 4, 3, 4, 3 ]
   }, {
@@ -324,7 +324,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 188,
     "count" : 2,
-    "rating" : 788.247865261174,
+    "rating" : 788.2478652611742,
     "displayRating" : 788,
     "scores" : [ 3, 4 ]
   }, {
@@ -366,7 +366,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 775.9577491548845,
+    "rating" : 775.9577491548847,
     "displayRating" : 776,
     "scores" : [ 3, 4, 3, 4 ]
   }, {
@@ -380,7 +380,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 774.8323476561159,
+    "rating" : 774.8323476561161,
     "displayRating" : 775,
     "scores" : [ 5, 3, 5, 3 ]
   }, {
@@ -394,7 +394,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 450,
     "count" : 6,
-    "rating" : 774.0351542372506,
+    "rating" : 774.0351542372508,
     "displayRating" : 774,
     "scores" : [ 4, 4, 4, 5, 4, 5 ]
   }, {
@@ -408,7 +408,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 771.7010719384363,
+    "rating" : 771.7010719384365,
     "displayRating" : 772,
     "scores" : [ 6, 6, 6 ]
   }, {
@@ -422,7 +422,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 766.6870530011047,
+    "rating" : 766.6870530011045,
     "displayRating" : 767,
     "scores" : [ 4, 4 ]
   }, {
@@ -450,7 +450,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 763.5217471732142,
+    "rating" : 763.5217471732144,
     "displayRating" : 764,
     "scores" : [ 4, 5 ]
   }, {
@@ -492,7 +492,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1633,
     "count" : 21,
-    "rating" : 761.3619694582083,
+    "rating" : 761.361969458208,
     "displayRating" : 761,
     "scores" : [ 6, 4, 7, 6, 5, 4, 7, 5, 4, 5, 5, 5, 6, 4, 4, 3, 4, 4, 5, 4, 4 ]
   }, {
@@ -520,7 +520,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1160,
     "count" : 6,
-    "rating" : 760.0338449262539,
+    "rating" : 760.033844926254,
     "displayRating" : 760,
     "scores" : [ 3, 4, 3, 3, 2, 5 ]
   }, {
@@ -534,7 +534,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 759.8219643087039,
+    "rating" : 759.8219643087036,
     "displayRating" : 760,
     "scores" : [ 6, 5, 6, 8 ]
   }, {
@@ -562,7 +562,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 757.150921579328,
+    "rating" : 757.1509215793278,
     "displayRating" : 757,
     "scores" : [ 5, 4, 3, 4, 3, 4, 4, 3, 6, 5, 4 ]
   }, {
@@ -576,7 +576,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 755.6790471986797,
+    "rating" : 755.6790471986799,
     "displayRating" : 756,
     "scores" : [ 3, 3, 3, 5 ]
   }, {
@@ -590,7 +590,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 755.4210828805291,
+    "rating" : 755.4210828805288,
     "displayRating" : 755,
     "scores" : [ 6, 6, 5, 5, 5, 6, 7, 6, 5, 6, 5, 6, 7, 6, 5 ]
   }, {
@@ -604,7 +604,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 503,
     "count" : 7,
-    "rating" : 755.2699492990461,
+    "rating" : 755.2699492990463,
     "displayRating" : 755,
     "scores" : [ 3, 5, 4, 3, 3, 4, 6 ]
   }, {
@@ -618,7 +618,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 754.3706723887553,
+    "rating" : 754.3706723887551,
     "displayRating" : 754,
     "scores" : [ 4, 4, 3, 4, 4, 5, 5, 4, 4, 5, 4, 4, 4, 4, 4 ]
   }, {
@@ -646,7 +646,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2394,
     "count" : 28,
-    "rating" : 752.5764679239412,
+    "rating" : 752.576467923941,
     "displayRating" : 753,
     "scores" : [ 4, 3, 4, 6, 4, 3, 3, 3, 3, 5, 3, 4, 5, 3, 3, 3, 4, 3, 3, 3, 5, 4, 3, 4, 4, 4, 5, 3 ]
   }, {
@@ -702,7 +702,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 748.3283945194272,
+    "rating" : 748.3283945194271,
     "displayRating" : 748,
     "scores" : [ 4, 4 ]
   }, {
@@ -716,7 +716,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 450,
     "count" : 6,
-    "rating" : 746.7909408660804,
+    "rating" : 746.7909408660806,
     "displayRating" : 747,
     "scores" : [ 5, 6, 6, 5, 5, 6 ]
   }, {
@@ -730,7 +730,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 744.3788794358546,
+    "rating" : 744.3788794358545,
     "displayRating" : 744,
     "scores" : [ 3, 3, 4, 4 ]
   }, {
@@ -744,7 +744,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 743.9135749437593,
+    "rating" : 743.9135749437594,
     "displayRating" : 744,
     "scores" : [ 6, 6, 5, 6, 6, 6, 6, 4, 5, 6, 5, 4, 7, 5, 7 ]
   }, {
@@ -758,7 +758,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 743.2783175097353,
+    "rating" : 743.2783175097354,
     "displayRating" : 743,
     "scores" : [ 5, 4, 6, 7 ]
   }, {
@@ -786,7 +786,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2394,
     "count" : 28,
-    "rating" : 742.1581801577601,
+    "rating" : 742.1581801577597,
     "displayRating" : 742,
     "scores" : [ 4, 3, 3, 3, 3, 5, 3, 4, 3, 3, 3, 2, 3, 4, 4, 2, 2, 3, 3, 3, 4, 2, 3, 3, 3, 3, 3, 3 ]
   }, {
@@ -828,7 +828,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 737.4650814520138,
+    "rating" : 737.4650814520137,
     "displayRating" : 737,
     "scores" : [ 4, 4, 5, 4 ]
   }, {
@@ -870,7 +870,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 734.6348873066448,
+    "rating" : 734.6348873066447,
     "displayRating" : 735,
     "scores" : [ 4, 3, 3, 4 ]
   }, {
@@ -884,7 +884,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1076,
     "count" : 10,
-    "rating" : 733.9172861751952,
+    "rating" : 733.9172861751953,
     "displayRating" : 734,
     "scores" : [ 4, 4, 4, 4, 4, 4, 3, 3, 4, 4 ]
   }, {
@@ -898,7 +898,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1002,
     "count" : 6,
-    "rating" : 733.7723808135979,
+    "rating" : 733.7723808135978,
     "displayRating" : 734,
     "scores" : [ 5, 5, 6, 7, 6, 6 ]
   }, {
@@ -912,7 +912,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 733.6343001836256,
+    "rating" : 733.6343001836258,
     "displayRating" : 734,
     "scores" : [ 7, 6, 5, 5 ]
   }, {
@@ -930,20 +930,6 @@
     "displayRating" : 733,
     "scores" : [ 4, 4, 4, 4 ]
   }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 261,
-    "basketLabel" : "3A",
-    "basketSortOrder" : null,
-    "variationId" : 301,
-    "variationLabel" : "Main [54]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 174,
-    "count" : 4,
-    "rating" : 733.1290661173242,
-    "displayRating" : 733,
-    "scores" : [ 4, 4, 3, 3 ]
-  }, {
     "basketCourseId" : 11,
     "basketCourseName" : "Panevėžys. Skaistakalnis",
     "basketId" : 191,
@@ -954,7 +940,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 731.5496814518789,
+    "rating" : 731.5496814518788,
     "displayRating" : 732,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -982,7 +968,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 922,
     "count" : 11,
-    "rating" : 729.8946147547817,
+    "rating" : 729.8946147547815,
     "displayRating" : 730,
     "scores" : [ 6, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5 ]
   }, {
@@ -1010,7 +996,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 729.5824603820479,
+    "rating" : 729.5824603820482,
     "displayRating" : 730,
     "scores" : [ 3, 4, 3, 5, 4, 3, 5, 3, 4, 3, 4 ]
   }, {
@@ -1052,7 +1038,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 728.6899102992209,
+    "rating" : 728.689910299221,
     "displayRating" : 729,
     "scores" : [ 4, 4 ]
   }, {
@@ -1066,7 +1052,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 728.2601099411665,
+    "rating" : 728.2601099411663,
     "displayRating" : 728,
     "scores" : [ 5, 4, 4, 4, 3, 3, 4, 4, 3, 4, 4, 3, 3, 4, 4 ]
   }, {
@@ -1094,7 +1080,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 726.4563513200653,
+    "rating" : 726.4563513200654,
     "displayRating" : 726,
     "scores" : [ 4, 4, 4, 5, 4, 3, 5, 4, 3, 4, 4, 4, 4, 4, 5 ]
   }, {
@@ -1108,7 +1094,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1160,
     "count" : 6,
-    "rating" : 726.022841410297,
+    "rating" : 726.0228414102972,
     "displayRating" : 726,
     "scores" : [ 4, 4, 4, 4, 4, 4 ]
   }, {
@@ -1125,20 +1111,6 @@
     "rating" : 725.4037139331257,
     "displayRating" : 725,
     "scores" : [ 3, 5 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 266,
-    "basketLabel" : "8",
-    "basketSortOrder" : null,
-    "variationId" : 306,
-    "variationLabel" : "Main [75]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 723.8812324432392,
-    "displayRating" : 724,
-    "scores" : [ 4, 3, 4, 5, 5, 5, 6, 4, 4 ]
   }, {
     "basketCourseId" : 2,
     "basketCourseName" : "Pakruojis",
@@ -1178,7 +1150,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 722.9209011951184,
+    "rating" : 722.9209011951183,
     "displayRating" : 723,
     "scores" : [ 5, 6, 6, 5 ]
   }, {
@@ -1192,7 +1164,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 722.7535169879485,
+    "rating" : 722.7535169879487,
     "displayRating" : 723,
     "scores" : [ 6, 6, 6 ]
   }, {
@@ -1206,7 +1178,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1002,
     "count" : 6,
-    "rating" : 722.2892193655479,
+    "rating" : 722.2892193655476,
     "displayRating" : 722,
     "scores" : [ 5, 5, 5, 6, 6, 6 ]
   }, {
@@ -1220,7 +1192,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 721.8668974346427,
+    "rating" : 721.8668974346431,
     "displayRating" : 722,
     "scores" : [ 4, 5, 5, 4, 5, 3, 4, 4, 6, 3, 4, 3, 3, 4, 4 ]
   }, {
@@ -1234,7 +1206,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 721.7924406636976,
+    "rating" : 721.7924406636977,
     "displayRating" : 722,
     "scores" : [ 5, 4, 4 ]
   }, {
@@ -1248,7 +1220,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1526,
     "count" : 16,
-    "rating" : 721.0305015743464,
+    "rating" : 721.0305015743465,
     "displayRating" : 721,
     "scores" : [ 4, 5, 5, 4, 4, 3, 4, 4, 4, 6, 4, 5, 5, 4, 6, 5 ]
   }, {
@@ -1262,7 +1234,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 720.7353967548347,
+    "rating" : 720.7353967548346,
     "displayRating" : 721,
     "scores" : [ 5, 6, 5, 6 ]
   }, {
@@ -1276,7 +1248,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 720.6504964000011,
+    "rating" : 720.650496400001,
     "displayRating" : 721,
     "scores" : [ 4, 4, 4, 5 ]
   }, {
@@ -1290,7 +1262,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 719.6774937567257,
+    "rating" : 719.6774937567255,
     "displayRating" : 720,
     "scores" : [ 4, 5, 5, 5 ]
   }, {
@@ -1318,7 +1290,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 718.8726950898056,
+    "rating" : 718.8726950898057,
     "displayRating" : 719,
     "scores" : [ 5, 3, 5, 5 ]
   }, {
@@ -1335,6 +1307,20 @@
     "rating" : 716.6169178128051,
     "displayRating" : 717,
     "scores" : [ 3, 5, 6, 4, 4, 4, 3, 3, 4, 3, 6, 3, 4, 4, 5, 3, 3, 5, 3, 5 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 275,
+    "basketLabel" : "17",
+    "basketSortOrder" : null,
+    "variationId" : 315,
+    "variationLabel" : "Main [93]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 278,
+    "count" : 4,
+    "rating" : 716.5676845113899,
+    "displayRating" : 717,
+    "scores" : [ 4, 4, 4, 4 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
@@ -1374,7 +1360,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 715.4780517038782,
+    "rating" : 715.4780517038785,
     "displayRating" : 715,
     "scores" : [ 6, 4, 5, 3, 3, 4, 3, 4, 3, 5, 5, 3, 3, 4, 4 ]
   }, {
@@ -1388,7 +1374,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 715.1206003294778,
+    "rating" : 715.1206003294777,
     "displayRating" : 715,
     "scores" : [ 3, 4, 3, 4, 4, 4, 3, 3, 3, 4, 5, 4, 3, 4, 4 ]
   }, {
@@ -1405,6 +1391,20 @@
     "rating" : 714.8807595720298,
     "displayRating" : 715,
     "scores" : [ 4, 4, 5, 4 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 266,
+    "basketLabel" : "8",
+    "basketSortOrder" : null,
+    "variationId" : 306,
+    "variationLabel" : "Main [75]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 714.6009186161276,
+    "displayRating" : 715,
+    "scores" : [ 4, 3, 4, 5, 5, 5, 6, 4, 4, 3, 4 ]
   }, {
     "basketCourseId" : 4,
     "basketCourseName" : "Rietavas",
@@ -1430,7 +1430,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 713.3298158815933,
+    "rating" : 713.3298158815932,
     "displayRating" : 713,
     "scores" : [ 4, 5, 4 ]
   }, {
@@ -1444,7 +1444,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 450,
     "count" : 6,
-    "rating" : 712.7316575686024,
+    "rating" : 712.7316575686019,
     "displayRating" : 713,
     "scores" : [ 4, 5, 5, 4, 5, 5 ]
   }, {
@@ -1472,7 +1472,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 710.5692186700552,
+    "rating" : 710.5692186700554,
     "displayRating" : 711,
     "scores" : [ 5, 4, 4, 6 ]
   }, {
@@ -1486,7 +1486,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 709.1671818930295,
+    "rating" : 709.1671818930296,
     "displayRating" : 709,
     "scores" : [ 5, 5, 7 ]
   }, {
@@ -1514,7 +1514,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 708.5399229363439,
+    "rating" : 708.5399229363442,
     "displayRating" : 709,
     "scores" : [ 3, 5, 4 ]
   }, {
@@ -1556,7 +1556,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1526,
     "count" : 16,
-    "rating" : 707.494325518232,
+    "rating" : 707.4943255182318,
     "displayRating" : 707,
     "scores" : [ 4, 3, 4, 4, 3, 4, 3, 5, 4, 3, 3, 4, 4, 4, 4, 3 ]
   }, {
@@ -1584,7 +1584,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 707.3972105778089,
+    "rating" : 707.3972105778087,
     "displayRating" : 707,
     "scores" : [ 7, 5, 6, 6 ]
   }, {
@@ -1612,7 +1612,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 11,
-    "rating" : 706.6736837734236,
+    "rating" : 706.6736837734235,
     "displayRating" : 707,
     "scores" : [ 3, 4, 3, 5, 4, 4, 3, 3, 3, 3, 3 ]
   }, {
@@ -1626,7 +1626,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 706.2721525611487,
+    "rating" : 706.2721525611486,
     "displayRating" : 706,
     "scores" : [ 8, 8, 10, 11 ]
   }, {
@@ -1640,7 +1640,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2393,
     "count" : 28,
-    "rating" : 705.9181973584574,
+    "rating" : 705.9181973584573,
     "displayRating" : 706,
     "scores" : [ 5, 4, 4, 5, 5, 3, 5, 4, 6, 3, 5, 3, 4, 4, 5, 7, 5, 4, 4, 5, 5, 4, 4, 4, 4, 6, 5, 5 ]
   }, {
@@ -1668,7 +1668,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1527,
     "count" : 16,
-    "rating" : 705.4832779436958,
+    "rating" : 705.4832779436961,
     "displayRating" : 705,
     "scores" : [ 5, 4, 5, 5, 5, 5, 4, 4, 5, 5, 4, 4, 4, 4, 6, 4 ]
   }, {
@@ -1682,7 +1682,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 705.3370460205807,
+    "rating" : 705.3370460205804,
     "displayRating" : 705,
     "scores" : [ 4, 5, 4, 4 ]
   }, {
@@ -1696,7 +1696,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 704.4993139729146,
+    "rating" : 704.4993139729147,
     "displayRating" : 704,
     "scores" : [ 4, 4, 4, 4 ]
   }, {
@@ -1710,9 +1710,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 703.6754947549798,
+    "rating" : 703.6754947549801,
     "displayRating" : 704,
     "scores" : [ 7, 5, 8, 5, 5, 7, 6, 7, 5, 5, 5, 5, 6, 6, 6 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 261,
+    "basketLabel" : "3",
+    "basketSortOrder" : null,
+    "variationId" : 301,
+    "variationLabel" : "Main [54]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 411,
+    "count" : 6,
+    "rating" : 703.6388834116442,
+    "displayRating" : 704,
+    "scores" : [ 4, 4, 3, 3, 3, 3 ]
   }, {
     "basketCourseId" : 12,
     "basketCourseName" : "Nedožinka",
@@ -1724,7 +1738,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 703.3295051751026,
+    "rating" : 703.3295051751024,
     "displayRating" : 703,
     "scores" : [ 4, 5, 3 ]
   }, {
@@ -1752,9 +1766,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 702.9793186699221,
+    "rating" : 702.9793186699219,
     "displayRating" : 703,
     "scores" : [ 6, 5, 5, 7, 7, 7, 5, 5, 5, 6, 6, 5, 7, 6, 6 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 264,
+    "basketLabel" : "6",
+    "basketSortOrder" : null,
+    "variationId" : 304,
+    "variationLabel" : "Main [81]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 702.4974034859077,
+    "displayRating" : 702,
+    "scores" : [ 4, 4, 4, 3, 3, 4, 4, 5, 4, 4, 3 ]
   }, {
     "basketCourseId" : 3,
     "basketCourseName" : "Pušynas",
@@ -1766,7 +1794,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2393,
     "count" : 28,
-    "rating" : 702.4527496962967,
+    "rating" : 702.4527496962965,
     "displayRating" : 702,
     "scores" : [ 4, 3, 3, 3, 4, 4, 3, 5, 3, 4, 5, 5, 4, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 4, 4 ]
   }, {
@@ -1780,7 +1808,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 701.7497811598035,
+    "rating" : 701.7497811598038,
     "displayRating" : 702,
     "scores" : [ 6, 6 ]
   }, {
@@ -1808,7 +1836,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2393,
     "count" : 28,
-    "rating" : 701.3051327637947,
+    "rating" : 701.3051327637949,
     "displayRating" : 701,
     "scores" : [ 4, 4, 5, 4, 4, 5, 4, 4, 5, 5, 4, 5, 5, 4, 6, 6, 5, 4, 6, 5, 4, 5, 6, 6, 5, 5, 5, 5 ]
   }, {
@@ -1836,7 +1864,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 594,
     "count" : 7,
-    "rating" : 700.9247492955883,
+    "rating" : 700.9247492955881,
     "displayRating" : 701,
     "scores" : [ 5, 4, 5, 5, 6, 4, 5 ]
   }, {
@@ -1850,7 +1878,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1002,
     "count" : 6,
-    "rating" : 698.6956344514169,
+    "rating" : 698.6956344514173,
     "displayRating" : 699,
     "scores" : [ 4, 4, 3, 5, 3, 4 ]
   }, {
@@ -1882,20 +1910,6 @@
     "displayRating" : 698,
     "scores" : [ 4, 4, 4 ]
   }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 277,
-    "basketLabel" : "18",
-    "basketSortOrder" : null,
-    "variationId" : 317,
-    "variationLabel" : "Main [138]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 697.6422900488715,
-    "displayRating" : 698,
-    "scores" : [ 5, 5, 5, 5, 5, 5, 5, 5, 5 ]
-  }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
     "basketId" : 184,
@@ -1920,7 +1934,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2394,
     "count" : 28,
-    "rating" : 697.5063254947474,
+    "rating" : 697.5063254947478,
     "displayRating" : 698,
     "scores" : [ 6, 7, 5, 7, 6, 8, 6, 7, 6, 6, 7, 7, 5, 6, 6, 6, 7, 7, 10, 6, 6, 6, 6, 6, 6, 6, 8, 7 ]
   }, {
@@ -1952,20 +1966,6 @@
     "displayRating" : 696,
     "scores" : [ 5, 7, 6 ]
   }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 267,
-    "basketLabel" : "9",
-    "basketSortOrder" : null,
-    "variationId" : 307,
-    "variationLabel" : "Main [117]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 695.9252601683855,
-    "displayRating" : 696,
-    "scores" : [ 4, 5, 4, 5, 4, 4, 5, 5, 5 ]
-  }, {
     "basketCourseId" : 11,
     "basketCourseName" : "Panevėžys. Skaistakalnis",
     "basketId" : 196,
@@ -1976,37 +1976,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 694.8720463229747,
+    "rating" : 694.8720463229743,
     "displayRating" : 695,
     "scores" : [ 5, 5, 7 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 260,
-    "basketLabel" : "3",
-    "basketSortOrder" : null,
-    "variationId" : 300,
-    "variationLabel" : "Main [107]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 694.325447392857,
-    "displayRating" : 694,
-    "scores" : [ 4, 4, 4, 4, 4, 5, 4, 5, 5 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 270,
-    "basketLabel" : "12",
-    "basketSortOrder" : null,
-    "variationId" : 310,
-    "variationLabel" : "Main [186]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 693.872870399932,
-    "displayRating" : 694,
-    "scores" : [ 6, 6, 5, 8, 7, 6, 6, 6, 7 ]
   }, {
     "basketCourseId" : 3,
     "basketCourseName" : "Pušynas",
@@ -2032,7 +2004,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 693.4336293196085,
+    "rating" : 693.4336293196087,
     "displayRating" : 693,
     "scores" : [ 4, 6 ]
   }, {
@@ -2046,23 +2018,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2393,
     "count" : 28,
-    "rating" : 693.2133367984886,
+    "rating" : 693.2133367984885,
     "displayRating" : 693,
     "scores" : [ 4, 4, 5, 5, 4, 4, 5, 5, 5, 5, 6, 5, 4, 6, 4, 5, 4, 5, 5, 5, 5, 5, 4, 5, 5, 4, 4, 6 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 265,
-    "basketLabel" : "7",
-    "basketSortOrder" : null,
-    "variationId" : 305,
-    "variationLabel" : "Main [157]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 692.8652964176018,
-    "displayRating" : 693,
-    "scores" : [ 5, 6, 5, 8, 6, 6, 6, 6, 5 ]
   }, {
     "basketCourseId" : 8,
     "basketCourseName" : "Molėtai",
@@ -2074,7 +2032,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 692.7071416550497,
+    "rating" : 692.7071416550498,
     "displayRating" : 693,
     "scores" : [ 5, 5, 6, 6 ]
   }, {
@@ -2088,7 +2046,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 692.1203398455647,
+    "rating" : 692.1203398455646,
     "displayRating" : 692,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -2116,7 +2074,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1347,
     "count" : 14,
-    "rating" : 689.8541929813283,
+    "rating" : 689.8541929813285,
     "displayRating" : 690,
     "scores" : [ 6, 4, 4, 6, 5, 5, 6, 4, 4, 5, 4, 5, 5, 4 ]
   }, {
@@ -2130,7 +2088,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 689.385790272757,
+    "rating" : 689.3857902727569,
     "displayRating" : 689,
     "scores" : [ 3, 5, 4, 4 ]
   }, {
@@ -2144,7 +2102,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 5,
-    "rating" : 688.9032404780767,
+    "rating" : 688.9032404780766,
     "displayRating" : 689,
     "scores" : [ 5, 6, 4, 5, 4 ]
   }, {
@@ -2158,7 +2116,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 688.5313351477425,
+    "rating" : 688.5313351477429,
     "displayRating" : 689,
     "scores" : [ 4, 4, 6 ]
   }, {
@@ -2186,7 +2144,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 5,
-    "rating" : 687.7527856823984,
+    "rating" : 687.7527856823989,
     "displayRating" : 688,
     "scores" : [ 6, 7, 7, 7, 7 ]
   }, {
@@ -2200,9 +2158,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 687.4787582134645,
+    "rating" : 687.4787582134644,
     "displayRating" : 687,
     "scores" : [ 4, 4, 4, 4, 4, 3, 4, 5, 4, 4, 3, 5, 5, 4, 3 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 270,
+    "basketLabel" : "12",
+    "basketSortOrder" : null,
+    "variationId" : 310,
+    "variationLabel" : "Main [186]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 687.2125238426544,
+    "displayRating" : 687,
+    "scores" : [ 6, 6, 5, 8, 7, 6, 6, 6, 7, 6, 6 ]
   }, {
     "basketCourseId" : 14,
     "basketCourseName" : "Survilų Sodyba",
@@ -2214,7 +2186,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 687.2081621725258,
+    "rating" : 687.2081621725254,
     "displayRating" : 687,
     "scores" : [ 3, 5, 3, 3, 4, 5, 3, 4, 4, 3, 4, 4, 3, 4, 4 ]
   }, {
@@ -2228,9 +2200,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 686.2836507529186,
+    "rating" : 686.2836507529184,
     "displayRating" : 686,
     "scores" : [ 6, 6, 6, 6 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 259,
+    "basketLabel" : "2",
+    "basketSortOrder" : null,
+    "variationId" : 299,
+    "variationLabel" : "Main [80]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 686.1509421210004,
+    "displayRating" : 686,
+    "scores" : [ 4, 4, 5, 5, 6, 5, 4, 4, 5, 4, 4 ]
   }, {
     "basketCourseId" : 14,
     "basketCourseName" : "Survilų Sodyba",
@@ -2242,7 +2228,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 685.5280027273942,
+    "rating" : 685.5280027273941,
     "displayRating" : 686,
     "scores" : [ 5, 4, 3, 3, 4, 4, 5, 5, 5, 4, 4, 5, 3, 4, 4 ]
   }, {
@@ -2256,7 +2242,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 685.3193405681479,
+    "rating" : 685.3193405681478,
     "displayRating" : 685,
     "scores" : [ 6, 5, 4, 6, 5, 5, 5, 6, 4, 7, 4 ]
   }, {
@@ -2284,37 +2270,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 684.8237635919634,
+    "rating" : 684.8237635919631,
     "displayRating" : 685,
     "scores" : [ 6, 8, 5, 7, 7, 6, 7, 5, 6, 6, 9, 7, 5, 8, 6 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
-    "basketId" : 264,
-    "basketLabel" : "6",
+    "basketId" : 265,
+    "basketLabel" : "7",
     "basketSortOrder" : null,
-    "variationId" : 304,
-    "variationLabel" : "Main [81]",
+    "variationId" : 305,
+    "variationLabel" : "Main [157]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 684.334354410388,
-    "displayRating" : 684,
-    "scores" : [ 4, 4, 4, 3, 3, 4, 4, 5, 4 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 259,
-    "basketLabel" : "2",
-    "basketSortOrder" : null,
-    "variationId" : 299,
-    "variationLabel" : "Main [80]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 684.2933053128274,
-    "displayRating" : 684,
-    "scores" : [ 4, 4, 5, 5, 6, 5, 4, 4, 5 ]
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 684.7958420970589,
+    "displayRating" : 685,
+    "scores" : [ 5, 6, 5, 8, 6, 6, 6, 6, 5, 5, 6 ]
   }, {
     "basketCourseId" : 3,
     "basketCourseName" : "Pušynas",
@@ -2326,7 +2298,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2394,
     "count" : 28,
-    "rating" : 684.2116255332272,
+    "rating" : 684.2116255332269,
     "displayRating" : 684,
     "scores" : [ 5, 4, 5, 3, 4, 4, 5, 4, 5, 4, 4, 4, 4, 3, 3, 4, 5, 4, 3, 4, 4, 5, 3, 5, 4, 5, 4, 4 ]
   }, {
@@ -2354,7 +2326,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1527,
     "count" : 16,
-    "rating" : 683.2554419459034,
+    "rating" : 683.2554419459035,
     "displayRating" : 683,
     "scores" : [ 3, 4, 4, 6, 3, 4, 4, 5, 5, 4, 5, 4, 5, 3, 4, 4 ]
   }, {
@@ -2382,7 +2354,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1527,
     "count" : 16,
-    "rating" : 679.5279083210844,
+    "rating" : 679.5279083210846,
     "displayRating" : 680,
     "scores" : [ 5, 3, 4, 5, 4, 5, 4, 3, 5, 3, 3, 3, 5, 4, 4, 5 ]
   }, {
@@ -2396,7 +2368,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 679.1157019501572,
+    "rating" : 679.1157019501571,
     "displayRating" : 679,
     "scores" : [ 6, 7, 7, 6 ]
   }, {
@@ -2410,7 +2382,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 678.7317338547571,
+    "rating" : 678.7317338547568,
     "displayRating" : 679,
     "scores" : [ 5, 5, 4, 5 ]
   }, {
@@ -2424,7 +2396,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 678.2527832130954,
+    "rating" : 678.2527832130958,
     "displayRating" : 678,
     "scores" : [ 3, 4, 6 ]
   }, {
@@ -2438,7 +2410,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 100,
     "count" : 2,
-    "rating" : 678.2138260797165,
+    "rating" : 678.2138260797167,
     "displayRating" : 678,
     "scores" : [ 4, 5 ]
   }, {
@@ -2452,7 +2424,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 188,
     "count" : 2,
-    "rating" : 677.7352078661377,
+    "rating" : 677.7352078661379,
     "displayRating" : 678,
     "scores" : [ 4, 3 ]
   }, {
@@ -2466,7 +2438,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 677.3663802360395,
+    "rating" : 677.3663802360394,
     "displayRating" : 677,
     "scores" : [ 5, 5, 4, 4, 6, 3, 4, 4, 4, 5, 4 ]
   }, {
@@ -2478,16 +2450,16 @@
     "variationId" : 309,
     "variationLabel" : "Main [174]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 677.263850413115,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 676.9557893388509,
     "displayRating" : 677,
-    "scores" : [ 5, 7, 6, 7, 7, 7, 6, 6, 5 ]
+    "scores" : [ 5, 7, 6, 7, 7, 7, 6, 6, 5, 5, 6 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
     "basketId" : 275,
-    "basketLabel" : "16",
+    "basketLabel" : "17",
     "basketSortOrder" : null,
     "variationId" : 319,
     "variationLabel" : "Old [125]",
@@ -2508,7 +2480,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1076,
     "count" : 10,
-    "rating" : 676.1883943379106,
+    "rating" : 676.1883943379104,
     "displayRating" : 676,
     "scores" : [ 5, 3, 5, 5, 5, 5, 5, 4, 5, 6 ]
   }, {
@@ -2522,7 +2494,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 675.7293668981649,
+    "rating" : 675.7293668981647,
     "displayRating" : 676,
     "scores" : [ 6, 6, 7, 8 ]
   }, {
@@ -2536,7 +2508,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 675.42636216262,
+    "rating" : 675.4263621626203,
     "displayRating" : 675,
     "scores" : [ 4, 4, 4, 4 ]
   }, {
@@ -2554,6 +2526,20 @@
     "displayRating" : 675,
     "scores" : [ 5, 3 ]
   }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 277,
+    "basketLabel" : "19",
+    "basketSortOrder" : null,
+    "variationId" : 317,
+    "variationLabel" : "Main [138]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 674.8104142686087,
+    "displayRating" : 675,
+    "scores" : [ 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 4 ]
+  }, {
     "basketCourseId" : 11,
     "basketCourseName" : "Panevėžys. Skaistakalnis",
     "basketId" : 185,
@@ -2564,7 +2550,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 674.7559058172463,
+    "rating" : 674.755905817246,
     "displayRating" : 675,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -2592,7 +2578,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 674.3560872995002,
+    "rating" : 674.3560872995001,
     "displayRating" : 674,
     "scores" : [ 4, 5 ]
   }, {
@@ -2620,7 +2606,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1077,
     "count" : 10,
-    "rating" : 670.5564063070839,
+    "rating" : 670.5564063070838,
     "displayRating" : 671,
     "scores" : [ 6, 5, 6, 7, 6, 6, 6, 6, 7, 6 ]
   }, {
@@ -2637,20 +2623,6 @@
     "rating" : 669.8048565809634,
     "displayRating" : 670,
     "scores" : [ 4, 5, 4, 4 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 276,
-    "basketLabel" : "17",
-    "basketSortOrder" : null,
-    "variationId" : 316,
-    "variationLabel" : "Main [100]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 669.6506550505941,
-    "displayRating" : 670,
-    "scores" : [ 5, 4, 5, 5, 5, 5, 6, 4, 5 ]
   }, {
     "basketCourseId" : 7,
     "basketCourseName" : "Akmenė",
@@ -2676,7 +2648,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 669.2991588333648,
+    "rating" : 669.2991588333643,
     "displayRating" : 669,
     "scores" : [ 8, 6, 6, 6 ]
   }, {
@@ -2690,7 +2662,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 668.7599999999999,
+    "rating" : 668.76,
     "displayRating" : 669,
     "scores" : [ 5, 4 ]
   }, {
@@ -2718,7 +2690,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2363,
     "count" : 28,
-    "rating" : 665.390142003878,
+    "rating" : 665.3901420038784,
     "displayRating" : 665,
     "scores" : [ 5, 3, 4, 3, 4, 6, 5, 4, 3, 6, 5, 5, 5, 4, 4, 4, 3, 4, 4, 4, 4, 3, 3, 4, 5, 4, 5, 5 ]
   }, {
@@ -2746,9 +2718,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1077,
     "count" : 10,
-    "rating" : 663.9299245506731,
+    "rating" : 663.9299245506733,
     "displayRating" : 664,
     "scores" : [ 5, 5, 5, 6, 4, 5, 4, 5, 5, 5 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 276,
+    "basketLabel" : "18",
+    "basketSortOrder" : null,
+    "variationId" : 316,
+    "variationLabel" : "Main [100]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 663.9083860237919,
+    "displayRating" : 664,
+    "scores" : [ 5, 4, 5, 5, 5, 5, 6, 4, 5, 5, 4 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -2760,7 +2746,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 663.2050583045192,
+    "rating" : 663.2050583045193,
     "displayRating" : 663,
     "scores" : [ 8, 7, 8, 7, 8, 8, 10, 7, 9, 8, 8 ]
   }, {
@@ -2774,7 +2760,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 662.1709826710598,
+    "rating" : 662.1709826710603,
     "displayRating" : 662,
     "scores" : [ 4, 3 ]
   }, {
@@ -2788,7 +2774,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 761,
     "count" : 7,
-    "rating" : 662.1269477424585,
+    "rating" : 662.1269477424587,
     "displayRating" : 662,
     "scores" : [ 9, 7, 8, 7, 9, 7, 7 ]
   }, {
@@ -2802,23 +2788,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 15,
-    "rating" : 661.5719863400907,
+    "rating" : 661.5719863400906,
     "displayRating" : 662,
     "scores" : [ 6, 5, 4, 5, 5, 6, 4, 4, 4, 4, 4, 5, 4, 7, 5 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 263,
-    "basketLabel" : "5",
-    "basketSortOrder" : null,
-    "variationId" : 303,
-    "variationLabel" : "Main [100]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 661.1784717765221,
-    "displayRating" : 661,
-    "scores" : [ 4, 4, 3, 3, 4, 5, 4, 5, 5 ]
   }, {
     "basketCourseId" : 1,
     "basketCourseName" : "Alytus",
@@ -2830,7 +2802,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 660.2273467320117,
+    "rating" : 660.2273467320116,
     "displayRating" : 660,
     "scores" : [ 6, 6, 6, 6 ]
   }, {
@@ -2844,7 +2816,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 658.1619045906532,
+    "rating" : 658.1619045906533,
     "displayRating" : 658,
     "scores" : [ 5, 5, 6, 5 ]
   }, {
@@ -2858,7 +2830,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 5,
-    "rating" : 655.9507546240916,
+    "rating" : 655.9507546240914,
     "displayRating" : 656,
     "scores" : [ 6, 7, 6, 7, 6 ]
   }, {
@@ -2872,7 +2844,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 760,
     "count" : 7,
-    "rating" : 655.1647773105552,
+    "rating" : 655.1647773105551,
     "displayRating" : 655,
     "scores" : [ 7, 5, 5, 9, 5, 6, 7 ]
   }, {
@@ -2900,7 +2872,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 11,
-    "rating" : 654.497760192732,
+    "rating" : 654.4977601927319,
     "displayRating" : 654,
     "scores" : [ 5, 5, 5, 5, 7, 5, 7, 5, 4, 5, 6 ]
   }, {
@@ -2914,9 +2886,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 654.1143913754108,
+    "rating" : 654.114391375411,
     "displayRating" : 654,
     "scores" : [ 5, 4, 4, 4 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 263,
+    "basketLabel" : "5",
+    "basketSortOrder" : null,
+    "variationId" : 303,
+    "variationLabel" : "Main [100]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 652.8248138270105,
+    "displayRating" : 653,
+    "scores" : [ 4, 4, 3, 3, 4, 5, 4, 5, 5, 4, 4 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
@@ -2928,9 +2914,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1077,
     "count" : 10,
-    "rating" : 652.5722768041475,
+    "rating" : 652.5722768041471,
     "displayRating" : 653,
     "scores" : [ 5, 4, 4, 5, 6, 6, 4, 6, 5, 5 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 267,
+    "basketLabel" : "9",
+    "basketSortOrder" : null,
+    "variationId" : 307,
+    "variationLabel" : "Main [117]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 652.5319386114102,
+    "displayRating" : 653,
+    "scores" : [ 4, 5, 4, 5, 4, 4, 5, 5, 5, 4, 5 ]
   }, {
     "basketCourseId" : 12,
     "basketCourseName" : "Nedožinka",
@@ -2942,7 +2942,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 652.3488214679307,
+    "rating" : 652.3488214679306,
     "displayRating" : 652,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -2956,7 +2956,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 11,
-    "rating" : 651.3094262823298,
+    "rating" : 651.3094262823299,
     "displayRating" : 651,
     "scores" : [ 5, 5, 4, 4, 4, 4, 5, 4, 4, 4, 4 ]
   }, {
@@ -2970,7 +2970,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 649.0783484235817,
+    "rating" : 649.078348423582,
     "displayRating" : 649,
     "scores" : [ 6, 6, 7, 7 ]
   }, {
@@ -2984,7 +2984,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 648.1633884553144,
+    "rating" : 648.1633884553146,
     "displayRating" : 648,
     "scores" : [ 4, 5, 4, 4 ]
   }, {
@@ -3012,7 +3012,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 647.5533412991558,
+    "rating" : 647.5533412991559,
     "displayRating" : 648,
     "scores" : [ 5, 5, 5, 4 ]
   }, {
@@ -3026,7 +3026,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2393,
     "count" : 28,
-    "rating" : 644.8435839357907,
+    "rating" : 644.8435839357905,
     "displayRating" : 645,
     "scores" : [ 4, 4, 4, 4, 6, 4, 6, 4, 3, 4, 6, 5, 5, 4, 4, 4, 3, 6, 4, 5, 4, 4, 5, 3, 6, 6, 4, 5 ]
   }, {
@@ -3040,7 +3040,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 643.8700010198556,
+    "rating" : 643.8700010198553,
     "displayRating" : 644,
     "scores" : [ 5, 7, 6, 5 ]
   }, {
@@ -3054,7 +3054,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 643.7222854577808,
+    "rating" : 643.722285457781,
     "displayRating" : 644,
     "scores" : [ 5, 4 ]
   }, {
@@ -3068,7 +3068,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 643.1366856847995,
+    "rating" : 643.1366856847993,
     "displayRating" : 643,
     "scores" : [ 6, 6, 6, 7 ]
   }, {
@@ -3082,9 +3082,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 643.1292530804725,
+    "rating" : 643.1292530804731,
     "displayRating" : 643,
     "scores" : [ 5, 5, 3, 4 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 260,
+    "basketLabel" : "1",
+    "basketSortOrder" : null,
+    "variationId" : 300,
+    "variationLabel" : "Main [107]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 642.8028089036482,
+    "displayRating" : 643,
+    "scores" : [ 4, 4, 4, 4, 4, 5, 4, 5, 5, 6, 4 ]
   }, {
     "basketCourseId" : 2,
     "basketCourseName" : "Pakruojis",
@@ -3096,7 +3110,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 641.8326707273513,
+    "rating" : 641.8326707273511,
     "displayRating" : 642,
     "scores" : [ 5, 5, 7, 7 ]
   }, {
@@ -3110,7 +3124,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 641.4526390752033,
+    "rating" : 641.4526390752031,
     "displayRating" : 641,
     "scores" : [ 8, 6, 6, 7, 6, 6, 6, 7, 8, 6, 6 ]
   }, {
@@ -3124,7 +3138,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 641.1392535347777,
+    "rating" : 641.1392535347778,
     "displayRating" : 641,
     "scores" : [ 5, 5, 3, 4 ]
   }, {
@@ -3138,7 +3152,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 641.0993320646296,
+    "rating" : 641.0993320646294,
     "displayRating" : 641,
     "scores" : [ 5, 4, 5, 4 ]
   }, {
@@ -3152,7 +3166,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2363,
     "count" : 28,
-    "rating" : 639.0070878466213,
+    "rating" : 639.0070878466215,
     "displayRating" : 639,
     "scores" : [ 4, 4, 4, 5, 4, 5, 5, 4, 5, 4, 3, 5, 4, 3, 5, 5, 5, 5, 6, 4, 4, 4, 5, 6, 5, 5, 4, 5 ]
   }, {
@@ -3180,7 +3194,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 638.2490682469696,
+    "rating" : 638.2490682469694,
     "displayRating" : 638,
     "scores" : [ 4, 4, 4, 5 ]
   }, {
@@ -3194,7 +3208,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 638.1059965806766,
+    "rating" : 638.1059965806763,
     "displayRating" : 638,
     "scores" : [ 6, 5, 6, 6 ]
   }, {
@@ -3222,7 +3236,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 637.4323205777406,
+    "rating" : 637.4323205777407,
     "displayRating" : 637,
     "scores" : [ 4, 4, 4, 5 ]
   }, {
@@ -3236,7 +3250,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 635.0206172035989,
+    "rating" : 635.0206172035987,
     "displayRating" : 635,
     "scores" : [ 7, 7, 6, 6 ]
   }, {
@@ -3250,7 +3264,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 255,
     "count" : 3,
-    "rating" : 633.8323896848136,
+    "rating" : 633.8323896848138,
     "displayRating" : 634,
     "scores" : [ 8, 5, 7 ]
   }, {
@@ -3264,7 +3278,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 4,
-    "rating" : 628.5958960076329,
+    "rating" : 628.5958960076326,
     "displayRating" : 629,
     "scores" : [ 9, 8, 8, 9 ]
   }, {
@@ -3292,23 +3306,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 627.0772025655313,
+    "rating" : 627.077202565531,
     "displayRating" : 627,
     "scores" : [ 5, 6, 6, 6 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
-    "basketId" : 273,
-    "basketLabel" : "14",
+    "basketId" : 268,
+    "basketLabel" : "10",
     "basketSortOrder" : null,
-    "variationId" : 313,
-    "variationLabel" : "Main [109]",
+    "variationId" : 308,
+    "variationLabel" : "Main [166]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 626.6061469870081,
-    "displayRating" : 627,
-    "scores" : [ 6, 5, 6, 6, 8, 5, 6, 5, 6 ]
+    "globalSampleCount" : 278,
+    "count" : 4,
+    "rating" : 625.0064835491855,
+    "displayRating" : 625,
+    "scores" : [ 7, 6, 6, 6 ]
   }, {
     "basketCourseId" : 9,
     "basketCourseName" : "Elektrėnai",
@@ -3320,7 +3334,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 624.1187406528808,
+    "rating" : 624.1187406528804,
     "displayRating" : 624,
     "scores" : [ 4, 4, 5, 3 ]
   }, {
@@ -3334,7 +3348,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 623.6539068171649,
+    "rating" : 623.6539068171644,
     "displayRating" : 624,
     "scores" : [ 7, 8 ]
   }, {
@@ -3348,7 +3362,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 623.1994169418683,
+    "rating" : 623.1994169418682,
     "displayRating" : 623,
     "scores" : [ 4, 5, 5, 4 ]
   }, {
@@ -3362,21 +3376,21 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 622.1638083259779,
+    "rating" : 622.163808325978,
     "displayRating" : 622,
     "scores" : [ 5, 4, 4, 4 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
     "basketId" : 258,
-    "basketLabel" : "1",
+    "basketLabel" : "Old 1",
     "basketSortOrder" : null,
     "variationId" : 298,
     "variationLabel" : "Main [95]",
     "variationSortOrder" : null,
     "globalSampleCount" : 635,
     "count" : 9,
-    "rating" : 619.9101667784547,
+    "rating" : 619.9101667784548,
     "displayRating" : 620,
     "scores" : [ 5, 5, 5, 4, 5, 4, 4, 4, 5 ]
   }, {
@@ -3404,7 +3418,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 616.8544011723237,
+    "rating" : 616.8544011723236,
     "displayRating" : 617,
     "scores" : [ 7, 6 ]
   }, {
@@ -3422,20 +3436,6 @@
     "displayRating" : 617,
     "scores" : [ 4, 4 ]
   }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 274,
-    "basketLabel" : "15",
-    "basketSortOrder" : null,
-    "variationId" : 314,
-    "variationLabel" : "Main [79]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 614.5713299540253,
-    "displayRating" : 615,
-    "scores" : [ 5, 7, 7, 6, 4, 4, 6, 6, 3 ]
-  }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
     "basketId" : 177,
@@ -3446,7 +3446,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 450,
     "count" : 6,
-    "rating" : 613.8038950681387,
+    "rating" : 613.8038950681388,
     "displayRating" : 614,
     "scores" : [ 5, 3, 5, 4, 3, 5 ]
   }, {
@@ -3502,7 +3502,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 278,
     "count" : 2,
-    "rating" : 609.9718143243659,
+    "rating" : 609.9718143243662,
     "displayRating" : 610,
     "scores" : [ 8, 9 ]
   }, {
@@ -3534,6 +3534,20 @@
     "displayRating" : 609,
     "scores" : [ 4, 5, 6, 6 ]
   }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 274,
+    "basketLabel" : "16",
+    "basketSortOrder" : null,
+    "variationId" : 314,
+    "variationLabel" : "Main [79]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 607.9915563518821,
+    "displayRating" : 608,
+    "scores" : [ 5, 7, 7, 6, 4, 4, 6, 6, 3, 6, 4 ]
+  }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
     "basketId" : 93,
@@ -3544,9 +3558,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1002,
     "count" : 6,
-    "rating" : 604.1987019936927,
+    "rating" : 604.1987019936923,
     "displayRating" : 604,
     "scores" : [ 5, 6, 5, 4, 5, 5 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 273,
+    "basketLabel" : "15",
+    "basketSortOrder" : null,
+    "variationId" : 313,
+    "variationLabel" : "Main [109]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 601.5932718835694,
+    "displayRating" : 602,
+    "scores" : [ 6, 5, 6, 6, 8, 5, 6, 5, 6, 5, 6 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
@@ -3558,7 +3586,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 450,
     "count" : 6,
-    "rating" : 601.4884025309506,
+    "rating" : 601.4884025309503,
     "displayRating" : 601,
     "scores" : [ 5, 3, 6, 4, 5, 4 ]
   }, {
@@ -3572,7 +3600,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 11,
-    "rating" : 596.8450998021771,
+    "rating" : 596.8450998021767,
     "displayRating" : 597,
     "scores" : [ 5, 5, 5, 7, 7, 6, 6, 6, 8, 5, 6 ]
   }, {
@@ -3586,7 +3614,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 5,
-    "rating" : 594.9609063468017,
+    "rating" : 594.960906346802,
     "displayRating" : 595,
     "scores" : [ 6, 6, 10, 6, 8 ]
   }, {
@@ -3614,7 +3642,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 454,
     "count" : 4,
-    "rating" : 591.7220225854212,
+    "rating" : 591.7220225854214,
     "displayRating" : 592,
     "scores" : [ 8, 7, 5, 6 ]
   }, {
@@ -3628,7 +3656,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 587.2121317964836,
+    "rating" : 587.2121317964838,
     "displayRating" : 587,
     "scores" : [ 5, 4 ]
   }, {
@@ -3642,7 +3670,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 583.1402385957397,
+    "rating" : 583.1402385957393,
     "displayRating" : 583,
     "scores" : [ 6, 4 ]
   }, {
@@ -3656,7 +3684,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 5,
-    "rating" : 582.6452630935439,
+    "rating" : 582.645263093544,
     "displayRating" : 583,
     "scores" : [ 8, 8, 5, 9, 7 ]
   }, {
@@ -3684,7 +3712,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 577.7956011905949,
+    "rating" : 577.795601190595,
     "displayRating" : 578,
     "scores" : [ 7, 6 ]
   }, {
@@ -3698,7 +3726,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 158,
     "count" : 2,
-    "rating" : 577.6412143666878,
+    "rating" : 577.6412143666879,
     "displayRating" : 578,
     "scores" : [ 5, 7 ]
   }, {
@@ -3712,23 +3740,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 574.8751925217734,
+    "rating" : 574.8751925217729,
     "displayRating" : 575,
     "scores" : [ 7, 6, 5, 6 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 262,
-    "basketLabel" : "4",
-    "basketSortOrder" : null,
-    "variationId" : 302,
-    "variationLabel" : "Main [96]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 635,
-    "count" : 9,
-    "rating" : 572.7267562137947,
-    "displayRating" : 573,
-    "scores" : [ 4, 4, 3, 5, 4, 6, 5, 4, 5 ]
   }, {
     "basketCourseId" : 9,
     "basketCourseName" : "Elektrėnai",
@@ -3740,7 +3754,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 569.8123231614641,
+    "rating" : 569.8123231614642,
     "displayRating" : 570,
     "scores" : [ 3, 4, 4, 5 ]
   }, {
@@ -3754,7 +3768,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 566.5070039166961,
+    "rating" : 566.5070039166964,
     "displayRating" : 567,
     "scores" : [ 5, 5 ]
   }, {
@@ -3768,7 +3782,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 561.4199102061016,
+    "rating" : 561.4199102061015,
     "displayRating" : 561,
     "scores" : [ 4, 5 ]
   }, {
@@ -3796,7 +3810,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 360,
     "count" : 4,
-    "rating" : 551.3897858133155,
+    "rating" : 551.3897858133154,
     "displayRating" : 551,
     "scores" : [ 4, 4, 4, 4 ]
   }, {
@@ -3810,7 +3824,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 544.5280905725399,
+    "rating" : 544.52809057254,
     "displayRating" : 545,
     "scores" : [ 4, 4, 5, 5 ]
   }, {
@@ -3824,7 +3838,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 538.3238046810067,
+    "rating" : 538.3238046810063,
     "displayRating" : 538,
     "scores" : [ 6, 5 ]
   }, {
@@ -3838,7 +3852,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 535.5503758884805,
+    "rating" : 535.5503758884807,
     "displayRating" : 536,
     "scores" : [ 4, 6, 4, 4 ]
   }, {
@@ -3852,7 +3866,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 347,
     "count" : 4,
-    "rating" : 525.7183540268041,
+    "rating" : 525.7183540268044,
     "displayRating" : 526,
     "scores" : [ 4, 5, 5, 4 ]
   }, {
@@ -3866,23 +3880,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 518.9443430587365,
+    "rating" : 518.9443430587364,
     "displayRating" : 519,
     "scores" : [ 5, 7, 6 ]
-  }, {
-    "basketCourseId" : 15,
-    "basketCourseName" : "Jonava",
-    "basketId" : 271,
-    "basketLabel" : "12A",
-    "basketSortOrder" : null,
-    "variationId" : 311,
-    "variationLabel" : "Main [64]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 408,
-    "count" : 6,
-    "rating" : 517.0410080163894,
-    "displayRating" : 517,
-    "scores" : [ 5, 4, 4, 5, 7, 5 ]
   }, {
     "basketCourseId" : 2,
     "basketCourseName" : "Pakruojis",
@@ -3894,9 +3894,37 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 228,
     "count" : 4,
-    "rating" : 514.4803404196349,
+    "rating" : 514.4803404196354,
     "displayRating" : 514,
     "scores" : [ 4, 3, 5, 4 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 271,
+    "basketLabel" : "13",
+    "basketSortOrder" : null,
+    "variationId" : 311,
+    "variationLabel" : "Main [64]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 645,
+    "count" : 8,
+    "rating" : 511.1772000491467,
+    "displayRating" : 511,
+    "scores" : [ 5, 4, 4, 5, 7, 5, 4, 5 ]
+  }, {
+    "basketCourseId" : 15,
+    "basketCourseName" : "Jonava",
+    "basketId" : 262,
+    "basketLabel" : "4",
+    "basketSortOrder" : null,
+    "variationId" : 302,
+    "variationLabel" : "Main [96]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 872,
+    "count" : 11,
+    "rating" : 502.1088076221203,
+    "displayRating" : 502,
+    "scores" : [ 4, 4, 3, 5, 4, 6, 5, 4, 5, 6, 5 ]
   }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
@@ -3908,7 +3936,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 496.4255236185066,
+    "rating" : 496.4255236185068,
     "displayRating" : 496,
     "scores" : [ 7, 7 ]
   }, {
@@ -3922,7 +3950,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 332,
     "count" : 4,
-    "rating" : 494.9559189377746,
+    "rating" : 494.9559189377744,
     "displayRating" : 495,
     "scores" : [ 11, 6, 6, 5 ]
   }, {
@@ -3936,7 +3964,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 494.5783894146935,
+    "rating" : 494.5783894146934,
     "displayRating" : 495,
     "scores" : [ 5, 5 ]
   }, {
@@ -3964,7 +3992,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 66,
     "count" : 2,
-    "rating" : 485.47738851500094,
+    "rating" : 485.4773885150008,
     "displayRating" : 485,
     "scores" : [ 5, 6 ]
   }, {
@@ -3978,7 +4006,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 480.4290207287022,
+    "rating" : 480.429020728702,
     "displayRating" : 480,
     "scores" : [ 6, 5, 5 ]
   }, {
@@ -3992,7 +4020,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 460.7372242060014,
+    "rating" : 460.73722420600177,
     "displayRating" : 461,
     "scores" : [ 8, 7 ]
   }, {
@@ -4006,7 +4034,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 326.2414654740894,
+    "rating" : 326.2414654740891,
     "displayRating" : 326,
     "scores" : [ 4, 6, 5 ]
   } ]
