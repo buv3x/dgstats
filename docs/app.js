@@ -32,7 +32,6 @@
     var courseSelect = document.getElementById("course");
     var ratingFromInput = document.getElementById("rating-from");
     var ratingToInput = document.getElementById("rating-to");
-    var snapshotMeta = document.getElementById("snapshot-meta");
     var message = document.getElementById("message");
     var tableWrap = document.getElementById("table-wrap");
     var tableBody = document.getElementById("statistics-body");
@@ -152,7 +151,6 @@
 
     function initializePage() {
         setActiveView("description");
-        renderMetadata();
         populateCourses();
         populateBasketCourses();
         loadPlayerLookup();
@@ -291,14 +289,6 @@
         descriptionMessage.textContent = text;
         descriptionMessage.hidden = !text;
         descriptionMessage.classList.toggle("error", !!error);
-    }
-
-    function renderMetadata() {
-        if (!manifest || !manifest.metadata || !manifest.metadata.exportedAt) {
-            snapshotMeta.textContent = "";
-            return;
-        }
-        snapshotMeta.textContent = "Exported at " + manifest.metadata.exportedAt;
     }
 
     function populateCourses() {
@@ -941,6 +931,10 @@
     }
 
     function comparePersonalRows(left, right) {
+        var ratingComparison = Number(right.rating) - Number(left.rating);
+        if (Number.isFinite(ratingComparison) && ratingComparison !== 0) {
+            return ratingComparison;
+        }
         var courseComparison = compareCourses(
             selectedManifestCourse(left.basketCourseId) || {
                 id: left.basketCourseId,
