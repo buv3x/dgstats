@@ -16,15 +16,15 @@
     var playerLookup = [];
     var selectedPersonalSnapshot = null;
     var selectedPersonalRequest = 0;
-    var descriptionSource = null;
-
+    var personalPlayerInputTimer = null;
     var descriptionTab = document.getElementById("description-tab");
     var courseStatsTab = document.getElementById("course-stats-tab");
     var basketStatsTab = document.getElementById("basket-stats-tab");
     var personalStatsTab = document.getElementById("personal-stats-tab");
     var descriptionView = document.getElementById("description-view");
-    var descriptionMessage = document.getElementById("description-message");
-    var descriptionContent = document.getElementById("description-content");
+    var descriptionCompetitionCount = document.getElementById("description-competition-count");
+    var descriptionPlayersCount = document.getElementById("description-players-count");
+    var descriptionLatestCompetition = document.getElementById("description-latest-competition");
     var courseStatsView = document.getElementById("course-stats-view");
     var basketStatsView = document.getElementById("basket-stats-view");
     var personalStatsView = document.getElementById("personal-stats-view");
@@ -57,8 +57,20 @@
     var personalMessage = document.getElementById("personal-message");
     var personalTableWrap = document.getElementById("personal-table-wrap");
     var personalTableBody = document.getElementById("personal-statistics-body");
+    var uiTooltip = document.getElementById("ui-tooltip");
+    var activeUiTooltipTrigger = null;
 
-    loadDescription();
+    updateDescriptionPlaceholders(null);
+
+    document.addEventListener("pointerover", handleUiTooltipPointerOver);
+    document.addEventListener("pointerout", handleUiTooltipPointerOut);
+    document.addEventListener("focusin", handleUiTooltipFocusIn);
+    document.addEventListener("focusout", handleUiTooltipFocusOut);
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            hideUiTooltip();
+        }
+    });
 
     fetch("data/statistics.json")
         .then(function (response) {
@@ -69,14 +81,14 @@
         })
         .then(function (data) {
             manifest = data;
+            updateDescriptionPlaceholders(manifest);
             initializePage();
-            renderDescription();
         })
         .catch(function () {
             showMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
             showBasketMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
             showPersonalMessage("No exported statistics manifest found. Run the local basket statistics export first.", true);
-            renderDescription();
+            updateDescriptionPlaceholders(null);
         });
 
     descriptionTab.addEventListener("click", function () {
@@ -113,11 +125,11 @@
     });
 
     personalPlayerInput.addEventListener("input", function () {
-        handlePersonalPlayerInput();
+        schedulePersonalPlayerInput();
     });
 
     personalPlayerInput.addEventListener("change", function () {
-        handlePersonalPlayerInput();
+        schedulePersonalPlayerInput();
     });
 
     personalCourseSelect.addEventListener("change", function () {
@@ -150,7 +162,7 @@
     });
 
     function initializePage() {
-        setActiveView("description");
+        setActiveView("course");
         populateCourses();
         populateBasketCourses();
         loadPlayerLookup();
@@ -186,109 +198,17 @@
         }
     }
 
-    function loadDescription() {
-        fetch("description.txt")
-            .then(function (response) {
-                if (!response.ok) {
-                    throw new Error("Description not found");
-                }
-                return response.text();
-            })
-            .then(function (text) {
-                descriptionSource = text;
-                renderDescription();
-            })
-            .catch(function () {
-                descriptionSource = null;
-                descriptionContent.hidden = true;
-                showDescriptionMessage("Description is unavailable.", true);
-            });
-    }
-
-    function renderDescription() {
-        if (descriptionSource === null) {
-            return;
-        }
-        descriptionContent.innerHTML = "";
-        var lines = resolveDescriptionPlaceholders(descriptionSource).split(/\r?\n/);
-        var paragraphLines = [];
-        var sectionContent = null;
-        lines.forEach(function (line) {
-            if (/^#\s+/.test(line)) {
-                flushDescriptionParagraph(paragraphLines, sectionContent || descriptionContent);
-                paragraphLines = [];
-                var title = line.replace(/^#\s+/, "");
-                var section = document.createElement("details");
-                section.className = "description-section";
-                if (title === "General Information") {
-                    section.open = true;
-                }
-
-                var summary = document.createElement("summary");
-                appendSafeInlineContent(summary, title);
-                section.appendChild(summary);
-
-                sectionContent = document.createElement("div");
-                sectionContent.className = "description-section-content";
-                section.appendChild(sectionContent);
-                descriptionContent.appendChild(section);
-            } else if (line.trim() === "") {
-                flushDescriptionParagraph(paragraphLines, sectionContent || descriptionContent);
-                paragraphLines = [];
-            } else {
-                paragraphLines.push(line);
-            }
-        });
-        flushDescriptionParagraph(paragraphLines, sectionContent || descriptionContent);
-        descriptionContent.hidden = false;
-        showDescriptionMessage("", false);
-    }
-
-    function flushDescriptionParagraph(lines, target) {
-        if (lines.length === 0) {
-            return;
-        }
-        var paragraph = document.createElement("p");
-        appendSafeInlineContent(paragraph, lines.join(" "));
-        target.appendChild(paragraph);
-    }
-
-    function resolveDescriptionPlaceholders(source) {
-        var values = manifest && manifest.metadata && manifest.metadata.description
-            ? manifest.metadata.description
+    function updateDescriptionPlaceholders(source) {
+        var values = source && source.metadata && source.metadata.description
+            ? source.metadata.description
             : {};
-        return source
-            .replace(/\[competition_count\]/g, descriptionValue(values.competitionCount))
-            .replace(/\[players_count\]/g, descriptionValue(values.playersCount))
-            .replace(/\[latest_competition\]/g, descriptionValue(values.latestCompetition));
+        descriptionCompetitionCount.textContent = descriptionValue(values.competitionCount);
+        descriptionPlayersCount.textContent = descriptionValue(values.playersCount);
+        descriptionLatestCompetition.textContent = descriptionValue(values.latestCompetition);
     }
 
     function descriptionValue(value) {
         return value === undefined || value === null || value === "" ? "unavailable" : String(value);
-    }
-
-    function appendSafeInlineContent(parent, text) {
-        var markerPattern = /<(italic|bold)>([\s\S]*?)<\/\1>/gi;
-        var lastIndex = 0;
-        var match;
-        while ((match = markerPattern.exec(text)) !== null) {
-            if (match.index > lastIndex) {
-                parent.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-            }
-            var formatted = document.createElement(match[1].toLowerCase() === "bold" ? "strong" : "em");
-            formatted.textContent = match[2];
-            parent.appendChild(formatted);
-            lastIndex = markerPattern.lastIndex;
-        }
-        if (lastIndex < text.length) {
-            parent.appendChild(document.createTextNode(text.slice(lastIndex)));
-        }
-    }
-
-    function showDescriptionMessage(text, error) {
-        descriptionMessage.textContent = text;
-        descriptionMessage.hidden = !text;
-        descriptionMessage.classList.toggle("error", !!error);
     }
 
     function populateCourses() {
@@ -486,6 +406,16 @@
             return;
         }
         showPersonalMessage("Select a person to view personal basket statistics.", false);
+    }
+
+    function schedulePersonalPlayerInput() {
+        if (personalPlayerInputTimer !== null) {
+            clearTimeout(personalPlayerInputTimer);
+        }
+        personalPlayerInputTimer = setTimeout(function () {
+            personalPlayerInputTimer = null;
+            handlePersonalPlayerInput();
+        }, 0);
     }
 
     function handlePersonalPlayerInput() {
@@ -1445,6 +1375,70 @@
         positionTooltip(chartTooltip, chartCanvas, event);
         chartTooltip.hidden = false;
         markHoveredPoints(points);
+    }
+
+    function handleUiTooltipPointerOver(event) {
+        var trigger = event.target.closest ? event.target.closest(".tooltip-trigger") : null;
+        if (trigger) {
+            showUiTooltip(trigger);
+        }
+    }
+
+    function handleUiTooltipPointerOut(event) {
+        var trigger = event.target.closest ? event.target.closest(".tooltip-trigger") : null;
+        if (trigger && (!event.relatedTarget || !trigger.contains(event.relatedTarget))) {
+            if (document.activeElement !== trigger) {
+                hideUiTooltip();
+            }
+        }
+    }
+
+    function handleUiTooltipFocusIn(event) {
+        var trigger = event.target.closest ? event.target.closest(".tooltip-trigger") : null;
+        if (trigger) {
+            showUiTooltip(trigger);
+        }
+    }
+
+    function handleUiTooltipFocusOut(event) {
+        var trigger = event.target.closest ? event.target.closest(".tooltip-trigger") : null;
+        if (trigger && (!event.relatedTarget || !trigger.contains(event.relatedTarget))) {
+            hideUiTooltip();
+        }
+    }
+
+    function showUiTooltip(trigger) {
+        var text = trigger.getAttribute("data-tooltip");
+        if (!text) {
+            return;
+        }
+        activeUiTooltipTrigger = trigger;
+        uiTooltip.textContent = text;
+        uiTooltip.hidden = false;
+        positionUiTooltip(trigger);
+    }
+
+    function positionUiTooltip(trigger) {
+        var triggerBounds = trigger.getBoundingClientRect();
+        var tooltipBounds = uiTooltip.getBoundingClientRect();
+        var margin = 12;
+        var gap = 8;
+        var left = triggerBounds.left + (triggerBounds.width - tooltipBounds.width) / 2;
+        var top = triggerBounds.bottom + gap;
+
+        left = Math.max(margin, Math.min(left, window.innerWidth - tooltipBounds.width - margin));
+        if (top + tooltipBounds.height > window.innerHeight - margin) {
+            top = triggerBounds.top - tooltipBounds.height - gap;
+        }
+        top = Math.max(margin, top);
+        uiTooltip.style.left = left + "px";
+        uiTooltip.style.top = top + "px";
+    }
+
+    function hideUiTooltip() {
+        activeUiTooltipTrigger = null;
+        uiTooltip.hidden = true;
+        uiTooltip.textContent = "";
     }
 
     function showBasketChartTooltip(points, event) {

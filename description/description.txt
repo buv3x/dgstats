@@ -2,37 +2,48 @@
 
 This application gathers hole-by-hole scores and calculates and displays statistics for Lithuanian PDGA tournaments.
 Lithuanian PDGA tournaments used hole-by-hole scores from PDGA Live sporadically from late 2021 through 2022. Since 2023, every tournament has included them, so the statistics cover this period.
-At the moment, [competition_count] competitions have been processed, and [players_count] players have included scores. The latest included competition is [latest_competition].
+At the moment, [competition_count] competitions have been processed, and [players_count] players have submitted scores. The latest included competition is [latest_competition].
 
-The application uses players' PDGA ratings and mechanisms analogous to those used in PDGA rating calculations. It combines results for each hole across multiple tournaments in the style of DGMetrix.
-A hole can have multiple variations when its layout changes significantly - for example, because of a new basket or tee, or changed out-of-bounds (OB) rules. These variations are tracked separately.
+# Hole Layouts
 
-# Course Stats
+The application combines results for each hole across multiple tournaments. A hole might have multiple layouts when it changes significantly; these layouts are tracked separately.
+It is a judgment call whether a change to a hole necessitates a new layout (i.e., whether it significantly affects scoring).
+For example, the introduction of new OB lines on holes 1, 2, and 3 in Pušynas affected hole 2 much more than holes 1 and 3, so a new layout was created for hole 2 but not for holes 1 and 3. A change to the hazard rule was very important for hole 4 in Domeikava, but the same change was much less noticeable for hole 3 in Pučkoriai. Similar logic was applied to multiple tee-pad changes in Domeikava by checking whether the length or angle of a shot changed enough.
 
-This section has two parts, and the filters at the top affect both. You can select a course from a list (courses are sorted by the number of recorded results) and specify a rating range. Either or both rating limits can be left blank. The charts display statistics for the selected rating range, or for all ratings when no range is selected.
+# Ratings
 
-The table shows the percentage of each possible score for every hole variation. Note that par is not defined anywhere, although it can usually be inferred from the numbers.
+All statistics are based on PDGA ratings. Ratings are taken as inputs (a rating with which a player enters a round) and are emulated in various calculations.
+There is no published description of exactly how PDGA round ratings are calculated, but essentially, the process is a form of linear regression that creates a line corresponding to results and ratings. In this application, the same process is emulated using a standard "least squares" approach. It might not match the PDGA logic exactly, but it should be conceptually close.
+The main differences are that ratings are calculated for each hole separately and aggregated across multiple rounds and tournaments. The latter has consequences when combining rounds with different conditions, but it allows us to collect, combine, and process many more results.
 
-The chart introduces two measurements, VAR and SPR. Each point represents a hole variation for the selected course.
-VAR measures how variable scoring is on a hole variation. Higher values indicate a wider range of possible results, usually because of factors such as difficult out-of-bounds areas or deep woods; lower values indicate a more straightforward hole.
-SPR measures how strongly scoring separates players by rating. Higher values indicate a longer, more difficult hole where skill level makes a greater difference. Lower values indicate that scores are less correlated with rating, usually because the hole is simple or results are more random.
+# SPR/VAR Calculations
 
-# Hole Stats
+Applying an emulated rating calculation produces a line corresponding to score and rating for each hole layout.
+SPR is a measure of hole difficulty: it indicates how much scoring separation higher-rated players can create on a hole. It is the slope of a line (more precisely, the slope multiplied by -100 to make the numbers positive and easier to read). This represents the expected score difference between players with a 100-point rating difference. For instance, if the SPR value is 1 and the expected score on a hole for a player rated 900 is 4, the expected score for a player rated 850 should be 4.5, and for a player rated 800, 5, and so on.
+VAR is a measure of hole variability: it indicates how diverse the scores on a hole are. It is the average difference between expected scores and actual scores.
+There is a strong correlation between hole length and SPR value, which is clearly visible on the chart, with longer holes generally appearing on the right side. However, other factors also play a role: holes with challenging lines and difficult OBs tend to have higher SPR values. In a certain sense, SPR can be thought of as a measure of a hole's difficulty.
+Variability might also depend on the factors mentioned above, as length and difficulty affect scoring diversity. However, the correlation between SPR and VAR is not always strong, as there are multiple examples of high VAR on relatively low-SPR holes.
+SPR is the expected score difference between players with a 100-point rating difference, but a natural question is whether the score difference stays the same across all ratings (i.e., whether the expected score difference between a player rated 1000 and one rated 900 is the same as that between a player rated 900 and one rated 800). Theoretically, the answer is yes: because the rating is calculated as a linear function, the expected score difference is also linear. In practice, however, no hole can produce uniform scores across all ratings. The next section analyzes how a hole's layout affects its scoring across different ratings.
 
-The chart in this section shows how a hole variation plays across the rating range.
-The SPR value in the previous section measures scoring separation using all results. Here, SPRW is calculated for a particular rating range. A peak in the chart indicates the rating range with the greatest scoring separation - the range in which the hole variation is most challenging and therefore its target audience.
-A solid line indicates that the rating range has enough recorded results. A dashed line indicates fewer results and lower confidence. Unconnected dots indicate even fewer results; the chart should mostly be ignored in those areas.
+# SPRW Calculations
+
+SPR calculates scoring separation based on all results. It shows an average scoring separation but potentially hides more granular scoring details. SPRW is an SPR calculation using weighted results to highlight a specific rating region. For a rating N, it is calculated using ratings from the [N-50, N+50] rating window, with a "triangular weight" applied to the scores. For instance, SPRW calculated for a rating of 900 includes all scores from players rated 900 with a weight of 1, scores from players rated 890 or 910 with a weight of 0.8, scores from players rated 865 or 935 with a weight of 0.3, and so on.
+The SPRW chart displays SPRW across the range of ratings with enough recorded scores. The total weight in the range should be at least 50. SPRW values with a total weight from 50 to 100 are displayed as unconnected dots, indicating lower confidence; values from 100 to 200 are displayed as dotted lines; and values above 200 are displayed as solid lines.
+A straightforward interpretation of SPRW is that it provides a more precise way of determining the expected scoring difference. To understand scoring between players rated 890 and 910, SPRW at a rating of 900 is much more useful than the general SPR.
+There is also another way of looking at it: by considering a single player. A player of a given rating would have performance on a course, a hole, or any particular shot centered around that rating, most likely with performance following some form of normal distribution. A high SPRW for this player means that shot quality matters more and is more likely to affect the score, resulting in a more challenging experience. A low SPRW, on the other hand, might mean that shot quality does not matter as much, either because the score is "funneled" toward a particular result or because the hole is too random for shot quality to correlate with the overall result.
+In that sense, peaks in the SPRW chart might be interpreted as an indication of a hole's "target audience": the rating range the hole suits best. It is important to keep absolute values in mind, however. On long, difficult holes, even the minimum SPRW values might be higher than those of shorter and simpler holes.
 
 # Personal Stats
 
-The other calculations effectively produce a separate PDGA-rating-like value for each hole variation. Although it is not an official PDGA rating, it is calculated in a similar manner and can be used to estimate each person's average rating on each hole variation.
-After you select a player, the table shows that player's average rating for each hole variation and lists the results.
-Keep in mind that a player's rating becomes more reliable as the player records more results and as more results are recorded for the hole variation in general. A hole variation played only a few times - especially on a less frequently played course - can produce extreme values. You can filter these out using the course and number-of-plays filters.
+This section shows a player's performance rating for each hole. Using the linear regression described in the previous sections, each score on any hole can be assigned a projected rating, and the average rating across all recorded results is displayed. These values are approximate measurements of a player's performance on every hole, and they provide a general idea of how well each hole has historically been played.
+Note that enough plays might be needed to stabilize the results and produce reasonable values. With a low number of plays, some extreme rating values might be produced.
 
-# Technical Details
+# Future Improvements and Suggestions
 
-Technical details will be added later.
+There are some improvements planned for implementation in the future:
+1) Show images of hole layouts (tee signs).
+2) Add an analysis of how score distributions (percentages) change with rating.
+3) Add an import of personal statistics (specifically putts), with possible analytics.
 
-# Future Improvements
-
-Future improvements will be described later.
+If you have any suggestions of your own, you can contact me on Facebook.
+Aliaksei Memelau.

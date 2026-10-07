@@ -13,18 +13,61 @@
     </header>
 
     <nav class="view-nav" aria-label="Statistics views">
-        <button id="description-tab" class="view-tab active" type="button">Description</button>
-        <button id="course-stats-tab" class="view-tab" type="button">Course stats</button>
+        <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
         <button id="basket-stats-tab" class="view-tab" type="button">Basket stats</button>
         <button id="personal-stats-tab" class="view-tab" type="button">Personal stats</button>
+        <button id="description-tab" class="view-tab" type="button">Description</button>
     </nav>
 
-    <section id="description-view">
-        <div id="description-message" class="message">Loading description...</div>
-        <article id="description-content" class="description-content" hidden></article>
+    <section id="description-view" hidden>
+        <article id="description-content" class="description-content">
+            <h2>General Information</h2>
+            <p>This application gathers hole-by-hole scores and calculates and displays statistics for Lithuanian PDGA tournaments.</p>
+            <p>Lithuanian PDGA tournaments used hole-by-hole scores from PDGA Live sporadically from late 2021 through 2022. Since 2023, every tournament has included them, so the statistics cover this period.</p>
+            <p>At the moment, <span id="description-competition-count">unavailable</span> competitions have been processed, and <span id="description-players-count">unavailable</span> players have submitted scores. The latest included competition is <span id="description-latest-competition">unavailable</span>.</p>
+
+            <h2>Hole Layouts</h2>
+            <p>The application combines results for each hole across multiple tournaments. A hole might have multiple layouts when it changes significantly; these layouts are tracked separately.</p>
+            <p>It is a judgment call whether a change to a hole necessitates a new layout (i.e., whether it significantly affects scoring).</p>
+            <p>For example, the introduction of new OB lines on holes 1, 2, and 3 in Pušynas affected hole 2 much more than holes 1 and 3, so a new layout was created for hole 2 but not for holes 1 and 3. A change to the hazard rule was very important for hole 4 in Domeikava, but the same change was much less noticeable for hole 3 in Pučkoriai. Similar logic was applied to multiple tee-pad changes in Domeikava by checking whether the length or angle of a shot changed enough.</p>
+
+            <h2>Ratings</h2>
+            <p>All statistics are based on PDGA ratings. Ratings are taken as inputs (a rating with which a player enters a round) and are emulated in various calculations.</p>
+            <p>There is no published description of exactly how PDGA round ratings are calculated, but essentially, the process is a form of linear regression that creates a line corresponding to results and ratings. In this application, the same process is emulated using a standard "least squares" approach. It might not match the PDGA logic exactly, but it should be conceptually close.</p>
+            <p>The main differences are that ratings are calculated for each hole separately and aggregated across multiple rounds and tournaments. The latter has consequences when combining rounds with different conditions, but it allows us to collect, combine, and process many more results.</p>
+
+            <h2>SPR/VAR Calculations</h2>
+            <p>Applying an emulated rating calculation produces a line corresponding to score and rating for each hole layout.</p>
+            <p>SPR is a measure of hole difficulty: it indicates how much scoring separation higher-rated players can create on a hole. It is the slope of a line (more precisely, the slope multiplied by -100 to make the numbers positive and easier to read). This represents the expected score difference between players with a 100-point rating difference. For instance, if the SPR value is 1 and the expected score on a hole for a player rated 900 is 4, the expected score for a player rated 850 should be 4.5, and for a player rated 800, 5, and so on.</p>
+            <p>VAR is a measure of hole variability: it indicates how diverse the scores on a hole are. It is the average difference between expected scores and actual scores.</p>
+            <p>There is a strong correlation between hole length and SPR value, which is clearly visible on the chart, with longer holes generally appearing on the right side of the chart. However, other factors also play a role: holes with challenging lines and difficult OBs tend to have higher SPR values. In a certain sense, SPR can be thought of as a measure of a hole's difficulty.</p>
+            <p>Variability might also depend on the factors mentioned above, as length and difficulty affect scoring diversity. However, the correlation between SPR and VAR is not always strong, as there are multiple examples of high VAR on relatively low-SPR holes.</p>
+            <p>SPR is the expected score difference between players with a 100-point rating difference, but a natural question is whether the score difference stays the same across all ratings (i.e., whether the expected score difference between a player rated 1000 and one rated 900 is the same as that between a player rated 900 and one rated 800). Theoretically, the answer is yes: because the rating is calculated as a linear function, the expected score difference is also linear. In practice, however, no hole can produce uniform scores across all ratings. The next section analyzes how a hole's layout affects its scoring across different ratings.</p>
+
+            <h2>SPRW Calculations</h2>
+            <p>SPR calculates scoring separation based on all results. It shows an average scoring separation but potentially hides more granular scoring details. SPRW is an SPR calculation using weighted results to highlight a specific rating region. For a rating N, it is calculated using ratings from the [N-50, N+50] rating window, with a "triangular weight" applied to the scores. For instance, SPRW calculated for a rating of 900 includes all scores from players rated 900 with a weight of 1, scores from players rated 890 or 910 with a weight of 0.8, scores from players rated 865 or 935 with a weight of 0.3, and so on.</p>
+            <p>The SPRW chart displays SPRW across the range of ratings with enough recorded scores. The total weight in the range should be at least 50. SPRW values with a total weight from 50 to 100 are displayed as unconnected dots, indicating lower confidence; values from 100 to 200 are displayed as dotted lines; and values above 200 are displayed as solid lines.</p>
+            <p>A straightforward interpretation of SPRW is that it provides a more precise way of determining the expected scoring difference. To understand scoring between players rated 890 and 910, SPRW at a rating of 900 is much more useful than the general SPR.</p>
+            <p>There is also another way of looking at it: by considering a single player. A player of a given rating would have performance on a course, a hole, or any particular shot centered around that rating, most likely with performance following some form of normal distribution. A high SPRW for this player means that shot quality matters more and is more likely to affect the score, resulting in a more challenging experience. A low SPRW, on the other hand, might mean that shot quality does not matter as much, either because the score is "funneled" toward a particular result or because the hole is too random for shot quality to correlate with the overall result.</p>
+            <p>In that sense, peaks in the SPRW chart might be interpreted as an indication of a hole's "target audience": the rating range the hole suits best. It is important to keep absolute values in mind, however. On long, difficult holes, even the minimum SPRW values might be higher than those of shorter and simpler holes.</p>
+
+            <h2>Personal Stats</h2>
+            <p>This section shows a player's performance rating for each hole. Using the linear regression described in the previous sections, each score on any hole can be assigned a projected rating, and the average rating across all recorded results is displayed. These values are approximate measurements of a player's performance on every hole, and they provide a general idea of how well each hole has historically been played.</p>
+            <p>Note that enough plays might be needed to stabilize the results and produce reasonable values. With a low number of plays, some extreme rating values might be produced.</p>
+
+            <h2>Future Improvements and Suggestions</h2>
+            <p>There are some improvements planned for implementation in the future:</p>
+            <ol>
+                <li>Show images of hole layouts (tee signs).</li>
+                <li>Add an analysis of how score distributions (percentages) change with rating.</li>
+                <li>Add an import of personal statistics (specifically putts), with possible analytics.</li>
+            </ol>
+            <p>If you have any suggestions of your own, you can contact me on Facebook.</p>
+            <p>Aliaksei Memelau.</p>
+        </article>
     </section>
 
-    <section id="course-stats-view" hidden>
+    <section id="course-stats-view">
         <form id="filters" class="filters" hidden>
             <label>
                 <span>Basket course</span>
@@ -45,7 +88,11 @@
 
         <section id="chart-section" class="chart-section" hidden>
             <div class="section-header">
-                <h2>SPR / VAR</h2>
+                <h2>
+                    <span class="tooltip-trigger" tabindex="0" data-tooltip="Measurement of scoring separation based on a rating" aria-label="SPR: Measurement of scoring separation based on a rating">SPR</span>
+                    /
+                    <span class="tooltip-trigger" tabindex="0" data-tooltip="Measurement of scoring variability" aria-label="VAR: Measurement of scoring variability">VAR</span>
+                </h2>
                 <div id="chart-status" class="chart-status"></div>
             </div>
             <div id="chart-canvas" class="chart-canvas">
@@ -58,16 +105,16 @@
             <table>
                 <thead>
                 <tr>
-                    <th>Basket</th>
-                    <th>Average</th>
-                    <th>1-2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                    <th>7</th>
-                    <th>8+</th>
-                    <th>Count</th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Basket layout [length in meters]" aria-label="Basket: Basket layout [length in meters]">Basket</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average score on a basket layout" aria-label="Average: Average score on a basket layout">Average</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 1 or 2 throws" aria-label="1-2: Percentage of times a basket layout was completed in 1 or 2 throws">1-2</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 3 throws" aria-label="3: Percentage of times a basket layout was completed in 3 throws">3</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 4 throws" aria-label="4: Percentage of times a basket layout was completed in 4 throws">4</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 5 throws" aria-label="5: Percentage of times a basket layout was completed in 5 throws">5</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 6 throws" aria-label="6: Percentage of times a basket layout was completed in 6 throws">6</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 7 throws" aria-label="7: Percentage of times a basket layout was completed in 7 throws">7</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 8 or more throws" aria-label="8+: Percentage of times a basket layout was completed in 8 or more throws">8+</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Number of recorded results" aria-label="Count: Number of recorded results">Count</span></th>
                 </tr>
                 </thead>
                 <tbody id="statistics-body"></tbody>
@@ -82,7 +129,7 @@
                 <select id="basket-course" name="basketCourse"></select>
             </label>
             <label>
-                <span>Basket variation</span>
+                <span>Basket layout</span>
                 <select id="basket-variation" name="basketVariation"></select>
             </label>
         </form>
@@ -91,7 +138,7 @@
 
         <section id="basket-chart-section" class="chart-section" hidden>
             <div class="section-header">
-                <h2>Basket SPRW</h2>
+                <h2>Basket <span class="tooltip-trigger" tabindex="0" data-tooltip="Scoring separation calculated around a given rating" aria-label="SPRW: Scoring separation calculated around a given rating">SPRW</span></h2>
                 <div id="basket-chart-status" class="chart-status"></div>
             </div>
             <div id="basket-chart-canvas" class="chart-canvas basket-chart-canvas">
@@ -126,10 +173,10 @@
                 <tr>
                     <th>Basket course</th>
                     <th>Basket</th>
-                    <th>Variation</th>
-                    <th>Rating</th>
-                    <th>Count</th>
-                    <th>Scores</th>
+                    <th>Layout</th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average expected rating for a player on a given layout" aria-label="Rating: Average expected rating for a player on a given layout">Rating</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Number of recorded results for a player" aria-label="Count: Number of recorded results for a player">Count</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Scores for a player on a given layout in chronological order" aria-label="Scores: Scores for a player on a given layout in chronological order">Scores</span></th>
                 </tr>
                 </thead>
                 <tbody id="personal-statistics-body"></tbody>
@@ -137,6 +184,7 @@
         </div>
     </section>
 </main>
+<div id="ui-tooltip" class="ui-tooltip" role="tooltip" hidden></div>
 <script src="app.js"></script>
 </body>
 </html>

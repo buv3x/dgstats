@@ -28,8 +28,6 @@ import java.util.Map;
 public class BasketStatisticsExportService {
 
     private static final Path MANIFEST_PATH = Path.of("docs", "data", "statistics.json");
-    private static final Path DESCRIPTION_SOURCE_PATH = Path.of("description", "description.txt");
-    private static final Path DESCRIPTION_OUTPUT_PATH = Path.of("docs", "description.txt");
     private static final Path COURSES_DIRECTORY = Path.of("docs", "data", "courses");
     private static final Path BASKET_STATS_DIRECTORY = Path.of("docs", "data", "basket-stats");
     private static final Path PLAYERS_PATH = Path.of("docs", "data", "players.json");
@@ -126,8 +124,6 @@ public class BasketStatisticsExportService {
         List<CourseOption> courseOptions = new ArrayList<>();
         int generatedBasketStatsFiles = 0;
 
-        copyDescriptionAsset();
-
         for (CourseExportBuilder course : courses) {
             String relativePath = courseRelativePath(course.id());
             CourseSnapshot snapshot = course.toSnapshot();
@@ -206,20 +202,6 @@ public class BasketStatisticsExportService {
 
     private Path resolvePersonalStatsDirectory() {
         return resolveProjectRoot().resolve(PERSONAL_STATS_DIRECTORY).toAbsolutePath().normalize();
-    }
-
-    private void copyDescriptionAsset() {
-        Path sourcePath = resolveProjectRoot().resolve(DESCRIPTION_SOURCE_PATH).toAbsolutePath().normalize();
-        Path outputPath = resolveProjectRoot().resolve(DESCRIPTION_OUTPUT_PATH).toAbsolutePath().normalize();
-        try {
-            Path parent = outputPath.getParent();
-            if (parent != null) {
-                Files.createDirectories(parent);
-            }
-            Files.copy(sourcePath, outputPath, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException ex) {
-            throw new UncheckedIOException("Failed to publish description asset", ex);
-        }
     }
 
     private String latestCompetitionDisplay(Iterable<IncludedCompetition> competitions) {
