@@ -317,7 +317,7 @@ The static page SHALL display one list of personal basket variation ratings for 
 - **THEN** the Personal stats view displays a no-personal-results message instead of an empty list
 
 ### Requirement: Personal stats client-side filters
-The static page SHALL provide Personal stats filters for basket course and minimum personal result count, applied only in the browser to the selected player's loaded personal statistics rows.
+The static page SHALL provide Personal stats filters for basket course and minimum personal result count, applied only in the browser to the selected player's loaded personal statistics rows. The minimum count filter SHALL allow an empty value while the user is editing, treat that empty value as the default effective value of `2`, and normalize the visible value to `2` when the edit is committed.
 
 #### Scenario: Course selector uses selected player rows
 - **WHEN** a selected player's personal statistics file loads with variation rows
@@ -335,8 +335,16 @@ The static page SHALL provide Personal stats filters for basket course and minim
 - **WHEN** the Personal stats controls are shown
 - **THEN** the minimum count filter defaults to `2`
 
+#### Scenario: Minimum count can be cleared while editing
+- **WHEN** the user deletes the current minimum count value
+- **THEN** the input remains empty until the edit is committed and the Personal Stats list is filtered as if the minimum count were `2`
+
+#### Scenario: Empty minimum count normalizes on commit
+- **WHEN** the user leaves the minimum count input empty and commits the change
+- **THEN** the page restores the visible minimum count value to `2` before applying the filter
+
 #### Scenario: Minimum count cannot be lower than two
-- **WHEN** the user enters a minimum count value lower than `2`, empty, or invalid
+- **WHEN** the user enters a minimum count value lower than `2` or an invalid value and commits the change
 - **THEN** the page normalizes the minimum count filter to `2` before applying it
 
 #### Scenario: Minimum count filters rows
@@ -470,65 +478,62 @@ The Basket stats variation selector SHALL use explicit basket and variation orde
 - **THEN** variations are ordered by basket `sortOrder`, then basket ID, variation `sortOrder`, then variation ID, with null sort orders after non-null values
 
 ### Requirement: Description tab navigation and default view
-The static page SHALL display a Description tab before Course stats, Basket stats, and Personal stats, and SHALL make Description the default active view.
+The static page SHALL display the Course stats, Basket stats, Personal stats, and Description navigation items in that order, and SHALL make Course stats the default active view.
 
-#### Scenario: Description tab is first
+#### Scenario: Description tab is last
 - **WHEN** the static basket statistics page is displayed
-- **THEN** the navigation order is Description, Course stats, Basket stats, Personal stats
+- **THEN** the navigation order is Course stats, Basket stats, Personal stats, Description
 
-#### Scenario: Description is selected initially
+#### Scenario: Course stats is selected initially
 - **WHEN** the static basket statistics page first loads successfully
-- **THEN** the Description tab is active and its content is visible
-- **AND** the Course stats, Basket stats, and Personal stats content is hidden
+- **THEN** the Course stats tab is active and its content is visible
+- **AND** the Basket stats, Personal stats, and Description content is hidden
 
-#### Scenario: Existing statistics views remain selectable
-- **WHEN** the user selects Course stats, Basket stats, or Personal stats
-- **THEN** the selected existing view becomes visible and Description becomes inactive
+#### Scenario: Existing views remain selectable
+- **WHEN** the user selects Description, Basket stats, or Personal stats
+- **THEN** the selected view becomes visible and Course stats becomes inactive
 
-### Requirement: Description content asset
-The static page SHALL render the reviewed content maintained in `description/description.txt` through a relative static asset without hard-coding a second copy of the prose in the page script.
+### Requirement: Description content presentation
+The static page SHALL render the reviewed Description content as embedded HTML in `docs/index.html`, using ordinary headings and paragraphs rather than loading a separate Description text asset.
 
-#### Scenario: Description source is loaded
-- **WHEN** the Description view is loaded
-- **THEN** the page fetches the description asset using a relative path and renders its headings and paragraphs in the Description view
+#### Scenario: Embedded Description content is displayed
+- **WHEN** the static basket statistics page is loaded
+- **THEN** the Description view contains the Description topics in their defined order
+- **AND** each topic is displayed with a regular heading and its content is immediately visible
 
-#### Scenario: Description asset is unavailable
-- **WHEN** the description asset cannot be loaded
-- **THEN** the Description view displays a clear description-unavailable message
+#### Scenario: Description does not depend on a text asset
+- **WHEN** `docs/description.txt` is absent or unavailable
+- **THEN** the embedded Description content remains displayable
+- **AND** the page does not show a Description asset failure state
 
-### Requirement: Description formatting markers
-The page SHALL convert the supported `<italic>...</italic>` and `<bold>...</bold>` markers in the description source to italic and bold rendered text while treating the source as data rather than arbitrary executable HTML.
-
-#### Scenario: Inline formatting is rendered
-- **WHEN** the description contains supported italic or bold markers
-- **THEN** the enclosed text is rendered with the corresponding formatting
-
-#### Scenario: Unsupported markup is not executed
-- **WHEN** the description contains unsupported tags or markup-like text
-- **THEN** the page does not execute it as HTML or script
+#### Scenario: Description headings are not accordions
+- **WHEN** the Description view is displayed
+- **THEN** its topic headings are ordinary heading elements
+- **AND** no accordion or disclosure control is required to reveal their content
 
 ### Requirement: Description placeholder resolution
-The page SHALL replace `[competition_count]`, `[players_count]`, and `[latest_competition]` using the corresponding values from the loaded statistics manifest.
+The page SHALL replace the embedded Description placeholders for competition count, player count, and latest competition using the corresponding values from the loaded statistics manifest.
 
 #### Scenario: Placeholders use manifest values
-- **WHEN** the manifest contains description metadata
-- **THEN** the Description view replaces all supported placeholders with the exported competition count, player count, and latest competition value
+- **WHEN** the manifest contains `metadata.description`
+- **THEN** the page displays the exported competition count, player count, and latest competition in the embedded Description content
 
 #### Scenario: Missing placeholder metadata is handled
-- **WHEN** one or more supported placeholder values are absent from the manifest
-- **THEN** the Description view displays a deterministic unavailable value for each missing placeholder and remains readable
+- **WHEN** one or more supported placeholder values are absent from the manifest or the manifest cannot be loaded
+- **THEN** the page displays `unavailable` for each missing value
+- **AND** the embedded Description content remains readable
 
-### Requirement: Description loading state
-The page SHALL communicate Description loading and failure states without preventing access to the statistics views.
+### Requirement: Description formatting
+The embedded Description content SHALL use safe semantic HTML for supported emphasis, and SHALL not execute arbitrary Description text as script or markup.
 
-#### Scenario: Description is loading
-- **WHEN** the description asset is being fetched
-- **THEN** the Description view displays a loading state
+#### Scenario: Emphasis is rendered
+- **WHEN** the embedded Description contains emphasized or bold text
+- **THEN** it is represented with semantic `em` or `strong` elements
 
-#### Scenario: Statistics manifest is unavailable
-- **WHEN** the statistics manifest cannot be loaded
-- **THEN** the Description view may render its static text but displays an unavailable state for manifest-backed placeholders
-- **AND** existing statistics views retain their current missing-manifest state
+#### Scenario: Dynamic values are inserted safely
+- **WHEN** a manifest-backed Description value is displayed
+- **THEN** it is inserted as text content
+- **AND** the value cannot execute HTML or script
 
 ### Requirement: Basket stats chart rating axis
 The static page SHALL render the Basket stats chart rating X-axis with explicit whole-number rating labels and grid lines.
@@ -597,50 +602,6 @@ The static page SHALL display Course stats SPR/VAR scatter chart markers only fo
 #### Scenario: Empty chart result is reported after threshold filtering
 - **WHEN** the selected basket course and rating bounds produce no basket variations with at least 50 matching score samples and rating variance
 - **THEN** the page displays a no-chart-results message instead of an empty Course stats chart
-
-### Requirement: Description accordion sections
-
-The static basket statistics page SHALL render each top-level section of the Description content as an independently collapsible section, with General Information expanded by default.
-
-#### Scenario: Description headings become accordion sections
-
-- **WHEN** the Description source is loaded successfully
-- **THEN** each top-level heading and the content that follows it are rendered as one collapsible section
-- **AND** the sections preserve the order of the source headings
-
-#### Scenario: General Information is open initially
-
-- **WHEN** the Description view finishes its initial successful render
-- **THEN** the General Information section is expanded
-- **AND** every other Description section is collapsed
-
-#### Scenario: Sections expand independently
-
-- **WHEN** the user expands or collapses a Description section
-- **THEN** only that section's content visibility changes
-- **AND** the open or closed state of every other section remains unchanged
-
-#### Scenario: Multiple sections remain open
-
-- **WHEN** the user expands two or more Description sections
-- **THEN** all of those sections remain expanded simultaneously
-
-#### Scenario: Accordion controls are accessible
-
-- **WHEN** the Description sections are displayed
-- **THEN** each section has a keyboard-operable disclosure control with an accessible section label
-- **AND** the control exposes whether its section is expanded or collapsed through native disclosure semantics
-
-#### Scenario: Section content retains existing rendering
-
-- **WHEN** a Description section is expanded
-- **THEN** its paragraphs, placeholders, and supported italic or bold markers are rendered as they are in the existing Description view
-
-#### Scenario: Description loading and error states are preserved
-
-- **WHEN** the Description asset is loading or unavailable
-- **THEN** the existing loading or unavailable message is displayed
-- **AND** accordion sections are not displayed until the content has loaded successfully
 
 ### Requirement: Course stats chart first render sizing
 

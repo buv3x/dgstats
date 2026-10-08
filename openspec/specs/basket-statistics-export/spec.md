@@ -72,7 +72,7 @@ The system SHALL exclude data that cannot be displayed by the static basket stat
 - **THEN** the basket course is not included in the exported course list
 
 ### Requirement: Export diagnostics
-The system SHALL report diagnostic counts for the local export operation.
+The system SHALL report diagnostic counts for the local export operation and include export time, diagnostic metadata, and Description-tab metadata in the statistics manifest.
 
 #### Scenario: Export result displays diagnostics
 - **WHEN** the local user completes a statistics export
@@ -93,6 +93,18 @@ The system SHALL report diagnostic counts for the local export operation.
 #### Scenario: Latest competition has no dates
 - **WHEN** no included competition has a non-null start date
 - **THEN** the export still writes a stable latest-competition fallback based on included competition identity rather than failing the export
+
+### Requirement: Description content is not exported as a separate asset
+The statistics export SHALL not copy or generate a separate Description text asset under the `docs` directory.
+
+#### Scenario: Statistics export completes
+- **WHEN** the local user triggers a statistics export
+- **THEN** the export writes the statistics manifest and data files
+- **AND** it does not publish `docs/description.txt`
+
+#### Scenario: Description metadata remains available
+- **WHEN** the local user triggers a statistics export
+- **THEN** the manifest retains the Description metadata required by the embedded page placeholders
 
 ### Requirement: Public ordering metadata export
 The statistics export SHALL expose nullable basket and basket-variation `sortOrder` values needed by the static `docs/` page, while preserving all existing exported statistics and player-identity boundaries.

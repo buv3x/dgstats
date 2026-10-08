@@ -551,19 +551,23 @@
 
     function personalFilteredRows(rows) {
         var selectedCourseId = personalCourseSelect.value;
-        var minCount = normalizePersonalMinCount();
+        var minCount = effectivePersonalMinCount();
         return rows.filter(function (variation) {
             var courseMatches = selectedCourseId === "" || String(variation.basketCourseId) === selectedCourseId;
             return courseMatches && Number(variation.count) >= minCount;
         }).sort(comparePersonalRows);
     }
 
-    function normalizePersonalMinCount() {
+    function effectivePersonalMinCount() {
         var minCount = Number(personalMinCountInput.value);
         if (!Number.isFinite(minCount) || minCount < 2) {
-            minCount = 2;
+            return 2;
         }
-        minCount = Math.floor(minCount);
+        return Math.floor(minCount);
+    }
+
+    function normalizePersonalMinCount() {
+        var minCount = effectivePersonalMinCount();
         personalMinCountInput.value = String(minCount);
         return minCount;
     }
