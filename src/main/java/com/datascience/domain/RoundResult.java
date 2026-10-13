@@ -75,4 +75,7 @@ public class RoundResult {
 
     @Column(name = "played")
     private Integer played;
+
+    @Column(name = "throws_imported", nullable = false)
+    private Boolean throwsImported = Boolean.FALSE;
 }

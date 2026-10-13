@@ -1,0 +1,1053 @@
+https://www.pdga.com/api/v1/feat/live-scores/30251447/throw-timelines
+
+{
+    "liveResult": {
+        "resultId": 212845370,
+        "firstName": "Laurynas",
+        "lastName": "Beliauskas",
+        "team": null,
+        "teamName": null,
+        "member": {
+            "pdgaNum": 325571,
+            "firstName": "Laurynas",
+            "lastName": "Beliauskas",
+            "avatarURL": null,
+            "country": "LT",
+            "nationality": null,
+            "city": "Kazl\u0173 R\u016bda",
+            "stateProv": null,
+            "gender": "M"
+        }
+    },
+    "liveTournament": {
+        "tournId": 107973,
+        "tournamentName": "Lietuvos diskgolfo taur\u0117 2026 - VI  - JONAVA - Amateurs",
+        "tier": null,
+        "rounds": 2,
+        "fullStats": true
+    },
+    "liveRound": {
+        "roundId": 122978271,
+        "round": 2
+    },
+    "liveLayout": {
+        "layoutId": 779289,
+        "courseName": "Jonavos Diskgolfo Parkas",
+        "name": "Jonavos Diskgolfo Parkas 2026 (19 krep\u0161i\u0173)",
+        "units": "Meters"
+    },
+    "scoreThrows": [
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528405,
+                "holeOrdinal": 1,
+                "label": "1",
+                "par": 3,
+                "length": 107
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314835932,
+                "holeOrdinal": 1,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17727425,
+                        "zoneId": 4,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17727426,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17727427,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528406,
+                "holeOrdinal": 2,
+                "label": "2",
+                "par": 3,
+                "length": 80
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314844656,
+                "holeOrdinal": 2,
+                "score": 4
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 1,
+                    "liveScoreThrow": {
+                        "throwId": 17728700,
+                        "zoneId": 6,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": 10,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17728701,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 4,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17728702,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528407,
+                "holeOrdinal": 3,
+                "label": "3",
+                "par": 3,
+                "length": 63
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314854187,
+                "holeOrdinal": 3,
+                "score": 2
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17730072,
+                        "zoneId": 4,
+                        "distanceToTarget": 39,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17730073,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528408,
+                "holeOrdinal": 4,
+                "label": "4",
+                "par": 3,
+                "length": 96
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314861107,
+                "holeOrdinal": 4,
+                "score": 2
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17731133,
+                        "zoneId": 1,
+                        "distanceToTarget": 85,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17731134,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528409,
+                "holeOrdinal": 5,
+                "label": "5",
+                "par": 3,
+                "length": 100
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314871941,
+                "holeOrdinal": 5,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17732589,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17732590,
+                        "zoneId": 4,
+                        "distanceToTarget": 59,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17732591,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528410,
+                "holeOrdinal": 6,
+                "label": "6",
+                "par": 3,
+                "length": 81
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314880998,
+                "holeOrdinal": 6,
+                "score": 4
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 1,
+                    "liveScoreThrow": {
+                        "throwId": 17733712,
+                        "zoneId": 6,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": 3,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17733713,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 4,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17733714,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528411,
+                "holeOrdinal": 7,
+                "label": "7",
+                "par": 4,
+                "length": 157
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314895509,
+                "holeOrdinal": 7,
+                "score": 4
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17735521,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17735522,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17735523,
+                        "zoneId": 3,
+                        "distanceToTarget": 26,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 4,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17735524,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528412,
+                "holeOrdinal": 8,
+                "label": "8",
+                "par": 3,
+                "length": 75
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314902874,
+                "holeOrdinal": 8,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17736382,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17736383,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17736384,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528413,
+                "holeOrdinal": 9,
+                "label": "9",
+                "par": 3,
+                "length": 117
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314913793,
+                "holeOrdinal": 9,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17737436,
+                        "zoneId": 3,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17737437,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17737438,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528414,
+                "holeOrdinal": 10,
+                "label": "10",
+                "par": 4,
+                "length": 166
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314940799,
+                "holeOrdinal": 10,
+                "score": 4
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17739896,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17739897,
+                        "zoneId": 4,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17739898,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 4,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17739899,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528415,
+                "holeOrdinal": 11,
+                "label": "11",
+                "par": 4,
+                "length": 174
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314793115,
+                "holeOrdinal": 11,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17715620,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17715621,
+                        "zoneId": 3,
+                        "distanceToTarget": 16,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17715622,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528416,
+                "holeOrdinal": 12,
+                "label": "12",
+                "par": 4,
+                "length": 186
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314798099,
+                "holeOrdinal": 12,
+                "score": 6
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 1,
+                    "liveScoreThrow": {
+                        "throwId": 17717358,
+                        "zoneId": 11,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": 10,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17717359,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 4,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17717360,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 5,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17717361,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 6,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17717362,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528417,
+                "holeOrdinal": 13,
+                "label": "13",
+                "par": 3,
+                "length": 64
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314802057,
+                "holeOrdinal": 13,
+                "score": 2
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17718596,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17718597,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528418,
+                "holeOrdinal": 14,
+                "label": "14",
+                "par": 3,
+                "length": 81
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314806574,
+                "holeOrdinal": 14,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17720113,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17720114,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17720123,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528419,
+                "holeOrdinal": 15,
+                "label": "15",
+                "par": 4,
+                "length": 109
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314811894,
+                "holeOrdinal": 15,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17721651,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17721652,
+                        "zoneId": 3,
+                        "distanceToTarget": 16,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17721653,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528420,
+                "holeOrdinal": 16,
+                "label": "16",
+                "par": 3,
+                "length": 79
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314816120,
+                "holeOrdinal": 16,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17722933,
+                        "zoneId": 1,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17722934,
+                        "zoneId": 3,
+                        "distanceToTarget": 16,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17722935,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528421,
+                "holeOrdinal": 17,
+                "label": "17",
+                "par": 3,
+                "length": 93
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314819524,
+                "holeOrdinal": 17,
+                "score": 4
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17723952,
+                        "zoneId": 2,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17723953,
+                        "zoneId": 4,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17723954,
+                        "zoneId": 3,
+                        "distanceToTarget": 16,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 4,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17723955,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528422,
+                "holeOrdinal": 18,
+                "label": "18",
+                "par": 3,
+                "length": 100
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314823947,
+                "holeOrdinal": 18,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17725133,
+                        "zoneId": 4,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17725134,
+                        "zoneId": 3,
+                        "distanceToTarget": 6,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17725135,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        },
+        {
+            "liveLayoutDetail": {
+                "layoutDetailId": 22528423,
+                "holeOrdinal": 19,
+                "label": "19",
+                "par": 3,
+                "length": 138
+            },
+            "liveHoleScore": {
+                "holeScoreId": 314827776,
+                "holeOrdinal": 19,
+                "score": 3
+            },
+            "holeThrows": [
+                {
+                    "scoreOrdinal": 1,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17726111,
+                        "zoneId": 4,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 2,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17726112,
+                        "zoneId": 3,
+                        "distanceToTarget": 16,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                },
+                {
+                    "scoreOrdinal": 3,
+                    "penaltyCount": 0,
+                    "liveScoreThrow": {
+                        "throwId": 17726113,
+                        "zoneId": 5,
+                        "distanceToTarget": null,
+                        "penaltyType": null,
+                        "dropZoneId": null,
+                        "dropDistanceToTarget": null
+                    }
+                }
+            ]
+        }
+    ]
+}

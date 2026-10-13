@@ -11,6 +11,7 @@ import com.datascience.domain.Player;
 import com.datascience.domain.Round;
 import com.datascience.domain.RoundDivision;
 import com.datascience.domain.RoundResult;
+import com.datascience.domain.RoundResultThrows;
 import com.datascience.dto.pdga.PdgaCompetitionInfo;
 import com.datascience.dto.pdga.PdgaDivision;
 import com.datascience.dto.pdga.PdgaLayout;
@@ -19,6 +20,7 @@ import com.datascience.dto.pdga.PdgaResponse;
 import com.datascience.dto.pdga.PdgaRoundInfo;
 import com.datascience.dto.pdga.PdgaRoundResults;
 import com.datascience.dto.pdga.PdgaScore;
+import com.datascience.dto.pdga.PdgaThrowTimelineResponse;
 import com.datascience.repository.CompetitionDivisionRepository;
 import com.datascience.repository.CompetitionImportRepository;
 import com.datascience.repository.CompetitionRepository;
@@ -30,6 +32,7 @@ import com.datascience.repository.PlayerRepository;
 import com.datascience.repository.RoundDivisionRepository;
 import com.datascience.repository.RoundRepository;
 import com.datascience.repository.RoundResultRepository;
+import com.datascience.repository.RoundResultThrowsRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,6 +64,7 @@ public class ImportService {
     private final RoundDivisionRepository roundDivisionRepository;
     private final RoundResultRepository roundResultRepository;
     private final HoleScoreRepository holeScoreRepository;
+    private final RoundResultThrowsRepository roundResultThrowsRepository;
 
     @Async
     public void importPendingCompetitions() {
@@ -75,6 +79,83 @@ public class ImportService {
             }
         }
         log.info("Imported " + imported + " competitions");
+    }
+
+    @Async
+    public void inputThrows() {
+        List<ThrowImportTarget> targets = roundResultRepository
+                .findByThrowsImportedFalseOrderById()
+                .stream()
+                .map(roundResult -> new ThrowImportTarget(roundResult.getId(), roundResult.getPdgaScoreId()))
+                .toList();
+
+        int imported = 0;
+        for (ThrowImportTarget target : targets) {
+            try {
+                if (target.pdgaScoreId() == null) {
+                    transactionTemplate.executeWithoutResult(status -> markThrowsImported(target.roundResultId()));
+                } else {
+                    PdgaThrowTimelineResponse response = pdgaConnector.getThrowTimeline(target.pdgaScoreId());
+                    if (response == null) {
+                        throw new IllegalStateException("PDGA throw timeline response had no data for score "
+                                + target.pdgaScoreId());
+                    }
+                    transactionTemplate.executeWithoutResult(status -> saveThrowTimeline(target.roundResultId(), response));
+                }
+                imported++;
+            } catch (RuntimeException ex) {
+                log.error("Failed to import throws for round result {}", target.roundResultId(), ex);
+            }
+        }
+        log.info("Imported throws for {} round results", imported);
+    }
+
+    private void markThrowsImported(Long roundResultId) {
+        RoundResult roundResult = roundResultRepository.findById(roundResultId)
+                .orElseThrow(() -> new IllegalStateException("Missing round result " + roundResultId));
+        roundResult.setThrowsImported(Boolean.TRUE);
+        roundResultRepository.save(roundResult);
+    }
+
+    private void saveThrowTimeline(Long roundResultId, PdgaThrowTimelineResponse response) {
+        RoundResult roundResult = roundResultRepository.findById(roundResultId)
+                .orElseThrow(() -> new IllegalStateException("Missing round result " + roundResultId));
+        for (PdgaThrowTimelineResponse.PdgaScoreThrows scoreThrows : safeList(response.getScoreThrows())) {
+            if (scoreThrows.getLiveHoleScore() == null
+                    || scoreThrows.getLiveHoleScore().getHoleOrdinal() == null) {
+                throw new IllegalStateException("Throw timeline entry has no hole ordinal for round result "
+                        + roundResultId);
+            }
+            for (PdgaThrowTimelineResponse.PdgaHoleThrow holeThrow : safeList(scoreThrows.getHoleThrows())) {
+                if (holeThrow == null || holeThrow.getLiveScoreThrow() == null) {
+                    throw new IllegalStateException("Throw timeline entry has no live score throw for round result "
+                            + roundResultId);
+                }
+                RoundResultThrows row = roundResultThrowsRepository
+                        .findByRoundResultAndHoleOrdinalAndScoreOrdinal(
+                                roundResult,
+                                scoreThrows.getLiveHoleScore().getHoleOrdinal(),
+                                holeThrow.getScoreOrdinal()
+                        )
+                        .orElseGet(RoundResultThrows::new);
+                row.setRoundResult(roundResult);
+                row.setHoleOrdinal(scoreThrows.getLiveHoleScore().getHoleOrdinal());
+                row.setScoreOrdinal(holeThrow.getScoreOrdinal());
+                row.setPenaltyCount(holeThrow.getPenaltyCount());
+                row.setThrowId(holeThrow.getLiveScoreThrow().getThrowId());
+                row.setZoneId(holeThrow.getLiveScoreThrow().getZoneId());
+                row.setDistanceToTarget(holeThrow.getLiveScoreThrow().getDistanceToTarget());
+                row.setPenaltyType(holeThrow.getLiveScoreThrow().getPenaltyType());
+                row.setDropZoneId(holeThrow.getLiveScoreThrow().getDropZoneId());
+                row.setDropDistanceToTarget(holeThrow.getLiveScoreThrow().getDropDistanceToTarget());
+                roundResultThrowsRepository.save(row);
+            }
+        }
+        roundResult.setThrowsImported(Boolean.TRUE);
+        roundResultRepository.save(roundResult);
+    }
+
+    private record ThrowImportTarget(Long roundResultId, Long pdgaScoreId) {
     }
 
     private void importCompetition(Long tournamentId) {
@@ -321,8 +402,10 @@ public class ImportService {
 
     private Player savePlayer(PdgaScore score) {
         Player player = score.getPdgaNum() != null
-                ? playerRepository.findByPdgaNum(score.getPdgaNum()).orElseGet(Player::new)
-                : playerRepository.findFirstByNameAndCityAndCountry(score.getName(), score.getCity(), score.getCountry()).orElseGet(Player::new);
+                ? playerRepository.findByPdgaNum(score.getPdgaNum())
+                .or(() -> playerRepository.findFirstByNameAndPdgaNumIsNull(score.getName()))
+                .orElseGet(Player::new)
+                : playerRepository.findFirstByNameAndPdgaNumIsNull(score.getName()).orElseGet(Player::new);
         player.setPdgaNum(score.getPdgaNum());
         player.setFirstName(score.getFirstName());
         player.setLastName(score.getLastName());

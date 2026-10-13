@@ -354,3 +354,88 @@ DROP TABLE IF EXISTS datas.basket_variation_round_settings;
 
 ALTER TABLE datas.basket ADD COLUMN sort_order decimal;
 ALTER TABLE datas.basket_variation ADD COLUMN sort_order decimal;
+
+--changeset datascience:013-round-result-throws dbms:postgresql
+--validCheckSum 1:any
+
+ALTER TABLE datas.round_result
+    ADD COLUMN throws_imported BOOLEAN NOT NULL DEFAULT FALSE;
+
+CREATE TABLE datas.round_result_throws (
+    id BIGSERIAL NOT NULL,
+    round_result_id BIGINT NOT NULL,
+    hole_ordinal INTEGER NOT NULL,
+    data JSONB NOT NULL,
+    CONSTRAINT pk_round_result_throws PRIMARY KEY (id),
+    CONSTRAINT fk_round_result_throws_round_result FOREIGN KEY (round_result_id)
+        REFERENCES datas.round_result (id),
+    CONSTRAINT uq_round_result_throws_result_ordinal UNIQUE (round_result_id, hole_ordinal)
+);
+
+--changeset datascience:014-normalize-round-result-throws dbms:postgresql
+--validCheckSum 1:any
+
+ALTER TABLE datas.round_result_throws
+    DROP CONSTRAINT uq_round_result_throws_result_ordinal;
+
+CREATE TEMP TABLE normalized_round_result_throws AS
+SELECT rrt.round_result_id,
+       rrt.hole_ordinal,
+       (throw_data ->> 'scoreOrdinal')::INTEGER AS score_ordinal,
+       (throw_data ->> 'penaltyCount')::INTEGER AS penalty_count,
+       (throw_data -> 'liveScoreThrow' ->> 'throwId')::BIGINT AS throw_id,
+       (throw_data -> 'liveScoreThrow' ->> 'zoneId')::BIGINT AS zone_id,
+       (throw_data -> 'liveScoreThrow' ->> 'distanceToTarget')::INTEGER AS distance_to_target,
+       throw_data -> 'liveScoreThrow' ->> 'penaltyType' AS penalty_type,
+       (throw_data -> 'liveScoreThrow' ->> 'dropZoneId')::BIGINT AS drop_zone_id,
+       (throw_data -> 'liveScoreThrow' ->> 'dropDistanceToTarget')::INTEGER AS drop_distance_to_target
+FROM datas.round_result_throws rrt
+CROSS JOIN LATERAL jsonb_array_elements(rrt.data) AS throw_data
+WHERE jsonb_typeof(rrt.data) = 'array';
+
+TRUNCATE TABLE datas.round_result_throws;
+
+ALTER TABLE datas.round_result_throws
+    ADD COLUMN score_ordinal INTEGER,
+    ADD COLUMN penalty_count INTEGER,
+    ADD COLUMN throw_id BIGINT,
+    ADD COLUMN zone_id BIGINT,
+    ADD COLUMN distance_to_target INTEGER,
+    ADD COLUMN penalty_type TEXT,
+    ADD COLUMN drop_zone_id BIGINT,
+    ADD COLUMN drop_distance_to_target INTEGER;
+
+INSERT INTO datas.round_result_throws (
+    round_result_id,
+    hole_ordinal,
+    score_ordinal,
+    penalty_count,
+    throw_id,
+    zone_id,
+    distance_to_target,
+    penalty_type,
+    drop_zone_id,
+    drop_distance_to_target
+)
+SELECT round_result_id,
+       hole_ordinal,
+       score_ordinal,
+       penalty_count,
+       throw_id,
+       zone_id,
+       distance_to_target,
+       penalty_type,
+       drop_zone_id,
+       drop_distance_to_target
+FROM normalized_round_result_throws;
+
+ALTER TABLE datas.round_result_throws
+    ALTER COLUMN score_ordinal SET NOT NULL,
+    ALTER COLUMN penalty_count SET NOT NULL;
+
+ALTER TABLE datas.round_result_throws
+    ADD CONSTRAINT uq_round_result_throws_result_ordinal
+        UNIQUE (round_result_id, hole_ordinal, score_ordinal);
+
+ALTER TABLE datas.round_result_throws
+    DROP COLUMN data;

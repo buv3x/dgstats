@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basket Statistics</title>
+    <title>LT PDGA Statistics</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main class="page">
     <header class="page-header">
-        <h1>Basket Statistics</h1>
+        <h1>LT PDGA Statistics</h1>
     </header>
 
     <nav class="view-nav" aria-label="Statistics views">
         <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
-        <button id="basket-stats-tab" class="view-tab" type="button">Basket stats</button>
+        <button id="basket-stats-tab" class="view-tab" type="button">Hole stats</button>
         <button id="personal-stats-tab" class="view-tab" type="button">Personal stats</button>
         <button id="description-tab" class="view-tab" type="button">Description</button>
     </nav>
@@ -70,7 +70,7 @@
     <section id="course-stats-view">
         <form id="filters" class="filters" hidden>
             <label>
-                <span>Basket course</span>
+                <span>Course</span>
                 <select id="course" name="course"></select>
             </label>
             <label>
@@ -105,15 +105,15 @@
             <table>
                 <thead>
                 <tr>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Basket layout [length in meters]" aria-label="Basket: Basket layout [length in meters]">Basket</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average score on a basket layout" aria-label="Average: Average score on a basket layout">Average</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 1 or 2 throws" aria-label="1-2: Percentage of times a basket layout was completed in 1 or 2 throws">1-2</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 3 throws" aria-label="3: Percentage of times a basket layout was completed in 3 throws">3</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 4 throws" aria-label="4: Percentage of times a basket layout was completed in 4 throws">4</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 5 throws" aria-label="5: Percentage of times a basket layout was completed in 5 throws">5</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 6 throws" aria-label="6: Percentage of times a basket layout was completed in 6 throws">6</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 7 throws" aria-label="7: Percentage of times a basket layout was completed in 7 throws">7</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a basket layout was completed in 8 or more throws" aria-label="8+: Percentage of times a basket layout was completed in 8 or more throws">8+</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Hole layout [length in meters]" aria-label="Hole: Hole layout [length in meters]">Hole / Layout</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average score on a hole layout" aria-label="Average: Average score on a hole layout">Average</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 1 or 2 throws" aria-label="1-2: Percentage of times a hole layout was completed in 1 or 2 throws">1-2</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 3 throws" aria-label="3: Percentage of times a hole layout was completed in 3 throws">3</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 4 throws" aria-label="4: Percentage of times a hole layout was completed in 4 throws">4</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 5 throws" aria-label="5: Percentage of times a hole layout was completed in 5 throws">5</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 6 throws" aria-label="6: Percentage of times a hole layout was completed in 6 throws">6</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 7 throws" aria-label="7: Percentage of times a hole layout was completed in 7 throws">7</span></th>
+                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Percentage of times a hole layout was completed in 8 or more throws" aria-label="8+: Percentage of times a hole layout was completed in 8 or more throws">8+</span></th>
                     <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Number of recorded results" aria-label="Count: Number of recorded results">Count</span></th>
                 </tr>
                 </thead>
@@ -125,11 +125,11 @@
     <section id="basket-stats-view" hidden>
         <form id="basket-filters" class="filters" hidden>
             <label>
-                <span>Basket course</span>
+                <span>Course</span>
                 <select id="basket-course" name="basketCourse"></select>
             </label>
             <label>
-                <span>Basket layout</span>
+                <span>Hole Layout</span>
                 <select id="basket-variation" name="basketVariation"></select>
             </label>
         </form>
@@ -138,7 +138,7 @@
 
         <section id="basket-chart-section" class="chart-section" hidden>
             <div class="section-header">
-                <h2>Basket <span class="tooltip-trigger" tabindex="0" data-tooltip="Scoring separation calculated around a given rating" aria-label="SPRW: Scoring separation calculated around a given rating">SPRW</span></h2>
+                <h2><span class="tooltip-trigger" tabindex="0" data-tooltip="Scoring separation calculated around a given rating" aria-label="SPRW: Scoring separation calculated around a given rating">SPRW</span></h2>
                 <div id="basket-chart-status" class="chart-status"></div>
             </div>
             <div id="basket-chart-canvas" class="chart-canvas basket-chart-canvas">
@@ -156,7 +156,7 @@
                 <datalist id="personal-player-options"></datalist>
             </label>
             <label>
-                <span>Basket course</span>
+                <span>Course</span>
                 <select id="personal-course" name="personalCourse"></select>
             </label>
             <label>
@@ -171,8 +171,8 @@
             <table class="personal-table">
                 <thead>
                 <tr>
-                    <th>Basket course</th>
-                    <th>Basket</th>
+                    <th>Course</th>
+                    <th>Hole</th>
                     <th>Layout</th>
                     <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average expected rating for a player on a given layout" aria-label="Rating: Average expected rating for a player on a given layout">Rating</span></th>
                     <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Number of recorded results for a player" aria-label="Count: Number of recorded results for a player">Count</span></th>

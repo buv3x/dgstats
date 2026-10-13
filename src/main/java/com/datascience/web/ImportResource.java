@@ -20,4 +20,10 @@ public class ImportResource {
         importService.importPendingCompetitions();
         return "Import initiated";
     }
+
+    @PostMapping(value = "/import/throws", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String inputThrows() {
+        importService.inputThrows();
+        return "Import initiated";
+    }
 }

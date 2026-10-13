@@ -3,6 +3,7 @@ package com.datascience.service;
 import com.datascience.dto.pdga.PdgaCompetitionInfo;
 import com.datascience.dto.pdga.PdgaResponse;
 import com.datascience.dto.pdga.PdgaRoundResults;
+import com.datascience.dto.pdga.PdgaThrowTimelineResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -80,6 +81,33 @@ public class PdgaConnector {
                 params
         ).getBody();
         log.info(tournamentId + ". " + division + ". " + round + ". Tournament results processed.");
+        return body;
+    }
+
+    public PdgaThrowTimelineResponse getThrowTimeline(Long pdgaScoreId) {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            log.error("Sleep failed", e);
+        }
+        String urlTemplate = UriComponentsBuilder.fromUriString(
+                        "https://www.pdga.com/api/v1/feat/live-scores/{pdgaScoreId}/throw-timelines")
+                .encode()
+                .toUriString();
+
+        Map<String, String> params = new HashMap<>();
+        params.put("pdgaScoreId", pdgaScoreId.toString());
+
+        PdgaThrowTimelineResponse body = restTemplate.exchange(
+                urlTemplate,
+                HttpMethod.GET,
+                jsonHeaders(),
+                new ParameterizedTypeReference<PdgaThrowTimelineResponse>() {
+                },
+                params
+        ).getBody();
+        log.info("{}. Throw timeline processed.", pdgaScoreId);
         return body;
     }
 
