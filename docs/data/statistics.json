@@ -1,20 +1,20 @@
 {
   "metadata" : {
-    "exportedAt" : "2026-10-12T17:19:58.915695300Z",
+    "exportedAt" : "2026-10-17T17:48:49.083435800Z",
     "diagnostics" : {
-      "exportedSamples" : 233462,
-      "ignoredUnratedSamples" : 74428,
+      "exportedSamples" : 236342,
+      "ignoredUnratedSamples" : 74770,
       "ignoredUnmappedSamples" : 0,
       "includedBasketCourses" : 15,
       "generatedCourseFiles" : 15,
       "generatedBasketStatsFiles" : 14,
-      "eligiblePersonalPlayers" : 538,
-      "generatedPersonalStatsFiles" : 538
+      "eligiblePersonalPlayers" : 540,
+      "generatedPersonalStatsFiles" : 540
     },
     "description" : {
-      "competitionCount" : 98,
-      "playersCount" : 538,
-      "latestCompetition" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors"
+      "competitionCount" : 99,
+      "playersCount" : 540,
+      "latestCompetition" : "Sezono Uždarymas 2026 su Chilli Disc Golf"
     }
   },
   "courses" : [ {
@@ -32,7 +32,7 @@
   }, {
     "id" : 10,
     "name" : "Domeikava",
-    "sampleCount" : 27979,
+    "sampleCount" : 30859,
     "path" : "courses/10.json",
     "basketStatsPath" : "basket-stats/10.json"
   }, {
