@@ -1,0 +1,105 @@
+{
+  "player" : {
+    "id" : 518,
+    "name" : "Dovydas Mitašiūnas",
+    "pdgaNum" : null,
+    "label" : "Dovydas Mitašiūnas"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 69,
+        "roundDate" : "2024-04-13",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - I - JONAVA - MĖGEJAI",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 70,
+        "roundDate" : "2024-04-13",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - I - JONAVA - MĖGEJAI",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 71,
+        "roundDate" : "2024-04-28",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - II - DOMEIKAVA - MA4",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 72,
+        "roundDate" : "2024-04-28",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - II - DOMEIKAVA - MA4",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
+}

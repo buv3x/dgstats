@@ -1,0 +1,153 @@
+{
+  "player" : {
+    "id" : 866,
+    "name" : "Armandas Jasiulevičius",
+    "pdgaNum" : null,
+    "label" : "Armandas Jasiulevičius"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 223,
+        "roundDate" : "2026-09-06",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - V - PANEVĖŽYS - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 224,
+        "roundDate" : "2026-09-06",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - V - PANEVĖŽYS - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 227,
+        "roundDate" : "2026-09-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI  - JONAVA - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 228,
+        "roundDate" : "2026-09-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI  - JONAVA - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 156,
+        "roundDate" : "2025-10-04",
+        "competitionSimpleName" : "Pakruojo diskgolfo taurė: Kruojos iššūkis",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 157,
+        "roundDate" : "2025-10-04",
+        "competitionSimpleName" : "Pakruojo diskgolfo taurė: Kruojos iššūkis",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
+}

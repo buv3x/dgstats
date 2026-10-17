@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 1109.589841941746,
+    "rating" : 1109.5898419417465,
     "displayRating" : 1110,
     "scores" : [ 2, 3, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 1057.9046336218598,
+    "rating" : 1057.90463362186,
     "displayRating" : 1058,
     "scores" : [ 2, 3, 2 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 1043.2192642140699,
+    "rating" : 1043.21926421407,
     "displayRating" : 1043,
     "scores" : [ 3, 4, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 1036.8110896399362,
+    "rating" : 1036.811089639936,
     "displayRating" : 1037,
     "scores" : [ 3, 4, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 1015.470957100731,
+    "rating" : 1015.4709571007307,
     "displayRating" : 1015,
     "scores" : [ 4, 5, 4 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 1007.0883091119667,
+    "rating" : 1007.0883091119671,
     "displayRating" : 1007,
     "scores" : [ 3, 4, 5 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 975.6529100762222,
+    "rating" : 975.6529100762218,
     "displayRating" : 976,
     "scores" : [ 4, 3, 4 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 946.9674998639043,
+    "rating" : 946.9674998639042,
     "displayRating" : 947,
     "scores" : [ 3, 3, 2 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 945.7968111853376,
+    "rating" : 945.7968111853378,
     "displayRating" : 946,
     "scores" : [ 2, 4, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 937.6761810942403,
+    "rating" : 937.6761810942404,
     "displayRating" : 938,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 920.7122445613899,
+    "rating" : 920.7122445613894,
     "displayRating" : 921,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -257,5 +257,85 @@
     "rating" : 816.515407575429,
     "displayRating" : 817,
     "scores" : [ 6, 6, 3 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 73,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 74,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 75,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

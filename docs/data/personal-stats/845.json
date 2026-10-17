@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 270,
     "count" : 3,
-    "rating" : 1047.3723899485199,
+    "rating" : 1047.37238994852,
     "displayRating" : 1047,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 962.2729239892682,
+    "rating" : 962.2729239892683,
     "displayRating" : 962,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 954.8121625149928,
+    "rating" : 954.8121625149929,
     "displayRating" : 955,
     "scores" : [ 3, 4, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 918.028795280616,
+    "rating" : 918.0287952806162,
     "displayRating" : 918,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 914.9235384323614,
+    "rating" : 914.9235384323612,
     "displayRating" : 915,
     "scores" : [ 4, 5, 6 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 879.8045781368263,
+    "rating" : 879.8045781368261,
     "displayRating" : 880,
     "scores" : [ 3, 4, 3 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 878.2962805425585,
+    "rating" : 878.2962805425586,
     "displayRating" : 878,
     "scores" : [ 4, 3, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 872.6496863940242,
+    "rating" : 872.6496863940243,
     "displayRating" : 873,
     "scores" : [ 3, 4, 4 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 809.7364711404713,
+    "rating" : 809.736471140471,
     "displayRating" : 810,
     "scores" : [ 2, 5, 4 ]
   }, {
@@ -254,8 +254,88 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 758.7204015305743,
+    "rating" : 758.7204015305746,
     "displayRating" : 759,
     "scores" : [ 3, 7, 4 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 151,
+        "roundDate" : "2025-08-17",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 152,
+        "roundDate" : "2025-08-17",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 153,
+        "roundDate" : "2025-08-17",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

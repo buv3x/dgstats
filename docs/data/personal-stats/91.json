@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 9,
-    "rating" : 1058.961886555126,
+    "rating" : 1058.9618865551263,
     "displayRating" : 1059,
     "scores" : [ 5, 3, 3, 3, 4, 5, 3, 3, 3 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 9,
-    "rating" : 1049.2199920045916,
+    "rating" : 1049.2199920045914,
     "displayRating" : 1049,
     "scores" : [ 3, 3, 3, 3, 3, 3, 3, 4, 4 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 1036.8204055126228,
+    "rating" : 1036.8204055126225,
     "displayRating" : 1037,
     "scores" : [ 4, 4, 4, 4, 5, 4, 4, 4, 4 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 9,
-    "rating" : 1035.7082676373254,
+    "rating" : 1035.7082676373257,
     "displayRating" : 1036,
     "scores" : [ 4, 3, 4, 4, 5, 3, 3, 4, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 1033.7570601298298,
+    "rating" : 1033.7570601298296,
     "displayRating" : 1034,
     "scores" : [ 3, 3, 3, 3, 3, 3, 3, 4, 3 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 1010.6753403278378,
+    "rating" : 1010.6753403278375,
     "displayRating" : 1011,
     "scores" : [ 3, 3, 5, 3, 3, 3, 3, 4, 4 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 978.3897270591474,
+    "rating" : 978.3897270591476,
     "displayRating" : 978,
     "scores" : [ 2, 3, 4, 4, 3, 4, 3, 4, 4 ]
   }, {
@@ -257,5 +257,213 @@
     "rating" : 896.7982722279324,
     "displayRating" : 897,
     "scores" : [ 4, 6, 5, 3, 5, 4, 5, 5, 3 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 73,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 74,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 75,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2023,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 50,
+        "roundDate" : "2023-04-16",
+        "competitionSimpleName" : "IBT Vilnius Open 2023",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 51,
+        "roundDate" : "2023-04-16",
+        "competitionSimpleName" : "IBT Vilnius Open 2023",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 52,
+        "roundDate" : "2023-04-16",
+        "competitionSimpleName" : "IBT Vilnius Open 2023",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2022,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 3,
+        "roundDate" : "2022-05-01",
+        "competitionSimpleName" : "Innova Baltic Tour Vilnius Open 2022",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 4,
+        "roundDate" : "2022-05-01",
+        "competitionSimpleName" : "Innova Baltic Tour Vilnius Open 2022",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 5,
+        "roundDate" : "2022-05-01",
+        "competitionSimpleName" : "Innova Baltic Tour Vilnius Open 2022",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

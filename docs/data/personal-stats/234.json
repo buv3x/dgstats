@@ -1,0 +1,137 @@
+{
+  "player" : {
+    "id" : 234,
+    "name" : "Paulius Kvaraciejus",
+    "pdgaNum" : 111541,
+    "label" : "Paulius Kvaraciejus (111541)"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 83,
+        "roundDate" : "2024-04-27",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - II - DOMEIKAVA - MPO,FPO,MP40,MP50,FP40,MJ18",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 84,
+        "roundDate" : "2024-04-27",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - II - DOMEIKAVA - MPO,FPO,MP40,MP50,FP40,MJ18",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2022,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 10,
+        "roundDate" : "2022-09-04",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Čempionatas 2022 su DISCMANIA",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 11,
+        "roundDate" : "2022-09-04",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Čempionatas 2022 su DISCMANIA",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 12,
+        "roundDate" : "2022-09-04",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Čempionatas 2022 su DISCMANIA",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
+}

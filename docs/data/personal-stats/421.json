@@ -30,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 1087.3030090008324,
+    "rating" : 1087.3030090008322,
     "displayRating" : 1087,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 1082.6458169409964,
+    "rating" : 1082.645816940996,
     "displayRating" : 1083,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 1009.1942827414372,
+    "rating" : 1009.194282741437,
     "displayRating" : 1009,
     "scores" : [ 3, 4, 4 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 995.9913971909018,
+    "rating" : 995.9913971909021,
     "displayRating" : 996,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 975.6529100762222,
+    "rating" : 975.6529100762218,
     "displayRating" : 976,
     "scores" : [ 3, 4, 4 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 962.357675452003,
+    "rating" : 962.3576754520028,
     "displayRating" : 962,
     "scores" : [ 5, 3, 4 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 953.4846215047573,
+    "rating" : 953.4846215047572,
     "displayRating" : 953,
     "scores" : [ 3, 2, 3 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 914.4448370691222,
+    "rating" : 914.4448370691224,
     "displayRating" : 914,
     "scores" : [ 4, 6, 5 ]
   }, {
@@ -254,8 +254,88 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 835.3685579598147,
+    "rating" : 835.3685579598149,
     "displayRating" : 835,
     "scores" : [ 4, 6, 6 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2023,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 50,
+        "roundDate" : "2023-04-16",
+        "competitionSimpleName" : "IBT Vilnius Open 2023",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 51,
+        "roundDate" : "2023-04-16",
+        "competitionSimpleName" : "IBT Vilnius Open 2023",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 52,
+        "roundDate" : "2023-04-16",
+        "competitionSimpleName" : "IBT Vilnius Open 2023",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

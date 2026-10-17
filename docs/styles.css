@@ -111,6 +111,108 @@ button {
     font-weight: bold;
 }
 
+.subnav {
+    border-bottom: 1px solid #d8dee4;
+    display: flex;
+    gap: 4px;
+    margin: 4px 0 18px;
+}
+
+.subnav-tab {
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    color: #475467;
+}
+
+.subnav-tab.active {
+    border-bottom-color: #245b7a;
+    color: #1f2933;
+    font-weight: bold;
+}
+
+.putting-summary {
+    background: #ffffff;
+    border: 1px solid #d8dee4;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 16px 18px;
+}
+
+.putting-total {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.putting-global {
+    margin-top: 4px;
+}
+
+.putting-year {
+    border-top: 1px solid #d8dee4;
+    margin-top: 16px;
+    padding-top: 12px;
+}
+
+.putting-year-toggle {
+    background: transparent;
+    color: #1f2933;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: auto;
+    padding: 0;
+}
+
+.putting-year-toggle::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.15s ease-in-out;
+}
+
+.putting-year-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+}
+
+.putting-year-content {
+    padding: 8px 0 0 24px;
+}
+
+.putting-metric-label {
+    font-weight: bold;
+}
+
+.putting-round-toggle {
+    background: transparent;
+    color: #245b7a;
+    font-size: 14px;
+    margin-top: 12px;
+    min-height: auto;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.putting-round-details {
+    border-top: 1px solid #d8dee4;
+    margin-top: 12px;
+    padding-top: 10px;
+}
+
+.putting-round-line {
+    line-height: 1.8;
+}
+
+.putting-round-line.incomplete {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.putting-round-line > div {
+    display: inline;
+}
+
 .message {
     background: #ffffff;
     border-left: 4px solid #667085;

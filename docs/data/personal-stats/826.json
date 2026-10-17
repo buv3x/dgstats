@@ -30,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 1003.8022602724781,
+    "rating" : 1003.802260272478,
     "displayRating" : 1004,
     "scores" : [ 2, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 987.2118484028248,
+    "rating" : 987.2118484028249,
     "displayRating" : 987,
     "scores" : [ 3, 3 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 965.0865304402204,
+    "rating" : 965.0865304402205,
     "displayRating" : 965,
     "scores" : [ 3, 3 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 956.3681488152407,
+    "rating" : 956.3681488152405,
     "displayRating" : 956,
     "scores" : [ 2, 4 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 954.7085590550233,
+    "rating" : 954.7085590550232,
     "displayRating" : 955,
     "scores" : [ 4, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 950.6025873778187,
+    "rating" : 950.6025873778191,
     "displayRating" : 951,
     "scores" : [ 3, 3 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 909.6158920961727,
+    "rating" : 909.6158920961728,
     "displayRating" : 910,
     "scores" : [ 4, 5 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 881.5802945118259,
+    "rating" : 881.5802945118257,
     "displayRating" : 882,
     "scores" : [ 5, 4 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 838.3085032032557,
+    "rating" : 838.3085032032559,
     "displayRating" : 838,
     "scores" : [ 3, 4 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 832.4818008710056,
+    "rating" : 832.4818008710055,
     "displayRating" : 832,
     "scores" : [ 5, 5 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 822.1249605155953,
+    "rating" : 822.1249605155951,
     "displayRating" : 822,
     "scores" : [ 4, 4 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 922,
     "count" : 2,
-    "rating" : 779.7996589066458,
+    "rating" : 779.799658906646,
     "displayRating" : 780,
     "scores" : [ 4, 6 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 756.1735636075973,
+    "rating" : 756.1735636075975,
     "displayRating" : 756,
     "scores" : [ 4, 3 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 739.9420114998101,
+    "rating" : 739.9420114998098,
     "displayRating" : 740,
     "scores" : [ 4, 4 ]
   }, {
@@ -257,5 +257,85 @@
     "rating" : 659.7984122086825,
     "displayRating" : 660,
     "scores" : [ 4, 4 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 139,
+        "roundDate" : "2025-03-02",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2025 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 140,
+        "roundDate" : "2025-03-02",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2025 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 141,
+        "roundDate" : "2025-03-02",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2025 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

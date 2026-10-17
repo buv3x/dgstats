@@ -30,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 1081.4755316097608,
+    "rating" : 1081.475531609761,
     "displayRating" : 1081,
     "scores" : [ 3, 3, 2, 3, 3, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 6,
-    "rating" : 1057.9046336218598,
+    "rating" : 1057.90463362186,
     "displayRating" : 1058,
     "scores" : [ 2, 2, 2, 2, 3, 3 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 1028.6679594811276,
+    "rating" : 1028.6679594811271,
     "displayRating" : 1029,
     "scores" : [ 3, 4, 3, 3, 4, 3 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 6,
-    "rating" : 1028.5532780059857,
+    "rating" : 1028.553278005986,
     "displayRating" : 1029,
     "scores" : [ 5, 4, 3, 4, 4, 3 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 6,
-    "rating" : 1019.6053307024858,
+    "rating" : 1019.605330702486,
     "displayRating" : 1020,
     "scores" : [ 4, 4, 4, 3, 3, 5 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 1015.470957100731,
+    "rating" : 1015.4709571007307,
     "displayRating" : 1015,
     "scores" : [ 4, 5, 4, 4, 4, 5 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 6,
-    "rating" : 999.5843825459696,
+    "rating" : 999.5843825459693,
     "displayRating" : 1000,
     "scores" : [ 5, 4, 4, 3, 3, 3 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 6,
-    "rating" : 995.7480525221957,
+    "rating" : 995.7480525221955,
     "displayRating" : 996,
     "scores" : [ 4, 3, 3, 5, 3, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 975.6529100762222,
+    "rating" : 975.6529100762218,
     "displayRating" : 976,
     "scores" : [ 3, 3, 4, 5, 4, 3 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 937.6761810942403,
+    "rating" : 937.6761810942404,
     "displayRating" : 938,
     "scores" : [ 2, 3, 3, 3, 4, 3 ]
   }, {
@@ -257,5 +257,149 @@
     "rating" : 911.5581717532647,
     "displayRating" : 912,
     "scores" : [ 3, 4, 2, 4, 5, 4 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 73,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 74,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 75,
+        "roundDate" : "2024-04-07",
+        "competitionSimpleName" : "IBT Vilnius Open 2024",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2022,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 3,
+        "roundDate" : "2022-05-01",
+        "competitionSimpleName" : "Innova Baltic Tour Vilnius Open 2022",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 4,
+        "roundDate" : "2022-05-01",
+        "competitionSimpleName" : "Innova Baltic Tour Vilnius Open 2022",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 5,
+        "roundDate" : "2022-05-01",
+        "competitionSimpleName" : "Innova Baltic Tour Vilnius Open 2022",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

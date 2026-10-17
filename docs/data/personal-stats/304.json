@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 1090.8128441161289,
+    "rating" : 1090.8128441161284,
     "displayRating" : 1091,
     "scores" : [ 3, 2 ]
   }, {
@@ -30,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 1051.7395697579059,
+    "rating" : 1051.7395697579057,
     "displayRating" : 1052,
     "scores" : [ 2, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 1012.2639353717553,
+    "rating" : 1012.2639353717552,
     "displayRating" : 1012,
     "scores" : [ 3, 4 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 1003.8022602724781,
+    "rating" : 1003.802260272478,
     "displayRating" : 1004,
     "scores" : [ 3, 2 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 987.2118484028248,
+    "rating" : 987.2118484028249,
     "displayRating" : 987,
     "scores" : [ 3, 3 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 980.0955107497491,
+    "rating" : 980.095510749749,
     "displayRating" : 980,
     "scores" : [ 4, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 922,
     "count" : 2,
-    "rating" : 962.7848207968137,
+    "rating" : 962.7848207968138,
     "displayRating" : 963,
     "scores" : [ 5, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 950.6025873778187,
+    "rating" : 950.6025873778191,
     "displayRating" : 951,
     "scores" : [ 2, 4 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 941.0510965285024,
+    "rating" : 941.0510965285026,
     "displayRating" : 941,
     "scores" : [ 3, 3 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 909.6158920961727,
+    "rating" : 909.6158920961728,
     "displayRating" : 910,
     "scores" : [ 4, 5 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 867.7541272956316,
+    "rating" : 867.7541272956315,
     "displayRating" : 868,
     "scores" : [ 4, 6 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 739.9420114998101,
+    "rating" : 739.94201149981,
     "displayRating" : 740,
     "scores" : [ 3, 5 ]
   }, {
@@ -254,8 +254,88 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 1279,
     "count" : 2,
-    "rating" : 593.2350162317522,
+    "rating" : 593.2350162317524,
     "displayRating" : 593,
     "scores" : [ 4, 6 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2023,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 20,
+        "roundDate" : "2023-02-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2023 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 21,
+        "roundDate" : "2023-02-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2023 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 22,
+        "roundDate" : "2023-02-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2023 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

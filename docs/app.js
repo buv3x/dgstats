@@ -16,6 +16,7 @@
     var playerLookup = [];
     var selectedPersonalSnapshot = null;
     var selectedPersonalRequest = 0;
+    var personalView = "hole";
     var personalPlayerInputTimer = null;
     var descriptionTab = document.getElementById("description-tab");
     var courseStatsTab = document.getElementById("course-stats-tab");
@@ -49,14 +50,21 @@
     var basketChartCanvas = document.getElementById("basket-chart-canvas");
     var basketChartSvg = document.getElementById("basket-stats-chart");
     var basketChartTooltip = document.getElementById("basket-chart-tooltip");
-    var personalFilters = document.getElementById("personal-filters");
+    var personalPlayerFilter = document.getElementById("personal-player-filter");
     var personalPlayerInput = document.getElementById("personal-player");
     var personalPlayerOptions = document.getElementById("personal-player-options");
+    var personalContent = document.getElementById("personal-content");
+    var personalHoleTab = document.getElementById("personal-hole-tab");
+    var personalPuttingTab = document.getElementById("personal-putting-tab");
+    var personalHoleView = document.getElementById("personal-hole-view");
+    var personalPuttingView = document.getElementById("personal-putting-view");
+    var personalHoleFilters = document.getElementById("personal-hole-filters");
     var personalCourseSelect = document.getElementById("personal-course");
     var personalMinCountInput = document.getElementById("personal-min-count");
     var personalMessage = document.getElementById("personal-message");
     var personalTableWrap = document.getElementById("personal-table-wrap");
     var personalTableBody = document.getElementById("personal-statistics-body");
+    var personalPuttingSummary = document.getElementById("personal-putting-summary");
     var uiTooltip = document.getElementById("ui-tooltip");
     var activeUiTooltipTrigger = null;
 
@@ -145,6 +153,14 @@
         renderPersonalStatistics();
     });
 
+    personalHoleTab.addEventListener("click", function () {
+        setPersonalView("hole");
+    });
+
+    personalPuttingTab.addEventListener("click", function () {
+        setPersonalView("putting");
+    });
+
     chartSvg.addEventListener("pointermove", function (event) {
         handleChartPointer(event);
     });
@@ -193,7 +209,7 @@
         if (basketActive) {
             renderSelectedBasketVariation();
         }
-        if (personalActive && playerLookup.length === 0 && personalFilters.hidden) {
+        if (personalActive && playerLookup.length === 0 && personalPlayerFilter.hidden) {
             showPersonalMessage("No eligible players are available in this statistics export.", false);
         }
     }
@@ -367,7 +383,7 @@
         resetPersonalResults();
 
         if (!manifest || !manifest.playersPath) {
-            personalFilters.hidden = true;
+            personalPlayerFilter.hidden = true;
             showPersonalMessage("No personal statistics are available in this export.", false);
             return;
         }
@@ -385,7 +401,7 @@
                 populatePersonalPlayerOptions();
             })
             .catch(function () {
-                personalFilters.hidden = true;
+                personalPlayerFilter.hidden = true;
                 resetPersonalResults();
                 showPersonalMessage("Personal statistics player data could not be loaded.", true);
             });
@@ -400,12 +416,12 @@
             option.value = player.label;
             personalPlayerOptions.appendChild(option);
         });
-        personalFilters.hidden = playerLookup.length === 0;
+        personalPlayerFilter.hidden = playerLookup.length === 0;
         if (playerLookup.length === 0) {
             showPersonalMessage("No eligible players are available in this statistics export.", false);
             return;
         }
-        showPersonalMessage("Select a person to view personal basket statistics.", false);
+        showPersonalMessage("Select a person to view statistics.", false);
     }
 
     function schedulePersonalPlayerInput() {
@@ -425,9 +441,11 @@
         resetPersonalCourseOptions();
         personalTableBody.innerHTML = "";
         personalTableWrap.hidden = true;
+        personalContent.hidden = true;
+        personalPuttingSummary.innerHTML = "";
 
         if (personalPlayerInput.value.trim() === "") {
-            showPersonalMessage("Select a person to view personal basket statistics.", false);
+            showPersonalMessage("Select a person to view statistics.", false);
             return;
         }
 
@@ -451,7 +469,7 @@
 
     function loadSelectedPersonalStats(player) {
         var requestId = ++selectedPersonalRequest;
-        showPersonalMessage("Loading personal basket statistics...", false);
+        showPersonalMessage("Loading personal statistics...", false);
         fetch(dataUrl(player.path))
             .then(function (response) {
                 if (!response.ok) {
@@ -465,6 +483,8 @@
                 }
                 selectedPersonalSnapshot = data;
                 populatePersonalCourseOptions();
+                personalContent.hidden = false;
+                setPersonalView("hole");
                 renderPersonalStatistics();
             })
             .catch(function () {
@@ -481,8 +501,13 @@
             personalTableBody.innerHTML = "";
             personalTableWrap.hidden = true;
             if (personalPlayerInput.value.trim() === "") {
-                showPersonalMessage("Select a person to view personal basket statistics.", false);
+                showPersonalMessage("Select a person to view statistics.", false);
             }
+            return;
+        }
+
+        if (personalView === "putting") {
+            renderPuttingStatistics();
             return;
         }
 
@@ -507,6 +532,223 @@
         visibleRows.forEach(appendPersonalVariationRow);
         hidePersonalMessage();
         personalTableWrap.hidden = false;
+    }
+
+    function setPersonalView(view) {
+        personalView = view === "putting" ? "putting" : "hole";
+        var holeActive = personalView === "hole";
+        personalHoleTab.classList.toggle("active", holeActive);
+        personalPuttingTab.classList.toggle("active", !holeActive);
+        personalHoleView.hidden = !holeActive;
+        personalPuttingView.hidden = holeActive;
+        personalHoleFilters.hidden = !holeActive || !selectedPersonalSnapshot;
+        if (selectedPersonalSnapshot) {
+            renderPersonalStatistics();
+        }
+    }
+
+    function renderPuttingStatistics() {
+        personalPuttingSummary.innerHTML = "";
+        var putting = selectedPersonalSnapshot && selectedPersonalSnapshot.putting
+            ? selectedPersonalSnapshot.putting
+            : {};
+
+        var totals = document.createElement("div");
+        totals.className = "putting-total";
+        totals.appendChild(puttingLine("C1x", putting.c1x));
+        totals.appendChild(document.createTextNode(", "));
+        totals.appendChild(puttingLine("C2", putting.c2));
+        personalPuttingSummary.appendChild(totals);
+
+        appendPuttingHighlights(personalPuttingSummary, putting);
+
+        var years = Array.isArray(putting.years)
+            ? putting.years.filter(function (year) {
+                return year
+                    && Number.isFinite(Number(year.year))
+                    && yearHasCompleteRound(year);
+            })
+            : [];
+        years.forEach(function (year, index) {
+            appendPuttingYear(personalPuttingSummary, year, index);
+        });
+        hidePersonalMessage();
+    }
+
+    function yearHasCompleteRound(year) {
+        return Array.isArray(year.rounds)
+            && year.rounds.some(function (round) {
+                return round && round.complete === true;
+            });
+    }
+
+    function appendPuttingHighlights(container, putting) {
+        var global = document.createElement("div");
+        global.className = "putting-global";
+        if (Number.isFinite(Number(putting.c2PlusPerRound))) {
+            global.appendChild(puttingValueLine("C2+ per round", Number(putting.c2PlusPerRound).toFixed(2)));
+        }
+        if (putting.mostC2PlusInRound) {
+            var mostC2Plus = putting.mostC2PlusInRound;
+            var mostValue = Number.isFinite(Number(mostC2Plus.display))
+                ? Number(mostC2Plus.display)
+                : null;
+            if (mostValue !== null) {
+                var mostSuffix = Number(mostC2Plus.count) > 1
+                    ? " (" + Number(mostC2Plus.count) + " times)"
+                    : "";
+                global.appendChild(puttingValueLine("Most C2+ in a round", String(mostValue) + mostSuffix));
+            }
+        }
+        if (putting.bestC1xRound) {
+            var bestC1x = putting.bestC1xRound;
+            var bestPercentage = bestC1x.percentage === null || bestC1x.percentage === undefined
+                ? null
+                : Number(bestC1x.percentage);
+            if (Number.isFinite(bestPercentage)) {
+                var bestSuffix = Number(bestC1x.count) > 1
+                    ? " (" + Number(bestC1x.count) + " times)"
+                    : "";
+                global.appendChild(puttingValueLine(
+                    "Best C1x round",
+                    bestPercentage.toFixed(2) + "% (" + Number(bestC1x.successful) + " / " + Number(bestC1x.total) + ")" + bestSuffix
+                ));
+            }
+        }
+        if (global.childNodes.length > 0) {
+            container.appendChild(global);
+        }
+    }
+
+    function appendPuttingYear(container, year, index) {
+        var yearSection = document.createElement("section");
+        yearSection.className = "putting-year";
+
+        var yearId = "personal-putting-year-" + String(year.year) + "-" + String(index);
+        var toggle = document.createElement("button");
+        toggle.className = "putting-year-toggle";
+        toggle.type = "button";
+        toggle.textContent = String(year.year);
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", yearId);
+
+        var content = document.createElement("div");
+        content.className = "putting-year-content";
+        content.id = yearId;
+        content.hidden = true;
+
+        var totals = document.createElement("div");
+        totals.className = "putting-total";
+        totals.appendChild(puttingLine("C1x", year.c1x));
+        totals.appendChild(document.createTextNode(", "));
+        totals.appendChild(puttingLine("C2", year.c2));
+        content.appendChild(totals);
+        appendPuttingHighlights(content, year);
+
+        var rounds = Array.isArray(year.rounds)
+            ? year.rounds.filter(displayablePuttingRound)
+            : [];
+        appendPuttingRoundDetails(content, rounds, "personal-putting-year-round-details-" + String(year.year) + "-" + String(index));
+
+        toggle.addEventListener("click", function () {
+            var expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            content.hidden = expanded;
+        });
+
+        yearSection.appendChild(toggle);
+        yearSection.appendChild(content);
+        container.appendChild(yearSection);
+    }
+
+    function appendPuttingRoundDetails(container, rounds, detailsId) {
+        if (rounds.length === 0) {
+            return;
+        }
+
+        var toggle = document.createElement("button");
+        toggle.className = "putting-round-toggle";
+        toggle.type = "button";
+        toggle.textContent = "Show round details";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", detailsId);
+
+        var details = document.createElement("div");
+        details.className = "putting-round-details";
+        details.id = detailsId;
+        details.hidden = true;
+        rounds.forEach(function (round) {
+            details.appendChild(puttingRoundLine(round));
+        });
+
+        toggle.addEventListener("click", function () {
+            var expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            toggle.textContent = expanded ? "Show round details" : "Hide round details";
+            details.hidden = expanded;
+        });
+
+        container.appendChild(toggle);
+        container.appendChild(details);
+    }
+
+    function puttingLine(label, metric) {
+        var line = document.createElement("div");
+        var successful = metric && Number.isFinite(Number(metric.successful)) ? Number(metric.successful) : 0;
+        var total = metric && Number.isFinite(Number(metric.total)) ? Number(metric.total) : 0;
+        var percentage = metric && metric.percentage !== null && metric.percentage !== undefined
+            ? Number(metric.percentage).toFixed(2) + "%"
+            : "—";
+        var labelElement = document.createElement("strong");
+        labelElement.className = "putting-metric-label";
+        labelElement.textContent = label;
+        line.appendChild(labelElement);
+        line.appendChild(document.createTextNode(": " + percentage + " (" + successful + " / " + total + ")"));
+        return line;
+    }
+
+    function puttingValueLine(label, value) {
+        var line = document.createElement("div");
+        var labelElement = document.createElement("strong");
+        labelElement.className = "putting-metric-label";
+        labelElement.textContent = label;
+        line.appendChild(labelElement);
+        line.appendChild(document.createTextNode(": " + value));
+        return line;
+    }
+
+    function displayablePuttingRound(round) {
+        if (!round || round.complete !== false) {
+            return true;
+        }
+        return metricTotal(round.c1x) > 0 || metricTotal(round.c2) > 0;
+    }
+
+    function metricTotal(metric) {
+        var total = metric ? Number(metric.total) : 0;
+        return Number.isFinite(total) ? total : 0;
+    }
+
+    function puttingRoundLine(round) {
+        var line = document.createElement("div");
+        line.className = "putting-round-line";
+        if (round.complete === false) {
+            line.classList.add("incomplete");
+        }
+
+        var competition = document.createElement("strong");
+        competition.textContent = round.competitionSimpleName || "Competition";
+        line.appendChild(competition);
+        line.appendChild(document.createTextNode(" "));
+
+        var roundLabel = document.createElement("strong");
+        roundLabel.textContent = round.roundAbbreviatedLabel || "Round";
+        line.appendChild(roundLabel);
+        line.appendChild(document.createTextNode(": "));
+        line.appendChild(puttingLine("C1x", round.c1x));
+        line.appendChild(document.createTextNode(", "));
+        line.appendChild(puttingLine("C2", round.c2));
+        return line;
     }
 
     function populatePersonalCourseOptions() {
@@ -1547,10 +1789,18 @@
 
     function resetPersonalResults() {
         selectedPersonalSnapshot = null;
+        personalView = "hole";
         resetPersonalCourseOptions();
         normalizePersonalMinCount();
+        personalContent.hidden = true;
+        personalHoleFilters.hidden = true;
+        personalHoleView.hidden = false;
+        personalPuttingView.hidden = true;
+        personalHoleTab.classList.add("active");
+        personalPuttingTab.classList.remove("active");
         personalTableWrap.hidden = true;
         personalTableBody.innerHTML = "";
+        personalPuttingSummary.innerHTML = "";
     }
 
     function formatAxisValue(value) {

@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 975.6529100762222,
+    "rating" : 975.6529100762218,
     "displayRating" : 976,
     "scores" : [ 4, 3, 4 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 962.357675452003,
+    "rating" : 962.3576754520028,
     "displayRating" : 962,
     "scores" : [ 4, 5, 3 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 953.4846215047573,
+    "rating" : 953.4846215047572,
     "displayRating" : 953,
     "scores" : [ 3, 3, 2 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 950.1431279365078,
+    "rating" : 950.1431279365075,
     "displayRating" : 950,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 854.3077961213972,
+    "rating" : 854.3077961213977,
     "displayRating" : 854,
     "scores" : [ 4, 6, 5 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 842.2998924344855,
+    "rating" : 842.2998924344856,
     "displayRating" : 842,
     "scores" : [ 2, 4, 4 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 830.4848180370022,
+    "rating" : 830.4848180370024,
     "displayRating" : 830,
     "scores" : [ 4, 7, 6 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 824.2415070564584,
+    "rating" : 824.2415070564583,
     "displayRating" : 824,
     "scores" : [ 3, 4, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 768.3456887839269,
+    "rating" : 768.3456887839271,
     "displayRating" : 768,
     "scores" : [ 4, 8, 4 ]
   }, {
@@ -257,5 +257,103 @@
     "rating" : 688.2135909453576,
     "displayRating" : 688,
     "scores" : [ 5, 5, 3 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 31,
+      "total" : 42,
+      "percentage" : 73.81
+    },
+    "c2" : {
+      "successful" : 1,
+      "total" : 32,
+      "percentage" : 3.13
+    },
+    "c2PlusPerRound" : 0.33,
+    "mostC2PlusInRound" : {
+      "real" : 1.0,
+      "display" : 1,
+      "count" : 1
+    },
+    "bestC1xRound" : {
+      "percentage" : 85.71,
+      "successful" : 12,
+      "total" : 14,
+      "count" : 1
+    },
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 31,
+        "total" : 42,
+        "percentage" : 73.81
+      },
+      "c2" : {
+        "successful" : 1,
+        "total" : 32,
+        "percentage" : 3.13
+      },
+      "c2PlusPerRound" : 0.33,
+      "mostC2PlusInRound" : {
+        "real" : 1.0,
+        "display" : 1,
+        "count" : 1
+      },
+      "bestC1xRound" : {
+        "percentage" : 85.71,
+        "successful" : 12,
+        "total" : 14,
+        "count" : 1
+      },
+      "rounds" : [ {
+        "roundId" : 183,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 11,
+          "total" : 16,
+          "percentage" : 68.75
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 9,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 184,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 8,
+          "total" : 12,
+          "percentage" : 66.67
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 13,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 185,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 12,
+          "total" : 14,
+          "percentage" : 85.71
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 10,
+          "percentage" : 10.0
+        }
+      } ]
+    } ]
+  }
 }

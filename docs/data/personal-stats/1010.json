@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 1026.84470769495,
+    "rating" : 1026.8447076949503,
     "displayRating" : 1027,
     "scores" : [ 2, 3 ]
   }, {
@@ -30,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 964.746530211892,
+    "rating" : 964.7465302118919,
     "displayRating" : 965,
     "scores" : [ 3, 2 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 921.9163050732486,
+    "rating" : 921.9163050732485,
     "displayRating" : 922,
     "scores" : [ 3, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 909.3284842711183,
+    "rating" : 909.3284842711182,
     "displayRating" : 909,
     "scores" : [ 3, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 774.8323476561159,
+    "rating" : 774.8323476561156,
     "displayRating" : 775,
     "scores" : [ 4, 4 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 758.1519500120777,
+    "rating" : 758.1519500120778,
     "displayRating" : 758,
     "scores" : [ 6, 4 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 278,
     "count" : 2,
-    "rating" : 737.4644393854513,
+    "rating" : 737.4644393854514,
     "displayRating" : 737,
     "scores" : [ 4, 10 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 728.5153512017406,
+    "rating" : 728.5153512017407,
     "displayRating" : 729,
     "scores" : [ 8, 7 ]
   }, {
@@ -254,8 +254,72 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 378,
     "count" : 2,
-    "rating" : 719.0560373241241,
+    "rating" : 719.056037324124,
     "displayRating" : 719,
     "scores" : [ 5, 6 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 193,
+        "roundDate" : "2026-04-26",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2026 - I - Akmenė - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 194,
+        "roundDate" : "2026-04-26",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2026 - I - Akmenė - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
 }

@@ -149,38 +149,54 @@
     </section>
 
     <section id="personal-stats-view" hidden>
-        <form id="personal-filters" class="filters" hidden>
+        <form id="personal-player-filter" class="filters" hidden>
             <label class="personal-player-field">
-                <span>Person</span>
+                <span>Select a person to view statistics</span>
                 <input id="personal-player" name="personalPlayer" type="text" list="personal-player-options" autocomplete="off">
                 <datalist id="personal-player-options"></datalist>
-            </label>
-            <label>
-                <span>Course</span>
-                <select id="personal-course" name="personalCourse"></select>
-            </label>
-            <label>
-                <span>Minimum count</span>
-                <input id="personal-min-count" name="personalMinCount" type="number" inputmode="numeric" min="2" value="2">
             </label>
         </form>
 
         <div id="personal-message" class="message" hidden></div>
 
-        <div id="personal-table-wrap" class="table-wrap" hidden>
-            <table class="personal-table">
-                <thead>
-                <tr>
-                    <th>Course</th>
-                    <th>Hole</th>
-                    <th>Layout</th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average expected rating for a player on a given layout" aria-label="Rating: Average expected rating for a player on a given layout">Rating</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Number of recorded results for a player" aria-label="Count: Number of recorded results for a player">Count</span></th>
-                    <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Scores for a player on a given layout in chronological order" aria-label="Scores: Scores for a player on a given layout in chronological order">Scores</span></th>
-                </tr>
-                </thead>
-                <tbody id="personal-statistics-body"></tbody>
-            </table>
+        <div id="personal-content" hidden>
+            <nav id="personal-subnav" class="subnav" aria-label="Personal statistics views">
+                <button id="personal-hole-tab" class="subnav-tab active" type="button">Hole stats</button>
+                <button id="personal-putting-tab" class="subnav-tab" type="button">Putting stats</button>
+            </nav>
+
+            <section id="personal-hole-view">
+                <form id="personal-hole-filters" class="filters" hidden>
+                    <label>
+                        <span>Course</span>
+                        <select id="personal-course" name="personalCourse"></select>
+                    </label>
+                    <label>
+                        <span>Minimum count</span>
+                        <input id="personal-min-count" name="personalMinCount" type="number" inputmode="numeric" min="2" value="2">
+                    </label>
+                </form>
+
+                <div id="personal-table-wrap" class="table-wrap" hidden>
+                    <table class="personal-table">
+                        <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Hole</th>
+                            <th>Layout</th>
+                            <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Average expected rating for a player on a given layout" aria-label="Rating: Average expected rating for a player on a given layout">Rating</span></th>
+                            <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Number of recorded results for a player" aria-label="Count: Number of recorded results for a player">Count</span></th>
+                            <th><span class="tooltip-trigger" tabindex="0" data-tooltip="Scores for a player on a given layout in chronological order" aria-label="Scores: Scores for a player on a given layout in chronological order">Scores</span></th>
+                        </tr>
+                        </thead>
+                        <tbody id="personal-statistics-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="personal-putting-view" hidden>
+                <div id="personal-putting-summary" class="putting-summary" aria-live="polite"></div>
+            </section>
         </div>
     </section>
 </main>

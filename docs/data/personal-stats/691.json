@@ -1,0 +1,891 @@
+{
+  "player" : {
+    "id" : 691,
+    "name" : "Ainoras Ciekanauskas",
+    "pdgaNum" : 304000,
+    "label" : "Ainoras Ciekanauskas (304000)"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 18,
+      "total" : 29,
+      "percentage" : 62.07
+    },
+    "c2" : {
+      "successful" : 1,
+      "total" : 18,
+      "percentage" : 5.56
+    },
+    "c2PlusPerRound" : 0.47,
+    "mostC2PlusInRound" : {
+      "real" : 0.9473684210526315,
+      "display" : 1,
+      "count" : 1
+    },
+    "bestC1xRound" : {
+      "percentage" : 64.29,
+      "successful" : 9,
+      "total" : 14,
+      "count" : 1
+    },
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 18,
+        "total" : 29,
+        "percentage" : 62.07
+      },
+      "c2" : {
+        "successful" : 1,
+        "total" : 18,
+        "percentage" : 5.56
+      },
+      "c2PlusPerRound" : 0.47,
+      "mostC2PlusInRound" : {
+        "real" : 0.9473684210526315,
+        "display" : 1,
+        "count" : 1
+      },
+      "bestC1xRound" : {
+        "percentage" : 64.29,
+        "successful" : 9,
+        "total" : 14,
+        "count" : 1
+      },
+      "rounds" : [ {
+        "roundId" : 188,
+        "roundDate" : "2026-02-22",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2026 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 189,
+        "roundDate" : "2026-02-22",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2026 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 190,
+        "roundDate" : "2026-02-22",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2026 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 214,
+        "roundDate" : "2026-07-19",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - IV - PUŠYNAS - Pro & Juniors",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 215,
+        "roundDate" : "2026-07-19",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - IV - PUŠYNAS - Pro & Juniors",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 218,
+        "roundDate" : "2026-08-09",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 219,
+        "roundDate" : "2026-08-09",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 220,
+        "roundDate" : "2026-08-09",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 225,
+        "roundDate" : "2026-09-05",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - V - PANEVĖŽYS - Pros & Juniors",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 226,
+        "roundDate" : "2026-09-05",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - V - PANEVĖŽYS - Pros & Juniors",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 9,
+          "total" : 14,
+          "percentage" : 64.29
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 8,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 229,
+        "roundDate" : "2026-09-27",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 230,
+        "roundDate" : "2026-09-27",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 9,
+          "total" : 15,
+          "percentage" : 60.0
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 10,
+          "percentage" : 10.0
+        }
+      } ]
+    }, {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 139,
+        "roundDate" : "2025-03-02",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2025 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 140,
+        "roundDate" : "2025-03-02",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2025 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 141,
+        "roundDate" : "2025-03-02",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2025 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 132,
+        "roundDate" : "2025-03-29",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2025 – I – Pūčkoriai - FP40 MP40 FP50 MP50 MJ18 FJ18 FA4 MA4 FA1 MA1",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 133,
+        "roundDate" : "2025-03-29",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2025 – I – Pūčkoriai - FP40 MP40 FP50 MP50 MJ18 FJ18 FA4 MA4 FA1 MA1",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 89,
+        "roundDate" : "2025-04-26",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - II - Pušynas MPO/FPO",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 90,
+        "roundDate" : "2025-04-26",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - II - Pušynas MPO/FPO",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 91,
+        "roundDate" : "2025-04-27",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - II - Pušynas FP40 MP40 FP50 MP50 MJ18 FJ18 FA4 MA4 FA1 MA1",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 92,
+        "roundDate" : "2025-04-27",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - II - Pušynas FP40 MP40 FP50 MP50 MJ18 FJ18 FA4 MA4 FA1 MA1",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 87,
+        "roundDate" : "2025-05-10",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2025 – III – DOMEIKAVA - FP40,MP40,FP50,MP50,MJ18,FJ18,MA4,FA4,MA1",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 88,
+        "roundDate" : "2025-05-10",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2025 – III – DOMEIKAVA - FP40,MP40,FP50,MP50,MJ18,FJ18,MA4,FA4,MA1",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 149,
+        "roundDate" : "2025-05-17",
+        "competitionSimpleName" : "From Jonava to Worlds 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 150,
+        "roundDate" : "2025-05-17",
+        "competitionSimpleName" : "From Jonava to Worlds 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 181,
+        "roundDate" : "2025-06-08",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - IV - Akmenė - MP40, MP50, FP40, FP50, MJ18, FJ18, MA4, FA4, FA1, MA1",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 182,
+        "roundDate" : "2025-06-08",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - IV - Akmenė - MP40, MP50, FP40, FP50, MJ18, FJ18, MA4, FA4, FA1, MA1",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 175,
+        "roundDate" : "2025-07-06",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 176,
+        "roundDate" : "2025-07-06",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 151,
+        "roundDate" : "2025-08-17",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 152,
+        "roundDate" : "2025-08-17",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 153,
+        "roundDate" : "2025-08-17",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 186,
+        "roundDate" : "2025-09-21",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - VI - Elektrėnai - MP40, MP50, FP40, FP50, MJ18, FJ18, MA4, FA4, FA1, MA1",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 187,
+        "roundDate" : "2025-09-21",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - VI - Elektrėnai - MP40, MP50, FP40, FP50, MJ18, FJ18, MA4, FA4, FA1, MA1",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 156,
+        "roundDate" : "2025-10-04",
+        "competitionSimpleName" : "Pakruojo diskgolfo taurė: Kruojos iššūkis",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 157,
+        "roundDate" : "2025-10-04",
+        "competitionSimpleName" : "Pakruojo diskgolfo taurė: Kruojos iššūkis",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 158,
+        "roundDate" : "2025-10-11",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - VII - Šveicarijos ruduo - Age Protected & Amateur Divisions",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 159,
+        "roundDate" : "2025-10-11",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - VII - Šveicarijos ruduo - Age Protected & Amateur Divisions",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 169,
+        "roundDate" : "2025-10-19",
+        "competitionSimpleName" : "Sezono Uždarymas 2025 su www.chillidiscgolf.lt",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 170,
+        "roundDate" : "2025-10-19",
+        "competitionSimpleName" : "Sezono Uždarymas 2025 su www.chillidiscgolf.lt",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 115,
+        "roundDate" : "2024-09-15",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - VI - PUŠYNAS - MA4 MP40 MP50 FP40 MJ18",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 116,
+        "roundDate" : "2024-09-15",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - VI - PUŠYNAS - MA4 MP40 MP50 FP40 MJ18",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 93,
+        "roundDate" : "2024-10-05",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - VII - ŠVEICARIJOS RUDUO → MA4, FP40, MP40, MP50, MJ18",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 94,
+        "roundDate" : "2024-10-05",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - VII - ŠVEICARIJOS RUDUO → MA4, FP40, MP40, MP50, MJ18",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 144,
+        "roundDate" : "2024-10-20",
+        "competitionSimpleName" : "Sezono Uždarymas 2024 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 145,
+        "roundDate" : "2024-10-20",
+        "competitionSimpleName" : "Sezono Uždarymas 2024 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 146,
+        "roundDate" : "2024-10-20",
+        "competitionSimpleName" : "Sezono Uždarymas 2024 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
+      "year" : 2022,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "rounds" : [ {
+        "roundId" : 8,
+        "roundDate" : "2022-08-27",
+        "competitionSimpleName" : "KAUNO RAJONO MERO TAURĖ 2022",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 9,
+        "roundDate" : "2022-08-27",
+        "competitionSimpleName" : "KAUNO RAJONO MERO TAURĖ 2022",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    } ]
+  }
+}

@@ -30,7 +30,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 6,
-    "rating" : 1028.5532780059857,
+    "rating" : 1028.553278005986,
     "displayRating" : 1029,
     "scores" : [ 5, 3, 3, 4, 5, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 6,
-    "rating" : 1019.6053307024858,
+    "rating" : 1019.6053307024862,
     "displayRating" : 1020,
     "scores" : [ 4, 3, 5, 3, 5, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 6,
-    "rating" : 995.7480525221957,
+    "rating" : 995.7480525221955,
     "displayRating" : 996,
     "scores" : [ 3, 3, 3, 4, 4, 4 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 940.7904200440574,
+    "rating" : 940.7904200440571,
     "displayRating" : 941,
     "scores" : [ 5, 4, 4, 4, 4, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 920.7122445613899,
+    "rating" : 920.7122445613895,
     "displayRating" : 921,
     "scores" : [ 4, 5, 5, 3, 4, 3 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 912.7896696178482,
+    "rating" : 912.7896696178483,
     "displayRating" : 913,
     "scores" : [ 4, 4, 5, 3, 3, 4 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 842.2998924344855,
+    "rating" : 842.2998924344856,
     "displayRating" : 842,
     "scores" : [ 3, 4, 3, 2, 5, 3 ]
   }, {
@@ -254,8 +254,179 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 6,
-    "rating" : 813.3280550142113,
+    "rating" : 813.3280550142111,
     "displayRating" : 813,
     "scores" : [ 4, 6, 4, 5, 3, 3 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 52,
+      "total" : 70,
+      "percentage" : 74.29
+    },
+    "c2" : {
+      "successful" : 4,
+      "total" : 37,
+      "percentage" : 10.81
+    },
+    "c2PlusPerRound" : 0.67,
+    "mostC2PlusInRound" : {
+      "real" : 1.0,
+      "display" : 1,
+      "count" : 4
+    },
+    "bestC1xRound" : {
+      "percentage" : 88.89,
+      "successful" : 8,
+      "total" : 9,
+      "count" : 1
+    },
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 27,
+        "total" : 36,
+        "percentage" : 75.0
+      },
+      "c2" : {
+        "successful" : 2,
+        "total" : 21,
+        "percentage" : 9.52
+      },
+      "c2PlusPerRound" : 0.67,
+      "mostC2PlusInRound" : {
+        "real" : 1.0,
+        "display" : 1,
+        "count" : 2
+      },
+      "bestC1xRound" : {
+        "percentage" : 88.89,
+        "successful" : 8,
+        "total" : 9,
+        "count" : 1
+      },
+      "rounds" : [ {
+        "roundId" : 183,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 11,
+          "total" : 14,
+          "percentage" : 78.57
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 8,
+          "percentage" : 12.5
+        }
+      }, {
+        "roundId" : 184,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 8,
+          "total" : 13,
+          "percentage" : 61.54
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 4,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 185,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 8,
+          "total" : 9,
+          "percentage" : 88.89
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 9,
+          "percentage" : 11.11
+        }
+      } ]
+    }, {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 25,
+        "total" : 34,
+        "percentage" : 73.53
+      },
+      "c2" : {
+        "successful" : 2,
+        "total" : 16,
+        "percentage" : 12.5
+      },
+      "c2PlusPerRound" : 0.67,
+      "mostC2PlusInRound" : {
+        "real" : 1.0,
+        "display" : 1,
+        "count" : 2
+      },
+      "bestC1xRound" : {
+        "percentage" : 84.62,
+        "successful" : 11,
+        "total" : 13,
+        "count" : 1
+      },
+      "rounds" : [ {
+        "roundId" : 136,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 7,
+          "total" : 9,
+          "percentage" : 77.78
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 7,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 137,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 7,
+          "total" : 12,
+          "percentage" : 58.33
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 4,
+          "percentage" : 25.0
+        }
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 11,
+          "total" : 13,
+          "percentage" : 84.62
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 5,
+          "percentage" : 20.0
+        }
+      } ]
+    } ]
+  }
 }

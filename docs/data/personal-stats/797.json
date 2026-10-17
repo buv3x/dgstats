@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 995.9913971909018,
+    "rating" : 995.9913971909021,
     "displayRating" : 996,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 950.1431279365078,
+    "rating" : 950.1431279365075,
     "displayRating" : 950,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 946.9674998639043,
+    "rating" : 946.9674998639042,
     "displayRating" : 947,
     "scores" : [ 2, 3, 3 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 940.9039799498336,
+    "rating" : 940.9039799498338,
     "displayRating" : 941,
     "scores" : [ 5, 3, 3 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 940.7904200440574,
+    "rating" : 940.7904200440571,
     "displayRating" : 941,
     "scores" : [ 4, 4, 4 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 937.6761810942403,
+    "rating" : 937.6761810942404,
     "displayRating" : 938,
     "scores" : [ 3, 3, 3 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 921.2284335358909,
+    "rating" : 921.228433535891,
     "displayRating" : 921,
     "scores" : [ 4, 5, 5 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 920.7122445613899,
+    "rating" : 920.7122445613895,
     "displayRating" : 921,
     "scores" : [ 4, 3, 5 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 904.193096043559,
+    "rating" : 904.1930960435589,
     "displayRating" : 904,
     "scores" : [ 5, 4, 3 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 830.4848180370022,
+    "rating" : 830.4848180370024,
     "displayRating" : 830,
     "scores" : [ 5, 6, 6 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 791.3017487758688,
+    "rating" : 791.3017487758689,
     "displayRating" : 791,
     "scores" : [ 7, 6, 7 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 744.6445972705519,
+    "rating" : 744.6445972705518,
     "displayRating" : 745,
     "scores" : [ 4, 3, 3 ]
   }, {
@@ -254,8 +254,106 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 720.1759699924249,
+    "rating" : 720.175969992425,
     "displayRating" : 720,
     "scores" : [ 6, 5, 6 ]
-  } ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 14,
+      "total" : 27,
+      "percentage" : 51.85
+    },
+    "c2" : {
+      "successful" : 1,
+      "total" : 19,
+      "percentage" : 5.26
+    },
+    "c2PlusPerRound" : 0.33,
+    "mostC2PlusInRound" : {
+      "real" : 1.0,
+      "display" : 1,
+      "count" : 1
+    },
+    "bestC1xRound" : {
+      "percentage" : 66.67,
+      "successful" : 6,
+      "total" : 9,
+      "count" : 1
+    },
+    "years" : [ {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 14,
+        "total" : 27,
+        "percentage" : 51.85
+      },
+      "c2" : {
+        "successful" : 1,
+        "total" : 19,
+        "percentage" : 5.26
+      },
+      "c2PlusPerRound" : 0.33,
+      "mostC2PlusInRound" : {
+        "real" : 1.0,
+        "display" : 1,
+        "count" : 1
+      },
+      "bestC1xRound" : {
+        "percentage" : 66.67,
+        "successful" : 6,
+        "total" : 9,
+        "count" : 1
+      },
+      "rounds" : [ {
+        "roundId" : 136,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 2,
+          "total" : 6,
+          "percentage" : 33.33
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 7,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 137,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 6,
+          "total" : 9,
+          "percentage" : 66.67
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 8,
+          "percentage" : 0.0
+        }
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 6,
+          "total" : 12,
+          "percentage" : 50.0
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 4,
+          "percentage" : 25.0
+        }
+      } ]
+    } ]
+  }
 }
