@@ -183,6 +183,41 @@ class BasketStatisticsExportServicePuttingTest {
         assertEquals(1, metricValue(invoke(years.get(1), "c1x"), "total"));
     }
 
+    @Test
+    void threePlusPuttCountsExcessPuttsAndPenaltiesAfterFirstLanding() throws Exception {
+        Map<?, ?> players = buildPuttingPlayers(List.of(
+                row(501L, 5L, 50L, 1, 1, 4L, null, null, null, 1, null, 0),
+                row(501L, 5L, 50L, 1, 2, 4L, null, null, null, 1, null, 0),
+                row(501L, 5L, 50L, 1, 3, 4L, null, null, null, 1, null, 0),
+                row(501L, 5L, 50L, 1, 4, 5L, null, null, null, 1, null, 0),
+                row(502L, 5L, 51L, 1, 1, 4L, null, null, null, 1, null, 0),
+                row(502L, 5L, 51L, 1, 2, 4L, null, null, null, 1, null, 1),
+                row(502L, 5L, 51L, 1, 3, 5L, null, null, null, 1, null, 0)
+        ));
+
+        Object summary = invoke(players.get(5L), "toSummary");
+        assertEquals(18.0, doubleValue(summary, "threePlusPuttPerRound"));
+    }
+
+    @Test
+    void threePlusPuttUsesFirstDistanceLandingAndWeightsRounds() throws Exception {
+        Map<?, ?> players = buildPuttingPlayers(List.of(
+                row(601L, 6L, 60L, 1, 1, 2L, 40, null, null, 1, LocalDate.of(2026, 1, 1), 0),
+                row(601L, 6L, 60L, 1, 2, 5L, null, null, null, 1, LocalDate.of(2026, 1, 1), 0),
+                row(602L, 6L, 61L, 1, 1, 2L, 40, null, null, 2, LocalDate.of(2025, 1, 1), 0),
+                row(602L, 6L, 61L, 1, 2, 2L, 40, null, null, 2, LocalDate.of(2025, 1, 1), 0),
+                row(602L, 6L, 61L, 1, 3, 2L, 40, null, null, 2, LocalDate.of(2025, 1, 1), 0),
+                row(602L, 6L, 61L, 1, 4, 5L, null, null, null, 2, LocalDate.of(2025, 1, 1), 0),
+                row(602L, 6L, 61L, 2, 1, 2L, 40, null, null, 2, LocalDate.of(2025, 1, 1), 0),
+                row(602L, 6L, 61L, 2, 2, 5L, null, null, null, 2, LocalDate.of(2025, 1, 1), 0)
+        ));
+
+        Object summary = invoke(players.get(6L), "toSummary");
+        assertEquals(4.5, doubleValue(summary, "threePlusPuttPerRound"));
+        Object year = ((List<?>) invoke(summary, "years")).get(1);
+        assertEquals(9.0, doubleValue(year, "threePlusPuttPerRound"));
+    }
+
     private static Object newBuilder() throws Exception {
         Class<?> type = Class.forName("com.datascience.service.BasketStatisticsExportService$PuttingMetricsBuilder");
         Constructor<?> constructor = type.getDeclaredConstructor();
@@ -198,6 +233,10 @@ class BasketStatisticsExportServicePuttingTest {
 
     private static int metricValue(Object metric, String name) throws Exception {
         return (int) metric.getClass().getMethod(name).invoke(metric);
+    }
+
+    private static double doubleValue(Object target, String name) throws Exception {
+        return (double) target.getClass().getMethod(name).invoke(target);
     }
 
     private static Map<?, ?> buildPuttingPlayers(List<PuttingThrowRow> rows) throws Exception {
@@ -234,7 +273,8 @@ class BasketStatisticsExportServicePuttingTest {
                 dropDistance,
                 null,
                 expectedHoleCount,
-                LocalDate.of(2026, 1, 1)
+                LocalDate.of(2026, 1, 1),
+                null
         );
     }
 
@@ -261,7 +301,47 @@ class BasketStatisticsExportServicePuttingTest {
                 dropDistance,
                 dropZoneId,
                 expectedHoleCount,
-                LocalDate.of(2026, 1, 1)
+                LocalDate.of(2026, 1, 1),
+                null
+        );
+    }
+
+    private static PuttingThrowRow row(
+            Long roundResultId,
+            Long playerId,
+            Long roundId,
+            Integer holeOrdinal,
+            Integer scoreOrdinal,
+            Long zoneId,
+            Integer distance,
+            Integer dropDistance,
+            Long dropZoneId,
+            Integer expectedHoleCount,
+            LocalDate roundDate,
+            Integer penaltyCount
+    ) {
+        return (PuttingThrowRow) Proxy.newProxyInstance(
+                PuttingThrowRow.class.getClassLoader(),
+                new Class<?>[]{PuttingThrowRow.class},
+                (proxy, method, args) -> switch (method.getName()) {
+                    case "getRoundResultId" -> roundResultId;
+                    case "getPlayerId" -> playerId;
+                    case "getPlayerName" -> "Player " + playerId;
+                    case "getPlayerPdgaNum" -> playerId;
+                    case "getRoundId" -> roundId;
+                    case "getRoundDate" -> roundDate;
+                    case "getCompetitionSimpleName" -> "Competition";
+                    case "getRoundAbbreviatedLabel" -> "Round";
+                    case "getHoleOrdinal" -> holeOrdinal;
+                    case "getScoreOrdinal" -> scoreOrdinal;
+                    case "getPenaltyCount" -> penaltyCount;
+                    case "getZoneId" -> zoneId;
+                    case "getDropZoneId" -> dropZoneId;
+                    case "getDistanceToTarget" -> distance;
+                    case "getDropDistanceToTarget" -> dropDistance;
+                    case "getExpectedHoleCount" -> expectedHoleCount;
+                    default -> null;
+                }
         );
     }
 
@@ -292,6 +372,7 @@ class BasketStatisticsExportServicePuttingTest {
                     case "getRoundAbbreviatedLabel" -> "Round";
                     case "getHoleOrdinal" -> holeOrdinal;
                     case "getScoreOrdinal" -> scoreOrdinal;
+                    case "getPenaltyCount" -> null;
                     case "getZoneId" -> zoneId;
                     case "getDropZoneId" -> dropZoneId;
                     case "getDistanceToTarget" -> distance;

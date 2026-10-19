@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 9,
-    "rating" : 970.4181830905358,
+    "rating" : 970.4181830905355,
     "displayRating" : 970,
     "scores" : [ 4, 4, 5, 6, 4, 5, 5, 3, 5 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 959.6468535044907,
+    "rating" : 959.6468535044909,
     "displayRating" : 960,
     "scores" : [ 4, 4, 4, 3, 3, 4, 3, 4, 3 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 929.1695900333356,
+    "rating" : 929.1695900333357,
     "displayRating" : 929,
     "scores" : [ 3, 4, 5, 3, 3, 4, 5, 6, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 9,
-    "rating" : 928.9114180889337,
+    "rating" : 928.9114180889335,
     "displayRating" : 929,
     "scores" : [ 5, 4, 5, 3, 3, 5, 5, 4, 4 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 9,
-    "rating" : 918.6779507990564,
+    "rating" : 918.6779507990561,
     "displayRating" : 919,
     "scores" : [ 3, 3, 3, 3, 2, 2, 3, 3, 3 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 902.052592808415,
+    "rating" : 902.0525928084149,
     "displayRating" : 902,
     "scores" : [ 3, 3, 3, 4, 4, 2, 3, 4, 3 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 891.1732871051471,
+    "rating" : 891.1732871051473,
     "displayRating" : 891,
     "scores" : [ 5, 2, 3, 3, 3, 4, 4, 4, 2 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 877.7129051026202,
+    "rating" : 877.7129051026203,
     "displayRating" : 878,
     "scores" : [ 5, 4, 4, 5, 5, 5, 4, 5, 5 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 9,
-    "rating" : 866.7343871015206,
+    "rating" : 866.7343871015211,
     "displayRating" : 867,
     "scores" : [ 4, 4, 6, 3, 5, 4, 4, 5, 4 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 9,
-    "rating" : 838.2686518054477,
+    "rating" : 838.2686518054475,
     "displayRating" : 838,
     "scores" : [ 4, 3, 6, 5, 5, 5, 7, 6, 5 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 9,
-    "rating" : 806.7485994344562,
+    "rating" : 806.7485994344563,
     "displayRating" : 807,
     "scores" : [ 8, 5, 4, 7, 4, 5, 6, 6, 5 ]
   }, {
@@ -270,8 +270,10 @@
       "percentage" : null
     },
     "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
     "mostC2PlusInRound" : null,
     "bestC1xRound" : null,
+    "longestThrowIn" : null,
     "years" : [ {
       "year" : 2024,
       "c1x" : {
@@ -285,8 +287,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 73,
         "roundDate" : "2024-04-07",
@@ -349,8 +353,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 50,
         "roundDate" : "2023-04-16",
@@ -413,8 +419,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 3,
         "roundDate" : "2022-05-01",

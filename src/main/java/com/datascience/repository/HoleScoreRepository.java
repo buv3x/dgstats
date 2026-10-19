@@ -53,6 +53,35 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
             """)
     List<StatisticsExportRow> findStatisticsExportRows();
 
+    @Query("""
+            select
+                p.id as playerId,
+                p.name as playerName,
+                c.simpleName as competitionSimpleName,
+                c.name as competitionName,
+                r.id as roundId,
+                r.date as roundDate,
+                r.labelAbbreviated as roundAbbreviatedLabel,
+                r.label as roundLabel,
+                hs.holeOrdinal as holeOrdinal,
+                hs.score as score,
+                bv.distance as variationDistance
+            from HoleScore hs
+            join hs.roundResult rr
+            join rr.player p
+            join rr.roundDivision rd
+            join rd.round r
+            join r.competition c
+            left join BasketVariationRoundDivision mapping
+                on mapping.roundDivision = rd
+                and mapping.holeOrdinal = hs.holeOrdinal
+            left join mapping.basketVariation bv
+            where hs.score = 1
+              and bv.distance is not null
+            order by p.id asc, r.date asc, r.id asc, hs.holeOrdinal asc
+            """)
+    List<AceExportRow> findAceExportRows();
+
     interface StatisticsExportRow {
         Long getCompetitionId();
 
@@ -91,5 +120,29 @@ public interface HoleScoreRepository extends JpaRepository<HoleScore, Long> {
         Integer getRating();
 
         Integer getScore();
+    }
+
+    interface AceExportRow {
+        Long getPlayerId();
+
+        String getPlayerName();
+
+        String getCompetitionSimpleName();
+
+        String getCompetitionName();
+
+        Long getRoundId();
+
+        LocalDate getRoundDate();
+
+        String getRoundAbbreviatedLabel();
+
+        String getRoundLabel();
+
+        Integer getHoleOrdinal();
+
+        Integer getScore();
+
+        Integer getVariationDistance();
     }
 }

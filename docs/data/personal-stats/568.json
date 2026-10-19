@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 6,
-    "rating" : 1005.6946275633086,
+    "rating" : 1005.6946275633085,
     "displayRating" : 1006,
     "scores" : [ 2, 3, 3, 2, 3, 2 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 6,
-    "rating" : 995.9913971909021,
+    "rating" : 995.9913971909019,
     "displayRating" : 996,
     "scores" : [ 4, 4, 4, 4, 4, 4 ]
   }, {
@@ -72,7 +72,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 982.5057650341358,
+    "rating" : 982.5057650341361,
     "displayRating" : 983,
     "scores" : [ 5, 4, 4, 4, 3, 3 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 969.0182902818192,
+    "rating" : 969.0182902818193,
     "displayRating" : 969,
     "scores" : [ 3, 3, 4, 3, 5, 3 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 6,
-    "rating" : 956.4248465851823,
+    "rating" : 956.4248465851821,
     "displayRating" : 956,
     "scores" : [ 4, 7, 5, 4, 4, 4 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 947.7011732913238,
+    "rating" : 947.7011732913243,
     "displayRating" : 948,
     "scores" : [ 3, 5, 3, 5, 4, 3 ]
   }, {
@@ -198,7 +198,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 923.3591750279747,
+    "rating" : 923.3591750279751,
     "displayRating" : 923,
     "scores" : [ 4, 6, 4, 4, 4, 3 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 6,
-    "rating" : 920.6582075208274,
+    "rating" : 920.6582075208275,
     "displayRating" : 921,
     "scores" : [ 4, 3, 2, 3, 4, 3 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 6,
-    "rating" : 912.854845158433,
+    "rating" : 912.8548451584329,
     "displayRating" : 913,
     "scores" : [ 5, 4, 3, 6, 4, 4 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 6,
-    "rating" : 899.2187786823398,
+    "rating" : 899.21877868234,
     "displayRating" : 899,
     "scores" : [ 3, 4, 3, 3, 3, 4 ]
   }, {
@@ -270,16 +270,76 @@
       "percentage" : 0.0
     },
     "c2PlusPerRound" : 0.0,
+    "threePlusPuttPerRound" : 0.5,
     "mostC2PlusInRound" : {
       "real" : 0.0,
       "display" : 0,
-      "count" : 2
+      "count" : 2,
+      "rounds" : [ {
+        "roundId" : 137,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 0
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 0
+      } ]
     },
     "bestC1xRound" : {
       "percentage" : 100.0,
       "successful" : 13,
       "total" : 13,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 0
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 26,
+      "display" : 8,
+      "count" : 5,
+      "occurrences" : [ {
+        "roundId" : 137,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "holeOrdinal" : 11
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "holeOrdinal" : 3
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "holeOrdinal" : 6
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "holeOrdinal" : 12
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "holeOrdinal" : 15
+      } ]
     },
     "years" : [ {
       "year" : 2025,
@@ -294,16 +354,76 @@
         "percentage" : 0.0
       },
       "c2PlusPerRound" : 0.0,
+      "threePlusPuttPerRound" : 0.5,
       "mostC2PlusInRound" : {
         "real" : 0.0,
         "display" : 0,
-        "count" : 2
+        "count" : 2,
+        "rounds" : [ {
+          "roundId" : 137,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 0
+        }, {
+          "roundId" : 138,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 3",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 0
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 100.0,
         "successful" : 13,
         "total" : 13,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 138,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 3",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 0
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 26,
+        "display" : 8,
+        "count" : 5,
+        "occurrences" : [ {
+          "roundId" : 137,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 11
+        }, {
+          "roundId" : 138,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 3",
+          "holeOrdinal" : 3
+        }, {
+          "roundId" : 138,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 3",
+          "holeOrdinal" : 6
+        }, {
+          "roundId" : 138,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 3",
+          "holeOrdinal" : 12
+        }, {
+          "roundId" : 138,
+          "roundDate" : "2025-04-13",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+          "roundAbbreviatedLabel" : "Rd 3",
+          "holeOrdinal" : 15
+        } ]
       },
       "rounds" : [ {
         "roundId" : 136,
@@ -367,8 +487,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 73,
         "roundDate" : "2024-04-07",

@@ -18,8 +18,10 @@
       "percentage" : null
     },
     "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
     "mostC2PlusInRound" : null,
     "bestC1xRound" : null,
+    "longestThrowIn" : null,
     "years" : [ {
       "year" : 2025,
       "c1x" : {
@@ -33,8 +35,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 151,
         "roundDate" : "2025-08-17",
@@ -97,8 +101,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 16,
         "roundDate" : "2022-09-24",

@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 1057.364001532939,
+    "rating" : 1057.3640015329386,
     "displayRating" : 1057,
     "scores" : [ 4, 3, 3 ]
   }, {
@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 975.6529100762218,
+    "rating" : 975.6529100762222,
     "displayRating" : 976,
     "scores" : [ 3, 4, 4 ]
   }, {
@@ -58,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 974.6901020212582,
+    "rating" : 974.6901020212587,
     "displayRating" : 975,
     "scores" : [ 4, 3, 4 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 3,
-    "rating" : 872.4648275530625,
+    "rating" : 872.4648275530623,
     "displayRating" : 872,
     "scores" : [ 5, 6, 5 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 843.1564583911345,
+    "rating" : 843.1564583911344,
     "displayRating" : 843,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 835.795761130014,
+    "rating" : 835.7957611300141,
     "displayRating" : 836,
     "scores" : [ 4, 6, 5 ]
   }, {
@@ -170,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 3,
-    "rating" : 828.8837161033457,
+    "rating" : 828.8837161033458,
     "displayRating" : 829,
     "scores" : [ 5, 3, 3 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 3,
-    "rating" : 776.2241399821701,
+    "rating" : 776.22413998217,
     "displayRating" : 776,
     "scores" : [ 6, 5, 6 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 3,
-    "rating" : 715.9894972939502,
+    "rating" : 715.9894972939504,
     "displayRating" : 716,
     "scores" : [ 4, 5, 6 ]
   }, {
@@ -270,8 +270,10 @@
       "percentage" : null
     },
     "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
     "mostC2PlusInRound" : null,
     "bestC1xRound" : null,
+    "longestThrowIn" : null,
     "years" : [ {
       "year" : 2026,
       "c1x" : {
@@ -285,8 +287,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 183,
         "roundDate" : "2026-04-19",

@@ -16,7 +16,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 12,
-    "rating" : 969.0182902818192,
+    "rating" : 969.0182902818193,
     "displayRating" : 969,
     "scores" : [ 3, 3, 4, 4, 3, 4, 3, 4, 3, 5, 3, 3 ]
   }, {
@@ -100,7 +100,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 12,
-    "rating" : 930.1093350683781,
+    "rating" : 930.1093350683782,
     "displayRating" : 930,
     "scores" : [ 4, 4, 4, 6, 4, 4, 5, 4, 3, 4, 4, 5 ]
   }, {
@@ -114,7 +114,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 12,
-    "rating" : 927.3796184754815,
+    "rating" : 927.3796184754814,
     "displayRating" : 927,
     "scores" : [ 3, 2, 4, 4, 3, 2, 3, 2, 3, 3, 2, 2 ]
   }, {
@@ -128,7 +128,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 12,
-    "rating" : 923.3591750279747,
+    "rating" : 923.3591750279751,
     "displayRating" : 923,
     "scores" : [ 4, 6, 4, 5, 5, 4, 4, 3, 3, 4, 4, 4 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 12,
-    "rating" : 920.6582075208274,
+    "rating" : 920.6582075208275,
     "displayRating" : 921,
     "scores" : [ 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3, 3 ]
   }, {
@@ -156,7 +156,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 12,
-    "rating" : 899.2187786823398,
+    "rating" : 899.21877868234,
     "displayRating" : 899,
     "scores" : [ 4, 4, 3, 3, 3, 3, 3, 4, 3, 3, 4, 3 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 12,
-    "rating" : 887.9042612640698,
+    "rating" : 887.9042612640696,
     "displayRating" : 888,
     "scores" : [ 4, 5, 5, 3, 5, 4, 7, 4, 4, 6, 5, 4 ]
   }, {
@@ -226,7 +226,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 12,
-    "rating" : 872.4648275530625,
+    "rating" : 872.4648275530623,
     "displayRating" : 872,
     "scores" : [ 6, 5, 4, 6, 6, 4, 5, 8, 5, 5, 5, 5 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 12,
-    "rating" : 853.2399227365535,
+    "rating" : 853.2399227365539,
     "displayRating" : 853,
     "scores" : [ 5, 5, 5, 4, 4, 4, 3, 4, 5, 5, 5, 4 ]
   }, {
@@ -254,7 +254,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 12,
-    "rating" : 830.6938626098137,
+    "rating" : 830.6938626098136,
     "displayRating" : 831,
     "scores" : [ 8, 7, 6, 4, 4, 4, 4, 3, 4, 4, 4, 10 ]
   } ],
@@ -270,16 +270,45 @@
       "percentage" : 7.69
     },
     "c2PlusPerRound" : 0.5,
+    "threePlusPuttPerRound" : 0.5,
     "mostC2PlusInRound" : {
       "real" : 1.0,
       "display" : 1,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 184,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 1
+      } ]
     },
     "bestC1xRound" : {
       "percentage" : 90.91,
       "successful" : 10,
       "total" : 11,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 184,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 1
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 36,
+      "display" : 11,
+      "count" : 1,
+      "occurrences" : [ {
+        "roundId" : 184,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "holeOrdinal" : 13
+      } ]
     },
     "years" : [ {
       "year" : 2026,
@@ -294,16 +323,45 @@
         "percentage" : 7.69
       },
       "c2PlusPerRound" : 0.5,
+      "threePlusPuttPerRound" : 0.5,
       "mostC2PlusInRound" : {
         "real" : 1.0,
         "display" : 1,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 184,
+          "roundDate" : "2026-04-19",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 90.91,
         "successful" : 10,
         "total" : 11,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 184,
+          "roundDate" : "2026-04-19",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 36,
+        "display" : 11,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 184,
+          "roundDate" : "2026-04-19",
+          "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 13
+        } ]
       },
       "rounds" : [ {
         "roundId" : 183,
@@ -367,8 +425,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 136,
         "roundDate" : "2025-04-13",
@@ -431,8 +491,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 73,
         "roundDate" : "2024-04-07",
@@ -495,8 +557,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 50,
         "roundDate" : "2023-04-16",

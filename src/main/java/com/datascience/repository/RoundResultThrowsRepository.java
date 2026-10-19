@@ -31,6 +31,7 @@ public interface RoundResultThrowsRepository extends JpaRepository<RoundResultTh
                 coalesce(resultLayout.holes, divisionLayout.holes) as expectedHoleCount,
                 rrt.holeOrdinal as holeOrdinal,
                 rrt.scoreOrdinal as scoreOrdinal,
+                rrt.penaltyCount as penaltyCount,
                 rrt.zoneId as zoneId,
                 rrt.distanceToTarget as distanceToTarget,
                 rrt.dropZoneId as dropZoneId,
@@ -73,6 +74,8 @@ public interface RoundResultThrowsRepository extends JpaRepository<RoundResultTh
         Integer getHoleOrdinal();
 
         Integer getScoreOrdinal();
+
+        Integer getPenaltyCount();
 
         Long getZoneId();
 

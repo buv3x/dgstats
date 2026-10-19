@@ -141,9 +141,7 @@ button {
 }
 
 .putting-total {
-    align-items: baseline;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
 }
 
 .putting-global {
@@ -196,6 +194,7 @@ button {
 
 .putting-round-details {
     border-top: 1px solid #d8dee4;
+    font-size: 14px;
     margin-top: 12px;
     padding-top: 10px;
 }
@@ -431,6 +430,7 @@ button {
     pointer-events: none;
     position: fixed;
     z-index: 10;
+	white-space: pre-line;
 }
 
 .table-wrap {
@@ -491,6 +491,38 @@ thead th {
 
 .personal-table td:nth-child(6) {
     white-space: normal;
+}
+
+.leaderboards-table {
+    table-layout: fixed;
+    min-width: 570px;
+    width: 570px;
+}
+
+.leaderboards-table td:first-child {
+    text-align: right;
+    width: 70px;
+}
+
+.leaderboards-table td:nth-child(2) {
+    text-align: left;
+    width: 300px;
+}
+
+.leaderboards-table td:nth-child(3) {
+    text-align: right;
+    width: 300px;
+}
+
+.leaderboards-table td:last-child {
+    white-space: nowrap;
+}
+
+.leaderboards-note {
+    color: #667085;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 8px;
 }
 
 @media (max-width: 640px) {

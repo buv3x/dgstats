@@ -16,8 +16,36 @@
         <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
         <button id="basket-stats-tab" class="view-tab" type="button">Hole stats</button>
         <button id="personal-stats-tab" class="view-tab" type="button">Personal stats</button>
+        <button id="leaderboards-tab" class="view-tab" type="button">Leaderboards</button>
         <button id="description-tab" class="view-tab" type="button">Description</button>
     </nav>
+
+    <section id="leaderboards-view" hidden>
+        <nav id="leaderboards-subnav" class="subnav" aria-label="Leaderboard categories">
+            <button class="subnav-tab leaderboard-category-tab active" data-category="c1x" type="button">C1x</button>
+            <button class="subnav-tab leaderboard-category-tab" data-category="c2PlusPerRound" type="button">C2+ per round</button>
+            <button class="subnav-tab leaderboard-category-tab" data-category="mostC2PlusInRound" type="button">Most C2+ in a round</button>
+            <button class="subnav-tab leaderboard-category-tab" data-category="bestC1xRound" type="button">Best C1x round</button>
+            <button class="subnav-tab leaderboard-category-tab" data-category="longestThrowIn" type="button">Longest throw-in</button>
+            <button class="subnav-tab leaderboard-category-tab" data-category="aces" type="button">Aces</button>
+        </nav>
+
+        <form id="leaderboards-filters" class="filters">
+            <label>
+                <span>Year</span>
+                <select id="leaderboards-year" name="leaderboardsYear"></select>
+            </label>
+        </form>
+
+        <div id="leaderboards-message" class="message" hidden></div>
+
+        <div id="leaderboards-table-wrap" class="table-wrap" hidden>
+            <table class="leaderboards-table">
+                <tbody id="leaderboards-body"></tbody>
+            </table>
+        </div>
+        <div id="leaderboards-note" class="leaderboards-note" hidden></div>
+    </section>
 
     <section id="description-view" hidden>
         <article id="description-content" class="description-content">

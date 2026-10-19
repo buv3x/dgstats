@@ -18,9 +18,61 @@
       "percentage" : null
     },
     "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
     "mostC2PlusInRound" : null,
     "bestC1xRound" : null,
+    "longestThrowIn" : null,
     "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 231,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 232,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      } ]
+    }, {
       "year" : 2022,
       "c1x" : {
         "successful" : 0,
@@ -33,8 +85,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 6,
         "roundDate" : "2022-07-09",
@@ -81,8 +135,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 1,
         "roundDate" : "2021-12-19",

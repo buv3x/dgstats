@@ -3,9 +3,7 @@
 ## Purpose
 
 Define how eligible personal basket statistics are selected, calculated, ordered, and formatted for export and display.
-
 ## Requirements
-
 ### Requirement: Eligible player lookup
 The system SHALL provide a player lookup data set for selecting players who have personal basket statistics or imported putting statistics.
 
@@ -140,12 +138,21 @@ The personal statistics export SHALL provide combined putting metrics from compl
 - **AND** its successful and total counts remain zero
 
 ### Requirement: Personal putting round detail presentation
-The Personal stats putting view SHALL display overall putting totals immediately and represented round details collapsed by default, but SHALL omit incomplete rounds that have no recorded putting attempts.
+The Personal stats putting view SHALL display overall putting totals immediately and represented round details collapsed by default, but SHALL omit incomplete rounds that have no recorded putting attempts. Overall and yearly aggregate C1x and C2 metrics SHALL be displayed on separate lines. Round-detail text SHALL use 14px typography while preserving its existing content, ordering, emphasis, and incomplete-round styling.
 
 #### Scenario: Totals are visible by default
 - **WHEN** the user opens the Personal stats putting view for a player with putting data
-- **THEN** the overall C1x and C2 metrics are visible
+- **THEN** the overall C1x and C2 metrics are visible on separate lines
 - **AND** round details are hidden initially
+
+#### Scenario: Yearly totals use separate lines
+- **WHEN** the user expands a yearly putting summary
+- **THEN** that year's C1x and C2 metrics are displayed on separate lines
+
+#### Scenario: Round details use reduced typography
+- **WHEN** an expanded round aggregate is displayed
+- **THEN** its round-detail text uses 14px font size
+- **AND** its existing format and emphasis remain unchanged
 
 #### Scenario: Empty incomplete round is hidden
 - **WHEN** an exported round has `complete: false` and both its C1x and C2 total counts are zero
@@ -202,6 +209,105 @@ The Personal stats putting view SHALL display overall putting totals immediately
 - **AND** it does not display an empty round-details control or container
 
 #### Scenario: Round detail control is keyboard accessible
-- **WHEN** a keyboard user focuses and activates the show/hide control
+- **WHEN** a keyboard user focuses and activates the round-details control
 - **THEN** the round details toggle in the same way as pointer activation
 - **AND** the control exposes its current expanded state through `aria-expanded`
+
+### Requirement: Putting highlight round explanations
+The personal putting export SHALL provide the matching round descriptors for each available `mostC2PlusInRound` and `bestC1xRound` highlight. The Personal stats putting view SHALL render the complete displayed value of each available highlight as an accessible tooltip trigger whenever at least one matching round descriptor is present.
+
+#### Scenario: Most C2+ highlight includes matching rounds
+- **WHEN** a player or yearly aggregate has a most-C2+ highlight
+- **THEN** its export data includes the matching rounds that produced the displayed maximum
+- **AND** the matching-round list follows the existing aggregate round ordering
+
+#### Scenario: Best C1x highlight includes matching rounds
+- **WHEN** a player or yearly aggregate has a best-C1x highlight
+- **THEN** its export data includes the matching rounds that produced the displayed best percentage and tie-break result
+- **AND** the matching-round list follows the existing aggregate round ordering
+
+#### Scenario: Most C2+ value is a tooltip trigger
+- **WHEN** a most-C2+ highlight has at least one matching round descriptor
+- **THEN** the complete displayed value, including the maximum and occurrence suffix when present, is rendered as a focusable tooltip trigger
+- **AND** the tooltip lists all matching rounds
+
+#### Scenario: Best C1x value is a tooltip trigger
+- **WHEN** a best-C1x highlight has at least one matching round descriptor
+- **THEN** the complete displayed value, including the percentage, counts, and occurrence suffix when present, is rendered as a focusable tooltip trigger
+- **AND** the tooltip lists all matching rounds
+
+#### Scenario: Single occurrence still has a tooltip
+- **WHEN** either highlight has exactly one matching round descriptor
+- **THEN** its complete displayed value is still rendered as a tooltip trigger
+- **AND** the tooltip lists that one round
+
+#### Scenario: Legacy highlight data remains readable
+- **WHEN** an older export contains a highlight without matching-round descriptors
+- **THEN** the existing visible highlight value is rendered without a tooltip
+- **AND** no empty tooltip trigger is created
+
+### Requirement: Longest throw-in export
+
+The personal statistics export SHALL provide an overall and yearly longest-throw-in highlight when at least one complete-round successful throw-in has a recorded distance. The highlight SHALL include the displayed whole-meter distance, the exact-feet tie count, and one occurrence descriptor per matching successful throw with competition, abbreviated round, round identity, and hole ordinal.
+
+#### Scenario: Overall longest throw-in is exported
+- **WHEN** a player has at least one complete-round successful throw-in with a recorded distance
+- **THEN** the overall putting summary contains the longest-throw-in highlight
+- **AND** the highlight contains the rounded meter display value and matching occurrence descriptors
+
+#### Scenario: Yearly longest throw-in is exported
+- **WHEN** a year contains at least one complete-round successful throw-in with a recorded distance
+- **THEN** that yearly putting summary contains its longest-throw-in highlight
+
+#### Scenario: No qualifying distance produces no highlight
+- **WHEN** no complete-round successful throw-in has a recorded distance
+- **THEN** the corresponding overall or yearly longest-throw-in highlight is absent
+
+#### Scenario: Occurrences identify holes
+- **WHEN** the exact maximum feet value occurs more than once
+- **THEN** the exported occurrence list contains every matching competition, round, and hole
+- **AND** the occurrence count equals the number of matching successful throws
+
+### Requirement: Longest throw-in presentation
+
+The Personal stats putting view SHALL display the longest throw-in using whole meters and SHALL use the existing highlight occurrence suffix convention. When occurrence descriptors are available, the complete displayed value SHALL be an accessible tooltip trigger whose tooltip lists competition, round, and hole for every occurrence.
+
+#### Scenario: Single longest throw-in is displayed
+- **WHEN** an overall or yearly longest-throw-in highlight has one occurrence
+- **THEN** the view displays the rounded meter value without a multiple-occurrence suffix
+- **AND** the value is a focusable tooltip trigger listing the occurrence
+
+#### Scenario: Tied longest throw-ins are displayed
+- **WHEN** an overall or yearly highlight has multiple exact-feet occurrences
+- **THEN** the view displays the rounded meter value followed by the existing occurrence suffix
+- **AND** the tooltip lists every competition, round, and hole occurrence
+
+#### Scenario: Legacy export remains readable
+- **WHEN** an older putting export has no longest-throw-in field or has no occurrence descriptors
+- **THEN** the page does not create an empty tooltip trigger
+- **AND** existing putting highlights remain readable
+
+### Requirement: Concise putting highlight tooltips
+
+The Personal stats putting view SHALL render tooltip content for Most C2+, Best C1x, and Longest throw-in highlights as context entries only. It SHALL omit the metric name, displayed metric value, and section headings such as `Rounds:` or `Occurrences:`. Each matching round or occurrence SHALL appear on a separate line.
+
+#### Scenario: Round highlight tooltip contains context lines
+- **WHEN** a Most C2+ or Best C1x highlight has matching round descriptors
+- **THEN** the tooltip contains one competition-and-round line for each matching round
+- **AND** the tooltip does not contain the metric label, displayed value, or a `Rounds:` heading
+
+#### Scenario: Longest throw-in tooltip contains occurrence lines
+- **WHEN** a Longest throw-in highlight has matching occurrence descriptors
+- **THEN** the tooltip contains one competition, round, and hole line for each occurrence
+- **AND** the tooltip does not contain the metric label, displayed value, or an `Occurrences:` heading
+
+#### Scenario: Multiple entries remain separated
+- **WHEN** a highlight has multiple matching rounds or occurrences
+- **THEN** each entry is separated by a newline
+- **AND** no entries are merged into one line
+
+#### Scenario: Accessible trigger context is preserved
+- **WHEN** a putting highlight is rendered as a tooltip trigger
+- **THEN** its accessible label continues to identify the metric and displayed value
+- **AND** the concise tooltip content is used only as the tooltip text
+

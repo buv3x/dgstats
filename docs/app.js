@@ -18,10 +18,14 @@
     var selectedPersonalRequest = 0;
     var personalView = "hole";
     var personalPlayerInputTimer = null;
+    var leaderboardData = null;
+    var leaderboardCategory = "c1x";
+    var leaderboardYear = String(new Date().getFullYear());
     var descriptionTab = document.getElementById("description-tab");
     var courseStatsTab = document.getElementById("course-stats-tab");
     var basketStatsTab = document.getElementById("basket-stats-tab");
     var personalStatsTab = document.getElementById("personal-stats-tab");
+    var leaderboardsTab = document.getElementById("leaderboards-tab");
     var descriptionView = document.getElementById("description-view");
     var descriptionCompetitionCount = document.getElementById("description-competition-count");
     var descriptionPlayersCount = document.getElementById("description-players-count");
@@ -29,6 +33,13 @@
     var courseStatsView = document.getElementById("course-stats-view");
     var basketStatsView = document.getElementById("basket-stats-view");
     var personalStatsView = document.getElementById("personal-stats-view");
+    var leaderboardsView = document.getElementById("leaderboards-view");
+    var leaderboardsYearSelect = document.getElementById("leaderboards-year");
+    var leaderboardsMessage = document.getElementById("leaderboards-message");
+    var leaderboardsTableWrap = document.getElementById("leaderboards-table-wrap");
+    var leaderboardsBody = document.getElementById("leaderboards-body");
+    var leaderboardsNote = document.getElementById("leaderboards-note");
+    var leaderboardCategoryTabs = Array.from(document.querySelectorAll(".leaderboard-category-tab"));
     var filters = document.getElementById("filters");
     var courseSelect = document.getElementById("course");
     var ratingFromInput = document.getElementById("rating-from");
@@ -115,6 +126,26 @@
         setActiveView("personal");
     });
 
+    leaderboardsTab.addEventListener("click", function () {
+        setActiveView("leaderboards");
+    });
+
+    leaderboardCategoryTabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            leaderboardCategory = tab.getAttribute("data-category");
+            leaderboardCategoryTabs.forEach(function (categoryTab) {
+                categoryTab.classList.toggle("active", categoryTab === tab);
+            });
+            populateLeaderboardYears();
+            renderLeaderboards();
+        });
+    });
+
+    leaderboardsYearSelect.addEventListener("change", function () {
+        leaderboardYear = leaderboardsYearSelect.value;
+        renderLeaderboards();
+    });
+
     filters.addEventListener("submit", function (event) {
         event.preventDefault();
         renderStatistics();
@@ -182,6 +213,8 @@
         populateCourses();
         populateBasketCourses();
         loadPlayerLookup();
+        populateLeaderboardYears();
+        loadLeaderboards();
         if (courseSelect.value) {
             loadSelectedCourse();
         }
@@ -195,14 +228,17 @@
         var courseActive = view === "course";
         var basketActive = view === "basket";
         var personalActive = view === "personal";
+        var leaderboardsActive = view === "leaderboards";
         descriptionView.hidden = !descriptionActive;
-        courseStatsView.hidden = descriptionActive || basketActive || personalActive;
+        courseStatsView.hidden = descriptionActive || basketActive || personalActive || leaderboardsActive;
         basketStatsView.hidden = !basketActive;
         personalStatsView.hidden = !personalActive;
+        leaderboardsView.hidden = !leaderboardsActive;
         descriptionTab.classList.toggle("active", descriptionActive);
-        courseStatsTab.classList.toggle("active", !descriptionActive && !personalActive && !basketActive);
+        courseStatsTab.classList.toggle("active", courseActive);
         basketStatsTab.classList.toggle("active", basketActive);
         personalStatsTab.classList.toggle("active", personalActive);
+        leaderboardsTab.classList.toggle("active", leaderboardsActive);
         if (courseActive && selectedCourseSnapshot) {
             renderStatistics();
         }
@@ -212,6 +248,144 @@
         if (personalActive && playerLookup.length === 0 && personalPlayerFilter.hidden) {
             showPersonalMessage("No eligible players are available in this statistics export.", false);
         }
+        if (leaderboardsActive) {
+            renderLeaderboards();
+        }
+    }
+
+    function populateLeaderboardYears() {
+        leaderboardsYearSelect.innerHTML = "";
+        var years = [];
+        if (leaderboardCategory === "aces" && leaderboardData) {
+            years = (leaderboardData.scopes || [])
+                .filter(function (scope) {
+                    return scope.scope !== "overall"
+                        && scope.categories
+                        && Array.isArray(scope.categories.aces)
+                        && scope.categories.aces.length > 0;
+                })
+                .map(function (scope) {
+                    return scope.scope;
+                })
+                .sort(function (left, right) {
+                    return Number(right) - Number(left);
+                });
+        } else {
+            for (var year = new Date().getFullYear(); year >= 2025; year--) {
+                years.push(String(year));
+            }
+        }
+        years.forEach(function (year) {
+            var option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            leaderboardsYearSelect.appendChild(option);
+        });
+        var overallOption = document.createElement("option");
+        overallOption.value = "overall";
+        overallOption.textContent = "Overall";
+        leaderboardsYearSelect.appendChild(overallOption);
+
+        var availableValues = years.concat(["overall"]);
+        if (availableValues.indexOf(leaderboardYear) === -1) {
+            leaderboardYear = years.length > 0 ? years[0] : "overall";
+        }
+        leaderboardsYearSelect.value = leaderboardYear;
+    }
+
+    function loadLeaderboards() {
+        if (!manifest || !manifest.leaderboardsPath) {
+            showLeaderboardsMessage("Leaderboard data is not available in this export.", false);
+            return;
+        }
+        fetch("data/" + manifest.leaderboardsPath)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Leaderboard data not found");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                leaderboardData = data;
+                populateLeaderboardYears();
+                renderLeaderboards();
+            })
+            .catch(function () {
+                showLeaderboardsMessage("Leaderboard data could not be loaded.", true);
+            });
+    }
+
+    function renderLeaderboards() {
+        if (!leaderboardData) {
+            return;
+        }
+        renderLeaderboardsNote();
+        var scope = (leaderboardData.scopes || []).find(function (candidate) {
+            return candidate.scope === leaderboardYear;
+        });
+        var entries = scope && scope.categories && Array.isArray(scope.categories[leaderboardCategory])
+            ? scope.categories[leaderboardCategory]
+            : [];
+        leaderboardsBody.innerHTML = "";
+        if (entries.length === 0) {
+            showLeaderboardsMessage("No qualifying leaderboard entries are available for this selection.", false);
+            return;
+        }
+        hideLeaderboardsMessage();
+        entries.forEach(function (entry) {
+            var row = document.createElement("tr");
+            appendLeaderboardCell(row, entry.place);
+            appendLeaderboardCell(row, entry.name);
+            var valueCell = document.createElement("td");
+            var tooltips = Array.isArray(entry.tooltips) ? entry.tooltips.filter(Boolean) : [];
+            if (tooltips.length > 0) {
+                var value = document.createElement("span");
+                value.className = "tooltip-trigger";
+                value.tabIndex = 0;
+                value.textContent = entry.value;
+                value.setAttribute("data-tooltip", tooltips.join("\n"));
+                value.setAttribute("aria-label", entry.value + ": " + tooltips.join("; "));
+                valueCell.appendChild(value);
+            } else {
+                valueCell.textContent = entry.value;
+            }
+            row.appendChild(valueCell);
+            leaderboardsBody.appendChild(row);
+        });
+        leaderboardsTableWrap.hidden = false;
+    }
+
+    function renderLeaderboardsNote() {
+        var overall = leaderboardYear === "overall";
+        if (leaderboardCategory === "c1x") {
+            leaderboardsNote.textContent = "At least " + (overall ? "100" : "50") + " C1x putts are required.";
+            leaderboardsNote.hidden = false;
+        } else if (leaderboardCategory === "c2PlusPerRound") {
+            leaderboardsNote.textContent = "At least " + (overall ? "180" : "90") + " holes played are required.";
+            leaderboardsNote.hidden = false;
+        } else {
+            leaderboardsNote.textContent = "";
+            leaderboardsNote.hidden = true;
+        }
+    }
+
+    function appendLeaderboardCell(row, value) {
+        var cell = document.createElement("td");
+        cell.textContent = value === undefined || value === null ? "" : String(value);
+        row.appendChild(cell);
+    }
+
+    function showLeaderboardsMessage(text, isError) {
+        leaderboardsMessage.textContent = text;
+        leaderboardsMessage.classList.toggle("error", isError);
+        leaderboardsMessage.hidden = false;
+        leaderboardsTableWrap.hidden = true;
+    }
+
+    function hideLeaderboardsMessage() {
+        leaderboardsMessage.textContent = "";
+        leaderboardsMessage.classList.remove("error");
+        leaderboardsMessage.hidden = true;
     }
 
     function updateDescriptionPlaceholders(source) {
@@ -556,7 +730,6 @@
         var totals = document.createElement("div");
         totals.className = "putting-total";
         totals.appendChild(puttingLine("C1x", putting.c1x));
-        totals.appendChild(document.createTextNode(", "));
         totals.appendChild(puttingLine("C2", putting.c2));
         personalPuttingSummary.appendChild(totals);
 
@@ -597,7 +770,12 @@
                 var mostSuffix = Number(mostC2Plus.count) > 1
                     ? " (" + Number(mostC2Plus.count) + " times)"
                     : "";
-                global.appendChild(puttingValueLine("Most C2+ in a round", String(mostValue) + mostSuffix));
+                var mostDisplay = String(mostValue) + mostSuffix;
+                global.appendChild(puttingValueLine(
+                    "Most C2+ in a round",
+                    mostDisplay,
+                    puttingHighlightTooltip(mostC2Plus.rounds)
+                ));
             }
         }
         if (putting.bestC1xRound) {
@@ -609,11 +787,36 @@
                 var bestSuffix = Number(bestC1x.count) > 1
                     ? " (" + Number(bestC1x.count) + " times)"
                     : "";
+                var bestDisplay = bestPercentage.toFixed(2) + "% (" + Number(bestC1x.successful) + " / " + Number(bestC1x.total) + ")" + bestSuffix;
                 global.appendChild(puttingValueLine(
                     "Best C1x round",
-                    bestPercentage.toFixed(2) + "% (" + Number(bestC1x.successful) + " / " + Number(bestC1x.total) + ")" + bestSuffix
+                    bestDisplay,
+                    puttingHighlightTooltip(bestC1x.rounds)
                 ));
             }
+        }
+        if (putting.longestThrowIn) {
+            var longestThrowIn = putting.longestThrowIn;
+            var longestDisplay = Number.isFinite(Number(longestThrowIn.display))
+                ? Number(longestThrowIn.display)
+                : null;
+            if (longestDisplay !== null) {
+                var longestSuffix = Number(longestThrowIn.count) > 1
+                    ? " (" + Number(longestThrowIn.count) + " times)"
+                    : "";
+                var longestValue = String(longestDisplay) + " m" + longestSuffix;
+                global.appendChild(puttingValueLine(
+                    "Longest throw-in",
+                    longestValue,
+                    puttingLongestThrowInTooltip(longestThrowIn)
+                ));
+            }
+        }
+        if (Number.isFinite(Number(putting.threePlusPuttPerRound))) {
+            global.appendChild(puttingValueLine(
+                "3+putt per round",
+                Number(putting.threePlusPuttPerRound).toFixed(2)
+            ));
         }
         if (global.childNodes.length > 0) {
             container.appendChild(global);
@@ -640,7 +843,6 @@
         var totals = document.createElement("div");
         totals.className = "putting-total";
         totals.appendChild(puttingLine("C1x", year.c1x));
-        totals.appendChild(document.createTextNode(", "));
         totals.appendChild(puttingLine("C2", year.c2));
         content.appendChild(totals);
         appendPuttingHighlights(content, year);
@@ -707,14 +909,61 @@
         return line;
     }
 
-    function puttingValueLine(label, value) {
+    function puttingValueLine(label, value, tooltipText) {
         var line = document.createElement("div");
         var labelElement = document.createElement("strong");
         labelElement.className = "putting-metric-label";
         labelElement.textContent = label;
         line.appendChild(labelElement);
-        line.appendChild(document.createTextNode(": " + value));
+        line.appendChild(document.createTextNode(": "));
+        if (tooltipText) {
+            var valueElement = document.createElement("span");
+            valueElement.className = "tooltip-trigger";
+            valueElement.tabIndex = 0;
+            valueElement.setAttribute("role", "button");
+            valueElement.setAttribute("aria-label", label + ": " + value);
+            valueElement.setAttribute("data-tooltip", tooltipText);
+            valueElement.textContent = value;
+            line.appendChild(valueElement);
+        } else {
+            line.appendChild(document.createTextNode(value));
+        }
         return line;
+    }
+
+    function puttingHighlightTooltip(rounds) {
+        if (!Array.isArray(rounds) || rounds.length === 0) {
+            return null;
+        }
+        var roundLines = rounds.map(function (round) {
+            var competition = round && round.competitionSimpleName
+                ? round.competitionSimpleName
+                : "Competition";
+            var roundLabel = round && round.roundAbbreviatedLabel
+                ? round.roundAbbreviatedLabel
+                : "Round";
+            return competition + " " + roundLabel;
+        });
+        return roundLines.join("\n");
+    }
+
+    function puttingLongestThrowInTooltip(highlight) {
+        if (!highlight || !Array.isArray(highlight.occurrences) || highlight.occurrences.length === 0) {
+            return null;
+        }
+        var occurrenceLines = highlight.occurrences.map(function (occurrence) {
+            var competition = occurrence && occurrence.competitionSimpleName
+                ? occurrence.competitionSimpleName
+                : "Competition";
+            var roundLabel = occurrence && occurrence.roundAbbreviatedLabel
+                ? occurrence.roundAbbreviatedLabel
+                : "Round";
+            var hole = occurrence && Number.isFinite(Number(occurrence.holeOrdinal))
+                ? Number(occurrence.holeOrdinal)
+                : "?";
+            return competition + " " + roundLabel + " — Hole " + hole;
+        });
+        return occurrenceLines.join("\n");
     }
 
     function displayablePuttingRound(round) {

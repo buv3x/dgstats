@@ -16,23 +16,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 1144.004984621911,
+    "rating" : 1144.0049846219113,
     "displayRating" : 1144,
     "scores" : [ 2, 3 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 184,
-    "basketLabel" : "18",
-    "basketSortOrder" : null,
-    "variationId" : 218,
-    "variationLabel" : "Main [69]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1526,
-    "count" : 2,
-    "rating" : 1125.5816160674585,
-    "displayRating" : 1126,
-    "scores" : [ 3, 2 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -58,23 +44,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 872,
     "count" : 2,
-    "rating" : 1084.4298913827242,
+    "rating" : 1084.429891382724,
     "displayRating" : 1084,
     "scores" : [ 3, 2 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 181,
-    "basketLabel" : "16",
-    "basketSortOrder" : null,
-    "variationId" : 214,
-    "variationLabel" : "Main [95]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1076,
-    "count" : 2,
-    "rating" : 1070.8247944826828,
-    "displayRating" : 1071,
-    "scores" : [ 2, 3 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -86,7 +58,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 872,
     "count" : 2,
-    "rating" : 1059.6069810688166,
+    "rating" : 1059.6069810688164,
     "displayRating" : 1060,
     "scores" : [ 3, 3 ]
   }, {
@@ -100,23 +72,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 411,
     "count" : 2,
-    "rating" : 1058.5437476855304,
+    "rating" : 1058.54374768553,
     "displayRating" : 1059,
     "scores" : [ 3, 2 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
-    "basketId" : 166,
-    "basketLabel" : "1",
+    "basketId" : 184,
+    "basketLabel" : "18",
     "basketSortOrder" : null,
-    "variationId" : 189,
-    "variationLabel" : "Main [96]",
+    "variationId" : 218,
+    "variationLabel" : "Main [69]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 1077,
-    "count" : 2,
-    "rating" : 1055.5076022276999,
-    "displayRating" : 1056,
-    "scores" : [ 2, 3 ]
+    "globalSampleCount" : 1686,
+    "count" : 4,
+    "rating" : 1050.7855503161345,
+    "displayRating" : 1051,
+    "scores" : [ 3, 2, 3, 3 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -132,20 +104,6 @@
     "displayRating" : 1046,
     "scores" : [ 4, 4 ]
   }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 178,
-    "basketLabel" : "13",
-    "basketSortOrder" : null,
-    "variationId" : 208,
-    "variationLabel" : "Main [78]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1526,
-    "count" : 2,
-    "rating" : 1041.731385858886,
-    "displayRating" : 1042,
-    "scores" : [ 2, 3 ]
-  }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
     "basketId" : 267,
@@ -160,6 +118,20 @@
     "displayRating" : 1038,
     "scores" : [ 3, 3 ]
   }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 179,
+    "basketLabel" : "14",
+    "basketSortOrder" : null,
+    "variationId" : 211,
+    "variationLabel" : "Main [72]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1236,
+    "count" : 4,
+    "rating" : 1035.8180295535162,
+    "displayRating" : 1036,
+    "scores" : [ 4, 2, 2, 2 ]
+  }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
     "basketId" : 227,
@@ -170,9 +142,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 1033.8411184819918,
+    "rating" : 1033.8411184819913,
     "displayRating" : 1034,
     "scores" : [ 4, 5 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 181,
+    "basketLabel" : "16",
+    "basketSortOrder" : null,
+    "variationId" : 214,
+    "variationLabel" : "Main [95]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1236,
+    "count" : 4,
+    "rating" : 1032.890691792775,
+    "displayRating" : 1033,
+    "scores" : [ 2, 3, 3, 3 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -184,7 +170,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 278,
     "count" : 2,
-    "rating" : 1022.6356294638605,
+    "rating" : 1022.6356294638608,
     "displayRating" : 1023,
     "scores" : [ 4, 4 ]
   }, {
@@ -226,9 +212,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 872,
     "count" : 2,
-    "rating" : 1008.8607078514277,
+    "rating" : 1008.8607078514278,
     "displayRating" : 1009,
     "scores" : [ 4, 3 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 166,
+    "basketLabel" : "1",
+    "basketSortOrder" : null,
+    "variationId" : 189,
+    "variationLabel" : "Main [96]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1237,
+    "count" : 4,
+    "rating" : 1007.3004013290586,
+    "displayRating" : 1007,
+    "scores" : [ 2, 3, 4, 2 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 2,
-    "rating" : 1005.6946275633086,
+    "rating" : 1005.6946275633084,
     "displayRating" : 1006,
     "scores" : [ 2, 3 ]
   }, {
@@ -282,7 +282,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 2,
-    "rating" : 995.991397190902,
+    "rating" : 995.9913971909019,
     "displayRating" : 996,
     "scores" : [ 4, 4 ]
   }, {
@@ -296,7 +296,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 872,
     "count" : 2,
-    "rating" : 978.629486791337,
+    "rating" : 978.6294867913366,
     "displayRating" : 979,
     "scores" : [ 3, 3 ]
   }, {
@@ -316,17 +316,73 @@
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
+    "basketId" : 180,
+    "basketLabel" : "15",
+    "basketSortOrder" : null,
+    "variationId" : 213,
+    "variationLabel" : "Main [102]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1686,
+    "count" : 4,
+    "rating" : 973.4298502170225,
+    "displayRating" : 973,
+    "scores" : [ 4, 4, 3, 4 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 178,
+    "basketLabel" : "13",
+    "basketSortOrder" : null,
+    "variationId" : 208,
+    "variationLabel" : "Main [78]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1686,
+    "count" : 4,
+    "rating" : 969.8919594725808,
+    "displayRating" : 970,
+    "scores" : [ 2, 3, 2, 4 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
     "basketId" : 175,
     "basketLabel" : "10",
     "basketSortOrder" : null,
     "variationId" : 203,
     "variationLabel" : "Main [99]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 1526,
-    "count" : 2,
-    "rating" : 968.6435637756937,
+    "globalSampleCount" : 1686,
+    "count" : 4,
+    "rating" : 968.6820327926978,
     "displayRating" : 969,
-    "scores" : [ 3, 3 ]
+    "scores" : [ 3, 3, 3, 3 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 169,
+    "basketLabel" : "4",
+    "basketSortOrder" : null,
+    "variationId" : 194,
+    "variationLabel" : "Main [79]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1507,
+    "count" : 4,
+    "rating" : 949.4425545089551,
+    "displayRating" : 949,
+    "scores" : [ 4, 3, 4, 2 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 170,
+    "basketLabel" : "5",
+    "basketSortOrder" : null,
+    "variationId" : 196,
+    "variationLabel" : "Main [75]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1687,
+    "count" : 4,
+    "rating" : 942.1377695540443,
+    "displayRating" : 942,
+    "scores" : [ 4, 3, 2, 2 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -338,23 +394,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 940.7904200440571,
+    "rating" : 940.7904200440573,
     "displayRating" : 941,
     "scores" : [ 5, 3 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 177,
-    "basketLabel" : "12",
-    "basketSortOrder" : null,
-    "variationId" : 206,
-    "variationLabel" : "Main [91]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1076,
-    "count" : 2,
-    "rating" : 940.3312043709037,
-    "displayRating" : 940,
-    "scores" : [ 3, 3 ]
   }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
@@ -386,17 +428,31 @@
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
-    "basketId" : 180,
-    "basketLabel" : "15",
+    "basketId" : 177,
+    "basketLabel" : "12",
     "basketSortOrder" : null,
-    "variationId" : 213,
-    "variationLabel" : "Main [102]",
+    "variationId" : 206,
+    "variationLabel" : "Main [91]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 1526,
-    "count" : 2,
-    "rating" : 934.823272048912,
+    "globalSampleCount" : 1236,
+    "count" : 4,
+    "rating" : 936.0975890326702,
+    "displayRating" : 936,
+    "scores" : [ 3, 3, 3, 3 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 172,
+    "basketLabel" : "7",
+    "basketSortOrder" : null,
+    "variationId" : 198,
+    "variationLabel" : "Main [72]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1687,
+    "count" : 4,
+    "rating" : 935.1416861766879,
     "displayRating" : 935,
-    "scores" : [ 4, 4 ]
+    "scores" : [ 4, 3, 3, 2 ]
   }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
@@ -408,7 +464,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 930.2580855646603,
+    "rating" : 930.2580855646602,
     "displayRating" : 930,
     "scores" : [ 4, 2 ]
   }, {
@@ -420,25 +476,11 @@
     "variationId" : 197,
     "variationLabel" : "Main [107]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 1527,
-    "count" : 2,
-    "rating" : 927.5310054752691,
-    "displayRating" : 928,
-    "scores" : [ 3, 3 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 179,
-    "basketLabel" : "14",
-    "basketSortOrder" : null,
-    "variationId" : 211,
-    "variationLabel" : "Main [72]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1076,
-    "count" : 2,
-    "rating" : 923.1253644358845,
-    "displayRating" : 923,
-    "scores" : [ 4, 2 ]
+    "globalSampleCount" : 1687,
+    "count" : 4,
+    "rating" : 926.2760754146652,
+    "displayRating" : 926,
+    "scores" : [ 3, 3, 3, 3 ]
   }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
@@ -450,9 +492,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 918.32346062712,
+    "rating" : 918.3234606271201,
     "displayRating" : 918,
     "scores" : [ 5, 4 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 173,
+    "basketLabel" : "8",
+    "basketSortOrder" : null,
+    "variationId" : 199,
+    "variationLabel" : "Main [96]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1237,
+    "count" : 4,
+    "rating" : 917.316994522667,
+    "displayRating" : 917,
+    "scores" : [ 3, 4, 3, 3 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -464,7 +520,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 645,
     "count" : 2,
-    "rating" : 915.1408629410439,
+    "rating" : 915.1408629410441,
     "displayRating" : 915,
     "scores" : [ 4, 2 ]
   }, {
@@ -478,22 +534,8 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 872,
     "count" : 2,
-    "rating" : 912.3321924219646,
+    "rating" : 912.3321924219645,
     "displayRating" : 912,
-    "scores" : [ 4, 3 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 169,
-    "basketLabel" : "4",
-    "basketSortOrder" : null,
-    "variationId" : 194,
-    "variationLabel" : "Main [79]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1347,
-    "count" : 2,
-    "rating" : 909.6081114917731,
-    "displayRating" : 910,
     "scores" : [ 4, 3 ]
   }, {
     "basketCourseId" : 13,
@@ -526,17 +568,17 @@
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
-    "basketId" : 173,
-    "basketLabel" : "8",
+    "basketId" : 176,
+    "basketLabel" : "11",
     "basketSortOrder" : null,
-    "variationId" : 199,
-    "variationLabel" : "Main [96]",
+    "variationId" : 204,
+    "variationLabel" : "Main [84]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 1077,
-    "count" : 2,
-    "rating" : 878.8910037886744,
-    "displayRating" : 879,
-    "scores" : [ 3, 4 ]
+    "globalSampleCount" : 1236,
+    "count" : 4,
+    "rating" : 898.2828046252648,
+    "displayRating" : 898,
+    "scores" : [ 5, 3, 3, 3 ]
   }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
@@ -548,7 +590,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 872.3768545994064,
+    "rating" : 872.3768545994067,
     "displayRating" : 872,
     "scores" : [ 4, 3 ]
   }, {
@@ -562,7 +604,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 2,
-    "rating" : 864.0512473928427,
+    "rating" : 864.0512473928429,
     "displayRating" : 864,
     "scores" : [ 4, 3 ]
   }, {
@@ -576,7 +618,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 861.6883666894669,
+    "rating" : 861.6883666894671,
     "displayRating" : 862,
     "scores" : [ 2, 5 ]
   }, {
@@ -590,9 +632,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 860.7625099600159,
+    "rating" : 860.7625099600156,
     "displayRating" : 861,
     "scores" : [ 4, 3 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 174,
+    "basketLabel" : "9",
+    "basketSortOrder" : null,
+    "variationId" : 201,
+    "variationLabel" : "Main [163]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1236,
+    "count" : 4,
+    "rating" : 858.6729166448347,
+    "displayRating" : 859,
+    "scores" : [ 5, 5, 4, 5 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -604,7 +660,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 847.3723198372618,
+    "rating" : 847.3723198372617,
     "displayRating" : 847,
     "scores" : [ 3, 4 ]
   }, {
@@ -618,51 +674,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 839.7454583715862,
+    "rating" : 839.7454583715867,
     "displayRating" : 840,
     "scores" : [ 6, 3 ]
   }, {
     "basketCourseId" : 10,
     "basketCourseName" : "Domeikava",
-    "basketId" : 182,
-    "basketLabel" : "17",
+    "basketId" : 168,
+    "basketLabel" : "3",
     "basketSortOrder" : null,
-    "variationId" : 216,
-    "variationLabel" : "Main [100]",
+    "variationId" : 193,
+    "variationLabel" : "Main [106]",
     "variationSortOrder" : null,
-    "globalSampleCount" : 1526,
-    "count" : 2,
-    "rating" : 830.8635691170109,
-    "displayRating" : 831,
-    "scores" : [ 4, 4 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 172,
-    "basketLabel" : "7",
-    "basketSortOrder" : null,
-    "variationId" : 198,
-    "variationLabel" : "Main [72]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1527,
-    "count" : 2,
-    "rating" : 830.4106085087269,
-    "displayRating" : 830,
-    "scores" : [ 4, 3 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 174,
-    "basketLabel" : "9",
-    "basketSortOrder" : null,
-    "variationId" : 201,
-    "variationLabel" : "Main [163]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1076,
-    "count" : 2,
-    "rating" : 829.7094608546874,
-    "displayRating" : 830,
-    "scores" : [ 5, 5 ]
+    "globalSampleCount" : 1687,
+    "count" : 4,
+    "rating" : 834.1959583254336,
+    "displayRating" : 834,
+    "scores" : [ 4, 4, 4, 3 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -677,6 +705,20 @@
     "rating" : 823.1203869999438,
     "displayRating" : 823,
     "scores" : [ 3, 4 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 167,
+    "basketLabel" : "2",
+    "basketSortOrder" : null,
+    "variationId" : 191,
+    "variationLabel" : "Main [164]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1237,
+    "count" : 4,
+    "rating" : 819.9713066280826,
+    "displayRating" : 820,
+    "scores" : [ 6, 5, 4, 5 ]
   }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
@@ -706,20 +748,6 @@
     "displayRating" : 810,
     "scores" : [ 5, 4 ]
   }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 176,
-    "basketLabel" : "11",
-    "basketSortOrder" : null,
-    "variationId" : 204,
-    "variationLabel" : "Main [84]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1076,
-    "count" : 2,
-    "rating" : 807.9730866187635,
-    "displayRating" : 808,
-    "scores" : [ 5, 3 ]
-  }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
     "basketId" : 263,
@@ -730,7 +758,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 872,
     "count" : 2,
-    "rating" : 800.8245087351156,
+    "rating" : 800.8245087351157,
     "displayRating" : 801,
     "scores" : [ 4, 3 ]
   }, {
@@ -744,23 +772,9 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 800.3324282899066,
+    "rating" : 800.3324282899067,
     "displayRating" : 800,
     "scores" : [ 5, 4 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 168,
-    "basketLabel" : "3",
-    "basketSortOrder" : null,
-    "variationId" : 193,
-    "variationLabel" : "Main [106]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1527,
-    "count" : 2,
-    "rating" : 797.4438218684382,
-    "displayRating" : 797,
-    "scores" : [ 4, 4 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -772,7 +786,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 794.6117481046083,
+    "rating" : 794.6117481046082,
     "displayRating" : 795,
     "scores" : [ 4, 3 ]
   }, {
@@ -790,20 +804,6 @@
     "displayRating" : 794,
     "scores" : [ 4, 3 ]
   }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 170,
-    "basketLabel" : "5",
-    "basketSortOrder" : null,
-    "variationId" : 196,
-    "variationLabel" : "Main [75]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1527,
-    "count" : 2,
-    "rating" : 792.0479185302204,
-    "displayRating" : 792,
-    "scores" : [ 4, 3 ]
-  }, {
     "basketCourseId" : 15,
     "basketCourseName" : "Jonava",
     "basketId" : 264,
@@ -817,20 +817,6 @@
     "rating" : 778.5364409134431,
     "displayRating" : 779,
     "scores" : [ 3, 4 ]
-  }, {
-    "basketCourseId" : 10,
-    "basketCourseName" : "Domeikava",
-    "basketId" : 167,
-    "basketLabel" : "2",
-    "basketSortOrder" : null,
-    "variationId" : 191,
-    "variationLabel" : "Main [164]",
-    "variationSortOrder" : null,
-    "globalSampleCount" : 1077,
-    "count" : 2,
-    "rating" : 753.7237964855295,
-    "displayRating" : 754,
-    "scores" : [ 6, 5 ]
   }, {
     "basketCourseId" : 6,
     "basketCourseName" : "Vilnius. Pučkoriai",
@@ -870,7 +856,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 2,
-    "rating" : 725.5347942468525,
+    "rating" : 725.5347942468527,
     "displayRating" : 726,
     "scores" : [ 7, 6 ]
   }, {
@@ -898,7 +884,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3758,
     "count" : 2,
-    "rating" : 721.0831830862857,
+    "rating" : 721.0831830862854,
     "displayRating" : 721,
     "scores" : [ 5, 5 ]
   }, {
@@ -926,9 +912,23 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 3757,
     "count" : 2,
-    "rating" : 710.0443292121952,
+    "rating" : 710.0443292121953,
     "displayRating" : 710,
     "scores" : [ 5, 7 ]
+  }, {
+    "basketCourseId" : 10,
+    "basketCourseName" : "Domeikava",
+    "basketId" : 182,
+    "basketLabel" : "17",
+    "basketSortOrder" : null,
+    "variationId" : 216,
+    "variationLabel" : "Main [100]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 1686,
+    "count" : 4,
+    "rating" : 709.9500959689481,
+    "displayRating" : 710,
+    "scores" : [ 4, 4, 5, 5 ]
   }, {
     "basketCourseId" : 13,
     "basketCourseName" : "Panevėžys. Parkas",
@@ -940,7 +940,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 701.499885634727,
+    "rating" : 701.4998856347273,
     "displayRating" : 701,
     "scores" : [ 7, 7 ]
   }, {
@@ -954,7 +954,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2755,
     "count" : 2,
-    "rating" : 683.1573722472538,
+    "rating" : 683.1573722472533,
     "displayRating" : 683,
     "scores" : [ 8, 5 ]
   }, {
@@ -968,7 +968,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 674.3560872995002,
+    "rating" : 674.3560872995004,
     "displayRating" : 674,
     "scores" : [ 5, 4 ]
   }, {
@@ -996,7 +996,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 2,
-    "rating" : 672.0062512009231,
+    "rating" : 672.0062512009234,
     "displayRating" : 672,
     "scores" : [ 6, 6 ]
   }, {
@@ -1010,7 +1010,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 662.1709826710601,
+    "rating" : 662.1709826710604,
     "displayRating" : 662,
     "scores" : [ 2, 5 ]
   }, {
@@ -1024,7 +1024,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 259,
     "count" : 2,
-    "rating" : 611.5087635054017,
+    "rating" : 611.5087635054018,
     "displayRating" : 612,
     "scores" : [ 4, 7 ]
   }, {
@@ -1052,56 +1052,114 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 2756,
     "count" : 2,
-    "rating" : 556.3239623375675,
+    "rating" : 556.3239623375679,
     "displayRating" : 556,
     "scores" : [ 5, 10 ]
   } ],
   "putting" : {
     "c1x" : {
-      "successful" : 105,
-      "total" : 130,
-      "percentage" : 80.77
+      "successful" : 125,
+      "total" : 150,
+      "percentage" : 83.33
     },
     "c2" : {
-      "successful" : 10,
-      "total" : 67,
-      "percentage" : 14.93
+      "successful" : 15,
+      "total" : 88,
+      "percentage" : 17.05
     },
-    "c2PlusPerRound" : 1.06,
+    "c2PlusPerRound" : 1.3,
+    "threePlusPuttPerRound" : 0.32,
     "mostC2PlusInRound" : {
-      "real" : 2.8421052631578947,
-      "display" : 3,
-      "count" : 1
+      "real" : 4.0,
+      "display" : 4,
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 232,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 4
+      } ]
     },
     "bestC1xRound" : {
-      "percentage" : 93.75,
-      "successful" : 15,
-      "total" : 16,
-      "count" : 1
+      "percentage" : 100.0,
+      "successful" : 12,
+      "total" : 12,
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 231,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 1
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 85,
+      "display" : 26,
+      "count" : 1,
+      "occurrences" : [ {
+        "roundId" : 228,
+        "roundDate" : "2026-09-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI  - JONAVA - Amateurs",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "holeOrdinal" : 4
+      } ]
     },
     "years" : [ {
       "year" : 2026,
       "c1x" : {
-        "successful" : 87,
-        "total" : 104,
-        "percentage" : 83.65
+        "successful" : 107,
+        "total" : 124,
+        "percentage" : 86.29
       },
       "c2" : {
-        "successful" : 8,
-        "total" : 60,
-        "percentage" : 13.33
+        "successful" : 13,
+        "total" : 81,
+        "percentage" : 16.05
       },
-      "c2PlusPerRound" : 1.08,
+      "c2PlusPerRound" : 1.36,
+      "threePlusPuttPerRound" : 0.38,
       "mostC2PlusInRound" : {
-        "real" : 2.8421052631578947,
-        "display" : 3,
-        "count" : 1
+        "real" : 4.0,
+        "display" : 4,
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 4
+        } ]
       },
       "bestC1xRound" : {
-        "percentage" : 93.75,
-        "successful" : 15,
-        "total" : 16,
-        "count" : 1
+        "percentage" : 100.0,
+        "successful" : 12,
+        "total" : 12,
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 231,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 85,
+        "display" : 26,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 228,
+          "roundDate" : "2026-09-26",
+          "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI  - JONAVA - Amateurs",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 4
+        } ]
       },
       "rounds" : [ {
         "roundId" : 197,
@@ -1231,6 +1289,38 @@
           "total" : 7,
           "percentage" : 28.57
         }
+      }, {
+        "roundId" : 231,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 12,
+          "total" : 12,
+          "percentage" : 100.0
+        },
+        "c2" : {
+          "successful" : 1,
+          "total" : 10,
+          "percentage" : 10.0
+        }
+      }, {
+        "roundId" : 232,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 8,
+          "total" : 8,
+          "percentage" : 100.0
+        },
+        "c2" : {
+          "successful" : 4,
+          "total" : 11,
+          "percentage" : 36.36
+        }
       } ]
     }, {
       "year" : 2025,
@@ -1245,16 +1335,51 @@
         "percentage" : 28.57
       },
       "c2PlusPerRound" : 1.0,
+      "threePlusPuttPerRound" : 0.0,
       "mostC2PlusInRound" : {
         "real" : 2.0,
         "display" : 2,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 169,
+          "roundDate" : "2025-10-19",
+          "competitionSimpleName" : "Sezono Uždarymas 2025 su www.chillidiscgolf.lt",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 2
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 70.59,
         "successful" : 12,
         "total" : 17,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 170,
+          "roundDate" : "2025-10-19",
+          "competitionSimpleName" : "Sezono Uždarymas 2025 su www.chillidiscgolf.lt",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 0
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 39,
+        "display" : 12,
+        "count" : 2,
+        "occurrences" : [ {
+          "roundId" : 169,
+          "roundDate" : "2025-10-19",
+          "competitionSimpleName" : "Sezono Uždarymas 2025 su www.chillidiscgolf.lt",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "holeOrdinal" : 1
+        }, {
+          "roundId" : 169,
+          "roundDate" : "2025-10-19",
+          "competitionSimpleName" : "Sezono Uždarymas 2025 su www.chillidiscgolf.lt",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "holeOrdinal" : 16
+        } ]
       },
       "rounds" : [ {
         "roundId" : 149,

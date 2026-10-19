@@ -44,7 +44,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 974.8251993594562,
+    "rating" : 974.825199359456,
     "displayRating" : 975,
     "scores" : [ 2, 4, 3 ]
   }, {
@@ -86,7 +86,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 949.7218143596633,
+    "rating" : 949.721814359663,
     "displayRating" : 950,
     "scores" : [ 3, 3, 4 ]
   }, {
@@ -142,7 +142,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 883.064714572311,
+    "rating" : 883.0647145723107,
     "displayRating" : 883,
     "scores" : [ 4, 4, 5 ]
   }, {
@@ -184,7 +184,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 93,
     "count" : 3,
-    "rating" : 770.7829484782648,
+    "rating" : 770.7829484782646,
     "displayRating" : 771,
     "scores" : [ 4, 3, 5 ]
   }, {
@@ -212,7 +212,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 741.167743457765,
+    "rating" : 741.1677434577649,
     "displayRating" : 741,
     "scores" : [ 3, 3, 4 ]
   }, {
@@ -240,7 +240,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 688.5313351477431,
+    "rating" : 688.5313351477429,
     "displayRating" : 689,
     "scores" : [ 4, 6, 4 ]
   }, {
@@ -254,7 +254,7 @@
     "variationSortOrder" : null,
     "globalSampleCount" : 363,
     "count" : 3,
-    "rating" : 580.7377832798696,
+    "rating" : 580.7377832798699,
     "displayRating" : 581,
     "scores" : [ 7, 8, 7 ]
   } ],
@@ -270,8 +270,10 @@
       "percentage" : null
     },
     "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
     "mostC2PlusInRound" : null,
     "bestC1xRound" : null,
+    "longestThrowIn" : null,
     "years" : [ {
       "year" : 2023,
       "c1x" : {
@@ -285,8 +287,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 55,
         "roundDate" : "2023-06-25",

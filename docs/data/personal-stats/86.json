@@ -18,16 +18,45 @@
       "percentage" : 3.88
     },
     "c2PlusPerRound" : 0.36,
+    "threePlusPuttPerRound" : 0.85,
     "mostC2PlusInRound" : {
       "real" : 2.0,
       "display" : 2,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 162,
+        "roundDate" : "2025-08-30",
+        "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 2
+      } ]
     },
     "bestC1xRound" : {
       "percentage" : 100.0,
       "successful" : 11,
       "total" : 11,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 162,
+        "roundDate" : "2025-08-30",
+        "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 2
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 65,
+      "display" : 20,
+      "count" : 1,
+      "occurrences" : [ {
+        "roundId" : 91,
+        "roundDate" : "2025-04-27",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - II - Pušynas FP40 MP40 FP50 MP50 MJ18 FJ18 FA4 MA4 FA1 MA1",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "holeOrdinal" : 4
+      } ]
     },
     "years" : [ {
       "year" : 2025,
@@ -42,16 +71,45 @@
         "percentage" : 3.88
       },
       "c2PlusPerRound" : 0.36,
+      "threePlusPuttPerRound" : 0.85,
       "mostC2PlusInRound" : {
         "real" : 2.0,
         "display" : 2,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 162,
+          "roundDate" : "2025-08-30",
+          "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 2
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 100.0,
         "successful" : 11,
         "total" : 11,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 162,
+          "roundDate" : "2025-08-30",
+          "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 2
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 65,
+        "display" : 20,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 91,
+          "roundDate" : "2025-04-27",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - II - Pušynas FP40 MP40 FP50 MP50 MJ18 FJ18 FA4 MA4 FA1 MA1",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "holeOrdinal" : 4
+        } ]
       },
       "rounds" : [ {
         "roundId" : 139,
@@ -547,8 +605,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 117,
         "roundDate" : "2024-08-17",
@@ -659,8 +719,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 23,
         "roundDate" : "2023-03-25",
@@ -1091,8 +1153,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 3,
         "roundDate" : "2022-05-01",

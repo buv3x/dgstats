@@ -18,16 +18,51 @@
       "percentage" : 23.08
     },
     "c2PlusPerRound" : 0.96,
+    "threePlusPuttPerRound" : 0.63,
     "mostC2PlusInRound" : {
       "real" : 1.894736842105263,
       "display" : 2,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 229,
+        "roundDate" : "2026-09-27",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "expectedHoleCount" : 19,
+        "c2PlusSuccessful" : 2
+      } ]
     },
     "bestC1xRound" : {
       "percentage" : 75.0,
       "successful" : 6,
       "total" : 8,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 162,
+        "roundDate" : "2025-08-30",
+        "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 1
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 49,
+      "display" : 15,
+      "count" : 2,
+      "occurrences" : [ {
+        "roundId" : 162,
+        "roundDate" : "2025-08-30",
+        "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "holeOrdinal" : 2
+      }, {
+        "roundId" : 229,
+        "roundDate" : "2026-09-27",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "holeOrdinal" : 6
+      } ]
     },
     "years" : [ {
       "year" : 2026,
@@ -42,16 +77,45 @@
         "percentage" : 22.22
       },
       "c2PlusPerRound" : 0.95,
+      "threePlusPuttPerRound" : 0.95,
       "mostC2PlusInRound" : {
         "real" : 1.894736842105263,
         "display" : 2,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 229,
+          "roundDate" : "2026-09-27",
+          "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 19,
+          "c2PlusSuccessful" : 2
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 73.33,
         "successful" : 11,
         "total" : 15,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 230,
+          "roundDate" : "2026-09-27",
+          "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 19,
+          "c2PlusSuccessful" : 0
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 49,
+        "display" : 15,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 229,
+          "roundDate" : "2026-09-27",
+          "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 - VI - JONAVA - Pro & Juniors",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "holeOrdinal" : 6
+        } ]
       },
       "rounds" : [ {
         "roundId" : 188,
@@ -355,16 +419,45 @@
         "percentage" : 25.0
       },
       "c2PlusPerRound" : 1.0,
+      "threePlusPuttPerRound" : 0.0,
       "mostC2PlusInRound" : {
         "real" : 1.0,
         "display" : 1,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 162,
+          "roundDate" : "2025-08-30",
+          "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 75.0,
         "successful" : 6,
         "total" : 8,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 162,
+          "roundDate" : "2025-08-30",
+          "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 49,
+        "display" : 15,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 162,
+          "roundDate" : "2025-08-30",
+          "competitionSimpleName" : "Domeikio Taurei Laimėti 2025 su Latitude 64",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 2
+        } ]
       },
       "rounds" : [ {
         "roundId" : 139,
@@ -732,8 +825,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 79,
         "roundDate" : "2024-03-10",
@@ -1036,8 +1131,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 20,
         "roundDate" : "2023-02-26",
@@ -1244,8 +1341,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 10,
         "roundDate" : "2022-09-04",

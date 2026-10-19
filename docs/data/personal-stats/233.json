@@ -18,16 +18,58 @@
       "percentage" : 18.18
     },
     "c2PlusPerRound" : 1.0,
+    "threePlusPuttPerRound" : 0.83,
     "mostC2PlusInRound" : {
       "real" : 2.0,
       "display" : 2,
-      "count" : 2
+      "count" : 2,
+      "rounds" : [ {
+        "roundId" : 167,
+        "roundDate" : "2025-07-20",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - V - Molėtai - MPO, FPO",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 2
+      }, {
+        "roundId" : 168,
+        "roundDate" : "2025-07-20",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - V - Molėtai - MPO, FPO",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 2
+      } ]
     },
     "bestC1xRound" : {
       "percentage" : 91.67,
       "successful" : 11,
       "total" : 12,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 160,
+        "roundDate" : "2025-08-03",
+        "competitionSimpleName" : "DiscCity parkų atidarymai. Alytaus mero taurė",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "expectedHoleCount" : 18,
+        "c2PlusSuccessful" : 1
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 59,
+      "display" : 18,
+      "count" : 2,
+      "occurrences" : [ {
+        "roundId" : 167,
+        "roundDate" : "2025-07-20",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - V - Molėtai - MPO, FPO",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "holeOrdinal" : 13
+      }, {
+        "roundId" : 219,
+        "roundDate" : "2026-08-09",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "holeOrdinal" : 3
+      } ]
     },
     "years" : [ {
       "year" : 2026,
@@ -42,16 +84,45 @@
         "percentage" : 8.33
       },
       "c2PlusPerRound" : 0.5,
+      "threePlusPuttPerRound" : 0.5,
       "mostC2PlusInRound" : {
         "real" : 1.0,
         "display" : 1,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 219,
+          "roundDate" : "2026-08-09",
+          "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 90.91,
         "successful" : 10,
         "total" : 11,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 219,
+          "roundDate" : "2026-08-09",
+          "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 59,
+        "display" : 18,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 219,
+          "roundDate" : "2026-08-09",
+          "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2026",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 3
+        } ]
       },
       "rounds" : [ {
         "roundId" : 218,
@@ -115,16 +186,52 @@
         "percentage" : 23.81
       },
       "c2PlusPerRound" : 1.25,
+      "threePlusPuttPerRound" : 1.0,
       "mostC2PlusInRound" : {
         "real" : 2.0,
         "display" : 2,
-        "count" : 2
+        "count" : 2,
+        "rounds" : [ {
+          "roundId" : 167,
+          "roundDate" : "2025-07-20",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - V - Molėtai - MPO, FPO",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 2
+        }, {
+          "roundId" : 168,
+          "roundDate" : "2025-07-20",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - V - Molėtai - MPO, FPO",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 2
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 91.67,
         "successful" : 11,
         "total" : 12,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 160,
+          "roundDate" : "2025-08-03",
+          "competitionSimpleName" : "DiscCity parkų atidarymai. Alytaus mero taurė",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 1
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 59,
+        "display" : 18,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 167,
+          "roundDate" : "2025-07-20",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Taurė 2025 - V - Molėtai - MPO, FPO",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "holeOrdinal" : 13
+        } ]
       },
       "rounds" : [ {
         "roundId" : 136,
@@ -268,8 +375,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 76,
         "roundDate" : "2024-02-25",
@@ -620,8 +729,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 20,
         "roundDate" : "2023-02-26",
@@ -1020,8 +1131,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 10,
         "roundDate" : "2022-09-04",

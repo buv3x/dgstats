@@ -8,28 +8,168 @@
   "variations" : [ ],
   "putting" : {
     "c1x" : {
-      "successful" : 40,
-      "total" : 49,
-      "percentage" : 81.63
+      "successful" : 54,
+      "total" : 66,
+      "percentage" : 81.82
     },
     "c2" : {
       "successful" : 3,
-      "total" : 20,
-      "percentage" : 15.0
+      "total" : 21,
+      "percentage" : 14.29
     },
-    "c2PlusPerRound" : 0.71,
+    "c2PlusPerRound" : 0.57,
+    "threePlusPuttPerRound" : 0.39,
     "mostC2PlusInRound" : {
       "real" : 1.894736842105263,
       "display" : 2,
-      "count" : 1
+      "count" : 1,
+      "rounds" : [ {
+        "roundId" : 175,
+        "roundDate" : "2025-07-06",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "expectedHoleCount" : 19,
+        "c2PlusSuccessful" : 2
+      } ]
     },
     "bestC1xRound" : {
       "percentage" : 90.91,
       "successful" : 10,
       "total" : 11,
-      "count" : 2
+      "count" : 2,
+      "rounds" : [ {
+        "roundId" : 175,
+        "roundDate" : "2025-07-06",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "expectedHoleCount" : 19,
+        "c2PlusSuccessful" : 2
+      }, {
+        "roundId" : 176,
+        "roundDate" : "2025-07-06",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "expectedHoleCount" : 19,
+        "c2PlusSuccessful" : 1
+      } ]
+    },
+    "longestThrowIn" : {
+      "feet" : 49,
+      "display" : 15,
+      "count" : 1,
+      "occurrences" : [ {
+        "roundId" : 176,
+        "roundDate" : "2025-07-06",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "holeOrdinal" : 4
+      } ]
     },
     "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 14,
+        "total" : 17,
+        "percentage" : 82.35
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 1,
+        "percentage" : 0.0
+      },
+      "c2PlusPerRound" : 0.0,
+      "threePlusPuttPerRound" : 0.0,
+      "mostC2PlusInRound" : {
+        "real" : 0.0,
+        "display" : 0,
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 0
+        } ]
+      },
+      "bestC1xRound" : {
+        "percentage" : 82.35,
+        "successful" : 14,
+        "total" : 17,
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 18,
+          "c2PlusSuccessful" : 0
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 26,
+        "display" : 8,
+        "count" : 4,
+        "occurrences" : [ {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 6
+        }, {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 8
+        }, {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 9
+        }, {
+          "roundId" : 232,
+          "roundDate" : "2026-10-17",
+          "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 17
+        } ]
+      },
+      "rounds" : [ {
+        "roundId" : 231,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        }
+      }, {
+        "roundId" : 232,
+        "roundDate" : "2026-10-17",
+        "competitionSimpleName" : "Sezono Uždarymas 2026 su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : true,
+        "c1x" : {
+          "successful" : 14,
+          "total" : 17,
+          "percentage" : 82.35
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 1,
+          "percentage" : 0.0
+        }
+      } ]
+    }, {
       "year" : 2025,
       "c1x" : {
         "successful" : 40,
@@ -42,16 +182,52 @@
         "percentage" : 15.0
       },
       "c2PlusPerRound" : 0.71,
+      "threePlusPuttPerRound" : 0.49,
       "mostC2PlusInRound" : {
         "real" : 1.894736842105263,
         "display" : 2,
-        "count" : 1
+        "count" : 1,
+        "rounds" : [ {
+          "roundId" : 175,
+          "roundDate" : "2025-07-06",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 19,
+          "c2PlusSuccessful" : 2
+        } ]
       },
       "bestC1xRound" : {
         "percentage" : 90.91,
         "successful" : 10,
         "total" : 11,
-        "count" : 2
+        "count" : 2,
+        "rounds" : [ {
+          "roundId" : 175,
+          "roundDate" : "2025-07-06",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 1",
+          "expectedHoleCount" : 19,
+          "c2PlusSuccessful" : 2
+        }, {
+          "roundId" : 176,
+          "roundDate" : "2025-07-06",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "expectedHoleCount" : 19,
+          "c2PlusSuccessful" : 1
+        } ]
+      },
+      "longestThrowIn" : {
+        "feet" : 49,
+        "display" : 15,
+        "count" : 1,
+        "occurrences" : [ {
+          "roundId" : 176,
+          "roundDate" : "2025-07-06",
+          "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas 2025 su Chilli Disc Golf",
+          "roundAbbreviatedLabel" : "Rd 2",
+          "holeOrdinal" : 4
+        } ]
       },
       "rounds" : [ {
         "roundId" : 175,
@@ -147,8 +323,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 111,
         "roundDate" : "2024-07-20",
@@ -195,8 +373,10 @@
         "percentage" : null
       },
       "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
       "mostC2PlusInRound" : null,
       "bestC1xRound" : null,
+      "longestThrowIn" : null,
       "rounds" : [ {
         "roundId" : 6,
         "roundDate" : "2022-07-09",
