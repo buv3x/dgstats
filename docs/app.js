@@ -1,11 +1,26 @@
 (function () {
     var BUCKETS = ["1-2", "3", "4", "5", "6", "7", "8+"];
+    var SCORE_DISTRIBUTION_COLORS = {
+        "1-2": "#164e7a",
+        "3": "#62a9d1",
+        "4": "#2f855a",
+        "5": "#d6a514",
+        "6": "#e67e22",
+        "7": "#c026d3",
+        "8+": "#8b1e2d"
+    };
     var CHART_MIN_SAMPLES = 50;
     var CHART_HIT_RADIUS = 14;
     var CHART_SPR_DOMAIN = [-0.25, 1.75];
     var CHART_VAR_DOMAIN = [0.25, 1.25];
     var BASKET_SPR_DOMAIN = [-0.5, 2.0];
     var SVG_NS = "http://www.w3.org/2000/svg";
+    var PUTTING_METRIC_TOOLTIPS = {
+        c1x: "C1x: Circle 1 excluding bullseye (3 - 10 meters)",
+        c2: "C2: Circle 2 (10 - 20 meters)",
+        c2Plus: "C2+: Circle 2 and beyond (10+ meters)",
+        threePlusPutting: "3+putting: Taking more than 2 throws to complete the hole after landing inside Circle 2"
+    };
     var manifest = null;
     var selectedCourseSnapshot = null;
     var selectedCourseRequest = 0;
@@ -13,14 +28,21 @@
     var selectedBasketStatsSnapshot = null;
     var selectedBasketStatsRequest = 0;
     var basketChartPoints = [];
+    var scoreDistributionPoints = [];
+    var scoreDistributionVisibility = {};
     var playerLookup = [];
     var selectedPersonalSnapshot = null;
     var selectedPersonalRequest = 0;
+    var personalView = "putting";
     var personalPlayerInputTimer = null;
+    var leaderboardData = null;
+    var leaderboardCategory = "c1x";
+    var leaderboardYear = String(new Date().getFullYear());
     var descriptionTab = document.getElementById("description-tab");
     var courseStatsTab = document.getElementById("course-stats-tab");
     var basketStatsTab = document.getElementById("basket-stats-tab");
     var personalStatsTab = document.getElementById("personal-stats-tab");
+    var leaderboardsTab = document.getElementById("leaderboards-tab");
     var descriptionView = document.getElementById("description-view");
     var descriptionCompetitionCount = document.getElementById("description-competition-count");
     var descriptionPlayersCount = document.getElementById("description-players-count");
@@ -28,6 +50,13 @@
     var courseStatsView = document.getElementById("course-stats-view");
     var basketStatsView = document.getElementById("basket-stats-view");
     var personalStatsView = document.getElementById("personal-stats-view");
+    var leaderboardsView = document.getElementById("leaderboards-view");
+    var leaderboardsYearSelect = document.getElementById("leaderboards-year");
+    var leaderboardsMessage = document.getElementById("leaderboards-message");
+    var leaderboardsTableWrap = document.getElementById("leaderboards-table-wrap");
+    var leaderboardsBody = document.getElementById("leaderboards-body");
+    var leaderboardsNote = document.getElementById("leaderboards-note");
+    var leaderboardCategoryTabs = Array.from(document.querySelectorAll(".leaderboard-category-tab"));
     var filters = document.getElementById("filters");
     var courseSelect = document.getElementById("course");
     var ratingFromInput = document.getElementById("rating-from");
@@ -49,14 +78,26 @@
     var basketChartCanvas = document.getElementById("basket-chart-canvas");
     var basketChartSvg = document.getElementById("basket-stats-chart");
     var basketChartTooltip = document.getElementById("basket-chart-tooltip");
-    var personalFilters = document.getElementById("personal-filters");
+    var scoreDistributionSection = document.getElementById("score-distribution-section");
+    var scoreDistributionCanvas = document.getElementById("score-distribution-canvas");
+    var scoreDistributionSvg = document.getElementById("score-distribution-chart");
+    var scoreDistributionTooltip = document.getElementById("score-distribution-tooltip");
+    var scoreDistributionLegend = document.getElementById("score-distribution-legend");
+    var personalPlayerFilter = document.getElementById("personal-player-filter");
     var personalPlayerInput = document.getElementById("personal-player");
     var personalPlayerOptions = document.getElementById("personal-player-options");
+    var personalContent = document.getElementById("personal-content");
+    var personalHoleTab = document.getElementById("personal-hole-tab");
+    var personalPuttingTab = document.getElementById("personal-putting-tab");
+    var personalHoleView = document.getElementById("personal-hole-view");
+    var personalPuttingView = document.getElementById("personal-putting-view");
+    var personalHoleFilters = document.getElementById("personal-hole-filters");
     var personalCourseSelect = document.getElementById("personal-course");
     var personalMinCountInput = document.getElementById("personal-min-count");
     var personalMessage = document.getElementById("personal-message");
     var personalTableWrap = document.getElementById("personal-table-wrap");
     var personalTableBody = document.getElementById("personal-statistics-body");
+    var personalPuttingSummary = document.getElementById("personal-putting-summary");
     var uiTooltip = document.getElementById("ui-tooltip");
     var activeUiTooltipTrigger = null;
 
@@ -107,6 +148,26 @@
         setActiveView("personal");
     });
 
+    leaderboardsTab.addEventListener("click", function () {
+        setActiveView("leaderboards");
+    });
+
+    leaderboardCategoryTabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            leaderboardCategory = tab.getAttribute("data-category");
+            leaderboardCategoryTabs.forEach(function (categoryTab) {
+                categoryTab.classList.toggle("active", categoryTab === tab);
+            });
+            populateLeaderboardYears();
+            renderLeaderboards();
+        });
+    });
+
+    leaderboardsYearSelect.addEventListener("change", function () {
+        leaderboardYear = leaderboardsYearSelect.value;
+        renderLeaderboards();
+    });
+
     filters.addEventListener("submit", function (event) {
         event.preventDefault();
         renderStatistics();
@@ -145,6 +206,14 @@
         renderPersonalStatistics();
     });
 
+    personalHoleTab.addEventListener("click", function () {
+        setPersonalView("hole");
+    });
+
+    personalPuttingTab.addEventListener("click", function () {
+        setPersonalView("putting");
+    });
+
     chartSvg.addEventListener("pointermove", function (event) {
         handleChartPointer(event);
     });
@@ -161,11 +230,21 @@
         hideBasketChartTooltip();
     });
 
+    scoreDistributionSvg.addEventListener("pointermove", function (event) {
+        handleScoreDistributionPointer(event);
+    });
+
+    scoreDistributionSvg.addEventListener("pointerleave", function () {
+        hideScoreDistributionTooltip();
+    });
+
     function initializePage() {
-        setActiveView("course");
+        setActiveView("leaderboards");
         populateCourses();
         populateBasketCourses();
         loadPlayerLookup();
+        populateLeaderboardYears();
+        loadLeaderboards();
         if (courseSelect.value) {
             loadSelectedCourse();
         }
@@ -179,23 +258,164 @@
         var courseActive = view === "course";
         var basketActive = view === "basket";
         var personalActive = view === "personal";
+        var leaderboardsActive = view === "leaderboards";
         descriptionView.hidden = !descriptionActive;
-        courseStatsView.hidden = descriptionActive || basketActive || personalActive;
+        courseStatsView.hidden = descriptionActive || basketActive || personalActive || leaderboardsActive;
         basketStatsView.hidden = !basketActive;
         personalStatsView.hidden = !personalActive;
+        leaderboardsView.hidden = !leaderboardsActive;
         descriptionTab.classList.toggle("active", descriptionActive);
-        courseStatsTab.classList.toggle("active", !descriptionActive && !personalActive && !basketActive);
+        courseStatsTab.classList.toggle("active", courseActive);
         basketStatsTab.classList.toggle("active", basketActive);
         personalStatsTab.classList.toggle("active", personalActive);
+        leaderboardsTab.classList.toggle("active", leaderboardsActive);
         if (courseActive && selectedCourseSnapshot) {
             renderStatistics();
         }
         if (basketActive) {
             renderSelectedBasketVariation();
         }
-        if (personalActive && playerLookup.length === 0 && personalFilters.hidden) {
+        if (personalActive && playerLookup.length === 0 && personalPlayerFilter.hidden) {
             showPersonalMessage("No eligible players are available in this statistics export.", false);
         }
+        if (leaderboardsActive) {
+            renderLeaderboards();
+        }
+    }
+
+    function populateLeaderboardYears() {
+        leaderboardsYearSelect.innerHTML = "";
+        var years = [];
+        if (leaderboardCategory === "aces" && leaderboardData) {
+            years = (leaderboardData.scopes || [])
+                .filter(function (scope) {
+                    return scope.scope !== "overall"
+                        && scope.categories
+                        && Array.isArray(scope.categories.aces)
+                        && scope.categories.aces.length > 0;
+                })
+                .map(function (scope) {
+                    return scope.scope;
+                })
+                .sort(function (left, right) {
+                    return Number(right) - Number(left);
+                });
+        } else {
+            for (var year = new Date().getFullYear(); year >= 2025; year--) {
+                years.push(String(year));
+            }
+        }
+        years.forEach(function (year) {
+            var option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            leaderboardsYearSelect.appendChild(option);
+        });
+        var overallOption = document.createElement("option");
+        overallOption.value = "overall";
+        overallOption.textContent = "Overall";
+        leaderboardsYearSelect.appendChild(overallOption);
+
+        var availableValues = years.concat(["overall"]);
+        if (availableValues.indexOf(leaderboardYear) === -1) {
+            leaderboardYear = years.length > 0 ? years[0] : "overall";
+        }
+        leaderboardsYearSelect.value = leaderboardYear;
+    }
+
+    function loadLeaderboards() {
+        if (!manifest || !manifest.leaderboardsPath) {
+            showLeaderboardsMessage("Leaderboard data is not available in this export.", false);
+            return;
+        }
+        fetch("data/" + manifest.leaderboardsPath)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Leaderboard data not found");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                leaderboardData = data;
+                populateLeaderboardYears();
+                renderLeaderboards();
+            })
+            .catch(function () {
+                showLeaderboardsMessage("Leaderboard data could not be loaded.", true);
+            });
+    }
+
+    function renderLeaderboards() {
+        if (!leaderboardData) {
+            return;
+        }
+        renderLeaderboardsNote();
+        var scope = (leaderboardData.scopes || []).find(function (candidate) {
+            return candidate.scope === leaderboardYear;
+        });
+        var entries = scope && scope.categories && Array.isArray(scope.categories[leaderboardCategory])
+            ? scope.categories[leaderboardCategory]
+            : [];
+        leaderboardsBody.innerHTML = "";
+        if (entries.length === 0) {
+            showLeaderboardsMessage("No qualifying leaderboard entries are available for this selection.", false);
+            return;
+        }
+        hideLeaderboardsMessage();
+        entries.forEach(function (entry) {
+            var row = document.createElement("tr");
+            appendLeaderboardCell(row, entry.place);
+            appendLeaderboardCell(row, entry.name);
+            var valueCell = document.createElement("td");
+            var tooltips = Array.isArray(entry.tooltips) ? entry.tooltips.filter(Boolean) : [];
+            if (tooltips.length > 0) {
+                var value = document.createElement("span");
+                value.className = "tooltip-trigger";
+                value.tabIndex = 0;
+                value.textContent = entry.value;
+                value.setAttribute("data-tooltip", tooltips.join("\n"));
+                value.setAttribute("aria-label", entry.value + ": " + tooltips.join("; "));
+                valueCell.appendChild(value);
+            } else {
+                valueCell.textContent = entry.value;
+            }
+            row.appendChild(valueCell);
+            leaderboardsBody.appendChild(row);
+        });
+        leaderboardsTableWrap.hidden = false;
+    }
+
+    function renderLeaderboardsNote() {
+        var overall = leaderboardYear === "overall";
+        if (leaderboardCategory === "c1x") {
+            leaderboardsNote.textContent = "At least " + (overall ? "100" : "50") + " C1x putts are required.";
+            leaderboardsNote.hidden = false;
+        } else if (leaderboardCategory === "c2PlusPerRound") {
+            leaderboardsNote.textContent = "At least " + (overall ? "180" : "90") + " holes played are required.";
+            leaderboardsNote.hidden = false;
+        } else {
+            leaderboardsNote.textContent = "";
+            leaderboardsNote.hidden = true;
+        }
+    }
+
+    function appendLeaderboardCell(row, value) {
+        var cell = document.createElement("td");
+        cell.textContent = value === undefined || value === null ? "" : String(value);
+        row.appendChild(cell);
+    }
+
+    function showLeaderboardsMessage(text, isError) {
+        leaderboardsMessage.textContent = text;
+        leaderboardsMessage.classList.toggle("error", isError);
+        leaderboardsMessage.hidden = false;
+        leaderboardsTableWrap.hidden = true;
+    }
+
+    function hideLeaderboardsMessage() {
+        leaderboardsMessage.textContent = "";
+        leaderboardsMessage.classList.remove("error");
+        leaderboardsMessage.hidden = true;
     }
 
     function updateDescriptionPlaceholders(source) {
@@ -367,7 +587,7 @@
         resetPersonalResults();
 
         if (!manifest || !manifest.playersPath) {
-            personalFilters.hidden = true;
+            personalPlayerFilter.hidden = true;
             showPersonalMessage("No personal statistics are available in this export.", false);
             return;
         }
@@ -385,7 +605,7 @@
                 populatePersonalPlayerOptions();
             })
             .catch(function () {
-                personalFilters.hidden = true;
+                personalPlayerFilter.hidden = true;
                 resetPersonalResults();
                 showPersonalMessage("Personal statistics player data could not be loaded.", true);
             });
@@ -400,12 +620,12 @@
             option.value = player.label;
             personalPlayerOptions.appendChild(option);
         });
-        personalFilters.hidden = playerLookup.length === 0;
+        personalPlayerFilter.hidden = playerLookup.length === 0;
         if (playerLookup.length === 0) {
             showPersonalMessage("No eligible players are available in this statistics export.", false);
             return;
         }
-        showPersonalMessage("Select a person to view personal basket statistics.", false);
+        showPersonalMessage("Select a person to view statistics.", false);
     }
 
     function schedulePersonalPlayerInput() {
@@ -425,9 +645,11 @@
         resetPersonalCourseOptions();
         personalTableBody.innerHTML = "";
         personalTableWrap.hidden = true;
+        personalContent.hidden = true;
+        personalPuttingSummary.innerHTML = "";
 
         if (personalPlayerInput.value.trim() === "") {
-            showPersonalMessage("Select a person to view personal basket statistics.", false);
+            showPersonalMessage("Select a person to view statistics.", false);
             return;
         }
 
@@ -451,7 +673,7 @@
 
     function loadSelectedPersonalStats(player) {
         var requestId = ++selectedPersonalRequest;
-        showPersonalMessage("Loading personal basket statistics...", false);
+        showPersonalMessage("Loading personal statistics...", false);
         fetch(dataUrl(player.path))
             .then(function (response) {
                 if (!response.ok) {
@@ -465,6 +687,8 @@
                 }
                 selectedPersonalSnapshot = data;
                 populatePersonalCourseOptions();
+                personalContent.hidden = false;
+                setPersonalView("putting");
                 renderPersonalStatistics();
             })
             .catch(function () {
@@ -481,8 +705,13 @@
             personalTableBody.innerHTML = "";
             personalTableWrap.hidden = true;
             if (personalPlayerInput.value.trim() === "") {
-                showPersonalMessage("Select a person to view personal basket statistics.", false);
+                showPersonalMessage("Select a person to view statistics.", false);
             }
+            return;
+        }
+
+        if (personalView === "putting") {
+            renderPuttingStatistics();
             return;
         }
 
@@ -507,6 +736,344 @@
         visibleRows.forEach(appendPersonalVariationRow);
         hidePersonalMessage();
         personalTableWrap.hidden = false;
+    }
+
+    function setPersonalView(view) {
+        personalView = view === "putting" ? "putting" : "hole";
+        var holeActive = personalView === "hole";
+        personalHoleTab.classList.toggle("active", holeActive);
+        personalPuttingTab.classList.toggle("active", !holeActive);
+        personalHoleView.hidden = !holeActive;
+        personalPuttingView.hidden = holeActive;
+        personalHoleFilters.hidden = !holeActive || !selectedPersonalSnapshot;
+        if (selectedPersonalSnapshot) {
+            renderPersonalStatistics();
+        }
+    }
+
+    function renderPuttingStatistics() {
+        personalPuttingSummary.innerHTML = "";
+        var putting = selectedPersonalSnapshot && selectedPersonalSnapshot.putting
+            ? selectedPersonalSnapshot.putting
+            : {};
+
+        var totals = document.createElement("div");
+        totals.className = "putting-total";
+        totals.appendChild(puttingLine("C1x", putting.c1x));
+        totals.appendChild(puttingLine("C2", putting.c2));
+        personalPuttingSummary.appendChild(totals);
+
+        appendPuttingHighlights(personalPuttingSummary, putting);
+
+        var years = Array.isArray(putting.years)
+            ? putting.years.filter(function (year) {
+                return year
+                    && Number.isFinite(Number(year.year))
+                    && yearHasCompleteRound(year);
+            })
+            : [];
+        years.forEach(function (year, index) {
+            appendPuttingYear(personalPuttingSummary, year, index);
+        });
+        hidePersonalMessage();
+    }
+
+    function yearHasCompleteRound(year) {
+        return Array.isArray(year.rounds)
+            && year.rounds.some(function (round) {
+                return round && round.complete === true;
+            });
+    }
+
+    function appendPuttingHighlights(container, putting) {
+        var global = document.createElement("div");
+        global.className = "putting-global";
+        if (Number.isFinite(Number(putting.c2PlusPerRound))) {
+            global.appendChild(puttingValueLine("C2+ per round", Number(putting.c2PlusPerRound).toFixed(2)));
+        }
+        if (putting.mostC2PlusInRound) {
+            var mostC2Plus = putting.mostC2PlusInRound;
+            var mostValue = Number.isFinite(Number(mostC2Plus.display))
+                ? Number(mostC2Plus.display)
+                : null;
+            if (mostValue !== null) {
+                var mostSuffix = Number(mostC2Plus.count) > 1
+                    ? " (" + Number(mostC2Plus.count) + " times)"
+                    : "";
+                var mostDisplay = String(mostValue) + mostSuffix;
+                global.appendChild(puttingValueLine(
+                    "Most C2+ in a round",
+                    mostDisplay,
+                    puttingHighlightTooltip(mostC2Plus.rounds)
+                ));
+            }
+        }
+        if (putting.bestC1xRound) {
+            var bestC1x = putting.bestC1xRound;
+            var bestPercentage = bestC1x.percentage === null || bestC1x.percentage === undefined
+                ? null
+                : Number(bestC1x.percentage);
+            if (Number.isFinite(bestPercentage)) {
+                var bestSuffix = Number(bestC1x.count) > 1
+                    ? " (" + Number(bestC1x.count) + " times)"
+                    : "";
+                var bestDisplay = bestPercentage.toFixed(2) + "% (" + Number(bestC1x.successful) + " / " + Number(bestC1x.total) + ")" + bestSuffix;
+                global.appendChild(puttingValueLine(
+                    "Best C1x round",
+                    bestDisplay,
+                    puttingHighlightTooltip(bestC1x.rounds)
+                ));
+            }
+        }
+        if (putting.longestThrowIn) {
+            var longestThrowIn = putting.longestThrowIn;
+            var longestDisplay = Number.isFinite(Number(longestThrowIn.display))
+                ? Number(longestThrowIn.display)
+                : null;
+            if (longestDisplay !== null) {
+                var longestSuffix = Number(longestThrowIn.count) > 1
+                    ? " (" + Number(longestThrowIn.count) + " times)"
+                    : "";
+                var longestValue = String(longestDisplay) + " m" + longestSuffix;
+                global.appendChild(puttingValueLine(
+                    "Longest throw-in",
+                    longestValue,
+                    puttingLongestThrowInTooltip(longestThrowIn)
+                ));
+            }
+        }
+        if (Number.isFinite(Number(putting.threePlusPuttPerRound))) {
+            global.appendChild(puttingValueLine(
+                "Lost 3+putting per round",
+                Number(putting.threePlusPuttPerRound).toFixed(2)
+            ));
+        }
+        if (global.childNodes.length > 0) {
+            container.appendChild(global);
+        }
+    }
+
+    function appendPuttingYear(container, year, index) {
+        var yearSection = document.createElement("section");
+        yearSection.className = "putting-year";
+
+        var yearId = "personal-putting-year-" + String(year.year) + "-" + String(index);
+        var toggle = document.createElement("button");
+        toggle.className = "putting-year-toggle";
+        toggle.type = "button";
+        toggle.textContent = String(year.year);
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", yearId);
+
+        var content = document.createElement("div");
+        content.className = "putting-year-content";
+        content.id = yearId;
+        content.hidden = true;
+
+        var totals = document.createElement("div");
+        totals.className = "putting-total";
+        totals.appendChild(puttingLine("C1x", year.c1x));
+        totals.appendChild(puttingLine("C2", year.c2));
+        content.appendChild(totals);
+        appendPuttingHighlights(content, year);
+
+        var rounds = Array.isArray(year.rounds)
+            ? year.rounds.filter(displayablePuttingRound)
+            : [];
+        appendPuttingRoundDetails(content, rounds, "personal-putting-year-round-details-" + String(year.year) + "-" + String(index));
+
+        toggle.addEventListener("click", function () {
+            var expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            content.hidden = expanded;
+        });
+
+        yearSection.appendChild(toggle);
+        yearSection.appendChild(content);
+        container.appendChild(yearSection);
+    }
+
+    function appendPuttingRoundDetails(container, rounds, detailsId) {
+        if (rounds.length === 0) {
+            return;
+        }
+
+        var toggle = document.createElement("button");
+        toggle.className = "putting-round-toggle";
+        toggle.type = "button";
+        toggle.textContent = "Show round details";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", detailsId);
+
+        var details = document.createElement("div");
+        details.className = "putting-round-details";
+        details.id = detailsId;
+        details.hidden = true;
+        rounds.forEach(function (round) {
+            details.appendChild(puttingRoundLine(round));
+        });
+
+        toggle.addEventListener("click", function () {
+            var expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            toggle.textContent = expanded ? "Show round details" : "Hide round details";
+            details.hidden = expanded;
+        });
+
+        container.appendChild(toggle);
+        container.appendChild(details);
+    }
+
+    function puttingLine(label, metric) {
+        var line = document.createElement("div");
+        var successful = metric && Number.isFinite(Number(metric.successful)) ? Number(metric.successful) : 0;
+        var total = metric && Number.isFinite(Number(metric.total)) ? Number(metric.total) : 0;
+        var percentage = metric && metric.percentage !== null && metric.percentage !== undefined
+            ? Number(metric.percentage).toFixed(2) + "%"
+            : "—";
+        var labelElement = document.createElement("strong");
+        labelElement.className = "putting-metric-label";
+        appendPuttingMetricLabel(labelElement, label);
+        line.appendChild(labelElement);
+        line.appendChild(document.createTextNode(": " + percentage + " (" + successful + " / " + total + ")"));
+        return line;
+    }
+
+    function puttingValueLine(label, value, tooltipText) {
+        var line = document.createElement("div");
+        var labelElement = document.createElement("strong");
+        labelElement.className = "putting-metric-label";
+        appendPuttingMetricLabel(labelElement, label);
+        line.appendChild(labelElement);
+        line.appendChild(document.createTextNode(": "));
+        if (tooltipText) {
+            var valueElement = document.createElement("span");
+            valueElement.className = "tooltip-trigger";
+            valueElement.tabIndex = 0;
+            valueElement.setAttribute("role", "button");
+            valueElement.setAttribute("aria-label", label + ": " + value);
+            valueElement.setAttribute("data-tooltip", tooltipText);
+            valueElement.textContent = value;
+            line.appendChild(valueElement);
+        } else {
+            line.appendChild(document.createTextNode(value));
+        }
+        return line;
+    }
+
+    function appendPuttingMetricLabel(container, label) {
+        if (label === "C1x") {
+            container.appendChild(puttingTooltipTrigger("C1x", PUTTING_METRIC_TOOLTIPS.c1x));
+            return;
+        }
+        if (label === "C2") {
+            container.appendChild(puttingTooltipTrigger("C2", PUTTING_METRIC_TOOLTIPS.c2));
+            return;
+        }
+        if (label === "C2+ per round") {
+            container.appendChild(puttingTooltipTrigger("C2+", PUTTING_METRIC_TOOLTIPS.c2Plus));
+            container.appendChild(document.createTextNode(" per round"));
+            return;
+        }
+        if (label === "Lost 3+putting per round") {
+            container.appendChild(document.createTextNode("Lost "));
+            container.appendChild(puttingTooltipTrigger("3+putting", PUTTING_METRIC_TOOLTIPS.threePlusPutting));
+            container.appendChild(document.createTextNode(" per round"));
+            return;
+        }
+        container.textContent = label;
+    }
+
+    function puttingTooltipTrigger(text, tooltipText) {
+        var trigger = document.createElement("span");
+        trigger.className = "tooltip-trigger";
+        trigger.tabIndex = 0;
+        trigger.setAttribute("role", "button");
+        trigger.setAttribute("aria-label", text + ": " + tooltipText);
+        trigger.setAttribute("data-tooltip", tooltipText);
+        trigger.textContent = text;
+        return trigger;
+    }
+
+    function puttingHighlightTooltip(rounds) {
+        if (!Array.isArray(rounds) || rounds.length === 0) {
+            return null;
+        }
+        var roundLines = rounds.map(function (round) {
+            var competition = round && round.competitionSimpleName
+                ? round.competitionSimpleName
+                : "Competition";
+            var roundLabel = round && round.roundAbbreviatedLabel
+                ? round.roundAbbreviatedLabel
+                : "Round";
+            return competition + " " + roundLabel;
+        });
+        return roundLines.join("\n");
+    }
+
+    function puttingLongestThrowInTooltip(highlight) {
+        if (!highlight || !Array.isArray(highlight.occurrences) || highlight.occurrences.length === 0) {
+            return null;
+        }
+        var occurrenceLines = highlight.occurrences.map(function (occurrence) {
+            var competition = occurrence && occurrence.competitionSimpleName
+                ? occurrence.competitionSimpleName
+                : "Competition";
+            var roundLabel = occurrence && occurrence.roundAbbreviatedLabel
+                ? occurrence.roundAbbreviatedLabel
+                : "Round";
+            var hole = occurrence && Number.isFinite(Number(occurrence.holeOrdinal))
+                ? Number(occurrence.holeOrdinal)
+                : "?";
+            return competition + " " + roundLabel + " — Hole " + hole;
+        });
+        return occurrenceLines.join("\n");
+    }
+
+    function displayablePuttingRound(round) {
+        if (!round || round.complete !== false) {
+            return true;
+        }
+        return metricTotal(round.c1x) > 0
+            || metricTotal(round.c2) > 0
+            || threePlusPuttLostThrows(round) > 0;
+    }
+
+    function metricTotal(metric) {
+        var total = metric ? Number(metric.total) : 0;
+        return Number.isFinite(total) ? total : 0;
+    }
+
+    function threePlusPuttLostThrows(round) {
+        var count = round ? Number(round.threePlusPuttLostThrows) : 0;
+        return Number.isFinite(count) ? count : 0;
+    }
+
+    function puttingRoundLine(round) {
+        var line = document.createElement("div");
+        line.className = "putting-round-line";
+        if (round.complete === false) {
+            line.classList.add("incomplete");
+        }
+
+        var competition = document.createElement("strong");
+        competition.textContent = round.competitionSimpleName || "Competition";
+        line.appendChild(competition);
+        line.appendChild(document.createTextNode(" "));
+
+        var roundLabel = document.createElement("strong");
+        roundLabel.textContent = round.roundAbbreviatedLabel || "Round";
+        line.appendChild(roundLabel);
+        line.appendChild(document.createTextNode(": "));
+        line.appendChild(puttingLine("C1x", round.c1x));
+        line.appendChild(document.createTextNode(", "));
+        line.appendChild(puttingLine("C2", round.c2));
+        var threePlusPuttCount = threePlusPuttLostThrows(round);
+        if (threePlusPuttCount > 0) {
+            line.appendChild(document.createTextNode(", "));
+            line.appendChild(puttingValueLine("3+putts", String(threePlusPuttCount)));
+        }
+        return line;
     }
 
     function populatePersonalCourseOptions() {
@@ -1092,6 +1659,7 @@
         drawBasketSeriesSegments(windows, "sprw", "sprwCountBucket", xDomain, BASKET_SPR_DOMAIN, metrics, "basket-sprw-line");
         drawBasketPoints(windows, xDomain, metrics);
         drawBasketLegend(metrics);
+        drawScoreDistributionChart(variation, windows, xDomain);
     }
 
     function drawBasketGrid(metrics, xDomain) {
@@ -1177,6 +1745,157 @@
         var x = metrics.left + 8;
         appendSvg(basketChartSvg, "line", {class: "basket-sprw-line basket-line-200-plus", x1: x, y1: y, x2: x + 28, y2: y});
         appendSvg(basketChartSvg, "text", {class: "chart-tick-label", x: x + 36, y: y + 4}, "SPRW");
+    }
+
+    function drawScoreDistributionChart(variation, windows, xDomain) {
+        var buckets = Array.isArray(variation.scoreBuckets) ? variation.scoreBuckets.filter(function (bucket) {
+            return BUCKETS.indexOf(bucket) >= 0;
+        }) : [];
+        if (buckets.length === 0 || !windows.some(function (window) {
+            return window.scoreDistribution && typeof window.scoreDistribution === "object";
+        })) {
+            scoreDistributionSection.hidden = true;
+            scoreDistributionSvg.innerHTML = "";
+            scoreDistributionLegend.innerHTML = "";
+            scoreDistributionPoints = [];
+            hideScoreDistributionTooltip();
+            return;
+        }
+
+        scoreDistributionSection.hidden = false;
+        var metrics = chartMetrics(scoreDistributionCanvas, {top: 24, right: 24, bottom: 58, left: 58}, 360, 300);
+        scoreDistributionPoints = [];
+        scoreDistributionVisibility = {};
+        buckets.forEach(function (bucket) {
+            var overall = variation.overallScorePercentages && isNumeric(variation.overallScorePercentages[bucket])
+                ? Number(variation.overallScorePercentages[bucket])
+                : 0;
+            scoreDistributionVisibility[bucket] = overall > 5;
+        });
+        scoreDistributionSvg.innerHTML = "";
+        hideScoreDistributionTooltip();
+        scoreDistributionSvg.setAttribute("viewBox", "0 0 " + metrics.width + " " + metrics.height);
+        scoreDistributionSvg.setAttribute("width", String(metrics.width));
+        scoreDistributionSvg.setAttribute("height", String(metrics.height));
+        drawScoreDistributionGrid(metrics, xDomain);
+        renderScoreDistributionSeries(windows, buckets, xDomain, metrics);
+        renderScoreDistributionLegend(variation, windows, buckets, xDomain, metrics);
+    }
+
+    function drawScoreDistributionGrid(metrics, xDomain) {
+        var yTicks = [0, 25, 50, 75, 100];
+        yTicks.forEach(function (tick) {
+            var y = scale(tick, [0, 100], metrics.bottom, metrics.top);
+            appendSvg(scoreDistributionSvg, "line", {class: "chart-grid", x1: metrics.left, y1: y, x2: metrics.right, y2: y});
+            appendSvg(scoreDistributionSvg, "text", {class: "chart-tick-label", x: metrics.left - 8, y: y + 4, "text-anchor": "end"}, tick + "%");
+        });
+        ratingTicks(xDomain).forEach(function (tick) {
+            var x = scale(tick, xDomain, metrics.left, metrics.right);
+            appendSvg(scoreDistributionSvg, "line", {class: "chart-grid", x1: x, y1: metrics.top, x2: x, y2: metrics.bottom});
+            appendSvg(scoreDistributionSvg, "text", {class: "chart-tick-label", x: x, y: metrics.bottom + 20, "text-anchor": "middle"}, String(Math.round(tick)));
+        });
+        appendSvg(scoreDistributionSvg, "line", {class: "chart-axis", x1: metrics.left, y1: metrics.bottom, x2: metrics.right, y2: metrics.bottom});
+        appendSvg(scoreDistributionSvg, "line", {class: "chart-axis", x1: metrics.left, y1: metrics.top, x2: metrics.left, y2: metrics.bottom});
+        appendSvg(scoreDistributionSvg, "text", {class: "chart-axis-label", x: metrics.left + metrics.plotWidth / 2, y: metrics.height - 16, "text-anchor": "middle"}, "Rating");
+        appendSvg(scoreDistributionSvg, "text", {
+            class: "chart-axis-label",
+            x: 18,
+            y: metrics.top + metrics.plotHeight / 2,
+            "text-anchor": "middle",
+            transform: "rotate(-90 18 " + (metrics.top + metrics.plotHeight / 2) + ")"
+        }, "Score percentage");
+    }
+
+    function renderScoreDistributionSeries(windows, buckets, xDomain, metrics) {
+        buckets.forEach(function (bucket) {
+            if (!scoreDistributionVisibility[bucket]) {
+                return;
+            }
+            for (var index = 0; index < windows.length - 1; index++) {
+                var current = windows[index];
+                var next = windows[index + 1];
+                var currentValue = current.scoreDistribution && current.scoreDistribution[bucket];
+                var nextValue = next.scoreDistribution && next.scoreDistribution[bucket];
+                if (!isNumeric(currentValue) || !isNumeric(nextValue)) {
+                    continue;
+                }
+                var x1 = scale(current.ratingMidpoint, xDomain, metrics.left, metrics.right);
+                var y1 = scale(currentValue, [0, 100], metrics.bottom, metrics.top);
+                var x2 = scale(next.ratingMidpoint, xDomain, metrics.left, metrics.right);
+                var y2 = scale(nextValue, [0, 100], metrics.bottom, metrics.top);
+                if (current.sprwCountBucket === next.sprwCountBucket) {
+                    appendScoreDistributionLine(x1, y1, x2, y2, bucket, current.sprwCountBucket);
+                } else {
+                    appendScoreDistributionLine(x1, y1, (x1 + x2) / 2, (y1 + y2) / 2, bucket, current.sprwCountBucket);
+                    appendScoreDistributionLine((x1 + x2) / 2, (y1 + y2) / 2, x2, y2, bucket, next.sprwCountBucket);
+                }
+            }
+            windows.forEach(function (window) {
+                var value = window.scoreDistribution && window.scoreDistribution[bucket];
+                if (!isNumeric(value)) {
+                    return;
+                }
+                var point = {
+                    bucket: bucket,
+                    window: window,
+                    value: value,
+                    x: scale(window.ratingMidpoint, xDomain, metrics.left, metrics.right),
+                    y: scale(value, [0, 100], metrics.bottom, metrics.top)
+                };
+                scoreDistributionPoints.push(point);
+                appendSvg(scoreDistributionSvg, "circle", {
+                    class: "score-distribution-series score-distribution-point score-bucket-" + cssToken(bucket),
+                    cx: point.x,
+                    cy: point.y,
+                    r: 4,
+                    "data-bucket": bucket,
+                    "data-midpoint": window.ratingMidpoint
+                });
+            });
+        });
+    }
+
+    function appendScoreDistributionLine(x1, y1, x2, y2, bucket, countBucket) {
+        if (countBucket === "50-99") {
+            return;
+        }
+        appendSvg(scoreDistributionSvg, "line", {
+            class: "score-distribution-series score-distribution-line score-bucket-" + cssToken(bucket) + " " + bucketClass(countBucket),
+            x1: x1,
+            y1: y1,
+            x2: x2,
+            y2: y2
+        });
+    }
+
+    function renderScoreDistributionLegend(variation, windows, buckets, xDomain, metrics) {
+        scoreDistributionLegend.innerHTML = "";
+        buckets.forEach(function (bucket) {
+            var toggle = document.createElement("button");
+            toggle.type = "button";
+            toggle.className = "legend-item score-distribution-toggle";
+            toggle.setAttribute("aria-pressed", String(scoreDistributionVisibility[bucket]));
+            toggle.setAttribute("data-bucket", bucket);
+            var swatch = document.createElement("span");
+            swatch.className = "legend-swatch score-bucket-" + cssToken(bucket);
+            swatch.setAttribute("aria-hidden", "true");
+            toggle.appendChild(swatch);
+            toggle.appendChild(document.createTextNode(bucket));
+            toggle.addEventListener("click", function () {
+                scoreDistributionVisibility[bucket] = !scoreDistributionVisibility[bucket];
+                toggle.setAttribute("aria-pressed", String(scoreDistributionVisibility[bucket]));
+                scoreDistributionSvg.querySelectorAll(".score-distribution-series").forEach(function (element) {
+                    element.remove();
+                });
+                scoreDistributionPoints = [];
+                renderScoreDistributionSeries(windows, buckets, xDomain, metrics);
+            });
+            scoreDistributionLegend.appendChild(toggle);
+        });
+    }
+
+    function cssToken(bucket) {
+        return bucket.replace("+", "plus").replace("-", "to");
     }
 
     function bucketClass(countBucket) {
@@ -1346,6 +2065,22 @@
         showBasketChartTooltip(matches, event);
     }
 
+    function handleScoreDistributionPointer(event) {
+        if (scoreDistributionPoints.length === 0) {
+            hideScoreDistributionTooltip();
+            return;
+        }
+        var svgPoint = pointerToSvgPoint(scoreDistributionSvg, event);
+        var matches = scoreDistributionPoints.filter(function (point) {
+            return pointDistance(point, svgPoint) <= CHART_HIT_RADIUS;
+        });
+        if (matches.length === 0) {
+            hideScoreDistributionTooltip();
+            return;
+        }
+        showScoreDistributionTooltip(matches, event);
+    }
+
     function pointDistance(point, svgPoint) {
         var dx = point.x - svgPoint.x;
         var dy = point.y - svgPoint.y;
@@ -1463,6 +2198,21 @@
         markBasketHoveredPoints(points);
     }
 
+    function showScoreDistributionTooltip(points, event) {
+        scoreDistributionTooltip.innerHTML = "";
+        points.forEach(function (point) {
+            var row = document.createElement("div");
+            row.className = "chart-tooltip-row";
+            row.textContent = point.bucket
+                + " | Rating " + point.window.ratingMidpoint
+                + " | " + Number(point.value).toFixed(1) + "%";
+            scoreDistributionTooltip.appendChild(row);
+        });
+        positionTooltip(scoreDistributionTooltip, scoreDistributionCanvas, event);
+        scoreDistributionTooltip.hidden = false;
+        markScoreDistributionHoveredPoints(points);
+    }
+
     function positionTooltip(tooltip, canvas, event) {
         var canvasBounds = canvas.getBoundingClientRect();
         var left = event.clientX - canvasBounds.left + 12;
@@ -1515,6 +2265,24 @@
         });
     }
 
+    function hideScoreDistributionTooltip() {
+        scoreDistributionTooltip.hidden = true;
+        scoreDistributionTooltip.innerHTML = "";
+        Array.from(scoreDistributionSvg.querySelectorAll(".score-distribution-point")).forEach(function (element) {
+            element.classList.remove("hovered");
+        });
+    }
+
+    function markScoreDistributionHoveredPoints(points) {
+        var hoveredKeys = new Set(points.map(function (point) {
+            return point.bucket + ":" + point.window.ratingMidpoint;
+        }));
+        Array.from(scoreDistributionSvg.querySelectorAll(".score-distribution-point")).forEach(function (element) {
+            var key = element.getAttribute("data-bucket") + ":" + element.getAttribute("data-midpoint");
+            element.classList.toggle("hovered", hoveredKeys.has(key));
+        });
+    }
+
     function showChartStatus(text) {
         chartSection.hidden = false;
         chartStatus.textContent = text;
@@ -1540,17 +2308,30 @@
     function resetBasketChart() {
         basketChartPoints = [];
         basketChartSection.hidden = true;
+        scoreDistributionSection.hidden = true;
         basketChartStatus.textContent = "";
         basketChartSvg.innerHTML = "";
+        scoreDistributionSvg.innerHTML = "";
+        scoreDistributionLegend.innerHTML = "";
+        scoreDistributionPoints = [];
         hideBasketChartTooltip();
+        hideScoreDistributionTooltip();
     }
 
     function resetPersonalResults() {
         selectedPersonalSnapshot = null;
+        personalView = "putting";
         resetPersonalCourseOptions();
         normalizePersonalMinCount();
+        personalContent.hidden = true;
+        personalHoleFilters.hidden = true;
+        personalHoleView.hidden = true;
+        personalPuttingView.hidden = false;
+        personalHoleTab.classList.remove("active");
+        personalPuttingTab.classList.add("active");
         personalTableWrap.hidden = true;
         personalTableBody.innerHTML = "";
+        personalPuttingSummary.innerHTML = "";
     }
 
     function formatAxisValue(value) {

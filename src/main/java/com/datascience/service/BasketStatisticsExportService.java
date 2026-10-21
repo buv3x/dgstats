@@ -2,6 +2,9 @@ package com.datascience.service;
 
 import com.datascience.repository.HoleScoreRepository;
 import com.datascience.repository.HoleScoreRepository.StatisticsExportRow;
+import com.datascience.repository.HoleScoreRepository.AceExportRow;
+import com.datascience.repository.RoundResultThrowsRepository;
+import com.datascience.repository.RoundResultThrowsRepository.PuttingThrowRow;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -17,11 +20,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -32,14 +41,28 @@ public class BasketStatisticsExportService {
     private static final Path BASKET_STATS_DIRECTORY = Path.of("docs", "data", "basket-stats");
     private static final Path PLAYERS_PATH = Path.of("docs", "data", "players.json");
     private static final Path PERSONAL_STATS_DIRECTORY = Path.of("docs", "data", "personal-stats");
+    private static final Path LEADERBOARDS_PATH = Path.of("docs", "data", "leaderboards.json");
     private static final int BASKET_STATS_WINDOW_SIZE = 50;
     private static final int BASKET_STATS_WINDOW_STEP = 5;
     private static final int BASKET_STATS_MIN_SAMPLES = 50;
     private static final int BASKET_STATS_SPRW_RADIUS = 50;
+    private static final List<String> SCORE_BUCKETS = List.of("1-2", "3", "4", "5", "6", "7", "8+");
     private static final int PERSONAL_STATS_MIN_GLOBAL_SAMPLES = 50;
     private static final int PERSONAL_STATS_MIN_PLAYER_SAMPLES = 2;
+    private static final int LEADERBOARD_OVERALL_MIN_C1X_PUTTS = 100;
+    private static final int LEADERBOARD_OVERALL_MIN_C2_PLUS_HOLES = 180;
+    private static final int LEADERBOARD_YEARLY_MIN_C1X_PUTTS = 50;
+    private static final int LEADERBOARD_YEARLY_MIN_C2_PLUS_HOLES = 90;
+    private static final int C1X_MIN_FEET = 12;
+    private static final int C1X_MAX_FEET = 32;
+    private static final int C2_MIN_FEET = 33;
+    private static final int C2_MAX_FEET = 65;
+    private static final long CIRCLE_1_ZONE_ID = 3L;
+    private static final long CIRCLE_2_ZONE_ID = 4L;
+    private static final long BASKET_ZONE_ID = 5L;
 
     private final HoleScoreRepository holeScoreRepository;
+    private final RoundResultThrowsRepository roundResultThrowsRepository;
     private final ObjectMapper objectMapper;
 
     @Transactional(readOnly = true)
@@ -111,6 +134,11 @@ public class BasketStatisticsExportService {
             exportedSamples++;
         }
 
+        Map<Long, PuttingPlayerBuilder> puttingPlayers = buildPuttingPlayers(
+                roundResultThrowsRepository.findPuttingThrowRows()
+        );
+        Map<Long, AcePlayerBuilder> acePlayers = buildAcePlayers(holeScoreRepository.findAceExportRows());
+
         List<CourseExportBuilder> courses = coursesById.values().stream()
                 .sorted(Comparator.comparing(CourseExportBuilder::name, String.CASE_INSENSITIVE_ORDER)
                         .thenComparing(CourseExportBuilder::id))
@@ -144,11 +172,13 @@ public class BasketStatisticsExportService {
             ));
         }
 
-        PersonalStatisticsExport personalStatisticsExport = buildPersonalStatisticsExport(personalSamples);
+        PersonalStatisticsExport personalStatisticsExport = buildPersonalStatisticsExport(personalSamples, puttingPlayers);
         writeJson(personalStatisticsExport.players(), playersPath);
         for (PersonalPlayerSnapshot snapshot : personalStatisticsExport.snapshots()) {
             writeJson(snapshot, personalStatsDirectory.resolve(personalStatsFileName(snapshot.player().id())));
         }
+        LeaderboardExport leaderboardExport = buildLeaderboardExport(puttingPlayers, acePlayers);
+        writeJson(leaderboardExport, resolveLeaderboardsPath());
 
         ExportDiagnostics diagnostics = new ExportDiagnostics(
                 exportedSamples,
@@ -172,7 +202,8 @@ public class BasketStatisticsExportService {
                 ),
                 courseOptions,
                 playersRelativePath(),
-                personalStatsPathTemplate()
+                personalStatsPathTemplate(),
+                leaderboardsRelativePath()
         );
         writeJson(manifest, manifestPath);
         return new ExportResult(
@@ -202,6 +233,10 @@ public class BasketStatisticsExportService {
 
     private Path resolvePersonalStatsDirectory() {
         return resolveProjectRoot().resolve(PERSONAL_STATS_DIRECTORY).toAbsolutePath().normalize();
+    }
+
+    private Path resolveLeaderboardsPath() {
+        return resolveProjectRoot().resolve(LEADERBOARDS_PATH).toAbsolutePath().normalize();
     }
 
     private String latestCompetitionDisplay(Iterable<IncludedCompetition> competitions) {
@@ -280,7 +315,7 @@ public class BasketStatisticsExportService {
         return firstNonBlank(row.getPlayerName(), "Player " + row.getPlayerId());
     }
 
-    private String firstNonBlank(String value, String fallback) {
+    private static String firstNonBlank(String value, String fallback) {
         return value == null || value.isBlank() ? fallback : value.trim();
     }
 
@@ -304,6 +339,10 @@ public class BasketStatisticsExportService {
         return "personal-stats/{playerId}.json";
     }
 
+    private String leaderboardsRelativePath() {
+        return "leaderboards.json";
+    }
+
     private String courseFileName(Long courseId) {
         return courseId + ".json";
     }
@@ -312,7 +351,10 @@ public class BasketStatisticsExportService {
         return playerId + ".json";
     }
 
-    private PersonalStatisticsExport buildPersonalStatisticsExport(List<PersonalScoreSample> samples) {
+    private PersonalStatisticsExport buildPersonalStatisticsExport(
+            List<PersonalScoreSample> samples,
+            Map<Long, PuttingPlayerBuilder> puttingPlayers
+    ) {
         Map<String, PersonalGlobalVariationBuilder> globalVariationBuilders = new LinkedHashMap<>();
         for (PersonalScoreSample sample : samples) {
             globalVariationBuilders.computeIfAbsent(
@@ -341,9 +383,20 @@ public class BasketStatisticsExportService {
             ).add(sample, variation);
         }
 
+        for (PuttingPlayerBuilder puttingPlayer : puttingPlayers.values()) {
+            playersById.computeIfAbsent(
+                    puttingPlayer.id,
+                    ignored -> new PersonalPlayerBuilder(
+                            puttingPlayer.id,
+                            puttingPlayer.name,
+                            puttingPlayer.pdgaNum
+                    )
+            ).putting = puttingPlayer.toSummary();
+        }
+
         List<PersonalPlayerSnapshot> snapshots = playersById.values().stream()
                 .map(PersonalPlayerBuilder::toSnapshot)
-                .filter(snapshot -> !snapshot.variations().isEmpty())
+                .filter(snapshot -> !snapshot.variations().isEmpty() || snapshot.putting() != null)
                 .sorted(Comparator.comparing(
                                 (PersonalPlayerSnapshot snapshot) -> snapshot.player().label(),
                                 String.CASE_INSENSITIVE_ORDER
@@ -364,8 +417,266 @@ public class BasketStatisticsExportService {
         return new PersonalStatisticsExport(players, snapshots);
     }
 
+    private static Map<Long, AcePlayerBuilder> buildAcePlayers(List<AceExportRow> rows) {
+        Map<Long, AcePlayerBuilder> players = new LinkedHashMap<>();
+        for (AceExportRow row : rows) {
+            if (row.getPlayerId() == null || row.getVariationDistance() == null || row.getHoleOrdinal() == null) {
+                continue;
+            }
+            players.computeIfAbsent(
+                    row.getPlayerId(),
+                    ignored -> new AcePlayerBuilder(row.getPlayerId(), row.getPlayerName())
+            ).occurrences.add(new AceOccurrence(
+                    row.getRoundDate(),
+                    row.getVariationDistance(),
+                    firstNonBlank(row.getCompetitionSimpleName(),
+                            firstNonBlank(row.getCompetitionName(), "Competition " + row.getRoundId())),
+                    firstNonBlank(row.getRoundAbbreviatedLabel(),
+                            firstNonBlank(row.getRoundLabel(), "Round " + row.getRoundId())),
+                    row.getHoleOrdinal()
+            ));
+        }
+        return players;
+    }
+
+    private LeaderboardExport buildLeaderboardExport(
+            Map<Long, PuttingPlayerBuilder> players,
+            Map<Long, AcePlayerBuilder> acePlayers
+    ) {
+        List<String> scopes = new ArrayList<>();
+        scopes.add("overall");
+        for (int year = 2025; year <= Year.now().getValue(); year++) {
+            scopes.add(String.valueOf(year));
+        }
+        Set<Integer> aceYears = acePlayers.values().stream()
+                .flatMap(player -> player.occurrences.stream())
+                .map(AceOccurrence::year)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toCollection(HashSet::new));
+        aceYears.stream()
+                .filter(year -> year < 2025)
+                .sorted()
+                .forEach(year -> scopes.add(String.valueOf(year)));
+
+        List<LeaderboardScope> exportedScopes = new ArrayList<>();
+        for (String scope : scopes) {
+            Map<String, List<LeaderboardEntry>> categories = new LinkedHashMap<>();
+            categories.put("c1x", rankLeaderboard(players.values().stream()
+                    .map(player -> player.leaderboardC1x(scope))
+                    .filter(Objects::nonNull)
+                    .toList(), false));
+            categories.put("c2PlusPerRound", rankLeaderboard(players.values().stream()
+                    .map(player -> player.leaderboardC2PlusPerRound(scope))
+                    .filter(Objects::nonNull)
+                    .toList(), false));
+            categories.put("mostC2PlusInRound", rankLeaderboard(players.values().stream()
+                    .map(player -> player.leaderboardMostC2Plus(scope))
+                    .filter(Objects::nonNull)
+                    .toList(), true));
+            categories.put("bestC1xRound", rankLeaderboard(players.values().stream()
+                    .map(player -> player.leaderboardBestC1x(scope))
+                    .filter(Objects::nonNull)
+                    .toList(), false));
+            categories.put("longestThrowIn", rankLeaderboard(players.values().stream()
+                    .map(player -> player.leaderboardLongestThrowIn(scope))
+                    .filter(Objects::nonNull)
+                    .toList(), false));
+            categories.put("aces", rankAces(acePlayers.values(), scope));
+            exportedScopes.add(new LeaderboardScope(scope, categories));
+        }
+        return new LeaderboardExport(exportedScopes);
+    }
+
+    private static List<LeaderboardEntry> rankAces(
+            java.util.Collection<AcePlayerBuilder> players,
+            String scope
+    ) {
+        List<AceEntryCandidate> candidates = players.stream()
+                .flatMap(player -> player.occurrences.stream()
+                        .filter(occurrence -> "overall".equals(scope)
+                                || Objects.equals(occurrence.year(), Integer.valueOf(scope)))
+                        .map(occurrence -> new AceEntryCandidate(
+                                player.name,
+                                occurrence.distanceMeters,
+                                occurrence.competitionSimpleName + " "
+                                        + occurrence.roundAbbreviatedLabel + " — Hole " + occurrence.holeOrdinal
+                        )))
+                .sorted(Comparator.comparingInt(AceEntryCandidate::distanceMeters).reversed()
+                        .thenComparing(AceEntryCandidate::playerName, String.CASE_INSENSITIVE_ORDER)
+                        .thenComparing(AceEntryCandidate::tooltip))
+                .toList();
+        List<LeaderboardEntry> result = new ArrayList<>();
+        for (int index = 0; index < candidates.size(); index++) {
+            AceEntryCandidate candidate = candidates.get(index);
+            boolean tied = (index > 0 && candidates.get(index - 1).distanceMeters == candidate.distanceMeters)
+                    || (index + 1 < candidates.size()
+                    && candidates.get(index + 1).distanceMeters == candidate.distanceMeters);
+            result.add(new LeaderboardEntry(
+                    tied ? "T" + (firstAceRankIndex(candidates, candidate.distanceMeters) + 1) : String.valueOf(index + 1),
+                    candidate.playerName,
+                    candidate.distanceMeters + " m",
+                    List.of(candidate.tooltip)
+            ));
+        }
+        return result;
+    }
+
+    private static int firstAceRankIndex(List<AceEntryCandidate> candidates, int distanceMeters) {
+        for (int index = 0; index < candidates.size(); index++) {
+            if (candidates.get(index).distanceMeters == distanceMeters) {
+                return index;
+            }
+        }
+        return 0;
+    }
+
+    private static List<LeaderboardEntry> rankLeaderboard(
+            List<LeaderboardCandidate> candidates,
+            boolean detectRoundLengthEffect
+    ) {
+        List<LeaderboardCandidate> sorted = candidates.stream()
+                .sorted(leaderboardComparator())
+                .toList();
+        if (sorted.size() > 10) {
+            int boundary = 10;
+            while (boundary < sorted.size()
+                    && sameLeaderboardRank(sorted.get(boundary - 1), sorted.get(boundary))) {
+                boundary++;
+            }
+            sorted = sorted.subList(0, boundary);
+        }
+
+        Map<String, Integer> weightedOrder = new LinkedHashMap<>();
+        for (int index = 0; index < sorted.size(); index++) {
+            weightedOrder.put(sorted.get(index).playerName(), index);
+        }
+        Map<String, Integer> rawOrder = new LinkedHashMap<>();
+        if (detectRoundLengthEffect) {
+            candidates.stream()
+                    .sorted(Comparator.comparingDouble(LeaderboardCandidate::rawPrimary).reversed()
+                            .thenComparing(LeaderboardCandidate::secondary, Comparator.reverseOrder())
+                            .thenComparing(LeaderboardCandidate::tertiary, Comparator.reverseOrder())
+                            .thenComparing(LeaderboardCandidate::playerName, String.CASE_INSENSITIVE_ORDER))
+                    .forEachOrdered(candidate -> rawOrder.put(candidate.playerName(), rawOrder.size()));
+        }
+
+        List<LeaderboardEntry> result = new ArrayList<>();
+        for (int index = 0; index < sorted.size(); index++) {
+            LeaderboardCandidate candidate = sorted.get(index);
+            boolean affected = detectRoundLengthEffect
+                    && rawOrder.containsKey(candidate.playerName())
+                    && weightedOrder.get(candidate.playerName()) != rawOrder.get(candidate.playerName())
+                    && candidate.roundLengths().stream().anyMatch(length -> length != null && length != 18);
+            int groupStart = index;
+            while (groupStart > 0 && sameLeaderboardRank(candidate, sorted.get(groupStart - 1))) {
+                groupStart--;
+            }
+            int groupEnd = index;
+            while (groupEnd + 1 < sorted.size() && sameLeaderboardRank(candidate, sorted.get(groupEnd + 1))) {
+                groupEnd++;
+            }
+            String place = groupStart != groupEnd
+                    ? "T" + (groupStart + 1)
+                    : String.valueOf(index + 1);
+            String value = affected ? candidate.value() + "*" : candidate.value();
+            List<String> tooltips = new ArrayList<>(candidate.tooltips());
+            if (affected) {
+                for (Integer roundLength : candidate.roundLengths()) {
+                    tooltips.add("Round with " + roundLength + " holes");
+                }
+            }
+            result.add(new LeaderboardEntry(place, candidate.playerName(), value, tooltips));
+        }
+        return result;
+    }
+
+    private static Comparator<LeaderboardCandidate> leaderboardComparator() {
+        return Comparator.comparingDouble(LeaderboardCandidate::primary).reversed()
+                .thenComparing(LeaderboardCandidate::secondary, Comparator.reverseOrder())
+                .thenComparing(LeaderboardCandidate::tertiary, Comparator.reverseOrder())
+                .thenComparing(LeaderboardCandidate::playerName, String.CASE_INSENSITIVE_ORDER);
+    }
+
+    private static boolean sameLeaderboardRank(LeaderboardCandidate left, LeaderboardCandidate right) {
+        return Double.compare(left.primary(), right.primary()) == 0
+                && left.secondary() == right.secondary()
+                && left.tertiary() == right.tertiary();
+    }
+
     private static String variationKey(Long basketId, Long variationId) {
         return basketId + ":" + variationId;
+    }
+
+    private static Map<Long, PuttingPlayerBuilder> buildPuttingPlayers(List<PuttingThrowRow> rows) {
+        Map<Long, PuttingPlayerBuilder> players = new LinkedHashMap<>();
+        for (PuttingThrowRow row : rows) {
+            if (row.getRoundResultId() == null || row.getPlayerId() == null) {
+                continue;
+            }
+            PuttingPlayerBuilder player = players.computeIfAbsent(
+                    row.getPlayerId(),
+                    ignored -> new PuttingPlayerBuilder(row.getPlayerId(), row.getPlayerName(), row.getPlayerPdgaNum())
+            );
+            player.round(row).add(row);
+        }
+
+        for (PuttingPlayerBuilder player : players.values()) {
+            player.finishRounds();
+        }
+        return players;
+    }
+
+    private static PuttingZone puttingZone(PuttingThrowRow row) {
+        Long zoneId = effectiveZoneId(row);
+        if (Objects.equals(zoneId, CIRCLE_2_ZONE_ID)) {
+            return PuttingZone.C2;
+        }
+        if (Objects.equals(zoneId, CIRCLE_1_ZONE_ID)) {
+            Integer distance = effectiveDistanceToTarget(row);
+            if (distance != null && distance < C1X_MIN_FEET) {
+                return PuttingZone.C1X_BULLSEYE;
+            }
+            return distance != null && distance <= C1X_MAX_FEET ? PuttingZone.C1X : PuttingZone.NONE;
+        }
+        Integer distance = effectiveDistanceToTarget(row);
+        if (distance != null && distance >= C1X_MIN_FEET && distance <= C1X_MAX_FEET) {
+            return PuttingZone.C1X;
+        }
+        if (distance != null && distance >= C2_MIN_FEET && distance <= C2_MAX_FEET) {
+            return PuttingZone.C2;
+        }
+        return PuttingZone.NONE;
+    }
+
+    private static Long effectiveZoneId(PuttingThrowRow row) {
+        return row.getDropZoneId() != null ? row.getDropZoneId() : row.getZoneId();
+    }
+
+    private static Integer effectiveDistanceToTarget(PuttingThrowRow row) {
+        return row.getDistanceToTarget() != null
+                ? row.getDistanceToTarget()
+                : row.getDropDistanceToTarget();
+    }
+
+    private static boolean isC2Plus(PuttingThrowRow row) {
+        Long zoneId = effectiveZoneId(row);
+        Integer distance = effectiveDistanceToTarget(row);
+        return !Objects.equals(zoneId, CIRCLE_1_ZONE_ID)
+                && (distance == null || distance >= C2_MIN_FEET);
+    }
+
+    private static boolean isThreePlusPuttInitialLanding(PuttingThrowRow row) {
+        Long zoneId = effectiveZoneId(row);
+        if (Objects.equals(zoneId, CIRCLE_1_ZONE_ID)
+                || Objects.equals(zoneId, CIRCLE_2_ZONE_ID)) {
+            return true;
+        }
+        Integer distance = effectiveDistanceToTarget(row);
+        return distance != null && distance >= C1X_MIN_FEET && distance <= C2_MAX_FEET;
+    }
+
+    private static int nonNegativePenaltyCount(PuttingThrowRow row) {
+        return row.getPenaltyCount() == null ? 0 : Math.max(0, row.getPenaltyCount());
     }
 
     private static class CourseExportBuilder {
@@ -454,6 +765,14 @@ public class BasketStatisticsExportService {
 
         private BasketStatsVariation toVariation() {
             List<BasketStatsWindow> windows = buildWindows(samples);
+            Map<String, Integer> bucketCounts = new LinkedHashMap<>();
+            SCORE_BUCKETS.forEach(bucket -> bucketCounts.put(bucket, 0));
+            samples.forEach(sample -> bucketCounts.compute(bucketFor(sample.score()), (ignored, count) -> count + 1));
+            Map<String, Double> overallScorePercentages = new LinkedHashMap<>();
+            bucketCounts.forEach((bucket, count) -> overallScorePercentages.put(
+                    bucket,
+                    count * 100.0 / samples.size()
+            ));
             return new BasketStatsVariation(
                     basketId,
                     basketLabel,
@@ -462,6 +781,11 @@ public class BasketStatisticsExportService {
                     variationLabel,
                     variationSortOrder,
                     samples.size(),
+                    bucketCounts.entrySet().stream()
+                            .filter(entry -> entry.getValue() > 0)
+                            .map(Map.Entry::getKey)
+                            .toList(),
+                    overallScorePercentages,
                     windows
             );
         }
@@ -503,7 +827,8 @@ public class BasketStatisticsExportService {
                     count,
                     -100 * weightedRegression.regression().slope(),
                     weightedRegression.weightedCount(),
-                    countBucket(weightedRegression.weightedCount())
+                    countBucket(weightedRegression.weightedCount()),
+                    weightedScorePercentages(samples, midpoint)
             ));
         }
 
@@ -580,6 +905,33 @@ public class BasketStatisticsExportService {
         return Math.max(0, 1 - (double) distance / BASKET_STATS_SPRW_RADIUS);
     }
 
+    private static Map<String, Double> weightedScorePercentages(List<ScoreSample> samples, int midpoint) {
+        Map<String, Double> weightedBuckets = new LinkedHashMap<>();
+        SCORE_BUCKETS.forEach(bucket -> weightedBuckets.put(bucket, 0.0));
+        double weightedCount = 0;
+        for (ScoreSample sample : samples) {
+            double weight = sprwWeight(sample.rating(), midpoint);
+            if (weight <= 0) {
+                continue;
+            }
+            weightedBuckets.compute(bucketFor(sample.score()), (ignored, value) -> value + weight);
+            weightedCount += weight;
+        }
+        double denominator = weightedCount;
+        weightedBuckets.replaceAll((bucket, value) -> value * 100 / denominator);
+        return weightedBuckets;
+    }
+
+    private static String bucketFor(int score) {
+        if (score <= 2) {
+            return "1-2";
+        }
+        if (score >= 8) {
+            return "8+";
+        }
+        return String.valueOf(score);
+    }
+
     private static String countBucket(double count) {
         if (count >= 200) {
             return "200+";
@@ -594,7 +946,8 @@ public class BasketStatisticsExportService {
             SnapshotMetadata metadata,
             List<CourseOption> courses,
             String playersPath,
-            String personalStatsPathTemplate
+            String personalStatsPathTemplate,
+            String leaderboardsPath
     ) {
     }
 
@@ -684,7 +1037,8 @@ public class BasketStatisticsExportService {
 
     public record PersonalPlayerSnapshot(
             PlayerDescriptor player,
-            List<PersonalVariationRow> variations
+            List<PersonalVariationRow> variations,
+            PuttingSummary putting
     ) {
     }
 
@@ -713,6 +1067,94 @@ public class BasketStatisticsExportService {
     ) {
     }
 
+    public record PuttingSummary(
+            PuttingMetric c1x,
+            PuttingMetric c2,
+            Double c2PlusPerRound,
+            Double threePlusPuttPerRound,
+            MostC2PlusRound mostC2PlusInRound,
+            BestC1xRound bestC1xRound,
+            LongestThrowIn longestThrowIn,
+            List<PuttingYearSummary> years
+    ) {
+    }
+
+    public record PuttingYearSummary(
+            int year,
+            PuttingMetric c1x,
+            PuttingMetric c2,
+            Double c2PlusPerRound,
+            Double threePlusPuttPerRound,
+            MostC2PlusRound mostC2PlusInRound,
+            BestC1xRound bestC1xRound,
+            LongestThrowIn longestThrowIn,
+            List<PuttingRoundSummary> rounds
+    ) {
+    }
+
+    public record MostC2PlusRound(
+            Double real,
+            int display,
+            int count,
+            List<PuttingRoundDescriptor> rounds
+    ) {
+    }
+
+    public record BestC1xRound(
+            Double percentage,
+            int successful,
+            int total,
+            int count,
+            List<PuttingRoundDescriptor> rounds
+    ) {
+    }
+
+    public record LongestThrowIn(
+            int feet,
+            int display,
+            int count,
+            List<LongestThrowInOccurrence> occurrences
+    ) {
+    }
+
+    public record LongestThrowInOccurrence(
+            Long roundId,
+            LocalDate roundDate,
+            String competitionSimpleName,
+            String roundAbbreviatedLabel,
+            int holeOrdinal
+    ) {
+    }
+
+    public record PuttingRoundDescriptor(
+            Long roundId,
+            LocalDate roundDate,
+            String competitionSimpleName,
+            String roundAbbreviatedLabel,
+            Integer expectedHoleCount,
+            int c2PlusSuccessful
+    ) {
+    }
+
+    public record PuttingRoundSummary(
+            Long roundId,
+            LocalDate roundDate,
+            String competitionSimpleName,
+            String roundAbbreviatedLabel,
+            boolean complete,
+            PuttingMetric c1x,
+            PuttingMetric c2,
+            int threePlusPuttLostThrows
+    ) {
+    }
+
+    public record PuttingMetric(
+            int successful,
+            int total,
+            Double percentage
+    ) {
+    }
+
     public record BasketStatsSnapshot(
             CourseDescriptor course,
             List<BasketStatsVariation> variations
@@ -727,6 +1169,8 @@ public class BasketStatisticsExportService {
             String variationLabel,
             BigDecimal variationSortOrder,
             int sampleCount,
+            List<String> scoreBuckets,
+            Map<String, Double> overallScorePercentages,
             List<BasketStatsWindow> windows
     ) {
     }
@@ -739,7 +1183,8 @@ public class BasketStatisticsExportService {
             int count,
             double sprw,
             double sprwCount,
-            String sprwCountBucket
+            String sprwCountBucket,
+            Map<String, Double> scoreDistribution
     ) {
     }
 
@@ -769,6 +1214,629 @@ public class BasketStatisticsExportService {
             List<PlayerLookupEntry> players,
             List<PersonalPlayerSnapshot> snapshots
     ) {
+    }
+
+    public record LeaderboardExport(
+            List<LeaderboardScope> scopes
+    ) {
+    }
+
+    public record LeaderboardScope(
+            String scope,
+            Map<String, List<LeaderboardEntry>> categories
+    ) {
+    }
+
+    public record LeaderboardEntry(
+            String place,
+            String name,
+            String value,
+            List<String> tooltips
+    ) {
+    }
+
+    private record LeaderboardCandidate(
+            String playerName,
+            String value,
+            double primary,
+            int secondary,
+            int tertiary,
+            double rawPrimary,
+            List<String> tooltips,
+            List<Integer> roundLengths
+    ) {
+    }
+
+    private enum PuttingZone {
+        C1X,
+        C1X_BULLSEYE,
+        C2,
+        NONE
+    }
+
+    private static class PuttingPlayerBuilder {
+
+        private final Long id;
+        private final String name;
+        private final Long pdgaNum;
+        private final PuttingMetricsBuilder total = new PuttingMetricsBuilder();
+        private final Map<Long, PuttingRoundBuilder> rounds = new LinkedHashMap<>();
+
+        private PuttingPlayerBuilder(Long id, String name, Long pdgaNum) {
+            this.id = id;
+            this.name = name;
+            this.pdgaNum = pdgaNum;
+        }
+
+        private PuttingRoundBuilder round(PuttingThrowRow row) {
+            return rounds.computeIfAbsent(
+                    row.getRoundResultId(),
+                    ignored -> new PuttingRoundBuilder(row)
+            );
+        }
+
+        private void finishRounds() {
+            rounds.values().forEach(round -> {
+                round.finish();
+                if (round.complete) {
+                    total.add(round.metrics);
+                }
+            });
+        }
+
+        private List<PuttingRoundBuilder> leaderboardRounds(String scope) {
+            return rounds.values().stream()
+                    .filter(round -> round.complete)
+                    .filter(round -> "overall".equals(scope)
+                            || round.roundDate != null && String.valueOf(round.roundDate.getYear()).equals(scope))
+                    .toList();
+        }
+
+        private PuttingMetricsBuilder leaderboardMetrics(String scope, List<PuttingRoundBuilder> scopeRounds) {
+            if ("overall".equals(scope)) {
+                return total;
+            }
+            PuttingMetricsBuilder metrics = new PuttingMetricsBuilder();
+            scopeRounds.forEach(round -> metrics.add(round.metrics));
+            return metrics;
+        }
+
+        private LeaderboardCandidate leaderboardC1x(String scope) {
+            List<PuttingRoundBuilder> scopeRounds = leaderboardRounds(scope);
+            PuttingMetric metric = leaderboardMetrics(scope, scopeRounds).toC1xMetric();
+            if (metric.percentage() == null || metric.total() < leaderboardMinC1xPutts(scope)) {
+                return null;
+            }
+            double primary = (double) metric.successful() / metric.total();
+            return new LeaderboardCandidate(
+                    name,
+                    String.format(java.util.Locale.ROOT, "%.2f%% (%d / %d)", metric.percentage(), metric.successful(), metric.total()),
+                    primary,
+                    0,
+                    0,
+                    primary,
+                    List.of(),
+                    List.of()
+            );
+        }
+
+        private LeaderboardCandidate leaderboardC2PlusPerRound(String scope) {
+            List<PuttingRoundBuilder> scopeRounds = leaderboardRounds(scope);
+            if (scopeRounds.isEmpty()) {
+                return null;
+            }
+            int holesPlayed = scopeRounds.stream().mapToInt(round -> round.expectedHoleCount).sum();
+            if (holesPlayed < leaderboardMinC2PlusHoles(scope)) {
+                return null;
+            }
+            double primary = scopeRounds.stream().mapToDouble(PuttingRoundBuilder::weightedC2Plus).average().orElse(0.0);
+            return new LeaderboardCandidate(
+                    name,
+                    String.format(java.util.Locale.ROOT, "%.2f", rounded(primary)),
+                    primary,
+                    0,
+                    0,
+                    primary,
+                    List.of(),
+                    List.of()
+            );
+        }
+
+        private static int leaderboardMinC1xPutts(String scope) {
+            return "overall".equals(scope)
+                    ? LEADERBOARD_OVERALL_MIN_C1X_PUTTS
+                    : LEADERBOARD_YEARLY_MIN_C1X_PUTTS;
+        }
+
+        private static int leaderboardMinC2PlusHoles(String scope) {
+            return "overall".equals(scope)
+                    ? LEADERBOARD_OVERALL_MIN_C2_PLUS_HOLES
+                    : LEADERBOARD_YEARLY_MIN_C2_PLUS_HOLES;
+        }
+
+        private LeaderboardCandidate leaderboardMostC2Plus(String scope) {
+            List<PuttingRoundBuilder> scopeRounds = leaderboardRounds(scope);
+            MostC2PlusRound highlight = mostC2PlusInRound(scopeRounds);
+            if (highlight == null) {
+                return null;
+            }
+            double raw = highlight.rounds().stream()
+                    .mapToInt(PuttingRoundDescriptor::c2PlusSuccessful)
+                    .max()
+                    .orElse(0);
+            List<String> tooltips = highlight.rounds().stream()
+                    .map(round -> round.competitionSimpleName() + " " + round.roundAbbreviatedLabel())
+                    .toList();
+            List<Integer> lengths = highlight.rounds().stream()
+                    .map(PuttingRoundDescriptor::expectedHoleCount)
+                    .toList();
+            String value = String.valueOf(highlight.display())
+                    + (highlight.count() > 1 ? " (" + highlight.count() + " times)" : "");
+            return new LeaderboardCandidate(name, value, highlight.real(), highlight.count(), 0, raw, tooltips, lengths);
+        }
+
+        private LeaderboardCandidate leaderboardBestC1x(String scope) {
+            List<PuttingRoundBuilder> scopeRounds = leaderboardRounds(scope);
+            BestC1xRound highlight = bestC1xRound(scopeRounds);
+            if (highlight == null) {
+                return null;
+            }
+            List<String> tooltips = highlight.rounds().stream()
+                    .map(round -> round.competitionSimpleName() + " " + round.roundAbbreviatedLabel())
+                    .toList();
+            String value = String.format(java.util.Locale.ROOT, "%.2f%% (%d / %d)",
+                    highlight.percentage(), highlight.successful(), highlight.total())
+                    + (highlight.count() > 1 ? " (" + highlight.count() + " times)" : "");
+            return new LeaderboardCandidate(name, value, highlight.percentage(), highlight.total(), highlight.count(),
+                    highlight.percentage(), tooltips, List.of());
+        }
+
+        private LeaderboardCandidate leaderboardLongestThrowIn(String scope) {
+            LongestThrowIn highlight = longestThrowIn(leaderboardRounds(scope));
+            if (highlight == null) {
+                return null;
+            }
+            List<String> tooltips = highlight.occurrences().stream()
+                    .map(occurrence -> occurrence.competitionSimpleName() + " "
+                            + occurrence.roundAbbreviatedLabel() + " — Hole " + occurrence.holeOrdinal())
+                    .toList();
+            String value = String.valueOf(highlight.display())
+                    + " m"
+                    + (highlight.count() > 1 ? " (" + highlight.count() + " times)" : "");
+            return new LeaderboardCandidate(name, value, highlight.feet(), highlight.count(), 0, highlight.feet(),
+                    tooltips, List.of());
+        }
+
+        private PuttingSummary toSummary() {
+            List<PuttingRoundBuilder> completeRounds = rounds.values().stream()
+                    .filter(round -> round.complete)
+                    .toList();
+            TreeMap<Integer, List<PuttingRoundBuilder>> roundsByYear = rounds.values().stream()
+                    .filter(round -> round.roundDate != null)
+                    .collect(Collectors.groupingBy(
+                            round -> round.roundDate.getYear(),
+                            TreeMap::new,
+                            Collectors.toList()
+                    ));
+            return new PuttingSummary(
+                    total.toC1xMetric(),
+                    total.toC2Metric(),
+                    c2PlusPerRound(completeRounds),
+                    threePlusPuttPerRound(completeRounds),
+                    mostC2PlusInRound(completeRounds),
+                    bestC1xRound(completeRounds),
+                    longestThrowIn(completeRounds),
+                    roundsByYear.descendingMap().entrySet().stream()
+                            .map(entry -> yearSummary(entry.getKey(), entry.getValue()))
+                            .toList()
+            );
+        }
+
+        private static PuttingYearSummary yearSummary(int year, List<PuttingRoundBuilder> rounds) {
+            List<PuttingRoundBuilder> completeRounds = rounds.stream()
+                    .filter(round -> round.complete)
+                    .toList();
+            PuttingMetricsBuilder metrics = new PuttingMetricsBuilder();
+            completeRounds.forEach(round -> metrics.add(round.metrics));
+            return new PuttingYearSummary(
+                    year,
+                    metrics.toC1xMetric(),
+                    metrics.toC2Metric(),
+                    c2PlusPerRound(completeRounds),
+                    threePlusPuttPerRound(completeRounds),
+                    mostC2PlusInRound(completeRounds),
+                    bestC1xRound(completeRounds),
+                    longestThrowIn(completeRounds),
+                    rounds.stream()
+                            .sorted(Comparator.comparing(PuttingRoundBuilder::roundDate)
+                                    .thenComparing(PuttingRoundBuilder::roundId))
+                            .map(PuttingRoundBuilder::toSummary)
+                            .toList()
+            );
+        }
+
+        private static Double c2PlusPerRound(List<PuttingRoundBuilder> rounds) {
+            return rounds.isEmpty()
+                    ? null
+                    : rounded(rounds.stream()
+                            .mapToDouble(PuttingRoundBuilder::weightedC2Plus)
+                            .average()
+                            .orElse(0.0));
+        }
+
+        private static Double threePlusPuttPerRound(List<PuttingRoundBuilder> rounds) {
+            return rounds.isEmpty()
+                    ? null
+                    : rounded(rounds.stream()
+                            .mapToDouble(PuttingRoundBuilder::weightedThreePlusPutt)
+                            .average()
+                            .orElse(0.0));
+        }
+
+        private static MostC2PlusRound mostC2PlusInRound(List<PuttingRoundBuilder> rounds) {
+            if (rounds.isEmpty()) {
+                return null;
+            }
+            PuttingRoundBuilder best = rounds.get(0);
+            int count = 1;
+            for (int index = 1; index < rounds.size(); index++) {
+                PuttingRoundBuilder candidate = rounds.get(index);
+                int comparison = compareWeightedC2Plus(candidate, best);
+                if (comparison > 0) {
+                    best = candidate;
+                    count = 1;
+                } else if (comparison == 0) {
+                    count++;
+                }
+            }
+            double real = best.weightedC2Plus();
+            PuttingRoundBuilder selectedBest = best;
+            List<PuttingRoundDescriptor> matchingRounds = rounds.stream()
+                    .filter(candidate -> compareWeightedC2Plus(candidate, selectedBest) == 0)
+                    .map(PuttingRoundBuilder::toDescriptor)
+                    .toList();
+            return new MostC2PlusRound(real, (int) Math.round(real), count, matchingRounds);
+        }
+
+        private static BestC1xRound bestC1xRound(List<PuttingRoundBuilder> rounds) {
+            PuttingRoundBuilder best = null;
+            int count = 0;
+            for (PuttingRoundBuilder candidate : rounds) {
+                if (candidate.metrics.c1xTotal == 0) {
+                    continue;
+                }
+                if (best == null) {
+                    best = candidate;
+                    count = 1;
+                    continue;
+                }
+                int percentageComparison = Long.compare(
+                        (long) candidate.metrics.c1xSuccessful * best.metrics.c1xTotal,
+                        (long) best.metrics.c1xSuccessful * candidate.metrics.c1xTotal
+                );
+                int comparison = percentageComparison != 0
+                        ? percentageComparison
+                        : Integer.compare(candidate.metrics.c1xTotal, best.metrics.c1xTotal);
+                if (comparison > 0) {
+                    best = candidate;
+                    count = 1;
+                } else if (comparison == 0) {
+                    count++;
+                }
+            }
+            if (best == null) {
+                return null;
+            }
+            PuttingRoundBuilder selectedBest = best;
+            return new BestC1xRound(
+                    PuttingMetricsBuilder.metricPercentage(selectedBest.metrics.c1xSuccessful, selectedBest.metrics.c1xTotal),
+                    selectedBest.metrics.c1xSuccessful,
+                    selectedBest.metrics.c1xTotal,
+                    count,
+                    rounds.stream()
+                            .filter(candidate -> candidate.metrics.c1xTotal > 0
+                                    && compareC1x(candidate, selectedBest) == 0)
+                            .map(PuttingRoundBuilder::toDescriptor)
+                            .toList()
+            );
+        }
+
+        private static LongestThrowIn longestThrowIn(List<PuttingRoundBuilder> rounds) {
+            List<ThrowInCandidate> candidates = rounds.stream()
+                    .sorted(Comparator.comparing(PuttingRoundBuilder::roundDate,
+                            Comparator.nullsLast(Comparator.naturalOrder()))
+                            .thenComparing(PuttingRoundBuilder::roundId))
+                    .flatMap(round -> round.throwInCandidates.stream())
+                    .toList();
+            if (candidates.isEmpty()) {
+                return null;
+            }
+            int maximumFeet = candidates.stream()
+                    .mapToInt(ThrowInCandidate::feet)
+                    .max()
+                    .orElseThrow();
+            List<LongestThrowInOccurrence> occurrences = candidates.stream()
+                    .filter(candidate -> candidate.feet == maximumFeet)
+                    .map(ThrowInCandidate::occurrence)
+                    .toList();
+            return new LongestThrowIn(
+                    maximumFeet,
+                    (int) Math.round(maximumFeet * 0.3048),
+                    occurrences.size(),
+                    occurrences
+            );
+        }
+
+        private static int compareC1x(PuttingRoundBuilder left, PuttingRoundBuilder right) {
+            int percentageComparison = Long.compare(
+                    (long) left.metrics.c1xSuccessful * right.metrics.c1xTotal,
+                    (long) right.metrics.c1xSuccessful * left.metrics.c1xTotal
+            );
+            return percentageComparison != 0
+                    ? percentageComparison
+                    : Integer.compare(left.metrics.c1xTotal, right.metrics.c1xTotal);
+        }
+
+        private static int compareWeightedC2Plus(PuttingRoundBuilder left, PuttingRoundBuilder right) {
+            return Long.compare(
+                    (long) left.metrics.c2PlusSuccessful * right.expectedHoleCount,
+                    (long) right.metrics.c2PlusSuccessful * left.expectedHoleCount
+            );
+        }
+
+        private static double rounded(double value) {
+            return Math.round(value * 100.0) / 100.0;
+        }
+    }
+
+    private static class PuttingRoundBuilder {
+
+        private final Long roundId;
+        private final LocalDate roundDate;
+        private final String competitionSimpleName;
+        private final String roundAbbreviatedLabel;
+        private final PuttingMetricsBuilder metrics = new PuttingMetricsBuilder();
+        private final Integer expectedHoleCount;
+        private final Map<Integer, List<PuttingThrowRow>> holes = new LinkedHashMap<>();
+        private final List<ThrowInCandidate> throwInCandidates = new ArrayList<>();
+        private boolean complete;
+
+        private PuttingRoundBuilder(PuttingThrowRow row) {
+            this.roundId = row.getRoundId();
+            this.roundDate = row.getRoundDate();
+            this.competitionSimpleName = firstNonBlank(
+                    row.getCompetitionSimpleName(),
+                    firstNonBlank(row.getCompetitionName(), "Competition " + row.getRoundId())
+            );
+            this.roundAbbreviatedLabel = firstNonBlank(
+                    row.getRoundAbbreviatedLabel(),
+                    firstNonBlank(row.getRoundLabel(), "Round " + row.getRoundId())
+            );
+            this.expectedHoleCount = row.getExpectedHoleCount();
+        }
+
+        private Long roundId() {
+            return roundId;
+        }
+
+        private LocalDate roundDate() {
+            return roundDate;
+        }
+
+        private PuttingRoundDescriptor toDescriptor() {
+            return new PuttingRoundDescriptor(
+                    roundId,
+                    roundDate,
+                    competitionSimpleName,
+                    roundAbbreviatedLabel,
+                    expectedHoleCount,
+                    metrics.c2PlusSuccessful
+            );
+        }
+
+        private double weightedC2Plus() {
+            return metrics.c2PlusSuccessful * 18.0 / expectedHoleCount;
+        }
+
+        private double weightedThreePlusPutt() {
+            return metrics.threePlusPuttLostThrows * 18.0 / expectedHoleCount;
+        }
+
+        private void add(PuttingThrowRow row) {
+            if (row.getHoleOrdinal() == null || row.getScoreOrdinal() == null) {
+                return;
+            }
+            holes.computeIfAbsent(row.getHoleOrdinal(), ignored -> new ArrayList<>()).add(row);
+        }
+
+        private void finish() {
+            complete = expectedHoleCount != null && expectedHoleCount > 0;
+            if (expectedHoleCount != null && expectedHoleCount > 0) {
+                for (int holeOrdinal = 1; holeOrdinal <= expectedHoleCount; holeOrdinal++) {
+                    List<PuttingThrowRow> hole = holes.get(holeOrdinal);
+                    if (hole == null || hole.isEmpty()) {
+                        complete = false;
+                        continue;
+                    }
+                    if (!processHole(hole)) {
+                        complete = false;
+                    }
+                }
+                if (holes.keySet().stream().anyMatch(ordinal -> ordinal < 1 || ordinal > expectedHoleCount)) {
+                    complete = false;
+                }
+                return;
+            }
+
+            holes.values().forEach(this::processHole);
+        }
+
+        private boolean processHole(List<PuttingThrowRow> hole) {
+            hole.sort(Comparator.comparing(PuttingThrowRow::getScoreOrdinal));
+            PuttingThrowRow last = hole.get(hole.size() - 1);
+            if (!Objects.equals(last.getZoneId(), BASKET_ZONE_ID)) {
+                return false;
+            }
+            for (int index = 0; index < hole.size() - 1; index++) {
+                PuttingThrowRow current = hole.get(index);
+                PuttingThrowRow next = hole.get(index + 1);
+                boolean successful = Objects.equals(next.getZoneId(), BASKET_ZONE_ID);
+                metrics.add(current, successful);
+                if (successful) {
+                    Integer distance = effectiveDistanceToTarget(current);
+                    if (distance != null) {
+                        throwInCandidates.add(new ThrowInCandidate(
+                                distance,
+                                new LongestThrowInOccurrence(
+                                        roundId,
+                                        roundDate,
+                                        competitionSimpleName,
+                                        roundAbbreviatedLabel,
+                                        current.getHoleOrdinal()
+                                )
+                        ));
+                    }
+                }
+            }
+            int initialLandingIndex = -1;
+            for (int index = 0; index < hole.size() - 1; index++) {
+                if (isThreePlusPuttInitialLanding(hole.get(index))) {
+                    initialLandingIndex = index;
+                    break;
+                }
+            }
+            if (initialLandingIndex >= 0) {
+                int postLandingThrows = hole.size() - 1 - initialLandingIndex;
+                int postLandingPenalties = 0;
+                for (int index = initialLandingIndex + 1; index < hole.size(); index++) {
+                    postLandingPenalties += nonNegativePenaltyCount(hole.get(index));
+                }
+                metrics.threePlusPuttLostThrows += Math.max(
+                        0,
+                        postLandingThrows + postLandingPenalties - 2
+                );
+            }
+            return true;
+        }
+
+        private PuttingRoundSummary toSummary() {
+            return new PuttingRoundSummary(
+                    roundId,
+                    roundDate,
+                    competitionSimpleName,
+                    roundAbbreviatedLabel,
+                    complete,
+                    metrics.toC1xMetric(),
+                    metrics.toC2Metric(),
+                    metrics.threePlusPuttLostThrows
+            );
+        }
+    }
+
+    private record ThrowInCandidate(
+            int feet,
+            LongestThrowInOccurrence occurrence
+    ) {
+    }
+
+    private static class AcePlayerBuilder {
+
+        private final Long id;
+        private final String name;
+        private final List<AceOccurrence> occurrences = new ArrayList<>();
+
+        private AcePlayerBuilder(Long id, String name) {
+            this.id = id;
+            this.name = firstNonBlank(name, "Player " + id);
+        }
+    }
+
+    private record AceOccurrence(
+            LocalDate roundDate,
+            int distanceMeters,
+            String competitionSimpleName,
+            String roundAbbreviatedLabel,
+            int holeOrdinal
+    ) {
+        private Integer year() {
+            return roundDate == null ? null : roundDate.getYear();
+        }
+    }
+
+    private record AceEntryCandidate(
+            String playerName,
+            int distanceMeters,
+            String tooltip
+    ) {
+    }
+
+    private static class PuttingMetricsBuilder {
+
+        private int c1xSuccessful;
+        private int c1xTotal;
+        private int c2Successful;
+        private int c2Total;
+        private int c2PlusSuccessful;
+        private int threePlusPuttLostThrows;
+
+        private boolean add(PuttingThrowRow row, boolean successful) {
+            if (successful && isC2Plus(row)) {
+                c2PlusSuccessful++;
+            }
+            if (Objects.equals(effectiveZoneId(row), CIRCLE_1_ZONE_ID) && !successful) {
+                c1xTotal++;
+                return true;
+            }
+
+            PuttingZone zone = puttingZone(row);
+            if (zone == PuttingZone.C1X) {
+                c1xTotal++;
+                if (successful) {
+                    c1xSuccessful++;
+                }
+                return true;
+            } else if (zone == PuttingZone.C1X_BULLSEYE) {
+                if (!successful) {
+                    c1xTotal++;
+                    return true;
+                }
+            } else if (zone == PuttingZone.C2) {
+                c2Total++;
+                if (successful) {
+                    c2Successful++;
+                }
+                return true;
+            }
+            return false;
+        }
+
+        private PuttingMetric toC1xMetric() {
+            return metric(c1xSuccessful, c1xTotal);
+        }
+
+        private PuttingMetric toC2Metric() {
+            return metric(c2Successful, c2Total);
+        }
+
+        private static PuttingMetric metric(int successful, int total) {
+            Double percentage = metricPercentage(successful, total);
+            return new PuttingMetric(successful, total, percentage);
+        }
+
+        private static Double metricPercentage(int successful, int total) {
+            return total == 0
+                    ? null
+                    : Math.round((successful * 10000.0 / total)) / 100.0;
+        }
+
+        private void add(PuttingMetricsBuilder other) {
+            c1xSuccessful += other.c1xSuccessful;
+            c1xTotal += other.c1xTotal;
+            c2Successful += other.c2Successful;
+            c2Total += other.c2Total;
+            c2PlusSuccessful += other.c2PlusSuccessful;
+            threePlusPuttLostThrows += other.threePlusPuttLostThrows;
+        }
     }
 
     private record PersonalScoreSample(
@@ -827,6 +1895,7 @@ public class BasketStatisticsExportService {
         private final String name;
         private final Long pdgaNum;
         private final Map<String, PersonalVariationBuilder> variationsByKey = new LinkedHashMap<>();
+        private PuttingSummary putting;
 
         private PersonalPlayerBuilder(Long id, String name, Long pdgaNum) {
             this.id = id;
@@ -852,7 +1921,8 @@ public class BasketStatisticsExportService {
                     .toList();
             return new PersonalPlayerSnapshot(
                     new PlayerDescriptor(id, name, pdgaNum, playerLabel(name, pdgaNum)),
-                    rows
+                    rows,
+                    putting
             );
         }
     }

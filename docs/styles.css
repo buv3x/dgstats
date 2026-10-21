@@ -111,6 +111,107 @@ button {
     font-weight: bold;
 }
 
+.subnav {
+    border-bottom: 1px solid #d8dee4;
+    display: flex;
+    gap: 4px;
+    margin: 4px 0 18px;
+}
+
+.subnav-tab {
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    color: #475467;
+}
+
+.subnav-tab.active {
+    border-bottom-color: #245b7a;
+    color: #1f2933;
+    font-weight: bold;
+}
+
+.putting-summary {
+    background: #ffffff;
+    border: 1px solid #d8dee4;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 16px 18px;
+}
+
+.putting-total {
+    display: block;
+}
+
+.putting-global {
+    margin-top: 4px;
+}
+
+.putting-year {
+    border-top: 1px solid #d8dee4;
+    margin-top: 16px;
+    padding-top: 12px;
+}
+
+.putting-year-toggle {
+    background: transparent;
+    color: #1f2933;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: auto;
+    padding: 0;
+}
+
+.putting-year-toggle::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.15s ease-in-out;
+}
+
+.putting-year-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+}
+
+.putting-year-content {
+    padding: 8px 0 0 24px;
+}
+
+.putting-metric-label {
+    font-weight: bold;
+}
+
+.putting-round-toggle {
+    background: transparent;
+    color: #245b7a;
+    font-size: 14px;
+    margin-top: 12px;
+    min-height: auto;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.putting-round-details {
+    border-top: 1px solid #d8dee4;
+    font-size: 14px;
+    margin-top: 12px;
+    padding-top: 10px;
+}
+
+.putting-round-line {
+    line-height: 1.8;
+}
+
+.putting-round-line.incomplete {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.putting-round-line > div {
+    display: inline;
+}
+
 .message {
     background: #ffffff;
     border-left: 4px solid #667085;
@@ -142,6 +243,10 @@ button {
 
 .description-content p {
     margin: 0 0 14px;
+    max-width: 920px;
+}
+
+.description-content ol {
     max-width: 920px;
 }
 
@@ -250,6 +355,52 @@ button {
     fill: #1f2933;
 }
 
+.score-distribution-line {
+    fill: none;
+    stroke-width: 2;
+}
+
+.score-distribution-point {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+}
+
+.score-distribution-point.hovered {
+    stroke: #1f2933;
+    stroke-width: 2;
+}
+
+.score-distribution-toggle {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 3px 5px;
+}
+
+.score-distribution-toggle[aria-pressed="false"] {
+    opacity: 0.45;
+    text-decoration: line-through;
+}
+
+.score-distribution-toggle:focus-visible {
+    border-color: #245b7a;
+    outline: 2px solid #245b7a;
+    outline-offset: 1px;
+}
+
+.score-distribution-legend {
+    flex-wrap: wrap;
+}
+
+.score-bucket-1to2 { background: #164e7a; stroke: #164e7a; fill: #164e7a; }
+.score-bucket-3 { background: #62a9d1; stroke: #62a9d1; fill: #62a9d1; }
+.score-bucket-4 { background: #2f855a; stroke: #2f855a; fill: #2f855a; }
+.score-bucket-5 { background: #d6a514; stroke: #d6a514; fill: #d6a514; }
+.score-bucket-6 { background: #e67e22; stroke: #e67e22; fill: #e67e22; }
+.score-bucket-7 { background: #c026d3; stroke: #c026d3; fill: #c026d3; }
+.score-bucket-8plus { background: #8b1e2d; stroke: #8b1e2d; fill: #8b1e2d; }
+
 .chart-legend {
     align-items: center;
     display: flex;
@@ -329,6 +480,7 @@ button {
     pointer-events: none;
     position: fixed;
     z-index: 10;
+	white-space: pre-line;
 }
 
 .table-wrap {
@@ -389,6 +541,38 @@ thead th {
 
 .personal-table td:nth-child(6) {
     white-space: normal;
+}
+
+.leaderboards-table {
+    table-layout: fixed;
+    min-width: 570px;
+    width: 570px;
+}
+
+.leaderboards-table td:first-child {
+    text-align: right;
+    width: 70px;
+}
+
+.leaderboards-table td:nth-child(2) {
+    text-align: left;
+    width: 300px;
+}
+
+.leaderboards-table td:nth-child(3) {
+    text-align: right;
+    width: 300px;
+}
+
+.leaderboards-table td:last-child {
+    white-space: nowrap;
+}
+
+.leaderboards-note {
+    color: #667085;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 8px;
 }
 
 @media (max-width: 640px) {
