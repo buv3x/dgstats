@@ -379,44 +379,49 @@ The static page SHALL load Basket stats data for the selected course using the m
 - **THEN** the page displays a no-basket-variations message instead of an empty chart
 
 ### Requirement: Basket stats SPR-only line chart
-The static page SHALL display precomputed basket variation sliding-window SPRW values in Basket stats without displaying raw SPR, SPR2, or VAR.
+The static page SHALL display precomputed basket variation sliding-window SPRW values in Hole stats without displaying raw SPR, SPR2, or VAR, and SHALL display the separate Score Distribution chart described below.
 
 #### Scenario: Selected variation SPRW windows are displayed
-- **WHEN** the user selects a basket variation with exported SPRW windows
-- **THEN** the Basket stats chart displays those windows as a single SPRW line chart
+- **WHEN** the user selects a hole variation with exported SPRW windows
+- **THEN** the Hole stats view displays those windows as the SPRW line chart
 
 #### Scenario: X axis uses rating midpoint
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart uses each window's `ratingMidpoint` as the X-axis value
+- **WHEN** Hole stats sliding-window statistics are displayed
+- **THEN** the SPRW chart uses each window's `ratingMidpoint` as the X-axis value
 
 #### Scenario: SPRW uses fixed left axis
-- **WHEN** Basket stats sliding-window statistics are displayed
+- **WHEN** Hole stats sliding-window statistics are displayed
 - **THEN** SPRW values are plotted against the Y-axis fixed from `-0.5` to `2.0`
 
 #### Scenario: Raw SPR series is not rendered
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart does not render raw SPR line segments or raw SPR points
+- **WHEN** Hole stats sliding-window statistics are displayed
+- **THEN** the SPRW chart does not render raw SPR line segments or raw SPR points
 
 #### Scenario: SPR2 series is not rendered
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart does not render SPR2 line segments or SPR2 points
+- **WHEN** Hole stats sliding-window statistics are displayed
+- **THEN** the SPRW chart does not render SPR2 line segments or SPR2 points
 
 #### Scenario: VAR series is not rendered
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart does not render VAR line segments or VAR points
+- **WHEN** Hole stats sliding-window statistics are displayed
+- **THEN** the SPRW chart does not render VAR line segments or VAR points
 
 #### Scenario: VAR axis is not rendered
-- **WHEN** Basket stats sliding-window statistics are displayed
-- **THEN** the chart does not render a VAR Y-axis, VAR tick labels, or a VAR axis label
+- **WHEN** Hole stats sliding-window statistics are displayed
+- **THEN** the SPRW chart does not render a VAR Y-axis, VAR tick labels, or a VAR axis label
+
+#### Scenario: SPRW chart labels mention only SPRW
+- **WHEN** the SPRW chart is displayed
+- **THEN** its visible chart title, Y-axis label, legend, tooltip metric labels, and accessible chart label mention SPRW
+- **AND** they do not mention raw SPR, SPR2, or VAR
 
 #### Scenario: Basket stats chart labels mention only SPRW
-- **WHEN** the Basket stats chart is displayed
-- **THEN** the visible chart title, Y-axis label, legend, tooltip metric labels, and accessible chart label mention SPRW
+- **WHEN** the SPRW chart is displayed
+- **THEN** its visible chart title, Y-axis label, legend, tooltip metric labels, and accessible chart label mention SPRW
 - **AND** they do not mention raw SPR, SPR2, or VAR
 
 #### Scenario: Empty window series is reported
-- **WHEN** the selected basket variation has no exported windows
-- **THEN** the page displays a no-window-results message instead of an empty Basket stats chart
+- **WHEN** the selected hole variation has no exported windows
+- **THEN** the page displays a no-window-results message instead of empty SPRW and Score Distribution charts
 
 ### Requirement: Basket stats chart first render sizing
 The static page SHALL render the initially selected Basket stats chart using the visible chart container dimensions.
@@ -478,20 +483,25 @@ The Basket stats variation selector SHALL use explicit basket and variation orde
 - **THEN** variations are ordered by basket `sortOrder`, then basket ID, variation `sortOrder`, then variation ID, with null sort orders after non-null values
 
 ### Requirement: Description tab navigation and default view
-The static page SHALL display the Course stats, Basket stats, Personal stats, and Description navigation items in that order, and SHALL make Course stats the default active view.
+The static page SHALL display the Leaderboards, Personal stats, Course stats, Hole stats, and Description navigation items in that order, and SHALL make Leaderboards the default active view.
 
 #### Scenario: Description tab is last
 - **WHEN** the static basket statistics page is displayed
-- **THEN** the navigation order is Course stats, Basket stats, Personal stats, Description
+- **THEN** the navigation order is Leaderboards, Personal stats, Course stats, Hole stats, Description
+
+#### Scenario: Leaderboards is selected initially
+- **WHEN** the static basket statistics page first loads successfully
+- **THEN** the Leaderboards tab is active and its content is visible
+- **AND** the Personal stats, Course stats, Hole stats, and Description content is hidden
 
 #### Scenario: Course stats is selected initially
 - **WHEN** the static basket statistics page first loads successfully
-- **THEN** the Course stats tab is active and its content is visible
-- **AND** the Basket stats, Personal stats, and Description content is hidden
+- **THEN** the Leaderboards tab is active and its content is visible
+- **AND** the Personal stats, Course stats, Hole stats, and Description content is hidden
 
 #### Scenario: Existing views remain selectable
-- **WHEN** the user selects Description, Basket stats, or Personal stats
-- **THEN** the selected view becomes visible and Course stats becomes inactive
+- **WHEN** the user selects Description, Course stats, Hole stats, or Personal stats
+- **THEN** the selected view becomes visible and Leaderboards becomes inactive
 
 ### Requirement: Description content presentation
 The static page SHALL render the reviewed Description content as embedded HTML in `docs/index.html`, using ordinary headings and paragraphs rather than loading a separate Description text asset.
@@ -708,7 +718,7 @@ The static statistics page SHALL display `LT PDGA Statistics` as both its browse
 - **THEN** the global page header is `LT PDGA Statistics`
 
 ### Requirement: Personal stats putting navigation
-The Personal stats view SHALL provide shared player selection and second-level Hole stats and Putting stats views.
+The Personal stats view SHALL provide shared player selection and second-level Putting stats and Hole stats views in that order, and SHALL default to Putting stats when a player is selected.
 
 #### Scenario: No player is selected
 - **WHEN** the Personal stats view is opened without a selected player
@@ -716,8 +726,8 @@ The Personal stats view SHALL provide shared player selection and second-level H
 
 #### Scenario: Player is selected
 - **WHEN** a player is selected
-- **THEN** the view displays second-level tabs named `Hole stats` and `Putting stats`
-- **AND** it defaults to Hole stats
+- **THEN** the view displays second-level tabs named `Putting stats` and `Hole stats`
+- **AND** it defaults to Putting stats
 
 #### Scenario: Hole stats view preserves existing controls
 - **WHEN** the Hole stats tab is active
@@ -725,7 +735,7 @@ The Personal stats view SHALL provide shared player selection and second-level H
 
 #### Scenario: Putting stats view has no filters
 - **WHEN** the Putting stats tab is active
-- **THEN** it displays only the C1x and C2 summaries for the selected player
+- **THEN** it displays the putting summaries for the selected player
 - **AND** it does not display course, minimum-count, or other statistics filters
 
 ### Requirement: Leaderboard columns have stable alignment and widths
@@ -751,4 +761,169 @@ The leaderboard table SHALL use the same fixed column geometry for every categor
 - **WHEN** the leaderboard is viewed in a viewport narrower than the fixed table width
 - **THEN** the table remains horizontally scrollable within its existing wrapper
 - **AND** the fixed column widths and alignments are preserved
+
+### Requirement: Three-plus-putt personal-statistics display
+
+The Personal stats putting view SHALL display an available `threePlusPuttPerRound` value as the last metric in the overall summary and in each yearly summary, labeled `3+putt per round` and formatted with exactly two decimal places.
+
+#### Scenario: Overall metric is displayed last
+
+- **WHEN** an overall putting summary contains `threePlusPuttPerRound`
+- **THEN** the Personal stats view displays a line labeled `3+putt per round`
+- **AND** that line appears after the existing longest-throw-in line
+- **AND** the value has two digits after the decimal point
+
+#### Scenario: Yearly metric is displayed last
+
+- **WHEN** a yearly putting summary contains `threePlusPuttPerRound`
+- **THEN** the expanded yearly section displays a line labeled `3+putt per round`
+- **AND** that line appears after the existing yearly highlight lines
+- **AND** the value has two digits after the decimal point
+
+#### Scenario: Missing metric remains backward compatible
+
+- **WHEN** an older personal-statistics file does not contain `threePlusPuttPerRound`
+- **THEN** the view omits only the new line
+- **AND** all existing putting metrics remain readable
+
+#### Scenario: Metric is not added to leaderboard UI
+
+- **WHEN** the user views Leaderboards
+- **THEN** no `3+putt per round` category or row is displayed
+
+### Requirement: Lost three-plus-putting label
+The Personal stats putting view SHALL display an available `threePlusPuttPerRound` value in overall and yearly summaries using the label `Lost 3+putting per round` and exactly two decimal places.
+
+#### Scenario: Overall metric uses the new label
+- **WHEN** an overall putting summary contains `threePlusPuttPerRound`
+- **THEN** the summary displays `Lost 3+putting per round`
+- **AND** the value has two digits after the decimal point
+
+#### Scenario: Yearly metric uses the new label
+- **WHEN** an expanded yearly putting summary contains `threePlusPuttPerRound`
+- **THEN** the summary displays `Lost 3+putting per round`
+- **AND** the value has two digits after the decimal point
+
+#### Scenario: Export field remains compatible
+- **WHEN** the putting summary is loaded from an existing personal-statistics export
+- **THEN** the value is read from `threePlusPuttPerRound` without requiring a field rename
+
+### Requirement: Conditional three-plus-putt round-detail rendering
+
+The static Personal stats putting view SHALL render a positive round-level `threePlusPuttLostThrows` value after C2 as `3+putts: N`, separated by a comma, and SHALL omit the metric for zero, missing, null, or non-numeric values.
+
+#### Scenario: Positive value is rendered after C2
+
+- **WHEN** a round detail has `threePlusPuttLostThrows` greater than zero
+- **THEN** the rendered line contains C1x, C2, and `3+putts: N` in that order
+- **AND** the metrics are separated by comma-space text
+
+#### Scenario: Non-positive or missing value is omitted
+
+- **WHEN** a round detail has no usable positive `threePlusPuttLostThrows` value
+- **THEN** the rendered line contains its existing C1x and C2 metrics
+- **AND** it does not contain `3+putts`
+
+### Requirement: Hole stats Score Distribution chart
+The static page SHALL display a Score Distribution chart below SPRW for a selected hole variation using the same chart dimensions, rating midpoints, and eligible windows as SPRW.
+
+#### Scenario: Distribution chart is positioned below SPRW
+- **WHEN** a selected hole variation has exported sliding-window statistics
+- **THEN** the Score Distribution chart is displayed below the SPRW chart
+- **AND** the chart has the same rendered size as SPRW
+
+#### Scenario: Distribution uses required score buckets
+- **WHEN** the Score Distribution chart is displayed
+- **THEN** its possible series are `1-2`, `3`, `4`, `5`, `6`, `7`, and `8+`
+
+#### Scenario: Distribution header tooltip is shown
+- **WHEN** the user hovers over or focuses the Score Distribution header
+- **THEN** the custom tooltip displays `Score distribution around a given rating`
+
+### Requirement: Weighted score distribution calculation
+The exporter SHALL calculate each window's score-bucket percentage using the same triangular rating weight as SPRW, with the selected window midpoint and the same rating range.
+
+#### Scenario: Window percentages use triangular weights
+- **WHEN** a score sample belongs to a window's SPRW rating range
+- **THEN** its contribution to its score bucket is weighted by the triangular SPRW weight around that window's midpoint
+- **AND** the bucket percentage equals the bucket's weighted contribution divided by total weighted contribution, multiplied by 100
+
+#### Scenario: Distribution is calculated at five-point rating gaps
+- **WHEN** sliding-window statistics are exported
+- **THEN** distribution values are provided for the same rating midpoints as SPRW, separated by 5 rating points
+
+#### Scenario: Distribution buckets sum to 100 percent
+- **WHEN** a window has valid weighted distribution data
+- **THEN** the percentages for all seven score buckets sum to 100 percent, subject to normal floating-point rounding
+
+### Requirement: Bucket line presence and default visibility
+The page SHALL render one Score Distribution line for every bucket with at least one score anywhere in the selected hole variation's complete sample set, and SHALL default-enable only buckets whose overall unweighted percentage is greater than 5%.
+
+#### Scenario: Globally present bucket is rendered
+- **WHEN** a bucket has at least one score in the selected hole variation's complete sample set
+- **THEN** the chart renders that bucket's line across the available rating windows
+
+#### Scenario: Globally absent bucket is not rendered
+- **WHEN** a bucket has no score in the selected hole variation's complete sample set
+- **THEN** the chart does not render a line or toggle for that bucket
+
+#### Scenario: Low-share present bucket starts disabled
+- **WHEN** a present bucket's overall unweighted percentage is less than or equal to 5%
+- **THEN** its line is initially hidden
+- **AND** its toggle is available to enable the line
+
+#### Scenario: Common present bucket starts enabled
+- **WHEN** a present bucket's overall unweighted percentage is greater than 5%
+- **THEN** its line is initially visible
+
+#### Scenario: Zero local percentage remains part of a present line
+- **WHEN** a globally present bucket has a zero weighted percentage in an individual rating window
+- **THEN** the bucket line remains the same series and plots that window at zero rather than being removed
+
+### Requirement: Distribution series toggles and colors
+The page SHALL provide an independent accessible toggle for each rendered score bucket and SHALL use fixed colors across all holes.
+
+#### Scenario: Bucket line is toggled off
+- **WHEN** the user activates an enabled bucket toggle
+- **THEN** that bucket's line and points are hidden
+- **AND** all other bucket series retain their visibility state
+
+#### Scenario: Bucket line is toggled on
+- **WHEN** the user activates a disabled bucket toggle
+- **THEN** that bucket's line and points are displayed
+
+#### Scenario: Fixed bucket colors are used
+- **WHEN** score-bucket series are displayed
+- **THEN** `1-2` uses dark blue, `3` light blue, `4` green, `5` yellow, `6` orange, `7` magenta, and `8+` dark red
+- **AND** each bucket uses the same color in lines, points, and legend controls across all holes
+
+### Requirement: Distribution confidence styling
+The Score Distribution chart SHALL use each window's SPRW weighted-count bucket for point connectivity and line pattern.
+
+#### Scenario: Low-confidence distribution windows are unconnected
+- **WHEN** a distribution window has `sprwCountBucket` of `50-99`
+- **THEN** its bucket values are displayed as points without connecting line segments
+
+#### Scenario: Medium-confidence distribution segments are dotted
+- **WHEN** a distribution segment represents `sprwCountBucket` of `100-199`
+- **THEN** that segment is displayed as a dotted line
+
+#### Scenario: High-confidence distribution segments are solid
+- **WHEN** a distribution segment represents `sprwCountBucket` of `200+`
+- **THEN** that segment is displayed as a solid line
+
+### Requirement: Distribution percentage axis and interaction
+The Score Distribution chart SHALL use a fixed percentage Y-axis and SHALL expose rating and percentage values through chart tooltips.
+
+#### Scenario: Percentage axis is displayed
+- **WHEN** the Score Distribution chart is displayed
+- **THEN** its Y-axis spans 0% through 100% and uses percentage labels
+
+#### Scenario: Distribution point tooltip is shown
+- **WHEN** the user hovers over a Score Distribution point
+- **THEN** the tooltip displays the bucket, rating midpoint, and weighted percentage for that point
+
+#### Scenario: Distribution tooltip hides when not targeted
+- **WHEN** the pointer is not close to a Score Distribution point
+- **THEN** the distribution chart tooltip is hidden
 

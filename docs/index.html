@@ -13,14 +13,14 @@
     </header>
 
     <nav class="view-nav" aria-label="Statistics views">
-        <button id="course-stats-tab" class="view-tab active" type="button">Course stats</button>
-        <button id="basket-stats-tab" class="view-tab" type="button">Hole stats</button>
+        <button id="leaderboards-tab" class="view-tab active" type="button">Leaderboards</button>
         <button id="personal-stats-tab" class="view-tab" type="button">Personal stats</button>
-        <button id="leaderboards-tab" class="view-tab" type="button">Leaderboards</button>
+        <button id="course-stats-tab" class="view-tab" type="button">Course stats</button>
+        <button id="basket-stats-tab" class="view-tab" type="button">Hole stats</button>
         <button id="description-tab" class="view-tab" type="button">Description</button>
     </nav>
 
-    <section id="leaderboards-view" hidden>
+    <section id="leaderboards-view">
         <nav id="leaderboards-subnav" class="subnav" aria-label="Leaderboard categories">
             <button class="subnav-tab leaderboard-category-tab active" data-category="c1x" type="button">C1x</button>
             <button class="subnav-tab leaderboard-category-tab" data-category="c2PlusPerRound" type="button">C2+ per round</button>
@@ -79,18 +79,36 @@
             <p>There is also another way of looking at it: by considering a single player. A player of a given rating would have performance on a course, a hole, or any particular shot centered around that rating, most likely with performance following some form of normal distribution. A high SPRW for this player means that shot quality matters more and is more likely to affect the score, resulting in a more challenging experience. A low SPRW, on the other hand, might mean that shot quality does not matter as much, either because the score is "funneled" toward a particular result or because the hole is too random for shot quality to correlate with the overall result.</p>
             <p>In that sense, peaks in the SPRW chart might be interpreted as an indication of a hole's "target audience": the rating range the hole suits best. It is important to keep absolute values in mind, however. On long, difficult holes, even the minimum SPRW values might be higher than those of shorter and simpler holes.</p>
 
-            <h2>Personal Stats</h2>
+            <h2>Scoring Distribution</h2>
+            <p>Scoring distribution shows the percentages of occurrences for specific scores, with scores of 1 and 2 grouped together, as well as all scores above 8. On the “Course stats” tab, these percentages are provided for the full range of results or for players within a specific rating range when a filter is selected.</p>
+            <p>The chart on the “Hole stats” tab takes a slightly different approach: it calculates scoring around specific ratings using the same “triangular weight” method used by SPRW. For instance, 50% for score 4 at a rating of 850 does not mean that half of the players with a rating of exactly 850 played the hole with a score of 4, since there were likely not many players with that exact rating. Instead, it means that a score of 4 was recorded approximately half the time among all players around the 850 rating.</p>
+            <p>The lines on the chart correspond to specific scores or groups of scores. A line is available if the score has ever occurred on the hole. Each line can be toggled on or off. By default, to avoid clutter, only lines representing scores that occurred at least 5% of the time overall are enabled.</p>
+
+            <h2>Personal Stats. Hole Stats</h2>
             <p>This section shows a player's performance rating for each hole. Using the linear regression described in the previous sections, each score on any hole can be assigned a projected rating, and the average rating across all recorded results is displayed. These values are approximate measurements of a player's performance on every hole, and they provide a general idea of how well each hole has historically been played.</p>
             <p>Note that enough plays might be needed to stabilize the results and produce reasonable values. With a low number of plays, some extreme rating values might be produced.</p>
 
-            <h2>Future Improvements and Suggestions</h2>
-            <p>There are some improvements planned for implementation in the future:</p>
+            <h2>Personal stats. Putting stats</h2>
+            <p>Putting statistics are calculated from statistics entered by players in the PDGA Live app. For a round to be included, statistics must be fully entered for all holes. Incomplete rounds are shown in the round details with strikethrough formatting, but they do not affect overall or yearly values.</p>
+            <p>The statistics include:</p>
             <ol>
-                <li>Show images of hole layouts (tee signs).</li>
-                <li>Add an analysis of how score distributions (percentages) change with rating.</li>
-                <li>Add an import of personal statistics (specifically putts), with possible analytics.</li>
+                <li><strong>C1x.</strong> Percentage of made putts from Circle 1 excluding the bullseye (3–10 meters).</li>
+                <li><strong>C2.</strong> Percentage of made putts from Circle 2 (10–20 meters).</li>
+                <li><strong>C2+ per round.</strong> Average number of putts and throw-ins from C2 and beyond (10+ meters) per round. This value is weighted for rounds with more than 18 holes.</li>
+                <li><strong>Most C2+ in a round.</strong> Maximum number of putts and throw-ins from C2+ in a single round, calculated for the selected year or overall.</li>
+                <li><strong>Best C1x round.</strong> Highest C1x percentage achieved in a single round, calculated for the selected year or overall. The total number of putts in the round is used as a secondary criterion.</li>
+                <li><strong>Longest throw-in.</strong> Longest recorded distance from which a hole was completed. The distance must be entered in the statistics to be counted. Aces are included when the distance is entered.</li>
+                <li><strong>Lost 3+putting per round.</strong> Average number of strokes lost to 3+ putting per round, including 3-putts, 4-putts, 5-putts, and so on. This value is weighted for rounds with more than 18 holes. A 3+ putt occurs when a player fails to complete a hole within one or two throws after first landing in C1 or C2. Penalty strokes are included. Every throw beyond the second counts as a stroke lost to 3+ putting.</li>
             </ol>
-            <p>If you have any suggestions of your own, you can contact me on Facebook.</p>
+
+            <h2>Leaderboards</h2>
+            <p>All leaderboards except Aces display the top 10 players for various putting metrics. Circle 2 percentage and 3+putting are not included because the back edge of Circle 2 can be difficult to define consistently.</p>
+            <p>Each player can appear only once on a leaderboard. For example, a player's result on the Longest throw-in leaderboard is their best result. When a player achieves the same best result multiple times, the number of occurrences is used as a tie-breaker. This applies to Most C2+ in a round, Best C1x round, and Longest throw-in.</p>
+            <p>The aggregated C1x and C2+ per round leaderboards require a minimum number of putts thrown or holes played. The thresholds are shown below the relevant leaderboard.</p>
+            <p>The Aces leaderboard is different: it does not use player-entered statistics, but draws directly from results and hole information. Therefore, it can include data from earlier years and does not require players to enter statistics. It effectively captures all aces recorded in PDGA tournaments with live scoring. A player may appear multiple times on this leaderboard. To avoid duplication aces are excluded from the "Longest throw-in" leaderboard.</p>
+
+            <h2>Contacts</h2>
+            <p>If you have any questions or suggestions, you can contact me on Facebook.</p>
             <p>Aliaksei Memelau.</p>
         </article>
     </section>
@@ -174,6 +192,17 @@
                 <div id="basket-chart-tooltip" class="chart-tooltip" hidden></div>
             </div>
         </section>
+
+        <section id="score-distribution-section" class="chart-section" hidden>
+            <div class="section-header">
+                <h2><span class="tooltip-trigger" tabindex="0" data-tooltip="Score distribution around a given rating" aria-label="Score Distribution: Score distribution around a given rating">Score Distribution</span></h2>
+            </div>
+            <div id="score-distribution-canvas" class="chart-canvas basket-chart-canvas">
+                <svg id="score-distribution-chart" class="spr-var-chart" role="img" aria-label="Score distribution around a given rating chart"></svg>
+                <div id="score-distribution-tooltip" class="chart-tooltip" hidden></div>
+            </div>
+            <div id="score-distribution-legend" class="chart-legend score-distribution-legend" aria-label="Score distribution series"></div>
+        </section>
     </section>
 
     <section id="personal-stats-view" hidden>
@@ -189,11 +218,11 @@
 
         <div id="personal-content" hidden>
             <nav id="personal-subnav" class="subnav" aria-label="Personal statistics views">
-                <button id="personal-hole-tab" class="subnav-tab active" type="button">Hole stats</button>
-                <button id="personal-putting-tab" class="subnav-tab" type="button">Putting stats</button>
+                <button id="personal-putting-tab" class="subnav-tab active" type="button">Putting stats</button>
+                <button id="personal-hole-tab" class="subnav-tab" type="button">Hole stats</button>
             </nav>
 
-            <section id="personal-hole-view">
+            <section id="personal-hole-view" hidden>
                 <form id="personal-hole-filters" class="filters" hidden>
                     <label>
                         <span>Course</span>
@@ -222,7 +251,7 @@
                 </div>
             </section>
 
-            <section id="personal-putting-view" hidden>
+            <section id="personal-putting-view">
                 <div id="personal-putting-summary" class="putting-summary" aria-live="polite"></div>
             </section>
         </div>

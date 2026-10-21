@@ -246,6 +246,10 @@ button {
     max-width: 920px;
 }
 
+.description-content ol {
+    max-width: 920px;
+}
+
 .section-header {
     align-items: baseline;
     display: flex;
@@ -350,6 +354,52 @@ button {
 .basket-chart-point.hovered {
     fill: #1f2933;
 }
+
+.score-distribution-line {
+    fill: none;
+    stroke-width: 2;
+}
+
+.score-distribution-point {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+}
+
+.score-distribution-point.hovered {
+    stroke: #1f2933;
+    stroke-width: 2;
+}
+
+.score-distribution-toggle {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 3px 5px;
+}
+
+.score-distribution-toggle[aria-pressed="false"] {
+    opacity: 0.45;
+    text-decoration: line-through;
+}
+
+.score-distribution-toggle:focus-visible {
+    border-color: #245b7a;
+    outline: 2px solid #245b7a;
+    outline-offset: 1px;
+}
+
+.score-distribution-legend {
+    flex-wrap: wrap;
+}
+
+.score-bucket-1to2 { background: #164e7a; stroke: #164e7a; fill: #164e7a; }
+.score-bucket-3 { background: #62a9d1; stroke: #62a9d1; fill: #62a9d1; }
+.score-bucket-4 { background: #2f855a; stroke: #2f855a; fill: #2f855a; }
+.score-bucket-5 { background: #d6a514; stroke: #d6a514; fill: #d6a514; }
+.score-bucket-6 { background: #e67e22; stroke: #e67e22; fill: #e67e22; }
+.score-bucket-7 { background: #c026d3; stroke: #c026d3; fill: #c026d3; }
+.score-bucket-8plus { background: #8b1e2d; stroke: #8b1e2d; fill: #8b1e2d; }
 
 .chart-legend {
     align-items: center;

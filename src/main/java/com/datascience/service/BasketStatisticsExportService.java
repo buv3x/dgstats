@@ -46,6 +46,7 @@ public class BasketStatisticsExportService {
     private static final int BASKET_STATS_WINDOW_STEP = 5;
     private static final int BASKET_STATS_MIN_SAMPLES = 50;
     private static final int BASKET_STATS_SPRW_RADIUS = 50;
+    private static final List<String> SCORE_BUCKETS = List.of("1-2", "3", "4", "5", "6", "7", "8+");
     private static final int PERSONAL_STATS_MIN_GLOBAL_SAMPLES = 50;
     private static final int PERSONAL_STATS_MIN_PLAYER_SAMPLES = 2;
     private static final int LEADERBOARD_OVERALL_MIN_C1X_PUTTS = 100;
@@ -764,6 +765,14 @@ public class BasketStatisticsExportService {
 
         private BasketStatsVariation toVariation() {
             List<BasketStatsWindow> windows = buildWindows(samples);
+            Map<String, Integer> bucketCounts = new LinkedHashMap<>();
+            SCORE_BUCKETS.forEach(bucket -> bucketCounts.put(bucket, 0));
+            samples.forEach(sample -> bucketCounts.compute(bucketFor(sample.score()), (ignored, count) -> count + 1));
+            Map<String, Double> overallScorePercentages = new LinkedHashMap<>();
+            bucketCounts.forEach((bucket, count) -> overallScorePercentages.put(
+                    bucket,
+                    count * 100.0 / samples.size()
+            ));
             return new BasketStatsVariation(
                     basketId,
                     basketLabel,
@@ -772,6 +781,11 @@ public class BasketStatisticsExportService {
                     variationLabel,
                     variationSortOrder,
                     samples.size(),
+                    bucketCounts.entrySet().stream()
+                            .filter(entry -> entry.getValue() > 0)
+                            .map(Map.Entry::getKey)
+                            .toList(),
+                    overallScorePercentages,
                     windows
             );
         }
@@ -813,7 +827,8 @@ public class BasketStatisticsExportService {
                     count,
                     -100 * weightedRegression.regression().slope(),
                     weightedRegression.weightedCount(),
-                    countBucket(weightedRegression.weightedCount())
+                    countBucket(weightedRegression.weightedCount()),
+                    weightedScorePercentages(samples, midpoint)
             ));
         }
 
@@ -888,6 +903,33 @@ public class BasketStatisticsExportService {
             return 0;
         }
         return Math.max(0, 1 - (double) distance / BASKET_STATS_SPRW_RADIUS);
+    }
+
+    private static Map<String, Double> weightedScorePercentages(List<ScoreSample> samples, int midpoint) {
+        Map<String, Double> weightedBuckets = new LinkedHashMap<>();
+        SCORE_BUCKETS.forEach(bucket -> weightedBuckets.put(bucket, 0.0));
+        double weightedCount = 0;
+        for (ScoreSample sample : samples) {
+            double weight = sprwWeight(sample.rating(), midpoint);
+            if (weight <= 0) {
+                continue;
+            }
+            weightedBuckets.compute(bucketFor(sample.score()), (ignored, value) -> value + weight);
+            weightedCount += weight;
+        }
+        double denominator = weightedCount;
+        weightedBuckets.replaceAll((bucket, value) -> value * 100 / denominator);
+        return weightedBuckets;
+    }
+
+    private static String bucketFor(int score) {
+        if (score <= 2) {
+            return "1-2";
+        }
+        if (score >= 8) {
+            return "8+";
+        }
+        return String.valueOf(score);
     }
 
     private static String countBucket(double count) {
@@ -1101,7 +1143,8 @@ public class BasketStatisticsExportService {
             String roundAbbreviatedLabel,
             boolean complete,
             PuttingMetric c1x,
-            PuttingMetric c2
+            PuttingMetric c2,
+            int threePlusPuttLostThrows
     ) {
     }
 
@@ -1126,6 +1169,8 @@ public class BasketStatisticsExportService {
             String variationLabel,
             BigDecimal variationSortOrder,
             int sampleCount,
+            List<String> scoreBuckets,
+            Map<String, Double> overallScorePercentages,
             List<BasketStatsWindow> windows
     ) {
     }
@@ -1138,7 +1183,8 @@ public class BasketStatisticsExportService {
             int count,
             double sprw,
             double sprwCount,
-            String sprwCountBucket
+            String sprwCountBucket,
+            Map<String, Double> scoreDistribution
     ) {
     }
 
@@ -1681,7 +1727,8 @@ public class BasketStatisticsExportService {
                     roundAbbreviatedLabel,
                     complete,
                     metrics.toC1xMetric(),
-                    metrics.toC2Metric()
+                    metrics.toC2Metric(),
+                    metrics.threePlusPuttLostThrows
             );
         }
     }
