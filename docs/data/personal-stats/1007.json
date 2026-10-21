@@ -1,0 +1,130 @@
+{
+  "player" : {
+    "id" : 1007,
+    "name" : "Paulius Zakarauskas",
+    "pdgaNum" : null,
+    "label" : "Paulius Zakarauskas"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "longestThrowIn" : null,
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 188,
+        "roundDate" : "2026-02-22",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2026 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 189,
+        "roundDate" : "2026-02-22",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2026 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 190,
+        "roundDate" : "2026-02-22",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2026 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 207,
+        "roundDate" : "2026-06-14",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 – III etapas – PŪČKORIAI - Mėgėjai",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 208,
+        "roundDate" : "2026-06-14",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 – III etapas – PŪČKORIAI - Mėgėjai",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    } ]
+  }
+}

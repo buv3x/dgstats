@@ -1,0 +1,506 @@
+{
+  "player" : {
+    "id" : 245,
+    "name" : "Dovydas Vyšniauskas",
+    "pdgaNum" : 175901,
+    "label" : "Dovydas Vyšniauskas (175901)"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "longestThrowIn" : null,
+    "years" : [ {
+      "year" : 2024,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 76,
+        "roundDate" : "2024-02-25",
+        "competitionSimpleName" : "Lietuvos Žiemos diskgolfo čempionatas 2024 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 77,
+        "roundDate" : "2024-02-25",
+        "competitionSimpleName" : "Lietuvos Žiemos diskgolfo čempionatas 2024 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 78,
+        "roundDate" : "2024-02-25",
+        "competitionSimpleName" : "Lietuvos Žiemos diskgolfo čempionatas 2024 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 121,
+        "roundDate" : "2024-06-16",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - V - RIETAVAS - FPO, MPO",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 122,
+        "roundDate" : "2024-06-16",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - V - RIETAVAS - FPO, MPO",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 111,
+        "roundDate" : "2024-07-20",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 112,
+        "roundDate" : "2024-07-20",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas su Chilli Disc Golf",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 125,
+        "roundDate" : "2024-08-04",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2024",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 126,
+        "roundDate" : "2024-08-04",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2024",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 127,
+        "roundDate" : "2024-08-04",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2024",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 95,
+        "roundDate" : "2024-10-06",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - VII - ŠVEICARIJOS RUDUO → MPO, FPO",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 96,
+        "roundDate" : "2024-10-06",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2024 su ELEVATION DISCS - VII - ŠVEICARIJOS RUDUO → MPO, FPO",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    }, {
+      "year" : 2023,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 20,
+        "roundDate" : "2023-02-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2023 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 21,
+        "roundDate" : "2023-02-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2023 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 22,
+        "roundDate" : "2023-02-26",
+        "competitionSimpleName" : "Lietuvos diskgolfo žiemos čempionatas 2023 su DiscCity.eu",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 45,
+        "roundDate" : "2023-04-01",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2023 su Dynamic Discs – II – DOMEIKAVA - MPO",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 46,
+        "roundDate" : "2023-04-01",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2023 su Dynamic Discs – II – DOMEIKAVA - MPO",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 62,
+        "roundDate" : "2023-07-16",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 63,
+        "roundDate" : "2023-07-16",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Mėgėjų Čempionatas",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 66,
+        "roundDate" : "2023-08-06",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2023",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 67,
+        "roundDate" : "2023-08-06",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2023",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 68,
+        "roundDate" : "2023-08-06",
+        "competitionSimpleName" : "LIETUVOS DISKGOLFO ČEMPIONATAS 2023",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    }, {
+      "year" : 2022,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 10,
+        "roundDate" : "2022-09-04",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Čempionatas 2022 su DISCMANIA",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 11,
+        "roundDate" : "2022-09-04",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Čempionatas 2022 su DISCMANIA",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 12,
+        "roundDate" : "2022-09-04",
+        "competitionSimpleName" : "Lietuvos Diskgolfo Čempionatas 2022 su DISCMANIA",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    } ]
+  }
+}

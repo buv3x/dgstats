@@ -1,0 +1,417 @@
+{
+  "player" : {
+    "id" : 814,
+    "name" : "Veikko Küttner",
+    "pdgaNum" : 62250,
+    "label" : "Veikko Küttner (62250)"
+  },
+  "variations" : [ {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 95,
+    "basketLabel" : "4",
+    "basketSortOrder" : null,
+    "variationId" : 108,
+    "variationLabel" : "Base [118]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 947.7011732913242,
+    "displayRating" : 948,
+    "scores" : [ 4, 3, 5, 3, 4, 4 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 110,
+    "basketLabel" : "17 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 124,
+    "variationLabel" : "Pilgrim [178]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 2756,
+    "count" : 6,
+    "rating" : 942.6934024299097,
+    "displayRating" : 943,
+    "scores" : [ 4, 4, 4, 4, 5, 6 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 109,
+    "basketLabel" : "17 / 16 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 123,
+    "variationLabel" : "Base [108]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3758,
+    "count" : 6,
+    "rating" : 934.386309971837,
+    "displayRating" : 934,
+    "scores" : [ 3, 3, 4, 3, 3, 3 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 107,
+    "basketLabel" : "15 / 14 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 121,
+    "variationLabel" : "Base [99]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3758,
+    "count" : 6,
+    "rating" : 904.1930960435593,
+    "displayRating" : 904,
+    "scores" : [ 4, 4, 4, 3, 4, 5 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 93,
+    "basketLabel" : "2",
+    "basketSortOrder" : null,
+    "variationId" : 105,
+    "variationLabel" : "Pilgrim [135]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 2756,
+    "count" : 6,
+    "rating" : 878.8147995069136,
+    "displayRating" : 879,
+    "scores" : [ 5, 3, 4, 4, 3, 4 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 100,
+    "basketLabel" : "8 / 9 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 114,
+    "variationLabel" : "Base [73]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 842.2998924344855,
+    "displayRating" : 842,
+    "scores" : [ 4, 4, 3, 4, 2, 3 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 101,
+    "basketLabel" : "9 / 10 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 115,
+    "variationLabel" : "Base [295]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 839.3380077026251,
+    "displayRating" : 839,
+    "scores" : [ 7, 6, 7, 7, 5, 5 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 103,
+    "basketLabel" : "11",
+    "basketSortOrder" : null,
+    "variationId" : 117,
+    "variationLabel" : "Base [143]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 814.8371891437106,
+    "displayRating" : 815,
+    "scores" : [ 5, 5, 5, 5, 4, 7 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 99,
+    "basketLabel" : "8 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 113,
+    "variationLabel" : "Pilgrim [144]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 2755,
+    "count" : 6,
+    "rating" : 807.0799290982295,
+    "displayRating" : 807,
+    "scores" : [ 5, 6, 6, 4, 6, 5 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 98,
+    "basketLabel" : "7",
+    "basketSortOrder" : null,
+    "variationId" : 112,
+    "variationLabel" : "Base [111]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 802.7185258581067,
+    "displayRating" : 803,
+    "scores" : [ 4, 4, 3, 4, 4, 4 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 105,
+    "basketLabel" : "13",
+    "basketSortOrder" : null,
+    "variationId" : 119,
+    "variationLabel" : "Base [132]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 800.3324282899066,
+    "displayRating" : 800,
+    "scores" : [ 5, 5, 4, 5, 4, 4 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 94,
+    "basketLabel" : "3",
+    "basketSortOrder" : null,
+    "variationId" : 106,
+    "variationLabel" : "Base [87]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3758,
+    "count" : 6,
+    "rating" : 793.5600088545967,
+    "displayRating" : 794,
+    "scores" : [ 4, 3, 3, 4, 3, 4 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 97,
+    "basketLabel" : "6",
+    "basketSortOrder" : null,
+    "variationId" : 111,
+    "variationLabel" : "Base [172]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 783.9092148993162,
+    "displayRating" : 784,
+    "scores" : [ 7, 5, 4, 6, 6, 5 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 96,
+    "basketLabel" : "5",
+    "basketSortOrder" : null,
+    "variationId" : 110,
+    "variationLabel" : "Pilgrim [155]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 2755,
+    "count" : 6,
+    "rating" : 776.22413998217,
+    "displayRating" : 776,
+    "scores" : [ 6, 4, 5, 5, 6, 8 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 111,
+    "basketLabel" : "18",
+    "basketSortOrder" : null,
+    "variationId" : 126,
+    "variationLabel" : "Pilgrim [176]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 2756,
+    "count" : 6,
+    "rating" : 767.5148037629125,
+    "displayRating" : 768,
+    "scores" : [ 5, 5, 6, 5, 9, 7 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 104,
+    "basketLabel" : "12",
+    "basketSortOrder" : null,
+    "variationId" : 118,
+    "variationLabel" : "Base [106]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3757,
+    "count" : 6,
+    "rating" : 748.9478284891856,
+    "displayRating" : 749,
+    "scores" : [ 3, 4, 3, 4, 5, 5 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 108,
+    "basketLabel" : "16 / 15 Pilgrim",
+    "basketSortOrder" : null,
+    "variationId" : 122,
+    "variationLabel" : "Base [76]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 3758,
+    "count" : 6,
+    "rating" : 744.6445972705516,
+    "displayRating" : 745,
+    "scores" : [ 3, 5, 3, 3, 3, 3 ]
+  }, {
+    "basketCourseId" : 6,
+    "basketCourseName" : "Vilnius. Pučkoriai",
+    "basketId" : 92,
+    "basketLabel" : "1",
+    "basketSortOrder" : null,
+    "variationId" : 103,
+    "variationLabel" : "Pilgrim [172]",
+    "variationSortOrder" : null,
+    "globalSampleCount" : 2756,
+    "count" : 6,
+    "rating" : 744.2608293881763,
+    "displayRating" : 744,
+    "scores" : [ 5, 7, 6, 5, 5, 5 ]
+  } ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "longestThrowIn" : null,
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 183,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 184,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 185,
+        "roundDate" : "2026-04-19",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs - Vilnius Open 2026",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    }, {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 136,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 137,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 138,
+        "roundDate" : "2025-04-13",
+        "competitionSimpleName" : "The AmTour by Innova Champion Discs → Vilnius Open 2025",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    } ]
+  }
+}

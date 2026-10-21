@@ -1,0 +1,148 @@
+{
+  "player" : {
+    "id" : 860,
+    "name" : "Gvidas Urnikis",
+    "pdgaNum" : null,
+    "label" : "Gvidas Urnikis"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "longestThrowIn" : null,
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 209,
+        "roundDate" : "2026-06-28",
+        "competitionSimpleName" : "Diskgolfo turnyras Rietavo mero taurei laimėti 2026",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 210,
+        "roundDate" : "2026-06-28",
+        "competitionSimpleName" : "Diskgolfo turnyras Rietavo mero taurei laimėti 2026",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 211,
+        "roundDate" : "2026-06-28",
+        "competitionSimpleName" : "Diskgolfo turnyras Rietavo mero taurei laimėti 2026",
+        "roundAbbreviatedLabel" : "Rd 3",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    }, {
+      "year" : 2025,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 154,
+        "roundDate" : "2025-09-28",
+        "competitionSimpleName" : "Rietavo Mykolinių diskgolfo turnyras 2025",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 155,
+        "roundDate" : "2025-09-28",
+        "competitionSimpleName" : "Rietavo Mykolinių diskgolfo turnyras 2025",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    } ]
+  }
+}

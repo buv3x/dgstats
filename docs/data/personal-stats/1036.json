@@ -1,0 +1,79 @@
+{
+  "player" : {
+    "id" : 1036,
+    "name" : "Dovydas Dargis",
+    "pdgaNum" : null,
+    "label" : "Dovydas Dargis"
+  },
+  "variations" : [ ],
+  "putting" : {
+    "c1x" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2" : {
+      "successful" : 0,
+      "total" : 0,
+      "percentage" : null
+    },
+    "c2PlusPerRound" : null,
+    "threePlusPuttPerRound" : null,
+    "mostC2PlusInRound" : null,
+    "bestC1xRound" : null,
+    "longestThrowIn" : null,
+    "years" : [ {
+      "year" : 2026,
+      "c1x" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2" : {
+        "successful" : 0,
+        "total" : 0,
+        "percentage" : null
+      },
+      "c2PlusPerRound" : null,
+      "threePlusPuttPerRound" : null,
+      "mostC2PlusInRound" : null,
+      "bestC1xRound" : null,
+      "longestThrowIn" : null,
+      "rounds" : [ {
+        "roundId" : 199,
+        "roundDate" : "2026-05-17",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 II DOMEIKAVA + WGE - MPO, FPO, MP40, FP40, MP50, FP50, MJ18",
+        "roundAbbreviatedLabel" : "Rd 1",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      }, {
+        "roundId" : 200,
+        "roundDate" : "2026-05-17",
+        "competitionSimpleName" : "Lietuvos diskgolfo taurė 2026 II DOMEIKAVA + WGE - MPO, FPO, MP40, FP40, MP50, FP50, MJ18",
+        "roundAbbreviatedLabel" : "Rd 2",
+        "complete" : false,
+        "c1x" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "c2" : {
+          "successful" : 0,
+          "total" : 0,
+          "percentage" : null
+        },
+        "threePlusPuttLostThrows" : 0
+      } ]
+    } ]
+  }
+}
